@@ -1,0 +1,338 @@
+.challenge {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  margin: 32px 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--bg-card)), var(--bg-card));
+  border-bottom: 1px solid var(--border);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.duration {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.levelBadge {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.scenario {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.scenario p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.setupSection {
+  border-bottom: 1px solid var(--border);
+}
+
+.setupHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.setupHeader:hover {
+  background: var(--bg-secondary);
+}
+
+.setupIcon {
+  font-size: 1.125rem;
+}
+
+.setupTitle {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.expandIcon {
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.setupContent {
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.setupItem {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.setupLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  min-width: 100px;
+}
+
+.setupValue {
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+}
+
+.recordings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recording {
+  background: var(--bg-secondary);
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.recNumber {
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.otherSettings {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.mainContent {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.goalBox {
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-secondary));
+  border-left: 4px solid var(--accent);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+}
+
+.goalLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.goalText {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.successBox {
+  background: color-mix(in srgb, var(--success) 10%, var(--bg-secondary));
+  border-left: 4px solid var(--success);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+}
+
+.successLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--success);
+  margin-bottom: 8px;
+}
+
+.successText {
+  color: var(--text-primary);
+}
+
+.failureBox {
+  background: color-mix(in srgb, var(--warning) 8%, var(--bg-secondary));
+  border-left: 4px solid var(--warning);
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+}
+
+.failureLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--warning);
+  margin-bottom: 8px;
+}
+
+.failureText {
+  color: var(--text-secondary);
+}
+
+.levelsSection {
+  padding: 20px;
+}
+
+.levelTabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.levelTab {
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.levelTab:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.levelTab.active {
+  background: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+.levelTab.completed {
+  border-color: var(--success);
+}
+
+.levelTab.completed .checkmark {
+  color: var(--success);
+}
+
+.levelTab.active.completed .checkmark {
+  color: var(--bg-primary);
+}
+
+.levelContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.levelDesc {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.completeBtn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.completeBtn:hover {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.completedBtn {
+  background: var(--success);
+  color: white;
+  border-color: var(--success);
+}
+
+.hints {
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+
+.hintsLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.hints ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.hints li {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: 6px;
+}
+
+.whyBox {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 5%, var(--bg-secondary)), var(--bg-secondary));
+  border-top: 1px solid var(--border);
+}
+
+.whyLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.whyBox p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  font-style: italic;
+}

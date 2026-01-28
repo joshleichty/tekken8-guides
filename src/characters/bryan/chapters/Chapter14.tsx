@@ -3,7 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
   Collapsible
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -242,20 +241,18 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </Collapsible>
       </Section>
 
-      <Section title="Snake Eyes Drill">
-        <DrillMode
-          title="Snake Eyes Utilization"
-          objective="Practice getting and using Snake Eyes"
-          setup="Practice Mode, get Snake Eyes through uf+3+4 in combo"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'Combo with uf+3+4 to get SNE', targetReps: 5 },
-            { instruction: '3+4 (hit) → SNE 3+4,2', targetReps: 10 },
-            { instruction: 'Wall combo with SNE uf+2,2,2,2,2,3', targetReps: 10 },
-            { instruction: 'Land SNE f,f+1+2 on opponent attack', targetReps: 5 },
-          ]}
-        />
+      <Section title="Getting Snake Eyes">
+        <p>
+          To practice Snake Eyes, focus on these sources:
+        </p>
+        <ul>
+          <li><strong>uf+3+4 in combos</strong> — Easiest SNE source</li>
+          <li><strong>f+2,1,4 on hit</strong> — Gives SNE and starts your pressure</li>
+          <li><strong>Heat</strong> — You have permanent SNE while in Heat</li>
+        </ul>
+        <p>
+          Once you have SNE, prioritize landing SNE 3+4,2 — the damage boost is significant.
+        </p>
       </Section>
     </Chapter>
   )

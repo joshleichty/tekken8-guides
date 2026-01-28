@@ -3,7 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
   Quiz
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -167,33 +166,12 @@ export function Chapter9({ goToChapter }: ChapterProps) {
         </TipBox>
       </Section>
 
-      <Section title="Extension Drills">
-        <DrillMode
-          title="d+2,3 Confirmation"
-          objective="Learn to confirm d+2,3 only on counter-hit"
-          setup="Dummy: random attack or block. If they attack, you get CH."
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'd+2 only (watch for CH stagger)', targetReps: 20 },
-            { instruction: 'd+2,3 ONLY when you see CH stagger', detail: 'Don\'t finish on block or normal hit', targetReps: 10 },
-            { instruction: 'Confirmed d+2,3 CH → combo', targetReps: 5 },
-          ]}
-        />
-
-        <DrillMode
-          title="1,2,1 Timing Mixup"
-          objective="Vary 1,2,1 timing to catch different responses"
-          setup="Dummy: random delay before pressing back"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: '1,2,1 immediate', targetReps: 10 },
-            { instruction: '1,2,1 with 5 frame delay', targetReps: 10 },
-            { instruction: '1,2,1 with max delay (10 frames)', targetReps: 10 },
-            { instruction: 'Mix all timings randomly', targetReps: 10 },
-          ]}
-        />
+      <Section title="Using Extensions Effectively">
+        <p>
+          The key to extensions is recognizing when opponents will press. Single pokes are 
+          fine — only extend when you KNOW they'll press back. If extensions keep getting 
+          blocked, you're being too predictable.
+        </p>
       </Section>
 
       <Section title="Knowledge Check">

@@ -3,8 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
-  MatchScenario,
   Flowchart
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -120,26 +118,6 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             }}
           />
         </SubSection>
-
-        <SubSection title="qcb+1 — The All-Rounder">
-          <MoveCard
-            move={{
-              input: 'qcb+1',
-              hitLevel: ['h'],
-              damage: '22',
-              startup: 'i13-14',
-              onBlock: '+5',
-              onHit: '+36a (+28)',
-              onCH: '+72a (+56)',
-              tags: ['High', 'CH Launcher', '+5 on Block'],
-              description: 'Your best button. Plus on block, launches on CH.',
-            }}
-          />
-          <p>
-            qcb+1 is technically a CH launcher too, but it's so good on block and normal 
-            hit that it's less about "fishing" and more about "use it all the time."
-          </p>
-        </SubSection>
       </Section>
 
       <Section title="CH Fishing Decision Tree">
@@ -175,74 +153,93 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         />
       </Section>
 
-      <Section title="Setting Up Counter-Hits">
+      <Section title="Learning to Read Button Presses">
         <p>
           The best Bryan players don't just throw out CH moves randomly. They <span className="highlight">
-          create situations</span> where opponents feel compelled to press.
+          recognize when opponents want to press</span> and exploit that.
         </p>
 
-        <KeyConcept title="CH Setup Techniques" icon="🎯">
-          <ul>
-            <li><strong>After df+2 is blocked</strong> — You're -6. Opponents might check. f+3.</li>
-            <li><strong>After jab string ends</strong> — You're -3 to -6. Opponents want their turn.</li>
-            <li><strong>After slight hesitation</strong> — Do nothing for a beat. They press. You launch.</li>
-            <li><strong>After qcb+3 hits</strong> — You're +5. Opponents often jab. f+3.</li>
-          </ul>
+        <KeyConcept title="When Opponents Press Buttons" icon="👀">
+          <p><strong>After you block their string:</strong> Impatient players will try to press again. Use f+3.</p>
+          <p><strong>After your move is blocked (-6):</strong> They know they're plus. They WILL press. Perfect f+3 timing.</p>
+          <p><strong>After they whiff unpunished:</strong> They think they got away with it. Confidence = pressing.</p>
+          <p><strong>When you've been blocking too long:</strong> They think you're scared. Time to fish with 3+4.</p>
+          <p><strong>Low life situations:</strong> Desperate players mash. Any CH launcher works.</p>
         </KeyConcept>
 
-        <MatchScenario
-          title="The Bait"
-          situation="You just did df+2 and it was blocked. You're -6."
-          context="Opponent knows they have advantage. They want to press."
-          options={[
-            {
-              action: 'Throw out f+3',
-              input: 'f+3',
-              result: 'If they press, they eat CH f+3 for full combo. If they block, you\'re even.',
-              isOptimal: true,
-              followup: 'Full combo off CH, or continue pressure if blocked'
-            },
-            {
-              action: 'Block',
-              result: 'Safe, but you give up potential damage.',
-            },
-            {
-              action: 'Press jab',
-              result: 'You\'re -6, so their jab beats yours. Not optimal.',
-            },
-          ]}
-          keyTakeaway="Your minus frames are CH bait. Smart opponents will press — make them pay."
-        />
+        <TipBox variant="tip" title="Reading the Transition">
+          Watch for moments when the opponent transitions from blocking to attacking. 
+          That transition is when you fish. The read isn't random — it's recognizing 
+          patterns and predicting behavior.
+        </TipBox>
       </Section>
 
-      <Section title="CH Fishing Drills">
-        <DrillMode
-          title="f+3 Fishing"
-          objective="Land CH f+3 consistently"
-          setup="Dummy set to do jab after blocking your move"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'df+2 → f+3 (catch their jab)', targetReps: 10 },
-            { instruction: 'f+3 → f+3 (fish twice)', detail: 'You\'re 0 on block, so fish again', targetReps: 10 },
-            { instruction: '1,2 → f+3', targetReps: 10 },
-            { instruction: 'Land CH f+3 → full combo', targetReps: 5 },
-          ]}
-        />
+      <Section title="The Bait and Punish">
+        <p>
+          Now let's talk about <strong>creating</strong> the situations where CHs happen.
+        </p>
 
-        <DrillMode
-          title="b+1 Pressure"
-          objective="Use b+1 to create pressure situations"
-          setup="Dummy on random guard and response"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'b+1 → df+2', detail: 'You\'re +4, df+2 is i13, they can\'t press', targetReps: 10 },
-            { instruction: 'b+1 → throw', detail: '+4 into throw mixup', targetReps: 5 },
-            { instruction: 'b+1 → b+1', detail: 'Fish again!', targetReps: 5 },
-            { instruction: 'Land CH b+1 → full combo', targetReps: 5 },
-          ]}
-        />
+        <SubSection title="The Minus Frame Trap">
+          <p>
+            When you're -6 (like after df+2 is blocked), opponents know they're plus. 
+            Good players will try to take their turn with a fast poke. 
+            <span className="highlight">This is exactly when you fish with f+3.</span>
+          </p>
+          <ul>
+            <li><strong>If they jab:</strong> f+3 catches it for a full CH combo</li>
+            <li><strong>If they df+1:</strong> f+3 still works — their mid is slower</li>
+            <li><strong>If they block:</strong> f+3 is blocked but you're 0. Fish again or go low.</li>
+          </ul>
+          <p>
+            <strong>Mental cue:</strong> "When I'm minus and close: fish time. My minus frames are bait."
+          </p>
+        </SubSection>
+
+        <TipBox variant="warning" title="Common Mistakes">
+          <ul>
+            <li><strong>f+3 too early</strong> — No counter-hit because their move hasn't started</li>
+            <li><strong>f+3 too late</strong> — They block it, you're back to neutral</li>
+            <li><strong>Wrong range</strong> — f+3 at far range will whiff</li>
+          </ul>
+        </TipBox>
+      </Section>
+
+      <Section title="Range-Specific CH Fishing">
+        <p>
+          Bryan has different CH launchers for different ranges. Using the wrong one at the 
+          wrong range = whiff = death.
+        </p>
+
+        <KeyConcept title="Match Your Tool to Your Range" icon="📍">
+          <p><strong>Close range (0-1):</strong> f+3 — Your close-range CH tool</p>
+          <p><strong>Mid range (1.5):</strong> b+1 — Reaches further, +4 on block</p>
+          <p><strong>Far range (2):</strong> 3+4 — Max range CH launcher</p>
+        </KeyConcept>
+
+        <TipBox variant="tip" title="Mental Cue">
+          Close = f+3. Mid = b+1. Far = 3+4. Range determines tool.
+        </TipBox>
+      </Section>
+
+      <Section title="When to Stop Fishing">
+        <p>
+          Here's the hardest part: sometimes the fish isn't biting. You need to know when 
+          to stop fishing and go low instead.
+        </p>
+
+        <p>
+          <span className="highlight">If the opponent is blocking everything and not pressing</span>, 
+          don't keep throwing CH moves at them. Turtles get opened up with lows (qcb+3) and throws, 
+          not CH launchers.
+        </p>
+
+        <KeyConcept title="Adapting to the Opponent" icon="🔄">
+          <ul>
+            <li><strong>Against mashers:</strong> Fish all day. f+3, b+1, 3+4.</li>
+            <li><strong>Against turtles:</strong> Chip with lows. qcb+3, throws, pressure.</li>
+            <li><strong>Mix both:</strong> When they block f+3 (you're 0), go low with qcb+3.</li>
+          </ul>
+        </KeyConcept>
       </Section>
 
       <Section title="Common Mistakes">
@@ -259,6 +256,21 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           CH fishing only works if your opponent presses buttons. Against turtles, use your 
           lows and throws instead. Against aggressive players, fish all day.
         </TipBox>
+      </Section>
+
+      <Section title="Chapter Summary">
+        <p>
+          Counter-hit fishing is about reading your opponent and punishing their aggression:
+        </p>
+        <ul>
+          <li><strong>f+3</strong> — Close range (0 on block, launches on CH)</li>
+          <li><strong>b+1</strong> — Mid range (+4 on block, launches on CH)</li>
+          <li><strong>3+4</strong> — Far range (safe with pushback, launches on CH)</li>
+        </ul>
+        <p>
+          Create situations where they want to press (minus frames, hesitation), then 
+          punish them for it. But stay adaptable — against turtles, go low instead.
+        </p>
       </Section>
     </Chapter>
   )

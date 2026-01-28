@@ -3,7 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
   Collapsible,
   ConceptBuilder
 } from '../../../components/ui'
@@ -161,20 +160,16 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           </ol>
         </KeyConcept>
 
-        <DrillMode
-          title="Jab String Mixups"
-          objective="Get comfortable varying your jab strings"
-          setup="Dummy on random: block, jab back, or duck"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'Do 1,2 only (don\'t finish)', targetReps: 10 },
-            { instruction: 'Do 1,2,1 (immediate)', targetReps: 10 },
-            { instruction: 'Do 1,2,1 (delayed)', detail: 'Wait a beat before the last hit', targetReps: 10 },
-            { instruction: 'Do 1,2,3', targetReps: 5 },
-            { instruction: 'Mix all four randomly', targetReps: 10 },
-          ]}
-        />
+        <TipBox variant="tip" title="Jab String Mind Games">
+          <p>
+            The power is in the mixup: immediate 1,2,1 catches instant mashers, delayed 1,2,1 
+            catches patient pressers. Sometimes just do 1,2 — the mental pressure is enough.
+          </p>
+          <p>
+            If they keep blocking: they're respecting the extension. Go for 1,2,3 (low) or 
+            1,2 → throw instead.
+          </p>
+        </TipBox>
       </Section>
 
       <Section title="1,4 String">

@@ -1,0 +1,291 @@
+.spacingGame {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  margin: 32px 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, var(--bg-card)), var(--bg-card));
+  border-bottom: 1px solid var(--border);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.duration {
+  background: var(--bg-secondary);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.description {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.description p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.rangeVisual {
+  padding: 30px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.rangeLine {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 20px;
+}
+
+.rangeLine::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 4px;
+  background: linear-gradient(to right, var(--accent), var(--accent-secondary, var(--accent)));
+  border-radius: 2px;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.rangeMarker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.markerLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.markerDot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 3px solid var(--border);
+  transition: all 0.2s;
+}
+
+.rangeMarker:hover .markerDot {
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.rangeMarker:hover .markerLabel {
+  color: var(--text-primary);
+}
+
+.rangeMarker.target .markerDot {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 20%, var(--bg-card));
+}
+
+.rangeMarker.target .markerLabel {
+  color: var(--accent);
+}
+
+.rangeMarker.active .markerDot {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.2);
+  box-shadow: 0 0 12px var(--accent);
+}
+
+.rangeMarker.active .markerLabel {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.targetIndicator {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.targetIndicator strong {
+  color: var(--accent);
+}
+
+.rangeDetail {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.rangeHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.rangeName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.targetBadge {
+  background: var(--accent);
+  color: var(--bg-primary);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.rangeDesc {
+  color: var(--text-secondary);
+  margin: 0 0 16px;
+  line-height: 1.6;
+}
+
+.toolsSection {
+  margin-top: 16px;
+}
+
+.toolsLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--success);
+  margin-bottom: 10px;
+}
+
+.toolsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tool {
+  background: color-mix(in srgb, var(--accent) 15%, var(--bg-secondary));
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  color: var(--accent);
+}
+
+.danger {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px;
+  background: color-mix(in srgb, var(--warning) 10%, var(--bg-secondary));
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.dangerIcon {
+  flex-shrink: 0;
+}
+
+.setup {
+  padding: 16px 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.setupRow {
+  display: flex;
+  gap: 12px;
+}
+
+.setupLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  min-width: 100px;
+}
+
+.setupValue {
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+}
+
+.tips {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tipsLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.tips li {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: 6px;
+}
+
+.whyBox {
+  padding: 16px 20px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 5%, var(--bg-secondary)), var(--bg-secondary));
+}
+
+.whyBox p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  font-style: italic;
+}

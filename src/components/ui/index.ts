@@ -16,6 +16,12 @@ export { CompletionBadge } from './CompletionBadge'
 // Enhanced Pedagogy Components
 export { ProgressMilestone } from './ProgressMilestone'
 export { SkillCheck } from './SkillCheck'
-export { DrillMode } from './DrillMode'
 export { MatchScenario } from './MatchScenario'
 export { ConceptBuilder } from './ConceptBuilder'
+
+// Practice Mode Challenge Components
+export { GameChallenge } from './GameChallenge'
+export { ConstraintPlay } from './ConstraintPlay'
+export { SpacingGame } from './SpacingGame'
+export { SituationDrill } from './SituationDrill'
+export { ReadingChallenge } from './ReadingChallenge'

@@ -1,0 +1,334 @@
+.situationDrill {
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  margin: 32px 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  background: linear-gradient(135deg, 
+    color-mix(in srgb, #a855f7 12%, var(--bg-card)), 
+    var(--bg-card)
+  );
+  border-bottom: 1px solid var(--border);
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.headerContent {
+  flex: 1;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #a855f7;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 2px;
+}
+
+.situation {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.situationLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a855f7;
+  margin-bottom: 8px;
+}
+
+.situationText {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0 0 8px;
+}
+
+.contextText {
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.recordingsSection {
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.recordIcon {
+  color: #ef4444;
+}
+
+.gearIcon {
+  color: var(--text-muted);
+}
+
+.recordInstructions {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+  margin: 0 0 16px;
+}
+
+.actionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actionItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.actionItem:hover {
+  border-color: color-mix(in srgb, #a855f7 50%, var(--border));
+}
+
+.actionItem.expanded {
+  border-color: #a855f7;
+}
+
+.actionHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.slotNumber {
+  background: #a855f7;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.actionText {
+  flex: 1;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.expandIcon {
+  color: var(--text-muted);
+  font-size: 1.25rem;
+}
+
+.actionDetail {
+  padding: 0 16px 16px;
+}
+
+.responseBox {
+  background: color-mix(in srgb, var(--success) 8%, var(--bg-secondary));
+  border-left: 4px solid var(--success);
+  padding: 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.responseLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--success);
+  margin-bottom: 6px;
+}
+
+.responseText {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.timing {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.timingIcon {
+  font-size: 0.875rem;
+}
+
+.setupSection {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.setupGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.setupItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.setupLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.setupValue {
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+}
+
+.otherSettings {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.otherSetting {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+.goalSection {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.goalBox {
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-secondary));
+  border-left: 4px solid var(--accent);
+  padding: 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.goalLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.goalText {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.successBox {
+  background: color-mix(in srgb, var(--success) 10%, var(--bg-secondary));
+  border-left: 4px solid var(--success);
+  padding: 14px;
+  border-radius: 0 6px 6px 0;
+}
+
+.successLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--success);
+  margin-bottom: 6px;
+}
+
+.successText {
+  color: var(--text-primary);
+}
+
+.mistakesSection {
+  padding: 16px 20px;
+  background: color-mix(in srgb, var(--warning) 5%, var(--bg-secondary));
+  border-bottom: 1px solid var(--border);
+}
+
+.mistakesLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--warning);
+  margin-bottom: 10px;
+}
+
+.mistakesSection ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.mistakesSection li {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-bottom: 6px;
+}
+
+.mentalCue {
+  display: flex;
+  gap: 14px;
+  padding: 20px;
+  background: linear-gradient(135deg, color-mix(in srgb, #a855f7 8%, var(--bg-card)), var(--bg-card));
+}
+
+.cueIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.cueContent {
+  flex: 1;
+}
+
+.cueLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #a855f7;
+  margin-bottom: 6px;
+}
+
+.mentalCue p {
+  margin: 0;
+  color: var(--text-primary);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+}

@@ -3,7 +3,6 @@ import {
   KeyConcept, 
   TipBox,
   Flowchart,
-  DrillMode,
   MatchScenario
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -63,19 +62,11 @@ export function Chapter17({ goToChapter }: ChapterProps) {
           </ul>
         </SubSection>
 
-        <DrillMode
-          title="Frame Trap Drill"
-          objective="Practice frame trap sequences"
-          setup="Dummy set to jab after blocking your move"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'qcb+1 (blocked) → df+2 (beats their jab)', targetReps: 10 },
-            { instruction: 'qcb+1 (blocked) → d+2 (beats their jab)', targetReps: 10 },
-            { instruction: 'b+1 (blocked) → f+3 (CH launches their response)', targetReps: 10 },
-            { instruction: 'b+1 (blocked) → b+1 (fish twice)', targetReps: 10 },
-          ]}
-        />
+        <TipBox variant="tip" title="Frame Trap Math">
+          <p><strong>qcb+1 blocked (+5) → df+2 (i13)</strong> = 5+13=18 frames. Beats jab.</p>
+          <p><strong>b+1 blocked (+4) → f+3 (i16)</strong> = 4+16=20 frames. Trades, but you CH launch.</p>
+          <p>Frame traps only work if they press. Against turtles, go low instead.</p>
+        </TipBox>
       </Section>
 
       <Section title="Conditioning">

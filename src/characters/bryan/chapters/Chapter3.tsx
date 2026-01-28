@@ -2,10 +2,7 @@ import { Chapter, Section, SubSection } from '../../../components/guide'
 import { 
   KeyConcept, 
   TipBox,
-  PracticeBox,
-  DrillMode,
-  MatchScenario,
-  ConceptBuilder
+  MatchScenario
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
@@ -55,23 +52,42 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             so well</span> that you only need functional movement to position yourself. Then your 
             moves do the work.
           </p>
+          <p>
+            The formula: <strong>Average movement + Incredible buttons + Smart positioning = Mid-range control.</strong>
+          </p>
         </SubSection>
-
-        <ConceptBuilder
-          title="Bryan's Spacing Philosophy"
-          foundation={[
-            { label: 'Average movement', description: 'Not elite, but functional' },
-            { label: 'Incredible buttons', description: 'qcb+1, 3+4, orbital have huge range' },
-          ]}
-          newAddition={{
-            label: 'Smart positioning',
-            description: 'Use basic movement to get to range 2',
-          }}
-          result="You control the match from mid-range even without elite movement"
-        />
       </Section>
 
-      <Section title="Core Movement Techniques">
+      <Section title="Understanding Bryan's Ranges">
+        <p>
+          Before we practice movement, you need to <strong>feel</strong> what each range is like. 
+          This isn't about memorizing distances — it's about developing an intuition.
+        </p>
+
+        <KeyConcept title="Bryan's Four Ranges" icon="📏">
+          <p><strong>Range 0 (Kissing Distance)</strong></p>
+          <p>Danger zone. You can throw, but Bryan struggles here — most characters have better panic options. Tools: 1,2, throw, sidestep.</p>
+          
+          <p style={{ marginTop: '16px' }}><strong>Range 1 (Jab Range)</strong></p>
+          <p>Both players' fast moves connect. Bryan can function here but isn't dominant. Tools: 1,2, df+2, qcb+3, d+4.</p>
+          
+          <p style={{ marginTop: '16px' }}><strong>Range 2 (Bryan's Kingdom)</strong></p>
+          <p><span className="highlight">This is where you want to be.</span> Far enough that their jabs whiff. Close enough that YOUR tools connect. Tools: qcb+1, 3+4, u+4, qcb+3, f,b+2.</p>
+          
+          <p style={{ marginTop: '16px' }}><strong>Range 3 (Too Far)</strong></p>
+          <p>Even your long moves whiff. Don't chase — let them come to you. Tools: ff+2 (approach), wait.</p>
+        </KeyConcept>
+
+        <TipBox variant="tip" title="Quick Range Check">
+          <ul>
+            <li>One backdash from close = Range 2</li>
+            <li>If their jab hits you = Range 1 or closer</li>
+            <li>If your qcb+1 whiffs = Range 3 (too far)</li>
+          </ul>
+        </TipBox>
+      </Section>
+
+      <Section title="Movement Techniques">
         <SubSection title="Backdash">
           <p>
             Backdashing creates the space Bryan needs. One backdash from range 1 puts you 
@@ -86,11 +102,6 @@ export function Chapter3({ goToChapter }: ChapterProps) {
               <li><strong>After your poke is blocked:</strong> Reset to neutral spacing</li>
             </ul>
           </KeyConcept>
-
-          <TipBox variant="tip" title="Korean Backdash (KBD)">
-            Bryan benefits from KBD but doesn't require it. Focus on <strong>clean double-backdashes</strong> 
-            first. You can learn KBD later once your fundamentals are solid.
-          </TipBox>
         </SubSection>
 
         <SubSection title="Sidestepping">
@@ -108,48 +119,45 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             </ul>
           </KeyConcept>
         </SubSection>
+      </Section>
 
-        <SubSection title="Walking">
+      <Section title="Movement in Practice">
+        <p>
+          Movement practice is about building habits, not completing challenges. Here's how to develop your spacing instincts:
+        </p>
+
+        <SubSection title="The Range 2 Game">
           <p>
-            Walking (holding forward/back) is underrated. It lets you <span className="highlight">micro-adjust 
-            your spacing</span> while keeping your guard.
+            Set the CPU to Aggressive and focus on <strong>staying at Range 2</strong>. Not on winning — just spacing. 
+            If they get in your face, backdash. If you end up too far, let them approach.
           </p>
-          <ul>
-            <li><strong>Walk back slightly</strong> → Whiff punish their jab attempt</li>
-            <li><strong>Walk forward slightly</strong> → Get into range for 3+4</li>
-          </ul>
+          <p>
+            Start by maintaining Range 2 for 15 seconds. Then 30. Then 60. When you can hold your preferred range 
+            without thinking about it, it's becoming instinct.
+          </p>
         </SubSection>
+
+        <SubSection title="Backdash into Whiff Punish">
+          <p>
+            The real power of backdash is <strong>creating whiff punishes</strong>. When you backdash and they 
+            attack into nothing, f,b+2 (Jet Upper) punishes for a full combo.
+          </p>
+          <p>
+            Practice this against an aggressive CPU: watch for their attacks, backdash to make them whiff, 
+            then launch with f,b+2. This turns every backdash into a potential 60+ damage opportunity.
+          </p>
+        </SubSection>
+
+        <TipBox variant="tip" title="Movement Tips">
+          <ul>
+            <li>One backdash = roughly one range increment</li>
+            <li>Don't run away forever — the corner will trap you</li>
+            <li>Walking back is often better than backdashing (keeps guard up)</li>
+          </ul>
+        </TipBox>
       </Section>
 
-      <Section title="Movement Drills">
-        <DrillMode
-          title="Basic Backdash Spacing"
-          objective="Learn to create range 2 spacing on command"
-          setup="Practice Mode, dummy set to stand at round-start distance"
-          difficulty="beginner"
-          estimatedTime="3 min"
-          steps={[
-            { instruction: 'Backdash 1x → throw qcb+1', detail: 'qcb+1 should hit from this range', targetReps: 10 },
-            { instruction: 'Backdash 2x → throw 3+4', detail: '3+4 reaches further than qcb+1', targetReps: 10 },
-            { instruction: 'Backdash until opponent whiffs → f,b+2', detail: 'Jet Upper punishes the whiff', targetReps: 5 },
-          ]}
-        />
-
-        <DrillMode
-          title="Sidestep Practice"
-          objective="Develop sidestep into punish reflexes"
-          setup="Set dummy to do a linear attack (like df+1)"
-          difficulty="intermediate"
-          estimatedTime="3 min"
-          steps={[
-            { instruction: 'SSL the dummy attack', targetReps: 10 },
-            { instruction: 'SSL → launch (f,b+2 or ws1)', targetReps: 10 },
-            { instruction: 'Block → sidestep their follow-up → punish', targetReps: 5 },
-          ]}
-        />
-      </Section>
-
-      <Section title="Movement in Context">
+      <Section title="Movement in Match Situations">
         <MatchScenario
           title="Round Start"
           situation="The round just started. You're at range 1.5."
@@ -198,23 +206,36 @@ export function Chapter3({ goToChapter }: ChapterProps) {
         />
       </Section>
 
-      <Section title="Practice: Real Match Spacing">
-        <PracticeBox
-          title="Spacing Homework"
-          setup="Play 5 matches vs CPU or online with ONE goal: maintain range 2"
-          tasks={[
-            { id: 'backdash-start', text: 'Backdash at round start in every round', type: 'toggle' },
-            { id: 'range2-qcb', text: 'Only use qcb+1 and 3+4 from range 2', type: 'toggle' },
-            { id: 'no-chase', text: 'Never chase a backdashing opponent', detail: 'Let them come to you', type: 'toggle' },
-            { id: 'backdash-block', text: 'Backdash after blocking strings', type: 'toggle' },
-          ]}
-        />
+      <Section title="Wall Awareness">
+        <p>
+          Bryan hates the corner. All that backdashing will put you there if you're not careful.
+        </p>
+
+        <KeyConcept title="Avoiding the Corner" icon="🧱">
+          <ul>
+            <li><strong>When near the wall:</strong> Stop backdashing — sidestep instead</li>
+            <li><strong>Offense creates space:</strong> qcb+1 on block pushes THEM back</li>
+            <li><strong>3+4 pushback:</strong> Even blocked, it gives you breathing room</li>
+          </ul>
+        </KeyConcept>
 
         <TipBox variant="warning" title="You Will Lose Games">
           Following these rules strictly will probably lose you some games. That's okay. 
           You're <strong>building habits</strong>. Once they're automatic, you'll adapt them 
           intelligently. But first, drill the fundamentals.
         </TipBox>
+      </Section>
+
+      <Section title="Chapter Summary">
+        <p>
+          Bryan's movement isn't elite, but it doesn't need to be. Your goal is simple:
+        </p>
+        <ul>
+          <li><strong>Get to Range 2</strong> — One backdash from close</li>
+          <li><strong>Stay at Range 2</strong> — Your buttons do the work here</li>
+          <li><strong>Backdash into whiff punishes</strong> — f,b+2 turns their whiffs into your combos</li>
+          <li><strong>Don't corner yourself</strong> — Sidestep when near the wall</li>
+        </ul>
       </Section>
     </Chapter>
   )

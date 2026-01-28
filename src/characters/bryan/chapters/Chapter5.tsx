@@ -3,8 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
-  ConceptBuilder,
   Quiz
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -39,18 +37,11 @@ export function Chapter5({ goToChapter }: ChapterProps) {
           </p>
         </KeyConcept>
 
-        <ConceptBuilder
-          title="Mental Frames in Action"
-          foundation={[
-            { label: 'df+2 is -6 on block', description: 'Technically opponent can press' },
-            { label: 'df+2,3 is a CH launcher', description: 'If they press, they die' },
-          ]}
-          newAddition={{
-            label: 'Opponent respects the extension',
-            description: 'They treat -6 like it\'s +0',
-          }}
-          result="You're at 'mental advantage' despite being technically minus"
-        />
+        <p>
+          <strong>Example:</strong> df+2 is -6 on block. Technically, the opponent can press. 
+          But df+2,3 is a CH launcher — if they press, they die. So they respect the extension 
+          and treat -6 like it's +0. You have "mental advantage" despite being technically minus.
+        </p>
       </Section>
 
       <Section title="Your Mid Pokes">
@@ -160,19 +151,13 @@ export function Chapter5({ goToChapter }: ChapterProps) {
           </ol>
         </KeyConcept>
 
-        <DrillMode
-          title="Mental Frame Conditioning"
-          objective="Learn to read when to use extensions"
-          setup="Set dummy to random: block or retaliate with jab"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'df+2 only - watch dummy response', targetReps: 10 },
-            { instruction: 'df+2,3 when dummy attacks back (catch the CH)', targetReps: 10 },
-            { instruction: 'd+2 → if blocked, check if they press', targetReps: 10 },
-            { instruction: 'd+2,3 on CH confirmation (watch for stagger)', targetReps: 5 },
-          ]}
-        />
+        <TipBox variant="tip" title="Using Mental Frames">
+          <p>
+            The power is in the <strong>threat</strong>, not constant execution. Single df+2 is fine — 
+            only extend when you KNOW they'll press. After blocking your poke, watch them: pressers will 
+            jab, blockers will wait. Adapt accordingly.
+          </p>
+        </TipBox>
       </Section>
 
       <Section title="df+1,1,1,1,2 String">

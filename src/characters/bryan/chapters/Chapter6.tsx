@@ -3,7 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
   MatchScenario,
   SkillCheck
 } from '../../../components/ui'
@@ -236,20 +235,20 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         />
       </Section>
 
-      <Section title="Low Poke Drills">
-        <DrillMode
-          title="Low Poke Integration"
-          objective="Mix lows naturally into your pressure"
-          setup="Dummy on random guard"
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'qcb+1 (blocked) → qcb+3', detail: '+5 into power low', targetReps: 10 },
-            { instruction: 'd+4 from max range', detail: 'Tip-range for spacing', targetReps: 10 },
-            { instruction: 'db+3 → ws3 on CH', detail: 'Set dummy to attack after blocking', targetReps: 10 },
-            { instruction: 'Mix: qcb+3, d+4, db+3 randomly', targetReps: 10 },
-          ]}
-        />
+      <Section title="Using Lows Effectively">
+        <p>
+          Against turtles who block everything, lows are your bread and butter. The key 
+          sequences to practice:
+        </p>
+        <ul>
+          <li><strong>qcb+1 (blocked, +5) → qcb+3</strong> — Your main low mixup</li>
+          <li><strong>d+4 at max range</strong> — Safe chip + spacing reset</li>
+          <li><strong>db+3</strong> — When they try to jab check you</li>
+        </ul>
+        <p>
+          Against a turtle, hatchet kick alone can win rounds. Don't underestimate the 
+          cumulative chip damage.
+        </p>
       </Section>
 
       <Section title="Checkpoint">

@@ -4,7 +4,6 @@ import {
   KeyConcept, 
   TipBox,
   ExecutionBox,
-  DrillMode,
   Collapsible
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -137,20 +136,12 @@ export function Chapter16({ goToChapter }: ChapterProps) {
         </Collapsible>
       </Section>
 
-      <Section title="Execution Practice">
-        <DrillMode
-          title="Basic Taunt Practice"
-          objective="Land taunt follow-ups consistently"
-          setup="Practice mode, dummy at wall, set to tech roll"
-          difficulty="advanced"
-          estimatedTime="10 min"
-          steps={[
-            { instruction: 'Wall combo → db+1+2 → double taunt', detail: 'Hold 3+4, tap 1 twice', targetReps: 10 },
-            { instruction: 'Taunt hits → 1,4 follow-up', detail: 'Easy timing, 6f leniency', targetReps: 10 },
-            { instruction: 'Taunt hits → 4,3 follow-up', detail: 'Slightly harder, 4f leniency', targetReps: 10 },
-            { instruction: 'Taunt hits → df+2,1 follow-up', detail: '3f leniency', targetReps: 10 },
-          ]}
-        />
+      <Section title="Execution Tips">
+        <ul>
+          <li><strong>Double taunt</strong> (hold 3+4, tap 1 twice) — Better tracking</li>
+          <li><strong>Start with 1,4 follow-up</strong> — 6 frames of leniency, most forgiving</li>
+          <li><strong>Practice at the wall</strong> — Wall combo ending with db+1+2, then taunt</li>
+        </ul>
 
         <TipBox variant="warning" title="Patience Required">
           Taunt takes <strong>hundreds of hours</strong> to master. The just-frame 

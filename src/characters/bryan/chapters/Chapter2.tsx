@@ -3,8 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
-  SkillCheck,
   InputNotation
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -85,19 +83,6 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             not three separate directions. Practice until you can do it from standing instantly.
           </TipBox>
         </SubSection>
-
-        <DrillMode
-          title="qcb+1 Execution Drill"
-          objective="Get comfortable with the quarter-circle input from neutral"
-          setup="Practice Mode, no dummy settings needed"
-          difficulty="beginner"
-          estimatedTime="3 min"
-          steps={[
-            { instruction: 'Do qcb+1 from standing', targetReps: 10 },
-            { instruction: 'Do qcb+1 after blocking a jab', detail: 'Set dummy to do 1 jab', targetReps: 10 },
-            { instruction: 'Do qcb+1 → qcb+4 on hit', detail: 'qcb+4 is guaranteed after qcb+1 hits', targetReps: 5 },
-          ]}
-        />
       </Section>
 
       <Section title="Move 2: 3+4">
@@ -143,19 +128,6 @@ export function Chapter2({ goToChapter }: ChapterProps) {
           it. Use it as a <strong>read</strong>, not a spam button. Observe when opponents like to 
           press, then time your 3+4 to catch them.
         </TipBox>
-
-        <DrillMode
-          title="3+4 Spacing Drill"
-          objective="Learn the range where 3+4 is most effective"
-          setup="Practice Mode, set dummy to 'Guard All'"
-          difficulty="beginner"
-          estimatedTime="2 min"
-          steps={[
-            { instruction: 'Hit 3+4 from max range (tip should just touch)', targetReps: 10 },
-            { instruction: 'Backdash once → 3+4', targetReps: 10 },
-            { instruction: 'Walk back briefly → 3+4', targetReps: 5 },
-          ]}
-        />
       </Section>
 
       <Section title="Move 3: qcb+3 (Hatchet Kick)">
@@ -200,24 +172,11 @@ export function Chapter2({ goToChapter }: ChapterProps) {
           only eat a ws4 (~16 damage). If it hits, you get 23 damage AND plus frames. 
           <strong>Use it to open up turtles.</strong>
         </TipBox>
-
-        <DrillMode
-          title="Hatchet Kick Drill"
-          objective="Get comfortable throwing out this powerful low"
-          setup="Practice Mode, dummy on 'Guard All'"
-          difficulty="beginner"
-          estimatedTime="2 min"
-          steps={[
-            { instruction: 'Do qcb+3 from standing', targetReps: 10 },
-            { instruction: 'Set dummy to "Random Guard" and land qcb+3', targetReps: 5 },
-            { instruction: 'qcb+3 CH → qcb+4 (set dummy to attack)', detail: 'Full mini combo for 45 damage', targetReps: 5 },
-          ]}
-        />
       </Section>
 
-      <Section title="Putting It Together">
+      <Section title="Putting It All Together">
         <p>
-          With just these three moves, you have a gameplan:
+          With just these three moves, you have a complete gameplan:
         </p>
 
         <KeyConcept title="Basic Bryan Flow" icon="🔄">
@@ -230,34 +189,27 @@ export function Chapter2({ goToChapter }: ChapterProps) {
           </ol>
         </KeyConcept>
 
-        <DrillMode
-          title="Three Pillars Combination"
-          objective="Flow between your three core moves naturally"
-          setup="Practice Mode, dummy on 'Random Guard' and occasional jab check"
-          difficulty="beginner"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'qcb+1 → watch what happens → respond', detail: 'If blocked, use +5 advantage. If hit, qcb+4.', targetReps: 10 },
-            { instruction: 'Backdash → 3+4', detail: 'Create space then CH fish', targetReps: 10 },
-            { instruction: 'qcb+1 (blocked) → qcb+3', detail: '+5 into power low', targetReps: 10 },
-            { instruction: 'Mix all three randomly', targetReps: 10 },
-          ]}
-        />
+        <TipBox variant="tip" title="Practice This">
+          Go into practice mode and try playing with <strong>only these three moves</strong> for 
+          a few rounds. You'll discover they're genuinely enough to compete. The skill isn't in 
+          knowing more moves — it's in choosing the right one.
+        </TipBox>
       </Section>
 
-      <Section title="Chapter Checkpoint">
-        <SkillCheck
-          title="Foundation Check"
-          subtitle="Before moving on, confirm you can do these consistently"
-          skills={[
-            { id: 'qcb1-exec', skill: 'I can execute qcb+1 from standing reliably', description: '10+ times in a row without dropping' },
-            { id: 'qcb1-followup', skill: 'I can do qcb+1 → qcb+4 on hit', description: 'The qcb+4 is guaranteed' },
-            { id: '3+4-range', skill: 'I know the range of 3+4', description: 'Can hit it from max distance' },
-            { id: 'hatchet', skill: 'I can do qcb+3 consistently', description: 'Quarter-circle back + 3' },
-            { id: 'flow', skill: 'I can mix these three moves in practice', description: 'Not thinking about inputs anymore' },
-          ]}
-          requiredToPass={4}
-        />
+      <Section title="Chapter Summary">
+        <p>
+          You now have the foundation of Bryan's game:
+        </p>
+        <ul>
+          <li><strong>qcb+1</strong> — Your best button. +5 on block, knockdown on hit.</li>
+          <li><strong>3+4</strong> — Your approach stopper. CH launches.</li>
+          <li><strong>qcb+3</strong> — Your low game. Opens up blockers.</li>
+        </ul>
+        <p>
+          If you can do the above, you already play better Bryan than most beginners who know 
+          20 moves but don't understand when to use them. Next, we'll add movement to make 
+          these tools even more dangerous.
+        </p>
       </Section>
     </Chapter>
   )

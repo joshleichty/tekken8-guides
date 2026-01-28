@@ -2,7 +2,6 @@ import { Chapter, Section, SubSection } from '../../../components/guide'
 import { 
   ComboCard,
   TipBox,
-  DrillMode,
   SkillCheck
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -182,23 +181,11 @@ export function Chapter10({ goToChapter }: ChapterProps) {
         </SubSection>
       </Section>
 
-      <Section title="Combo Drill">
-        <DrillMode
-          title="Beginner Combo Mastery"
-          objective="Land each combo 10 times without dropping"
-          setup="Practice Mode, dummy standing"
-          difficulty="beginner"
-          estimatedTime="15 min"
-          steps={[
-            { instruction: 'Jet Upper (f,b+2) combo', targetReps: 10 },
-            { instruction: 'WS1 combo', targetReps: 10 },
-            { instruction: 'CH f+3 combo', targetReps: 10 },
-            { instruction: 'CH b+1 combo', targetReps: 10 },
-            { instruction: 'CH 3+4 combo', targetReps: 10 },
-            { instruction: 'qcb+1 → qcb+4', targetReps: 10 },
-            { instruction: 'Wall combo (1+2,1 → uf+2,2,2,3)', targetReps: 10 },
-          ]}
-        />
+      <Section title="Combo Consistency">
+        <p>
+          The goal isn't to do combos X times — it's to land them when they matter. Focus on 
+          the rhythm, not speed. The dash timing is the hardest part — practice that specifically.
+        </p>
 
         <TipBox variant="warning" title="Don't Move On Until Consistent">
           You should be landing these combos <strong>at least 8/10 times</strong> before 

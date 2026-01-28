@@ -3,8 +3,6 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  DrillMode,
-  MatchScenario,
   Flowchart
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -160,66 +158,33 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Keepout in Practice">
-        <DrillMode
-          title="Keepout Flow Drill"
-          objective="Develop automatic keepout habits"
-          setup="Dummy set to approach with dash → jab. Random timing."
-          difficulty="intermediate"
-          estimatedTime="5 min"
-          steps={[
-            { instruction: 'Stop their approach with qcb+1', targetReps: 10 },
-            { instruction: 'Stop their approach with 3+4', targetReps: 10 },
-            { instruction: 'Low crush their approach with u+4', targetReps: 10 },
-            { instruction: 'Make them whiff → f,b+2', detail: 'Backdash their approach, then punish', targetReps: 10 },
-          ]}
-        />
+        <p>
+          The key to keepout is being <strong>predictive, not reactive</strong>. Throw out your 
+          buttons BEFORE they arrive, not after.
+        </p>
 
-        <MatchScenario
-          title="Opponent Dashing In"
-          situation="The opponent is dash-blocking towards you repeatedly."
-          context="They want to get in your face. You're at comfortable range 2."
-          options={[
-            {
-              action: 'Stand your ground and 3+4',
-              input: '3+4',
-              result: 'If they dash into buttons, they eat a full combo. If they block, pushback resets spacing.',
-              isOptimal: true,
-              followup: 'Snake Eyes 3+4,2 if you have install, or just reset'
-            },
-            {
-              action: 'Backdash more',
-              result: 'Safe but gives up stage position. Eventually you\'ll be at the wall.',
-            },
-            {
-              action: 'Rush them down',
-              result: 'Going against Bryan\'s gameplan. You\'re giving up your advantage.',
-            },
-          ]}
-          keyTakeaway="3+4 is your anti-approach button. Opponents who dash in recklessly will learn to respect you."
-        />
+        <SubSection title="Against Dashers">
+          <p>
+            When the opponent is dash-blocking towards you, <span className="highlight">3+4 is your answer</span>. 
+            If they dash into it, they eat a full combo. If they block, pushback resets the spacing.
+          </p>
+        </SubSection>
 
-        <MatchScenario
-          title="Passive Opponent"
-          situation="The opponent is standing back, waiting."
-          context="They're respecting your keepout. Neither of you is approaching."
-          options={[
-            {
-              action: 'Walk forward slightly → qcb+1',
-              result: 'Chips them, and you\'re +5 if blocked. Forces them to make a decision.',
-              isOptimal: true,
-              followup: 'Mix in qcb+3 (hatchet) when they start blocking'
-            },
-            {
-              action: 'Throw out 3+4 from max range',
-              result: 'Might whiff if they don\'t move. Slightly risky.',
-            },
-            {
-              action: 'Wait them out',
-              result: 'Fine, but the clock is running. Someone has to engage.',
-            },
-          ]}
-          keyTakeaway="qcb+1 is your tool for breaking stalemates. It's +5 even on block, so there's little risk."
-        />
+        <SubSection title="Against Passive Players">
+          <p>
+            If they're respecting your keepout and standing back, <span className="highlight">walk forward 
+            slightly and throw qcb+1</span>. It chips them and you're +5 if blocked. Mix in qcb+3 (hatchet) 
+            when they start blocking too much.
+          </p>
+        </SubSection>
+
+        <TipBox variant="tip" title="Keepout Mindset">
+          <ul>
+            <li><strong>qcb+1</strong> — General space control, safe even if you mistime</li>
+            <li><strong>3+4</strong> — When you KNOW they're coming (full combo on CH)</li>
+            <li><strong>u+4</strong> — Beats low approaches and catches commitment</li>
+          </ul>
+        </TipBox>
       </Section>
 
       <Section title="Common Keepout Mistakes">
