@@ -24,6 +24,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             hitLevel: ['Parry'],
             damage: '—',
             startup: 'Active frames 3-9',
+            onBlock: '—',
             onHit: 'Varies by parried move',
             tags: ['Parry', 'High/Mid', 'Defensive Tool'],
             description: 'Parries high and mid attacks. One of the best parries in Tekken.',
