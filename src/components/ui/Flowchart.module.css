@@ -1,0 +1,67 @@
+.flowchart {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.node {
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 12px 20px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.start {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, transparent), color-mix(in srgb, var(--accent-secondary) 10%, transparent));
+}
+
+.arrow {
+  text-align: center;
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+.branches {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.branch {
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.branchLabel {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.branchAction {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .branches {
+    grid-template-columns: 1fr;
+  }
+}

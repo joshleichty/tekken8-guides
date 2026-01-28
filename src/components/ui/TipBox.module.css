@@ -1,0 +1,54 @@
+.box {
+  background: var(--bg-card);
+  border: 1px solid var(--accent-dim);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+  display: flex;
+  gap: 16px;
+}
+
+.warning {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.3);
+  border-left-color: var(--warning);
+}
+
+.danger {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  border-left-color: var(--danger);
+}
+
+.icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.warning .title {
+  color: var(--warning);
+}
+
+.danger .title {
+  color: var(--danger);
+}
+
+.text {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.text p {
+  margin: 0;
+}

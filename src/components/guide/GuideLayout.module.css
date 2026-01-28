@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+  margin-left: 320px;
+  padding: 40px 60px;
+  max-width: 1000px;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .main {
+    margin-left: 0;
+    padding: 80px 20px 40px;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+  }
+}

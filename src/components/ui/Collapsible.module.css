@@ -1,0 +1,72 @@
+.collapsible {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.header {
+  padding: 16px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
+}
+
+.header:hover {
+  background: var(--bg-card-hover);
+}
+
+.title {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.arrow {
+  transition: transform 0.3s;
+  color: var(--accent);
+}
+
+.open .arrow {
+  transform: rotate(180deg);
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.open .content {
+  max-height: 5000px;
+}
+
+.body {
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--border);
+}
+
+.body ul, .body ol {
+  margin-left: 20px;
+  color: var(--text-secondary);
+}
+
+.body li {
+  margin-bottom: 8px;
+}
+
+.body p {
+  margin-top: 16px;
+}
+
+.body strong {
+  color: var(--text-primary);
+}

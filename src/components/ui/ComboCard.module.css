@@ -1,0 +1,90 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.badges {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: var(--bg-primary);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.wallBadge {
+  background: var(--accent);
+}
+
+.starter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.starterLabel {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.starterValue {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-weight: 600;
+  color: var(--accent-secondary);
+}
+
+.notation {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 1.05rem;
+  background: var(--bg-primary);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.notation :global(.tornado) {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+.damage {
+  color: var(--success);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.notes {
+  margin-left: 20px;
+  color: var(--text-secondary);
+}
+
+.notes li {
+  margin-bottom: 8px;
+}

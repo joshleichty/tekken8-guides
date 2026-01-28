@@ -1,0 +1,37 @@
+.badge {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 20%, transparent), color-mix(in srgb, var(--accent-secondary) 15%, transparent));
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 48px 0;
+  text-align: center;
+  animation: celebrationPulse 2s ease-in-out infinite;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.message {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+@keyframes celebrationPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 50%, transparent);
+  }
+}

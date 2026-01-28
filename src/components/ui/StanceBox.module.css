@@ -1,0 +1,59 @@
+.box {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--bg-primary) 50%, transparent));
+  border: 2px solid var(--accent-dim);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.input {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.content {
+  color: var(--text-secondary);
+}
+
+.content ul, .content ol {
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+.content strong {
+  color: var(--text-primary);
+}

@@ -1,0 +1,188 @@
+.scenario {
+  background: linear-gradient(135deg, var(--bg-card), color-mix(in srgb, var(--accent-secondary) 5%, var(--bg-card)));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 24px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.situation {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.situationLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  margin-bottom: 8px;
+}
+
+.situationText {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.context {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-style: italic;
+}
+
+.question {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.option {
+  background: var(--bg-secondary);
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option:hover:not(.dimmed):not(.optimal):not(.selected) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-secondary));
+}
+
+.option.optimal {
+  border-color: var(--success);
+  background: color-mix(in srgb, var(--success) 15%, var(--bg-secondary));
+}
+
+.option.selected:not(.optimal) {
+  border-color: var(--warning);
+  background: color-mix(in srgb, var(--warning) 10%, var(--bg-secondary));
+}
+
+.option.dimmed {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.optionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.optionAction {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.optionInput {
+  font-family: 'Courier New', monospace;
+  background: var(--bg-card);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: var(--accent);
+}
+
+.optionResult {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+}
+
+.optimalBadge {
+  display: inline-block;
+  background: var(--success);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.followup {
+  margin-top: 6px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.takeaway {
+  display: flex;
+  gap: 12px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg-secondary));
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-left: 4px solid var(--accent);
+}
+
+.takeawayIcon {
+  font-size: 1.25rem;
+}
+
+.takeawayContent {
+  flex: 1;
+}
+
+.takeawayLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.takeawayText {
+  color: var(--text-primary);
+}
+
+.resetBtn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.resetBtn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}

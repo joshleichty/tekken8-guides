@@ -1,0 +1,35 @@
+.box {
+  background: var(--bg-card);
+  border: 2px solid var(--accent-dim);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 1.25rem;
+  color: var(--accent);
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.large {
+  font-size: 1.5rem;
+  padding: 20px 24px;
+}
+
+.arrow {
+  color: var(--text-muted);
+  margin: 0 4px;
+}
+
+.button {
+  background: var(--accent-secondary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.large .button {
+  font-size: 1.25rem;
+  padding: 4px 10px;
+}

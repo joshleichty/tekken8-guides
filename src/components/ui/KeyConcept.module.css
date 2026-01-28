@@ -1,0 +1,38 @@
+.box {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--bg-primary) 80%, transparent));
+  border: 2px solid var(--accent-dim);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.content {
+  color: var(--text-secondary);
+}
+
+.content ul, .content ol {
+  margin-left: 20px;
+  margin-top: 12px;
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+.content strong {
+  color: var(--text-primary);
+}

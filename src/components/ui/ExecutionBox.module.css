@@ -1,0 +1,46 @@
+.box {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--accent-secondary) 5%, transparent));
+  border: 1px solid var(--accent-dim);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 24px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.content {
+  color: var(--text-secondary);
+}
+
+.content ol, .content ul {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.content li {
+  margin-bottom: 8px;
+}
+
+.content p {
+  margin-top: 12px;
+}
+
+.content strong {
+  color: var(--text-primary);
+}

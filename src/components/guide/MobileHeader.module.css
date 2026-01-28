@@ -1,0 +1,38 @@
+.header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
+  align-items: center;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.menuBtn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.spacer {
+  width: 40px;
+}
+
+@media (max-width: 1000px) {
+  .header {
+    display: flex;
+  }
+}
