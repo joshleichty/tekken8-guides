@@ -37,22 +37,23 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="LFF — Left Foot Forward">
-        <StanceBox
-          name="Left Foot Forward (LFF)"
-          description="Your default neutral stance. Full movement, can block, access to all fundamental options."
-          features={[
-            'Can block normally',
-            'Full movement (sidestep both ways)',
-            'Access to all universal moves',
-            'Where you start every round',
-          ]}
-          entries={[
-            'Default stance at round start',
-            'Sidestep from RFF',
-            'RFS.3+4 (stance switch)',
-            'Naturally after most moves end',
-          ]}
-        />
+        <StanceBox name="Left Foot Forward (LFF)" input="Default">
+          <p>Your default neutral stance. Full movement, can block, access to all fundamental options.</p>
+          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
+          <ul>
+            <li>Can block normally</li>
+            <li>Full movement (sidestep both ways)</li>
+            <li>Access to all universal moves</li>
+            <li>Where you start every round</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
+          <ul>
+            <li>Default stance at round start</li>
+            <li>Sidestep from RFF</li>
+            <li>RFS.3+4 (stance switch)</li>
+            <li>Naturally after most moves end</li>
+          </ul>
+        </StanceBox>
 
         <p>
           LFF is where you start and where you return when you want to play fundamental Tekken. 
@@ -79,23 +80,24 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="RFF — Right Foot Forward">
-        <StanceBox
-          name="Right Foot Forward (RFF)"
-          description="Secondary neutral stance. Can block, but sidestepping exits to LFF. Has the 'superior jab' and key transitions."
-          features={[
-            'Can block normally',
-            'Limited sidestep (exits to LFF)',
-            'Superior jab (RFF 2 is +2 on block)',
-            'Access to Backlash power crush',
-          ]}
-          entries={[
-            '3+4 from LFF (manual switch)',
-            'df+4 on hit/block',
-            'ws4,4 on hit',
-            'd+3,4 cancelled with no RFS transition',
-            'Many move enders naturally put you here',
-          ]}
-        />
+        <StanceBox name="Right Foot Forward (RFF)" input="3+4">
+          <p>Secondary neutral stance. Can block, but sidestepping exits to LFF. Has the 'superior jab' and key transitions.</p>
+          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
+          <ul>
+            <li>Can block normally</li>
+            <li>Limited sidestep (exits to LFF)</li>
+            <li>Superior jab (RFF 2 is +2 on block)</li>
+            <li>Access to Backlash power crush</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
+          <ul>
+            <li>3+4 from LFF (manual switch)</li>
+            <li>df+4 on hit/block</li>
+            <li>ws4,4 on hit</li>
+            <li>d+3,4 cancelled with no RFS transition</li>
+            <li>Many move enders naturally put you here</li>
+          </ul>
+        </StanceBox>
 
         <p>
           RFF is your "aggressive neutral." You can still block, but your movement is limited. 
@@ -121,23 +123,24 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="LFS — Left Flamingo Stance">
-        <StanceBox
-          name="Left Flamingo Stance (LFS)"
-          description="Aggressive stance with left leg raised. CANNOT BLOCK. Has heat engager and mid options."
-          features={[
-            'CANNOT block!',
-            'High reward moves',
-            'Heat engager (LFS f+3)',
-            'Quick mid with LFS 3~f for loops',
-          ]}
-          entries={[
-            '1,2,3 on block/hit',
-            'f+3 from LFF (manual entry)',
-            '3,3~f from LFF',
-            '4,3~f (cancel 4,3 into LFS)',
-            'RFS.3+4 (stance swap)',
-          ]}
-        />
+        <StanceBox name="Left Flamingo Stance (LFS)" input="1,2,3">
+          <p>Aggressive stance with left leg raised. <strong style={{ color: 'var(--danger)' }}>CANNOT BLOCK.</strong> Has heat engager and mid options.</p>
+          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
+          <ul>
+            <li>CANNOT block!</li>
+            <li>High reward moves</li>
+            <li>Heat engager (LFS f+3)</li>
+            <li>Quick mid with LFS 3~f for loops</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
+          <ul>
+            <li>1,2,3 on block/hit</li>
+            <li>f+3 from LFF (manual entry)</li>
+            <li>3,3~f from LFF</li>
+            <li>4,3~f (cancel 4,3 into LFS)</li>
+            <li>RFS.3+4 (stance swap)</li>
+          </ul>
+        </StanceBox>
 
         <p>
           LFS is powerful but less used than RFS. Your main tool is <code>LFS f+3</code> — a heat 
@@ -163,24 +166,25 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="RFS — Right Flamingo Stance">
-        <StanceBox
-          name="Right Flamingo Stance (RFS)"
-          description="Your MOST IMPORTANT stance. CANNOT BLOCK. Has 8-frame CH launcher, hell sweep, and all your pressure."
-          features={[
-            'CANNOT block!',
-            '8-frame CH launcher (RFS f+4,4)',
-            'Hell sweep mixup (RFS d+4,3,4)',
-            'Plus frame mids',
-            'Where your damage comes from',
-          ]}
-          entries={[
-            '1,2,4 on block/hit',
-            'd+3,4 on block/hit',
-            'RFF.2,4~f on block/hit',
-            'RFF.f+4 (manual entry)',
-            'f,n,4 from LFF (manual entry)',
-          ]}
-        />
+        <StanceBox name="Right Flamingo Stance (RFS)" input="1,2,4 / d+3,4">
+          <p>Your <strong style={{ color: 'var(--accent)' }}>MOST IMPORTANT</strong> stance. <strong style={{ color: 'var(--danger)' }}>CANNOT BLOCK.</strong> Has 8-frame CH launcher, hell sweep, and all your pressure.</p>
+          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
+          <ul>
+            <li>CANNOT block!</li>
+            <li>8-frame CH launcher (RFS f+4,4)</li>
+            <li>Hell sweep mixup (RFS d+4,3,4)</li>
+            <li>Plus frame mids</li>
+            <li>Where your damage comes from</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
+          <ul>
+            <li>1,2,4 on block/hit</li>
+            <li>d+3,4 on block/hit</li>
+            <li>RFF.2,4~f on block/hit</li>
+            <li>RFF.f+4 (manual entry)</li>
+            <li>f,n,4 from LFF (manual entry)</li>
+          </ul>
+        </StanceBox>
 
         <p>
           <span className="highlight">RFS is where Hwoarang becomes terrifying.</span> You have an 

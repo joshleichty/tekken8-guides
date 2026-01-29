@@ -57,17 +57,16 @@ export function Chapter8({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The Input">
-        <ExecutionBox
-          title="JFSR Input"
-          input="f,n,df:4"
-          description="Forward, neutral, down-forward + 4 (with just-frame timing on the 4)"
-          tips={[
-            'The : means press 4 on the SAME FRAME as df',
-            'You need to let the stick return to neutral (n) after forward',
-            'The motion is f → let go → df+4 simultaneously',
-            'Blue sparks indicate successful just-frame',
-          ]}
-        />
+        <ExecutionBox title="JFSR Input">
+          <p style={{ fontSize: '1.25rem', fontFamily: 'monospace', color: 'var(--accent)' }}>f,n,df:4</p>
+          <p style={{ marginTop: '8px' }}>Forward, neutral, down-forward + 4 (with just-frame timing on the 4)</p>
+          <ul style={{ marginTop: '12px' }}>
+            <li>The : means press 4 on the SAME FRAME as df</li>
+            <li>You need to let the stick return to neutral (n) after forward</li>
+            <li>The motion is f → let go → df+4 simultaneously</li>
+            <li>Blue sparks indicate successful just-frame</li>
+          </ul>
+        </ExecutionBox>
 
         <KeyConcept title="Breaking Down the Motion" icon="🎮">
           <ol>
