@@ -7,6 +7,7 @@ import { fahkumramConfig } from './fahkumram/config'
 import { hwoarangConfig } from './hwoarang/config'
 import { jack8Config } from './jack-8/config'
 import { jinConfig } from './jin/config'
+import { kingConfig } from './king/config'
 import { lawConfig } from './law/config'
 import { victorConfig } from './victor/config'
 import { yoshimitsuConfig } from './yoshimitsu/config'
@@ -22,6 +23,7 @@ export const characters: Record<string, CharacterConfig> = {
   'hwoarang': hwoarangConfig,
   'jack-8': jack8Config,
   'jin': jinConfig,
+  'king': kingConfig,
   'law': lawConfig,
   'victor': victorConfig,
   'yoshimitsu': yoshimitsuConfig,
