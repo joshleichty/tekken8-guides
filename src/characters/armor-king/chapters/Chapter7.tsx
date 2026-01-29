@@ -124,6 +124,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       <Section title="ff+4 — Heat Engager Whiff Punish">
         <MoveCard character="armor-king"
           input="ff+4"
+          videoId="f,F+4"
           tags={['mid', 'Heat Engager']}
           description="14-frame startup, safe at -8, and a heat engager. Great for punishing whiffs when you want to go into Heat."
           stats={{

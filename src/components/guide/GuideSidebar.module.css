@@ -161,6 +161,30 @@
   color: var(--text-muted);
 }
 
+.footerButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.settingsBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: all 0.2s;
+}
+
+.settingsBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
 .resetBtn {
   background: none;
   border: 1px solid var(--border);

@@ -19,6 +19,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
     >
       <Section title="The Legendary Slide">
         <MoveCard character="law"
+          videoId="FC.df,d,df+3"
           move={{
             input: 'FC df,d,df+3',
             hitLevel: ['l'],

@@ -118,6 +118,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="Poison Breath — The Unwhiffpunishable">
         <MoveCard character="yoshimitsu"
+          videoId="BDS.1"
           move={{
             input: 'db+1+2, 1 (BDS 1)',
             hitLevel: ['h!'],

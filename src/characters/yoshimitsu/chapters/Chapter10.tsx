@@ -187,6 +187,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
         </KeyConcept>
 
         <MoveCard character="yoshimitsu"
+          videoId="H.DGF.1"
           move={{
             input: 'Heat DGF.1',
             hitLevel: ['M'],

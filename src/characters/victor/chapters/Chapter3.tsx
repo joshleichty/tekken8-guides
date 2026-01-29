@@ -204,6 +204,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="f,f,f+2 — The Running Mid">
         <MoveCard character="victor"
+          videoId="f,f,F+2"
           move={{
             input: 'f,f,f+2',
             hitLevel: ['m'],

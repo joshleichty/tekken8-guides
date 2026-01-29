@@ -167,6 +167,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
         </TipBox>
 
         <MoveCard character="fahkumram"
+          videoId="RAM.1+3"
           move={{
             input: 'RAM.1+3 or RAM.2+4',
             hitLevel: ['t!'],

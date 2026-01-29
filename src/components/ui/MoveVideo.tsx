@@ -1,5 +1,6 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import styles from './MoveVideo.module.css'
+import { useSettings } from '../../contexts/SettingsContext'
 
 interface MoveVideoProps {
   /** The move command (e.g., "f+4", "df+1", "ZEN.2") */
@@ -35,6 +36,9 @@ function encodeCommand(command: string): string {
 function getVideoUrl(character: string, command: string): string {
   return `https://okizeme.b-cdn.net/${character.toLowerCase()}/${encodeCommand(command)}.mp4`
 }
+
+// Cache for video availability checks (persists across renders)
+const videoAvailabilityCache: Record<string, boolean | null> = {}
 
 export function MoveVideo({ 
   command, 
@@ -116,11 +120,63 @@ interface MoveVideoLinkProps {
   character?: string
 }
 
+/**
+ * Check if a video URL exists via HEAD request
+ * Results are cached to avoid repeated requests
+ */
+async function checkVideoExists(url: string): Promise<boolean> {
+  if (url in videoAvailabilityCache) {
+    return videoAvailabilityCache[url] === true
+  }
+  
+  try {
+    const response = await fetch(url, { method: 'HEAD' })
+    const exists = response.ok
+    videoAvailabilityCache[url] = exists
+    return exists
+  } catch {
+    videoAvailabilityCache[url] = false
+    return false
+  }
+}
+
 export function MoveVideoLink({ command, character = 'jin' }: MoveVideoLinkProps) {
   const commands = Array.isArray(command) ? command : [command]
+  const { settings } = useSettings()
   const [isExpanded, setIsExpanded] = useState(false)
   const [errorStates, setErrorStates] = useState<Record<string, boolean>>({})
+  const [availabilityChecked, setAvailabilityChecked] = useState(false)
+  const [availableCommands, setAvailableCommands] = useState<string[]>(commands)
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({})
+
+  // Pre-check video availability on mount
+  useEffect(() => {
+    let cancelled = false
+    
+    async function checkVideos() {
+      const results = await Promise.all(
+        commands.map(async cmd => {
+          const url = getVideoUrl(character, cmd)
+          const exists = await checkVideoExists(url)
+          return { cmd, exists }
+        })
+      )
+      
+      if (!cancelled) {
+        const available = results.filter(r => r.exists).map(r => r.cmd)
+        setAvailableCommands(available)
+        setAvailabilityChecked(true)
+        
+        // Auto-expand if setting is enabled and videos exist
+        if (settings.autoExpandVideos && available.length > 0) {
+          setIsExpanded(true)
+        }
+      }
+    }
+    
+    checkVideos()
+    return () => { cancelled = true }
+  }, [commands.join(','), character, settings.autoExpandVideos])
 
   const handleToggle = () => {
     if (isExpanded) {
@@ -143,12 +199,20 @@ export function MoveVideoLink({ command, character = 'jin' }: MoveVideoLinkProps
 
   const handleError = (cmd: string) => {
     setErrorStates(prev => ({ ...prev, [cmd]: true }))
+    // Also update cache
+    const url = getVideoUrl(character, cmd)
+    videoAvailabilityCache[url] = false
   }
 
-  // Filter out commands that have errored
-  const validCommands = commands.filter(cmd => !errorStates[cmd])
+  // Filter out commands that have errored (fallback for any that slip through)
+  const validCommands = availableCommands.filter(cmd => !errorStates[cmd])
   
-  // If all videos failed, hide the component
+  // Don't render anything until we've checked availability
+  // If all videos failed, hide the component entirely
+  if (!availabilityChecked) {
+    return null // Don't show button until we know if videos exist
+  }
+  
   if (validCommands.length === 0) {
     return null
   }

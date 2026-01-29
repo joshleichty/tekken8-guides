@@ -252,6 +252,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
       <Section title="Wall Throw">
         <MoveCard character="jack-8"
+          videoId="1+3"
           move={{
             input: '1+3 or 2+4 (at wall)',
             hitLevel: ['th'],

@@ -132,6 +132,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
 
       <Section title="Heat-Exclusive Move: db+1+2">
         <MoveCard character="victor"
+          videoId="H.db+1+2"
           move={{
             input: 'h.db+1+2',
             hitLevel: ['m'],
@@ -163,6 +164,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
 
       <Section title="Enhanced u+1+2">
         <MoveCard character="victor"
+          videoId="H.u+1+2"
           move={{
             input: 'h.u+1+2',
             hitLevel: ['m'],
@@ -199,6 +201,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
 
       <Section title="Enhanced IAI.d+2">
         <MoveCard character="victor"
+          videoId="H.IAI.d+2"
           move={{
             input: 'h.IAI.d+2',
             hitLevel: ['m', 'sm'],
@@ -230,6 +233,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
 
       <Section title="Heat Smash">
         <MoveCard character="victor"
+          videoId="H.2+3"
           move={{
             input: 'Heat Smash',
             hitLevel: ['l', 'm'],

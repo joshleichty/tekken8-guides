@@ -85,6 +85,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="The Sidestep Launcher: SS 1">
         <MoveCard character="yoshimitsu"
+          videoId="SS.1"
           move={{
             input: 'SS 1',
             hitLevel: ['m'],
@@ -116,6 +117,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="Counter-Hit Launchers">
         <MoveCard character="yoshimitsu"
+          videoId="FC.df+4"
           move={{
             input: 'CH FC df+4',
             hitLevel: ['L'],
@@ -137,6 +139,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="yoshimitsu"
+          videoId="uf+2"
           move={{
             input: 'CH uf+2',
             hitLevel: ['L'],

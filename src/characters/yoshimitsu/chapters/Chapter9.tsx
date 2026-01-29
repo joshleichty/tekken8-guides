@@ -19,6 +19,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
     >
       <Section title="Understanding Manji Spin">
         <MoveCard character="yoshimitsu"
+          videoId="b+3"
           move={{
             input: 'b+3 or b+4',
             hitLevel: ['Evasive'],

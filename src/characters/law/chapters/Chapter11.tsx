@@ -41,6 +41,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
 
       <Section title="Heat 1+2 — The God Move">
         <MoveCard character="law"
+          videoId="H.1+2"
           move={{
             input: 'Heat 1+2',
             hitLevel: ['m'],

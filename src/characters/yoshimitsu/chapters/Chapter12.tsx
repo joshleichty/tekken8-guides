@@ -65,6 +65,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
 
       <Section title="NSS Hellsweep">
         <MoveCard character="yoshimitsu"
+          videoId="NSS.FC.df+3"
           move={{
             input: 'NSS.FC df+3',
             hitLevel: ['L'],

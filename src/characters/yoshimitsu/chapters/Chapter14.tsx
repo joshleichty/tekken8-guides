@@ -179,6 +179,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
       <Section title="Heat DGF Enhancement">
         <MoveCard character="yoshimitsu"
+          videoId="H.DGF.1"
           move={{
             input: 'Heat DGF.1',
             hitLevel: ['M'],

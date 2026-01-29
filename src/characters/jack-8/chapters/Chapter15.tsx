@@ -74,6 +74,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         />
 
         <MoveCard character="jack-8"
+          videoId="f,f,F+1+2"
           move={{
             input: 'f,f,f+1+2',
             hitLevel: ['m'],
@@ -169,6 +170,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         </KeyConcept>
 
         <MoveCard character="jack-8"
+          videoId="db+1,1"
           move={{
             input: 'db+1,1 (at wall)',
             hitLevel: ['l', 'l'],

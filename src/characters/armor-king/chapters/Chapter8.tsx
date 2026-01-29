@@ -55,6 +55,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
 
         <MoveCard character="armor-king"
           input="BAD 2,4"
+          videoId="BAD.2,4"
           tags={['mid', 'throw', 'stance']}
           description="Mid into attack throw. The throw only comes out on front hit. Safe-ish option that leads to good oki."
           stats={{
@@ -118,6 +119,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
 
         <MoveCard character="armor-king"
           input="BAD 3"
+          videoId="BAD.3"
           tags={['mid', 'Power Crush', 'stance']}
           description="Power crush from stance. Absorbs attacks and launches on CH. In Heat, can follow up with BAD 3,2."
           stats={{
@@ -143,6 +145,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
 
         <MoveCard character="armor-king"
           input="BAD db+1+2"
+          videoId="BAD.db+1+2"
           tags={['throw', 'stance']}
           description="A ground throw that catches grounded, airborne, and backturn opponents. Leaves you FDFA on whiff."
           variant="throw"

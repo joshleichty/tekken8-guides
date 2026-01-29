@@ -77,6 +77,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
         </KeyConcept>
 
         <MoveCard character="hwoarang"
+          videoId="f,F+4"
           move={{
             input: 'ff+4',
             hitLevel: ['m'],

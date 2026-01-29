@@ -153,6 +153,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="f,f,f+3 — The Running Knee">
         <MoveCard character="fahkumram"
+          videoId="f,f,F+3"
           move={{
             input: 'f,f,f+3',
             hitLevel: ['m'],
@@ -206,6 +207,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="f,f+3 — The Long Range Low">
         <MoveCard character="fahkumram"
+          videoId="f,F+3"
           move={{
             input: 'f,f+3',
             hitLevel: ['l'],
