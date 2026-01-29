@@ -10,11 +10,11 @@ import type { ChapterProps } from '../../../types'
 export function Chapter10({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={10}
+      number={13}
       title="Heat System"
       intro="Heat is Tekken 8's biggest new mechanic. Jin gets free Electrics, one of the best Heat Smashes in the game, and access to Omen stance. Here's how to use it."
-      onPrevious={() => goToChapter(9)}
-      onNext={() => goToChapter(11)}
+      onPrevious={() => goToChapter(12)}
+      onNext={() => goToChapter(14)}
       nextLabel="Defense & Parry"
     >
       <Section title="Heat Basics">

@@ -10,12 +10,12 @@ import type { ChapterProps } from '../../../types'
 export function Chapter5({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={5}
+      number={6}
       title="First Combos"
       intro="You've learned pokes and strings. Now it's time to convert your launchers into real damage. We'll start with one simple route that works everywhere."
-      onPrevious={() => goToChapter(4)}
-      onNext={() => goToChapter(6)}
-      nextLabel="Learn the Electric"
+      onPrevious={() => goToChapter(5)}
+      onNext={() => goToChapter(7)}
+      nextLabel="Converting Your Hits"
     >
       <Section title="How Combos Work in Tekken">
         <p>

@@ -10,12 +10,12 @@ import type { ChapterProps } from '../../../types'
 export function Chapter6({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={6}
+      number={8}
       title="The Electric"
       intro="The Electric Wind Hook Fist (EWHF) is Jin's most famous move. It's +5 on block, launches on hit, and defines the Mishima playstyle. Here's everything you need to know."
-      onPrevious={() => goToChapter(5)}
-      onNext={() => goToChapter(7)}
-      nextLabel="Learn ZEN Stance"
+      onPrevious={() => goToChapter(7)}
+      onNext={() => goToChapter(9)}
+      nextLabel="ZEN Stance"
     >
       <Section title="Understanding the Crouch Dash">
         <p>

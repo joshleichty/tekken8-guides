@@ -9,12 +9,12 @@ import type { ChapterProps } from '../../../types'
 export function Chapter9({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={9}
+      number={11}
       title="Punishment"
       intro="Jin has some of the best punishment in Tekken 8. When opponents make mistakes, you should make them pay. Here's every punish you need to know."
-      onPrevious={() => goToChapter(8)}
-      onNext={() => goToChapter(10)}
-      nextLabel="Learn Heat System"
+      onPrevious={() => goToChapter(10)}
+      onNext={() => goToChapter(12)}
+      nextLabel="Bringing Jin Together"
     >
       <Section title="What is Punishment?">
         <p>

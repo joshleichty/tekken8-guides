@@ -10,12 +10,12 @@ import type { ChapterProps } from '../../../types'
 export function Chapter4({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={4}
+      number={5}
       title="Jab String Extensions"
       intro="You know 1,2 and 2,1 from Chapter 2. Now it's time to learn the extensions — when to use each one and what you gain (and risk) from each."
-      onPrevious={() => goToChapter(3)}
-      onNext={() => goToChapter(5)}
-      nextLabel="Learn Your First Combos"
+      onPrevious={() => goToChapter(4)}
+      onNext={() => goToChapter(6)}
+      nextLabel="First Combos"
     >
       <Section title="The 1,2 Family">
         <p>

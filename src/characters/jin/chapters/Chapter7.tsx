@@ -10,12 +10,12 @@ import type { ChapterProps } from '../../../types'
 export function Chapter7({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={7}
+      number={9}
       title="ZEN Stance (Zenshin)"
       intro="ZEN stance is Jin's secret weapon at the wall. The dive kick loop, power crush, and mixups make Jin's wall pressure among the scariest in Tekken 8."
-      onPrevious={() => goToChapter(6)}
-      onNext={() => goToChapter(8)}
-      nextLabel="Optimized Combos"
+      onPrevious={() => goToChapter(8)}
+      onNext={() => goToChapter(10)}
+      nextLabel="Standard Combos"
     >
       <Section title="How to Enter ZEN">
         <p>
