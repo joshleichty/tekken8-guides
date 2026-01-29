@@ -23,7 +23,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
       </KeyConcept>
 
       <Section title="Giant Swing">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f,hcf+1"
           tags={['throw', '1 break']}
           variant="throw"
@@ -59,7 +59,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Tombstone Piledriver">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="qcb+1+2"
           tags={['throw', '1+2 break']}
           variant="throw"
@@ -86,7 +86,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Shining Wizard">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f,f,F+2+4"
           tags={['throw', '1+2 break']}
           variant="throw"
@@ -104,7 +104,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Other Key Throws">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="1+3"
           tags={['throw', '1 or 2 break']}
           variant="throw"
@@ -115,7 +115,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="db+1+2"
           tags={['throw', '1+2 break']}
           variant="throw"
@@ -126,7 +126,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="FC 1+2"
           tags={['throw', '1+2 break', 'crouch']}
           variant="throw"
@@ -168,7 +168,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
           { id: 'ch10-gs-blue', text: 'Land a Blue Spark Giant Swing', detail: 'Dash into the throw input for +5 damage', type: 'counter', target: 3 },
           { id: 'ch10-ts', text: 'Land 10 Tombstones (qcb+1+2)', detail: 'Quarter circle back then 1+2', type: 'counter', target: 10 },
           { id: 'ch10-sw', text: 'Land Shining Wizard (f,f,F+2+4)', detail: 'Run forward then 2+4', type: 'counter', target: 10 },
-          { id: 'ch10-fc', text: 'Land FC 1+2 from crouch dash', detail: 'CD then hold d for crouch, then 1+2', type: 'counter', target: 5 },
+          { id: 'ch10-fc', text: 'Land FC 1+2 from crouch dash', detail: 'CD.then hold d for crouch, then 1+2', type: 'counter', target: 5 },
         ]}
       />
 

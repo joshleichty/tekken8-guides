@@ -36,7 +36,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
 
       <Section title="Jin's Oki Tools">
         <SubSection title="d+2 — The Ground Hit">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'd+2',
               hitLevel: ['l'],
@@ -60,7 +60,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="ZEN 4 — The Dive">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'ZEN 4',
               hitLevel: ['m'],
@@ -84,7 +84,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="CD+1 — Electric Ground Hit">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'f,n,d,df:1',
               hitLevel: ['m'],

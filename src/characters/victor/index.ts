@@ -1,0 +1,1 @@
+export { victorConfig } from './config'

@@ -23,7 +23,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
       </KeyConcept>
 
       <Section title="df+3 — The Knee">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="df+3"
           tags={['mid', 'CH launcher']}
           description={
@@ -49,7 +49,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="uf+3 — The Hopkick Alternative">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="uf+3"
           tags={['mid', 'CH launcher']}
           description={
@@ -68,7 +68,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="ff+2 — The Long Range CH Tool">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="ff+2"
           tags={['mid', 'CH launcher']}
           description={
@@ -87,7 +87,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="ws+2 — The True Dark Smash">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="ws+2"
           tags={['mid', 'CH launcher']}
           description={
@@ -116,7 +116,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="SS+4 — Sidestep CH Tool">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="SS+4"
           tags={['mid', 'CH launcher']}
           description={

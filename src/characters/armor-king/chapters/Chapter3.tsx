@@ -15,7 +15,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       <Section title="The 1,2,1 String">
         <p>Your 10-frame jab string with a key tactical property — the ability to cancel into Bad Jaguar stance.</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="1,2,1"
           tags={['high', 'high', 'mid']}
           description={
@@ -42,7 +42,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The 2,1 Punish String">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="2,1"
           tags={['high', 'mid']}
           description={
@@ -62,7 +62,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       <Section title="The b+1,2 String — Your 12-Frame Punish">
         <p>This is one of Armor King's most important strings. It's your 12-frame block punish AND your whiff punish tool.</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="b+1,2"
           tags={['high', 'mid']}
           description={
@@ -93,7 +93,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The b+2,1,2 String — Counter Hit Confirmable">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="b+2,1,2"
           tags={['mid', 'mid', 'high']}
           description={
@@ -113,7 +113,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The f+3,2 String — Crouch Dash Cancel">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f+3,2"
           tags={['mid', 'mid']}
           description="A mid-mid string that's -11 on block. The key property: you can cancel the recovery into crouch dash with df!"
@@ -136,7 +136,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The 4,3 String">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="4,3"
           tags={['high', 'high']}
           description={

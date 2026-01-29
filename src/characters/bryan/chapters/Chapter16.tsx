@@ -32,7 +32,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="How Taunt Works">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: '1+3+4',
             hitLevel: ['m!'],

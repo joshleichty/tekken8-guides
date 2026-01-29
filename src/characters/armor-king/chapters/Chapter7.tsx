@@ -15,7 +15,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       <Section title="Dark Upper — CD+2">
         <p>The signature Armor King whiff punish. Fast, long range, and only -10 on block.</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+2 (f,n,d,df+2)"
           tags={['high', 'launcher']}
           description={
@@ -48,7 +48,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="b+3 — Homing Tornado Launcher">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="b+3"
           tags={['high', 'homing', 'Tornado']}
           description="Long range homing high. Great for catching backdashes and whiffs at range. Tornado launcher on hit for massive damage."
@@ -68,7 +68,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="db+2 Strings — 14-Frame Whiff Punish">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="db+2,3"
           tags={['mid', 'mid']}
           description="Excellent range for a 14-frame punish. Mid-mid, balcony breaks. Use when Dark Upper is too risky or you need a mid."
@@ -81,7 +81,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="b+1,2 — 12-Frame Range Monster">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="b+1,2"
           tags={['high', 'mid']}
           description={
@@ -98,7 +98,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="f+1+4 — The Shoulder">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f+1+4"
           tags={['mid']}
           description="13-frame shoulder tackle. Great range but -19 on block — only use as a whiff punish! Balcony breaks."
@@ -117,7 +117,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="ff+4 — Heat Engager Whiff Punish">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="ff+4"
           tags={['mid', 'Heat Engager']}
           description="14-frame startup, safe at -8, and a heat engager. Great for punishing whiffs when you want to go into Heat."

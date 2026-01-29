@@ -38,7 +38,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
 
       <Section title="Standing Punishment">
         <SubSection title="i10 Punish">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,4',
               hitLevel: ['h', 'h'],
@@ -50,7 +50,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               description: 'Go-to i10 punish. Great range for a jab string.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '2,3',
               hitLevel: ['h', 'm'],
@@ -68,7 +68,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="i12 Punish">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '4,1',
               hitLevel: ['h', 'h'],
@@ -83,7 +83,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="i13 Punish">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'df+2,1',
               hitLevel: ['m', 'h'],
@@ -95,7 +95,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               description: 'Safe mid punish. Sway transition with B.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'uf+2,2,2,3',
               hitLevel: ['m', 'm', 'm', 'm'],
@@ -110,7 +110,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="i14 Punish (LAUNCH)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f,b+2',
               hitLevel: ['h'],
@@ -129,7 +129,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="i15+ Punish">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f+2,1,4',
               hitLevel: ['m', 'm', 'm'],
@@ -146,7 +146,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
 
       <Section title="While Standing Punishment">
         <SubSection title="ws4 (i11)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'ws4',
               hitLevel: ['m'],
@@ -161,7 +161,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="ws3 (i12)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'ws3',
               hitLevel: ['m'],
@@ -177,7 +177,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="FC df+2,1 (i13)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'FC df+2,1',
               hitLevel: ['m', 'h'],
@@ -192,7 +192,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="ws1 (i15) LAUNCH">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'ws1',
               hitLevel: ['m'],
@@ -207,7 +207,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="ws2 Fisherman Slam (i19)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'ws2',
               hitLevel: ['m'],
@@ -234,7 +234,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
           </ul>
         </KeyConcept>
 
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'qcb+2,4',
             hitLevel: ['m', 'h'],
@@ -247,7 +247,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'f+4,1',
             hitLevel: ['m', 'm'],

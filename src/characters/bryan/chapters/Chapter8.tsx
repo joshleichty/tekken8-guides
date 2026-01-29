@@ -35,7 +35,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
 
       <Section title="Primary CH Launchers">
         <SubSection title="f+3 — The Close Range Fish">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f+3',
               hitLevel: ['m'],
@@ -70,7 +70,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="b+1 — The Plus Frame Beast">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'b+1',
               hitLevel: ['m'],
@@ -104,7 +104,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           <p>
             You learned 3+4 in Chapter 2. From a CH fishing perspective:
           </p>
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '3+4',
               hitLevel: ['m'],

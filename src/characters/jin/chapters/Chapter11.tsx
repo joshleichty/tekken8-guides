@@ -18,7 +18,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
       nextLabel="Complete Jin"
     >
       <Section title="Jin's Parry">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'b+1+3 or b+2+4',
             hitLevel: ['Parry'],
@@ -88,7 +88,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The Punch Parry (b+1+2)">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'b+1+2',
             hitLevel: ['m'],
@@ -119,7 +119,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
           When you're under heavy pressure and need to escape, these are your panic options:
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'uf+4',
             hitLevel: ['m'],
@@ -133,7 +133,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
           showVideo
         />
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.u+1',
             hitLevel: ['m'],
@@ -147,7 +147,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
           showVideo
         />
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'uf+2',
             hitLevel: ['m'],
@@ -162,7 +162,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
           showVideo
         />
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '4~3',
             hitLevel: ['m'],
@@ -221,7 +221,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Defensive Power Crush">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'd+1',
             hitLevel: ['m', 't'],
@@ -235,7 +235,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
           showVideo
         />
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.2',
             hitLevel: ['h'],

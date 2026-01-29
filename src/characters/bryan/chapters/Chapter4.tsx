@@ -41,7 +41,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             You learned this in Chapter 2, but it's crucial for keepout. qcb+1 is your 
             <span className="highlight">primary space control tool</span>.
           </p>
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'qcb+1',
               hitLevel: ['h'],
@@ -61,7 +61,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             The mid-range counter-hit launcher. Use this to <span className="highlight">catch 
             approaching opponents</span>.
           </p>
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '3+4',
               hitLevel: ['m'],
@@ -77,7 +77,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="u+4 (Orbital)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'u+4',
               hitLevel: ['m'],
@@ -102,7 +102,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="f,b+2 (Jet Upper)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f,b+2',
               hitLevel: ['h'],

@@ -35,7 +35,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="f+4 — The Star of Jin's Gameplan">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'f+4',
             hitLevel: ['m'],
@@ -77,7 +77,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="df+3 — The Fast Mid">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'df+3',
             hitLevel: ['m'],
@@ -115,7 +115,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="d+4 — The Quick Low">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'd+4',
             hitLevel: ['l'],
@@ -149,7 +149,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="db+4 — The Chunky Low">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'db+4',
             hitLevel: ['l'],

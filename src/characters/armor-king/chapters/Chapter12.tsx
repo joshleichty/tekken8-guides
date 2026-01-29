@@ -15,7 +15,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
       <Section title="Chain Throw Starter: CD+1+3 / CD+2+4">
         <p>Chain throws start from crouch dash:</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+1+3"
           tags={['throw', 'chain starter']}
           variant="throw"
@@ -26,7 +26,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+2+4"
           tags={['throw', 'chain starter']}
           variant="throw"
@@ -69,7 +69,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
       <Section title="Ultimate Punch">
         <p>The back mount (BM) gives access to Ultimate Punch:</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="UT 2,1,2,1"
           tags={['throw', 'ground chain']}
           variant="throw"

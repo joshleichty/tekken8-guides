@@ -18,7 +18,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       nextLabel="Learn Mids & Lows"
     >
       <Section title="Your Fastest Button: The Jab">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '1',
             hitLevel: ['h'],
@@ -48,7 +48,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The 1,2 String">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '1,2',
             hitLevel: ['h', 'h'],
@@ -87,7 +87,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The 2,1 Alternative">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '2,1',
             hitLevel: ['h', 'm'],
@@ -120,7 +120,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Your Main Mid Poke: df+1">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'df+1',
             hitLevel: ['m'],

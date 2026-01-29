@@ -1,61 +1,24 @@
 #!/usr/bin/env node
 
 /**
- * Script to check which Okizeme video URLs resolve correctly
- * Run with: node scripts/check-videos.js
+ * Script to check which Okizeme video URLs resolve correctly for all character guides
+ * Run with: node scripts/check-videos.js [character1] [character2] ...
+ * Example: node scripts/check-videos.js victor bryan law
+ * Run without arguments to check all characters
+ * 
+ * Add --exclude=character to skip a character (e.g., --exclude=hwoarang)
  */
 
 import https from 'https';
 import http from 'http';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// All move inputs from Jin's MoveCards with showVideo enabled
-const jinMoves = [
-  // Chapter 2 - First Buttons
-  '1',
-  '1,2',
-  '2,1',
-  'df+1',
-  
-  // Chapter 3 - Core Mids & Lows
-  'f+4',
-  'df+3',
-  'd+4',
-  'db+4',
-  
-  // Chapter 4 - Jab String Extensions
-  '1,2,3',
-  '1,2,4',
-  '1,2,1',
-  '2,1,4',
-  '2,1,4~4',
-  '2,4',
-  
-  // Chapter 6 - The Electric
-  'f,n,d,df+2',   // WGF
-  'f,n,d,df:2',   // EWHF
-  'f,n,d,df+1',   // CD1
-  
-  // Chapter 7 - ZEN Stance
-  'ZEN.3+4',
-  'ZEN.4',
-  'ZEN.1,2',
-  'ZEN.u+1',
-  'ZEN.2',
-  'ZEN.1+2',
-  
-  // Chapter 11 - Defense & Parry
-  'b+1+3',           // Parry (videoId override for "b+1+3 or b+2+4")
-  'b+1+2',
-  'uf+4',
-  // 'ZEN.u+1',  // duplicate from Chapter 7
-  'uf+2',
-  '4~3',
-  'd+1',
-  // 'ZEN.2',    // duplicate from Chapter 7
-];
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// Remove duplicates
-const uniqueMoves = [...new Set(jinMoves)];
+const CHARACTERS_DIR = path.join(__dirname, '../src/characters');
 
 /**
  * Encodes a move command for Okizeme CDN URLs
@@ -120,18 +83,106 @@ function checkUrl(url) {
   });
 }
 
-async function main() {
-  console.log('Checking Jin video URLs from Okizeme CDN...\n');
-  console.log(`Total unique moves: ${uniqueMoves.length}\n`);
+/**
+ * Parse a chapter file to extract moves with showVideo enabled
+ */
+function extractMovesFromChapter(filePath) {
+  const content = fs.readFileSync(filePath, 'utf-8');
+  const moves = [];
+  
+  // Match MoveCard components with showVideo prop
+  // Pattern 1: <MoveCard ... showVideo ... />
+  // Pattern 2: <MoveCard ... showVideo>...</MoveCard>
+  
+  // Find all MoveCard components that have showVideo (not showVideo={false})
+  const moveCardRegex = /<MoveCard[\s\S]*?(?:\/>|<\/MoveCard>)/g;
+  const matches = content.matchAll(moveCardRegex);
+  
+  for (const match of matches) {
+    const moveCardContent = match[0];
+    
+    // Check if showVideo is present and not explicitly false
+    const hasShowVideo = /showVideo(?!\s*=\s*\{?\s*false)/.test(moveCardContent);
+    if (!hasShowVideo) continue;
+    
+    // Extract videoId if specified (takes priority)
+    const videoIdMatch = moveCardContent.match(/videoId=["']([^"']+)["']/);
+    const videoIdArrayMatch = moveCardContent.match(/videoId=\{?\[([^\]]+)\]?\}/);
+    
+    // Extract input from move object or direct prop
+    const inputMatch = moveCardContent.match(/input:\s*['"]([^'"]+)['"]/);
+    const directInputMatch = moveCardContent.match(/input=["']([^"']+)["']/);
+    
+    if (videoIdMatch) {
+      moves.push(videoIdMatch[1]);
+    } else if (videoIdArrayMatch) {
+      // Parse array of videoIds
+      const ids = videoIdArrayMatch[1].split(',').map(s => s.trim().replace(/['"]/g, ''));
+      moves.push(...ids);
+    } else if (inputMatch) {
+      moves.push(inputMatch[1]);
+    } else if (directInputMatch) {
+      moves.push(directInputMatch[1]);
+    }
+  }
+  
+  return moves;
+}
+
+/**
+ * Get all character directories
+ */
+function getCharacters() {
+  return fs.readdirSync(CHARACTERS_DIR)
+    .filter(dir => {
+      const fullPath = path.join(CHARACTERS_DIR, dir);
+      return fs.statSync(fullPath).isDirectory() && 
+             fs.existsSync(path.join(fullPath, 'chapters'));
+    });
+}
+
+/**
+ * Get all moves for a character by scanning their chapters
+ */
+function getCharacterMoves(character) {
+  const chaptersDir = path.join(CHARACTERS_DIR, character, 'chapters');
+  if (!fs.existsSync(chaptersDir)) {
+    return [];
+  }
+  
+  const allMoves = [];
+  const chapterFiles = fs.readdirSync(chaptersDir)
+    .filter(file => file.endsWith('.tsx') && file.startsWith('Chapter'));
+  
+  for (const file of chapterFiles) {
+    const filePath = path.join(chaptersDir, file);
+    const moves = extractMovesFromChapter(filePath);
+    allMoves.push(...moves);
+  }
+  
+  // Remove duplicates
+  return [...new Set(allMoves)];
+}
+
+async function checkCharacter(character, moves) {
+  console.log(`\n${'='.repeat(60)}`);
+  console.log(`Checking ${character.toUpperCase()} (${moves.length} moves with videos)`);
+  console.log('='.repeat(60) + '\n');
+  
+  if (moves.length === 0) {
+    console.log('  No moves with showVideo found in chapters.');
+    return { character, results: [], resolved: [], failed: [] };
+  }
   
   const results = [];
   
-  for (const move of uniqueMoves) {
-    const url = getVideoUrl('jin', move);
-    process.stdout.write(`Checking: ${move.padEnd(20)} ... `);
+  for (const move of moves) {
+    const url = getVideoUrl(character, move);
+    process.stdout.write(`  Checking: ${move.padEnd(20)} ... `);
     
     const result = await checkUrl(url);
     result.move = move;
+    result.character = character;
     results.push(result);
     
     if (result.ok) {
@@ -141,39 +192,94 @@ async function main() {
     }
   }
   
-  // Summary
   const resolved = results.filter(r => r.ok);
   const failed = results.filter(r => !r.ok);
   
-  console.log('\n' + '='.repeat(60));
-  console.log('SUMMARY');
-  console.log('='.repeat(60));
-  console.log(`Total moves checked: ${results.length}`);
-  console.log(`Resolved: ${resolved.length}`);
-  console.log(`Failed: ${failed.length}`);
+  return { character, results, resolved, failed };
+}
+
+async function main() {
+  const args = process.argv.slice(2);
   
-  if (failed.length > 0) {
-    console.log('\n' + '-'.repeat(60));
-    console.log('FAILED VIDEOS (need attention):');
-    console.log('-'.repeat(60));
-    failed.forEach(r => {
-      console.log(`  ${r.move}`);
-      console.log(`    URL: ${r.url}`);
-      console.log(`    Status: ${r.status || r.error}`);
-    });
+  // Parse --exclude flags
+  const excludeFlags = args.filter(a => a.startsWith('--exclude='));
+  const excluded = excludeFlags.map(f => f.replace('--exclude=', '').toLowerCase());
+  
+  // Get character arguments (non-flag arguments)
+  const charArgs = args.filter(a => !a.startsWith('--'));
+  
+  // Get all available characters
+  let allCharacters = getCharacters();
+  
+  // Filter characters based on arguments
+  let charactersToCheck;
+  if (charArgs.length > 0) {
+    charactersToCheck = charArgs.filter(c => allCharacters.includes(c.toLowerCase()));
+  } else {
+    charactersToCheck = allCharacters;
   }
   
-  if (resolved.length > 0) {
-    console.log('\n' + '-'.repeat(60));
-    console.log('RESOLVED VIDEOS:');
-    console.log('-'.repeat(60));
-    resolved.forEach(r => {
-      console.log(`  ✓ ${r.move}`);
-    });
+  // Apply exclusions
+  charactersToCheck = charactersToCheck.filter(c => !excluded.includes(c.toLowerCase()));
+  
+  console.log('╔════════════════════════════════════════════════════════════╗');
+  console.log('║     Okizeme Video URL Checker for Character Guides         ║');
+  console.log('╚════════════════════════════════════════════════════════════╝');
+  console.log(`\nCharacters to check: ${charactersToCheck.join(', ')}`);
+  if (excluded.length > 0) {
+    console.log(`Excluded: ${excluded.join(', ')}`);
+  }
+  
+  const allResults = [];
+  
+  for (const character of charactersToCheck) {
+    const moves = getCharacterMoves(character);
+    const result = await checkCharacter(character, moves);
+    allResults.push(result);
+  }
+  
+  // Overall summary
+  console.log('\n' + '═'.repeat(60));
+  console.log('OVERALL SUMMARY');
+  console.log('═'.repeat(60));
+  
+  let totalMoves = 0;
+  let totalResolved = 0;
+  let totalFailed = 0;
+  
+  for (const { character, results, resolved, failed } of allResults) {
+    totalMoves += results.length;
+    totalResolved += resolved.length;
+    totalFailed += failed.length;
+    
+    const status = failed.length === 0 ? '✓' : '✗';
+    console.log(`  ${status} ${character.padEnd(15)} ${resolved.length}/${results.length} videos OK`);
+  }
+  
+  console.log('-'.repeat(60));
+  console.log(`  TOTAL: ${totalResolved}/${totalMoves} videos resolved`);
+  
+  // Detailed failures
+  const allFailed = allResults.flatMap(r => r.failed);
+  if (allFailed.length > 0) {
+    console.log('\n' + '═'.repeat(60));
+    console.log('FAILED VIDEOS (need attention)');
+    console.log('═'.repeat(60));
+    
+    for (const { character, failed } of allResults) {
+      if (failed.length === 0) continue;
+      
+      console.log(`\n  ${character.toUpperCase()}:`);
+      for (const r of failed) {
+        console.log(`    • ${r.move}`);
+        console.log(`      URL: ${r.url}`);
+        console.log(`      Status: ${r.status || r.error}`);
+      }
+    }
   }
   
   // Exit with error code if any failed
-  process.exit(failed.length > 0 ? 1 : 0);
+  process.exit(totalFailed > 0 ? 1 : 0);
 }
 
 main().catch(console.error);

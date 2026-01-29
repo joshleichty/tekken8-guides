@@ -23,7 +23,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </KeyConcept>
 
       <Section title="Your Plus Frame Tools">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="ub+1"
           tags={['high', 'homing', '+5 on block']}
           description={
@@ -39,7 +39,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+1"
           tags={['mid', '+5 on block']}
           description={
@@ -55,7 +55,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f+4"
           tags={['mid', '+3 on block']}
           description={
@@ -72,7 +72,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 1+2"
           tags={['mid', 'stance', '+5 on block']}
           description={

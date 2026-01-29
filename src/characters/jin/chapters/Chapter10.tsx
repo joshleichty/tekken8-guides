@@ -53,7 +53,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
         </ul>
 
         <div style={{ display: 'grid', gap: '12px', marginTop: '16px' }}>
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'ff+2',
               hitLevel: ['m'],
@@ -66,7 +66,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             }}
           />
 
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: '1+2',
               hitLevel: ['m', 'm', 'm'],
@@ -79,7 +79,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             }}
           />
 
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'f+3,1',
               hitLevel: ['m', 'm'],
@@ -92,7 +92,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             }}
           />
 
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'df+4',
               hitLevel: ['m'],
@@ -105,7 +105,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             }}
           />
 
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'ZEN.1,2',
               hitLevel: ['m', 'm'],
@@ -136,7 +136,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
           which one you get:
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'H.2+3',
             hitLevel: ['m', 'h', 'm'],
@@ -149,7 +149,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'H.2+3,4',
             hitLevel: ['m', 'h', 'm'],

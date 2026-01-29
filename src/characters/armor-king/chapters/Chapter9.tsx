@@ -19,7 +19,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
       </ExecutionBox>
 
       <Section title="CD+1 — Shadow Lariat">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+1 (f,n,d,df+1)"
           tags={['high', '+5 on block']}
           description={
@@ -43,7 +43,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="CD+2 — Dark Upper">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+2 (f,n,d,df+2)"
           tags={['high', 'launcher']}
           description={
@@ -61,7 +61,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="CD+4 — Safe Mid">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+4 (f,n,d,df+4)"
           tags={['mid', 'Tornado']}
           description={
@@ -80,7 +80,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="CD+1+2 — Poison Mist">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+1+2 (f,n,d,df+1+2)"
           tags={['high', 'stun']}
           description={
@@ -105,7 +105,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="CD+1+3 / CD+2+4 — Chain Throw Starter">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="CD+1+3 or CD+2+4"
           tags={['throw', 'chain starter']}
           variant="throw"

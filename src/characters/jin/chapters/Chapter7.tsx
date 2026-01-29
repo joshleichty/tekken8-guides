@@ -61,7 +61,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="ZEN's Key Moves">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.3+4',
             hitLevel: ['h'],
@@ -98,7 +98,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           Good players will duck and launch you. Don't overuse it. Mix in mids.
         </TipBox>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.4',
             hitLevel: ['m'],
@@ -117,7 +117,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           the dive kick. On hit, <code>d+2</code> is guaranteed.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.1,2',
             hitLevel: ['m', 'm'],
@@ -136,7 +136,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           the string. At the wall, this wall splats for a combo.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.u+1',
             hitLevel: ['m'],
@@ -155,7 +155,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           Use it to escape pressure or as a panic move. <strong>Very unsafe</strong> on block.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.2',
             hitLevel: ['h'],
@@ -174,7 +174,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           Use it when you predict your opponent will try to interrupt your ZEN pressure.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'ZEN.1+2',
             hitLevel: ['l'],

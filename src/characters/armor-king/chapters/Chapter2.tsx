@@ -18,7 +18,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
           It's fast, it's safe, and it checks opponents who are being too aggressive.
         </p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="df+1"
           tags={['mid']}
           description="A quick elbow check. This is your 'stop pressing buttons' move. Use it to interrupt pressure, check opponents, and reset to neutral."
@@ -40,7 +40,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
         <h3>The df+1,2 Extension</h3>
         <p>df+1 has a mid-high follow-up. The high can be ducked, but it's useful in certain situations:</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="df+1,2"
           tags={['mid', 'high', 'Tornado']}
           description={
@@ -59,7 +59,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="d+2 — The Safe Mid Poke">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="d+2"
           tags={['mid']}
           description={
@@ -87,7 +87,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="df+4 — The 12-Frame Mid">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="df+4"
           tags={['mid']}
           description="Your fastest mid poke. Great for checking buttons and as a safe i12 block punish. Gives excellent +7 on hit."
@@ -102,7 +102,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       <Section title="Homing Pokes">
         <p>Since df+1 doesn't track, you need homing moves to stop sidesteppers. Here are your key options:</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="b+3+4"
           tags={['mid', 'homing']}
           description="Your go-to homing mid. Safe at -9, knocks down on hit for oki. Use this when you suspect your opponent is stepping."
@@ -113,7 +113,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="ub+1"
           tags={['high', 'homing']}
           description={

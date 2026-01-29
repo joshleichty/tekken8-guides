@@ -46,7 +46,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="Your Mid Pokes">
         <SubSection title="df+2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'df+2',
               hitLevel: ['m'],
@@ -59,7 +59,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             }}
           />
           
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'df+2,3',
               hitLevel: ['m', 'm'],
@@ -81,7 +81,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="d+2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'd+2',
               hitLevel: ['m'],
@@ -94,7 +94,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             }}
           />
           
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'd+2,3',
               hitLevel: ['m', 'm'],
@@ -116,7 +116,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="db+2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'db+2',
               hitLevel: ['m'],
@@ -166,7 +166,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
           and punish mixups</span>.
         </p>
 
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'DF+1,1,1,1,2',
             hitLevel: ['m', 'm', 'm', 'm', 'm'],

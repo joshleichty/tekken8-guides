@@ -38,7 +38,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Move 1: qcb+1">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'qcb+1',
             hitLevel: ['h'],
@@ -86,7 +86,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Move 2: 3+4">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: '3+4',
             hitLevel: ['m'],
@@ -131,7 +131,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Move 3: qcb+3 (Hatchet Kick)">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'qcb+3',
             hitLevel: ['l'],

@@ -13,7 +13,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       nextLabel="Continue to Counter Hits"
     >
       <Section title="d+3 — Your Standard Low Poke">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="d+3"
           tags={['low']}
           description={
@@ -32,7 +32,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="d+4 — The Tiny Poke">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="d+4"
           tags={['low', 'homing']}
           description="Fast at 14 frames and tracks both sides. Garbage damage (6), but useful as a round closer or to interrupt. Very negative at -15 on block though."
@@ -45,7 +45,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="SS+2 — Sidestep Low">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="SS+2"
           tags={['low']}
           description={
@@ -73,7 +73,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="ff,n+2 — The Kilo Low">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="ff,n+2"
           tags={['low']}
           description={
@@ -109,7 +109,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="d+3+4 — The Risky Low with Extensions">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="d+3+4"
           tags={['low']}
           description={
@@ -133,7 +133,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="db+3 — Homing Low (High Risk)">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="db+3"
           tags={['low', 'homing']}
           description={

@@ -35,7 +35,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
 
       <Section title="Extension Reference">
         <SubSection title="df+2,3">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'df+2,3',
               hitLevel: ['m', 'm'],
@@ -56,7 +56,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="d+2,3">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'd+2,3',
               hitLevel: ['m', 'm'],
@@ -81,7 +81,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="1,2,1">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,2,1',
               hitLevel: ['h', 'h', 'm'],
@@ -102,7 +102,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="b+3,2,1,2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'b+3,2,1,2',
               hitLevel: ['m', 'h', 'm', 'm'],
@@ -121,7 +121,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="4,3,4">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '4,3,4',
               hitLevel: ['h', 'm', 'm'],
@@ -134,7 +134,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               description: 'Extension from 4 jab. Can be charged for more damage.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '4,3,f+4',
               hitLevel: ['h', 'm', 'h'],

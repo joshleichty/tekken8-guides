@@ -35,7 +35,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Bad Jaguar Moves">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 4"
           tags={['low', 'stance']}
           description={
@@ -52,7 +52,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 2,4"
           tags={['mid', 'throw', 'stance']}
           description="Mid into attack throw. The throw only comes out on front hit. Safe-ish option that leads to good oki."
@@ -63,7 +63,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 2,3"
           tags={['mid', 'high', 'Tornado', 'stance']}
           description={
@@ -79,7 +79,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 1+2"
           tags={['mid', 'stance', '+5 on block']}
           description={
@@ -96,7 +96,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 1,2"
           tags={['high', 'mid', 'Heat Engager', 'stance']}
           description={
@@ -111,7 +111,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 3"
           tags={['mid', 'Power Crush', 'stance']}
           description="Power crush from stance. Absorbs attacks and launches on CH. In Heat, can follow up with BAD 3,2."
@@ -127,14 +127,14 @@ export function Chapter8({ goToChapter }: ChapterProps) {
       <Section title="Throws from Stance">
         <p>From Bad Jaguar, you have access to all your standing throws plus some stance-specific options:</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD 1+3"
           tags={['throw', 'stance']}
           description="Giant Swing from stance. Same properties as standing Giant Swing."
           variant="throw"
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD db+1+2"
           tags={['throw', 'stance']}
           description="A ground throw that catches grounded, airborne, and backturn opponents. Leaves you FDFA on whiff."

@@ -13,7 +13,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
       nextLabel="Continue to Punishers"
     >
       <Section title="b+1+3 — Punch Parry">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="b+1+3"
           tags={['parry', 'punches only']}
           description={
@@ -36,7 +36,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="f+3+4 — Stance Parry">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f+3+4"
           tags={['parry', 'stance']}
           description={

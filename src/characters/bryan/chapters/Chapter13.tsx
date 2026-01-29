@@ -42,7 +42,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
 
       <Section title="Heat Engagers">
         <SubSection title="1,2,4 — The Panic Engager">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,2,4',
               hitLevel: ['h', 'h', 'h'],
@@ -66,7 +66,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="qcf+1+2 — The Mid-Range Engager">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'qcf+1+2 (SLS.1+2)',
               hitLevel: ['m'],
@@ -90,7 +90,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="Other Engagers">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'db+1+2',
               hitLevel: ['m', 'h'],
@@ -102,7 +102,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
               description: 'Jails on block. Situational engager.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'SS 2,1',
               hitLevel: ['M', 'h'],
@@ -114,7 +114,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
               description: 'First hit is safe. Second is a duckable high.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f,f+2',
               hitLevel: ['h'],
@@ -130,7 +130,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Heat Smash">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'H.2+3',
             hitLevel: ['m', 'm'],

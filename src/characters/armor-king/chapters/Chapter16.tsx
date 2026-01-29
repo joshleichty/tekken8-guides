@@ -39,7 +39,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Heat-Only Moves">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="H.ub+1"
           tags={['high', 'homing', 'heat', 'launcher']}
           description={
@@ -56,7 +56,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="H.db+2,1"
           tags={['mid', 'mid', 'heat only']}
           description={
@@ -72,7 +72,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
           }}
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="H.BAD 3,2"
           tags={['mid', 'mid', 'Power Crush', 'heat only']}
           description={
@@ -90,7 +90,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Heat Smash">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="H.2+3"
           tags={['mid', 'throw', 'heat smash']}
           description="Your Heat Smash. Mid into attack throw on hit. 54 total damage. +9 on block! Balcony breaks."

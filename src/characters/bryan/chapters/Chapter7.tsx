@@ -19,7 +19,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
       nextLabel="Counter-Hit Fishing"
     >
       <Section title="The Bryan Jab">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: '1',
             hitLevel: ['h'],
@@ -40,7 +40,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
 
       <Section title="Core Jab Strings">
         <SubSection title="1,2 — Your Bread and Butter">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,2',
               hitLevel: ['h', 'h'],
@@ -60,7 +60,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="1,2,1 — The CH Extension">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,2,1',
               hitLevel: ['h', 'h', 'm'],
@@ -91,7 +91,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="1,2,3 — The Low Mixup">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,2,3',
               hitLevel: ['h', 'h', 'L'],
@@ -112,7 +112,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="1,2,4 — The Heat Engager">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,2,4',
               hitLevel: ['h', 'h', 'h'],
@@ -174,7 +174,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
 
       <Section title="1,4 String">
         <SubSection title="The Safe Mid Ender">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,4',
               hitLevel: ['h', 'h'],
@@ -187,7 +187,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             }}
           />
 
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1,4,2,1',
               hitLevel: ['h', 'h', 'h', 'h'],

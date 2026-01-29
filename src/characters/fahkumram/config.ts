@@ -1,0 +1,70 @@
+import type { CharacterConfig } from '../../types'
+import { Chapter1 } from './chapters/Chapter1'
+import { Chapter2 } from './chapters/Chapter2'
+import { Chapter3 } from './chapters/Chapter3'
+import { Chapter4 } from './chapters/Chapter4'
+import { Chapter5 } from './chapters/Chapter5'
+import { Chapter6 } from './chapters/Chapter6'
+import { Chapter7 } from './chapters/Chapter7'
+import { Chapter8 } from './chapters/Chapter8'
+import { Chapter9 } from './chapters/Chapter9'
+import { Chapter10 } from './chapters/Chapter10'
+import { Chapter11 } from './chapters/Chapter11'
+import { Chapter12 } from './chapters/Chapter12'
+import { Chapter13 } from './chapters/Chapter13'
+
+export const fahkumramConfig: CharacterConfig = {
+  slug: 'fahkumram',
+  name: 'Fahkumram',
+  subtitle: 'The Apex Predator — Tekken 8 Season 2',
+  icon: '⚡',
+  description: 'A towering Muay Thai powerhouse with the best range in the game. Master spacing, the Garuda Force install, and the devastating Rama stance mixups to dominate your opponents.',
+  
+  theme: {
+    name: 'fahkumram',
+    colors: {
+      // Fahkumram's theme: Electric yellow/gold with purple undertones (Muay Thai colors)
+      accent: '#eab308',           // Yellow/Gold (Garuda lightning)
+      accentDim: '#ca8a04',
+      accentSecondary: '#7c3aed',  // Purple (Muay Thai royal color)
+      accentSecondaryDim: '#5b21b6',
+      bgPrimary: '#030712',        // Near black
+      bgSecondary: '#0c0a09',      // Stone 950
+      bgCard: '#1c1917',           // Stone 900
+      bgCardHover: '#292524',      // Stone 800
+      textPrimary: '#fafaf9',      // Stone 50
+      textSecondary: '#a8a29e',    // Stone 400
+      textMuted: '#78716c',        // Stone 500
+      border: '#44403c',           // Stone 700
+      characterGlow: 'rgba(234, 179, 8, 0.25)',
+      heatGlow: 'rgba(124, 58, 237, 0.35)',
+    },
+  },
+  
+  chapters: [
+    // Phase 1: Foundation
+    { id: 1, title: 'Meet Fahkumram', section: 'Foundation', content: Chapter1 },
+    { id: 2, title: 'First Buttons', section: 'Foundation', content: Chapter2 },
+    { id: 3, title: 'Core Mids & Lows', section: 'Foundation', content: Chapter3 },
+    
+    // Phase 2: Strings & Combos
+    { id: 4, title: 'Key Strings', section: 'Strings & Combos', content: Chapter4 },
+    { id: 5, title: 'First Combos', section: 'Strings & Combos', content: Chapter5 },
+    
+    // Phase 3: Core Tools
+    { id: 6, title: 'Garuda Force Install', section: 'Core Tools', content: Chapter6 },
+    { id: 7, title: 'Rama Stance', section: 'Core Tools', content: Chapter7 },
+    
+    // Phase 4: Game Systems
+    { id: 8, title: 'Standard Combos', section: 'Game Systems', content: Chapter8 },
+    { id: 9, title: 'Punishment', section: 'Game Systems', content: Chapter9 },
+    { id: 10, title: 'Frame Traps & Setups', section: 'Game Systems', content: Chapter10 },
+    
+    // Phase 5: Heat & Defense
+    { id: 11, title: 'Heat System', section: 'Heat & Defense', content: Chapter11 },
+    { id: 12, title: 'Defense & Parries', section: 'Heat & Defense', content: Chapter12 },
+    
+    // Phase 6: Mastery
+    { id: 13, title: 'Complete Fahkumram', section: 'Mastery', content: Chapter13 },
+  ],
+}

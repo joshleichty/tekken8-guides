@@ -34,7 +34,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
       <Section title="Jin's Counter-Hit Tools">
         <SubSection title="f+4 — The King of CH">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'f+4',
               hitLevel: ['m'],
@@ -68,7 +68,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="4 — Homing CH">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: '4',
               hitLevel: ['h'],
@@ -101,7 +101,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="2,1,4 — String CH">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: '2,1,4',
               hitLevel: ['h', 'm', 'm'],
@@ -126,7 +126,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="uf+3 — The Safer CH Launcher">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'uf+3',
               hitLevel: ['m'],
@@ -147,7 +147,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="EWHF — The Ultimate CH Tool">
-          <MoveCard
+          <MoveCard character="jin"
             move={{
               input: 'f,n,d,df:2',
               hitLevel: ['h'],

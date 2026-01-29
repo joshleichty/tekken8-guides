@@ -15,14 +15,14 @@ export function Chapter13({ goToChapter }: ChapterProps) {
       <Section title="Ground Throws">
         <p>When your opponent is on the ground, you can throw them!</p>
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="db+1+3 (face up opponent)"
           tags={['throw', 'ground throw']}
           variant="throw"
           description="Ground throw for face up opponents. 35-40 damage depending on position. Sets up more oki."
         />
 
-        <MoveCard
+        <MoveCard character="armor-king"
           input="db+2+4 (any position)"
           tags={['throw', 'ground throw']}
           variant="throw"
@@ -45,7 +45,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="The Stomp: d+4,4,3+4">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="d+4,4,3+4"
           tags={['low', 'low', 'mid']}
           description="The multi-hit stomp! Hits grounded opponents. Guaranteed after CD1 hit. Floor breaks on the last hit."
@@ -53,7 +53,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="BAD db+1+2 — Grounded Tackle">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="BAD db+1+2"
           tags={['throw', 'stance']}
           variant="throw"
@@ -62,7 +62,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="f+1+4 — The Shoulder">
-        <MoveCard
+        <MoveCard character="armor-king"
           input="f+1+4"
           tags={['mid']}
           description="Use when they try to get up with attacks. The shoulder catches wake-up kicks. Also guaranteed after ub+1 hit!"

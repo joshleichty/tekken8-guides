@@ -47,7 +47,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
           There are two versions of this move depending on your timing:
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'f,n,d,df+2',
             hitLevel: ['h'],
@@ -61,7 +61,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
           showVideo
         />
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'f,n,d,df:2',
             hitLevel: ['h'],
@@ -153,7 +153,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="CD.df+1 — The Other Crouch Dash Move">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: 'f,n,d,df+1',
             hitLevel: ['m'],

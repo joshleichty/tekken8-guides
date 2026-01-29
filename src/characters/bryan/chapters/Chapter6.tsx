@@ -36,7 +36,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="qcb+3 (Hatchet Kick) — Your Power Low">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'qcb+3',
             hitLevel: ['l'],
@@ -72,7 +72,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="d+4 — The Spacing Low">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'd+4',
             hitLevel: ['L'],
@@ -116,7 +116,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="db+3 — The High Crush Low">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'db+3',
             hitLevel: ['L'],
@@ -160,7 +160,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="d+3,2 — The Risk/Reward Low">
-        <MoveCard
+        <MoveCard character="bryan"
           move={{
             input: 'd+3,2',
             hitLevel: ['l', 'h'],

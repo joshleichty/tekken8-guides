@@ -35,7 +35,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
       <Section title="How to Get Snake Eyes">
         <SubSection title="Moves That Give Snake Eyes">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f+2,1,4',
               hitLevel: ['m', 'm', 'm'],
@@ -47,7 +47,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               description: 'Grants Snake Eyes on hit (with 1+2 input).',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'd+3,2',
               hitLevel: ['l', 'h'],
@@ -59,7 +59,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               description: 'Grants Snake Eyes on hit. Second hit is duckable.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'uf+3+4',
               hitLevel: ['m'],
@@ -71,7 +71,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               description: 'Tornado move that gives Snake Eyes. Used in combos.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'uf+1',
               hitLevel: ['m'],
@@ -83,7 +83,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               description: 'Power crush that gives Snake Eyes on hit.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: '1+3+4 (Taunt)',
               hitLevel: ['m!'],
@@ -105,7 +105,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
       <Section title="Snake Eyes Moves">
         <SubSection title="SNE 3+4,2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'SNE 3+4,2',
               hitLevel: ['m', 'm'],
@@ -130,7 +130,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="SNE 3+4,2 (Charged)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'SNE 3+4,2*',
               hitLevel: ['m', 'M'],
@@ -155,7 +155,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="SNE uf+2,2,2,2,2,3">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'SNE uf+2,2,2,2,2,3',
               hitLevel: ['m x6'],
@@ -174,7 +174,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="SNE f+2,1,2,3,2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'SNE f+2,1,2,3,2',
               hitLevel: ['m', 'm', 'm', 'm', 'm'],
@@ -189,7 +189,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="SNE f,f+1+2">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'SNE f,f+1+2',
               hitLevel: ['h'],

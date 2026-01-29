@@ -43,7 +43,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
 
       <Section title="Panic Options">
         <SubSection title="u+4 (Orbital)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'u+4',
               hitLevel: ['m'],
@@ -68,7 +68,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="uf+3+4 (Hopkick Alternative)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'uf+3+4',
               hitLevel: ['m'],
@@ -86,7 +86,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="uf+1 (Power Crush)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'uf+1',
               hitLevel: ['m'],
@@ -112,7 +112,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="f,f+4 (Mock Kick)">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'f,f+4',
               hitLevel: ['h'],
@@ -144,7 +144,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         </SubSection>
 
         <SubSection title="Crouch Options">
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'ws3',
               hitLevel: ['m'],
@@ -157,7 +157,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
               description: 'From crouch, ws3 CH launches. Use after db+3 or as a panic tool.',
             }}
           />
-          <MoveCard
+          <MoveCard character="bryan"
             move={{
               input: 'FC df+4',
               hitLevel: ['m'],

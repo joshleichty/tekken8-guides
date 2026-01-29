@@ -24,7 +24,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
           knowing they exist.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '1,2,3',
             hitLevel: ['h', 'h', 'm'],
@@ -51,7 +51,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
           </ul>
         </KeyConcept>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '1,2,4',
             hitLevel: ['h', 'h', 'h'],
@@ -76,7 +76,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
           Use sparingly against competent opponents.
         </TipBox>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '1,2,1',
             hitLevel: ['h', 'h', 'm'],
@@ -115,7 +115,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
           powerful extensions.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '2,1,4',
             hitLevel: ['h', 'm', 'm'],
@@ -140,7 +140,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
           decide whether to continue.
         </p>
 
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '2,1,4~4',
             hitLevel: ['h', 'm', 'l'],
@@ -173,7 +173,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="2,4 — The Star Punish">
-        <MoveCard
+        <MoveCard character="jin"
           move={{
             input: '2,4',
             hitLevel: ['h', 'h'],
