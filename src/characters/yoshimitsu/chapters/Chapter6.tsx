@@ -167,6 +167,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="The Crouch Dash Launcher">
         <MoveCard character="yoshimitsu"
+          videoId="f,n,d,df+1"
           move={{
             input: 'f,n,d,df+1 (CD 1)',
             hitLevel: ['M'],

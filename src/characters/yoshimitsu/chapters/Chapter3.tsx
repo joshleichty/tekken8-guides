@@ -161,6 +161,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="FC df+4 — The Crouch Game">
         <MoveCard character="yoshimitsu"
+          videoId="FC.df+4"
           move={{
             input: 'FC df+4',
             hitLevel: ['L'],

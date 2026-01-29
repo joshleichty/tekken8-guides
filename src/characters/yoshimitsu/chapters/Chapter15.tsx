@@ -19,6 +19,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
     >
       <Section title="The Unblockable Low: FC df+1">
         <MoveCard character="yoshimitsu"
+          videoId="FC.df+1"
           move={{
             input: 'FC df+1',
             hitLevel: ['l!'],
