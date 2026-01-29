@@ -58,6 +58,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             tags: ['High', 'Launcher', 'Minus on Block'],
             description: 'Wind God Fist — The "slow" version. Still launches, but -10 on block.',
           }}
+          showVideo
         />
 
         <MoveCard
@@ -71,6 +72,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             tags: ['High', 'Launcher', 'PLUS ON BLOCK', 'Just Frame'],
             description: 'Electric Wind Hook Fist (EWHF) — The "just frame" version. +5 on block!',
           }}
+          showVideo
         />
 
         <KeyConcept title="The Difference" icon="⚡">
@@ -162,6 +164,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Tornado', 'Launcher', 'High Crush'],
             description: 'Mid launcher that high crushes and gives Tornado. Key combo tool.',
           }}
+          showVideo
         />
 
         <p>

@@ -47,6 +47,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Counter-Hit Launcher', 'Safe', 'Long Range'],
             description: 'One of Jin\'s best moves. Safe, long range, and LAUNCHES on counter-hit for a full combo.',
           }}
+          showVideo
         />
 
         <p>
@@ -87,6 +88,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Fast', 'Safe'],
             description: 'Jin\'s fastest standing mid at i12. Use when you need speed over range.',
           }}
+          showVideo
         />
 
         <p>
@@ -124,6 +126,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             tags: ['Low', 'Poke', 'High Crush'],
             description: 'Quick low poke that crushes highs. Chips damage and keeps them honest.',
           }}
+          showVideo
         />
 
         <p>
@@ -158,6 +161,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             tags: ['Low', 'Plus on Hit', 'Long Range'],
             description: 'Your main damage low. Plus on hit lets you continue pressure.',
           }}
+          showVideo
         />
 
         <p>

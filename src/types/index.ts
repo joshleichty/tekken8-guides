@@ -90,6 +90,7 @@ export interface MoveData {
   tags?: string[]
   description: string
   notes?: string[]
+  videoId?: string | string[]  // Optional video ID override(s) for Okizeme lookup
 }
 
 export interface TaskData {

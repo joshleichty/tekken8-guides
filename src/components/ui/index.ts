@@ -1,5 +1,6 @@
 // UI Component Library
 export { MoveCard } from './MoveCard'
+export { MoveVideo, MoveVideoLink, getVideoUrl } from './MoveVideo'
 export { TipBox } from './TipBox'
 export { PracticeBox } from './PracticeBox'
 export { KeyConcept } from './KeyConcept'

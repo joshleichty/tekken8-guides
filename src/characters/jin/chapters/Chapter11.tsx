@@ -29,6 +29,8 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Parry', 'High/Mid', 'Defensive Tool'],
             description: 'Parries high and mid attacks. One of the best parries in Tekken.',
           }}
+          videoId="b+1+3"
+          showVideo
         />
 
         <p>
@@ -97,6 +99,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Punch Sabaki', 'Risky'],
             description: 'Sabaki that catches punches (1 and 2 button attacks). Gives guaranteed ff+2 on success.',
           }}
+          showVideo
         />
 
         <p>
@@ -127,6 +130,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Hopkick', 'Low Crush', 'Panic Move'],
             description: 'Classic hopkick. Crushes lows, but -13 on block.',
           }}
+          showVideo
         />
 
         <MoveCard
@@ -140,6 +144,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Launcher', 'Evasive', 'Panic Move'],
             description: 'Samsara. Evasive launcher from ZEN. Low crushes and can evade some mids.',
           }}
+          showVideo
         />
 
         <MoveCard
@@ -154,6 +159,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Evasive', 'Sidestep Built-in'],
             description: 'Has built-in sidestep. Good for escaping linear pressure. Knockdown on CH.',
           }}
+          showVideo
         />
 
         <MoveCard
@@ -167,6 +173,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Low Crush', 'Evasive'],
             description: 'Weird jump move. Low crushes and leaves you grounded. Situational escape.',
           }}
+          showVideo
         />
 
         <KeyConcept title="When to Panic Move" icon="🚨">
@@ -225,6 +232,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Power Crush', 'Throw Follow-up'],
             description: 'Jin\'s power crush. Absorbs mid/high attacks and transitions to a throw.',
           }}
+          showVideo
         />
 
         <MoveCard
@@ -238,6 +246,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
             tags: ['High', 'Power Crush', 'Heat Engager'],
             description: 'Power crush from ZEN. Absorbs attacks and can activate Heat.',
           }}
+          showVideo
         />
 
         <p>

@@ -72,6 +72,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['High', 'PLUS on Block', 'Chip Damage', 'Dive Kick'],
             description: 'The infamous dive kick. Plus on block with chip damage. Can be looped at the wall.',
           }}
+          showVideo
         />
 
         <p>
@@ -108,6 +109,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Plus on Block', 'Ground Hits', 'Slow'],
             description: 'Mid alternative to the dive kick. Slower but hits crouchers. Guarantees d+2 on hit.',
           }}
+          showVideo
         />
 
         <p>
@@ -126,6 +128,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Mid', 'Heat Engager', 'Wall Splats', 'Confirmable'],
             description: 'Heat engager from ZEN. Wall splats for huge damage. Hit-confirmable.',
           }}
+          showVideo
         />
 
         <p>
@@ -144,6 +147,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Launcher', 'Tornado', 'Evasive', 'Panic Move'],
             description: 'Samsara — Evasive launcher. Jin\'s panic move from ZEN. Very unsafe on block.',
           }}
+          showVideo
         />
 
         <p>
@@ -162,6 +166,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['High', 'Power Crush', 'Homing', 'Heat Engager'],
             description: 'Power crush from ZEN. Absorbs mids/highs. Heat engager.',
           }}
+          showVideo
         />
 
         <p>
@@ -180,6 +185,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['Low', 'Throw Follow-up', 'Wall Crush'],
             description: 'Low chop that leads to a throw. Faster in Season 2. Wall crushes.',
           }}
+          showVideo
         />
 
         <p>

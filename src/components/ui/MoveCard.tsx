@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import styles from './MoveCard.module.css'
 import type { MoveData } from '../../types'
+import { MoveVideoLink } from './MoveVideo'
 
 interface MoveCardProps {
   // Direct props (original style)
@@ -18,6 +19,10 @@ interface MoveCardProps {
   children?: ReactNode
   // Wrapped props (alternate style for move object)
   move?: MoveData
+  // Video support
+  videoId?: string | string[]  // The move command(s) for video lookup (defaults to input)
+  character?: string  // Character name (defaults to "jin")
+  showVideo?: boolean  // Whether to show video link (defaults to true if videoId or input exists)
 }
 
 const tagStyles: Record<string, string> = {
@@ -53,7 +58,7 @@ const tagStyles: Record<string, string> = {
   'unblockable': styles.tagHeat,
 }
 
-export function MoveCard({ input, tags = [], description, stats, variant = 'default', children, move }: MoveCardProps) {
+export function MoveCard({ input, tags = [], description, stats, variant = 'default', children, move, videoId, character = 'jin', showVideo }: MoveCardProps) {
   // If move object is provided, extract props from it
   const finalInput = move?.input ?? input ?? ''
   const finalTags = move?.tags ?? tags
@@ -66,6 +71,12 @@ export function MoveCard({ input, tags = [], description, stats, variant = 'defa
     damage: move.damage,
   } : stats
   const notes = move?.notes
+  
+  // Video support - use videoId if provided, otherwise use input
+  const finalVideoId = videoId ?? move?.videoId ?? finalInput
+  const shouldShowVideo = showVideo ?? (finalVideoId ? true : false)
+  // Normalize to always pass to MoveVideoLink (it handles both string and array)
+  const videoCommands = finalVideoId
 
   return (
     <div className={`${styles.card} ${styles[variant] || ''}`}>
@@ -136,6 +147,10 @@ export function MoveCard({ input, tags = [], description, stats, variant = 'defa
             <li key={i}>{note}</li>
           ))}
         </ul>
+      )}
+
+      {shouldShowVideo && videoCommands && (
+        <MoveVideoLink command={videoCommands} character={character} />
       )}
       
       {children}

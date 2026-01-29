@@ -35,6 +35,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             tags: ['High', 'High', 'Mid', 'Neutral on Block', 'Knockdown'],
             description: 'Your safest extension. The mid ender is neutral on block and knocks down on hit.',
           }}
+          showVideo
         />
 
         <p>
@@ -61,6 +62,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             tags: ['High', 'High', 'High', 'Heat Engager', 'Duckable'],
             description: 'Heat engager ender. High damage but the third hit is a HIGH — can be ducked and launched.',
           }}
+          showVideo
         />
 
         <p>
@@ -85,6 +87,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             tags: ['High', 'High', 'Mid', 'Tornado', 'Launch Punishable'],
             description: 'Tornado move — extends combos. BUT it\'s -16 on block (launch punishable).',
           }}
+          showVideo
         />
 
         <p>
@@ -124,6 +127,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             tags: ['High', 'Mid', 'Mid', 'CH Knockdown'],
             description: 'Powerful string that wall splats on counter-hit. The third hit catches people pressing.',
           }}
+          showVideo
         />
 
         <p>
@@ -148,6 +152,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             tags: ['High', 'Mid', 'Low', 'Low Ender', 'Knockdown'],
             description: 'Low alternative. The fourth hit is a sweep that knocks down.',
           }}
+          showVideo
         />
 
         <p>
@@ -179,6 +184,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             tags: ['High', 'High', '10f Punish', 'Wall Splats', 'ZEN Transition', 'Tornado'],
             description: 'Jin\'s preferred 10f punish. Wall splats, can transition to ZEN, and is a Tornado move for combos.',
           }}
+          showVideo
         />
 
         <p>

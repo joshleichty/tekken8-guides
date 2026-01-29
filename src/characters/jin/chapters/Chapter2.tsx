@@ -29,6 +29,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             tags: ['High', 'Plus on Block'],
             description: 'Your fastest button. Being +1 on block means you can continue pressure even when they block it.',
           }}
+          showVideo
         />
 
         <p>
@@ -58,6 +59,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             tags: ['High', 'High', 'Natural Combo', '10f Punish'],
             description: 'Your basic punish and pressure string. Has powerful extensions covered in Chapter 4.',
           }}
+          showVideo
         />
 
         <p>
@@ -96,6 +98,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             tags: ['High', 'Mid', 'Natural Combo'],
             description: 'High-mid jab string. The second hit catches people who try to duck after the first jab.',
           }}
+          showVideo
         />
 
         <p>
@@ -129,6 +132,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Poke', 'Safe'],
             description: 'Your primary mid check. Hits crouching opponents and has useful extensions.',
           }}
+          showVideo
         />
 
         <p>
