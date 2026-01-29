@@ -8,6 +8,9 @@ interface Character {
   image?: string
   accentColor?: string
   isAvailable?: boolean
+  imagePosition?: string
+  imageScale?: number
+  imageTranslateY?: string
 }
 
 interface CharacterGridProps {

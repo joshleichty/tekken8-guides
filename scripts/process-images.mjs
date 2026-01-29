@@ -35,6 +35,7 @@ const PNG_COMPRESSION = 9;
 const SPECIAL_LAYOUTS = {
   'clive-rosfield': { cols: 2, rows: 1 }, // Just left/right versions
   'armor-king': { cols: 1, rows: 1 },     // Single portrait, no grid
+  'fahkumram': { cols: 1, rows: 1 },      // Single portrait, no grid
 };
 
 async function processImage(inputPath, filename) {

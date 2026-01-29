@@ -9,6 +9,9 @@ interface CharacterCardProps {
   image?: string
   accentColor?: string
   isAvailable?: boolean
+  imagePosition?: string
+  imageScale?: number
+  imageTranslateY?: string
 }
 
 export function CharacterCard({
@@ -18,6 +21,9 @@ export function CharacterCard({
   image,
   accentColor,
   isAvailable = true,
+  imagePosition,
+  imageScale,
+  imageTranslateY,
 }: CharacterCardProps) {
   const cardStyle = accentColor
     ? { '--card-accent': accentColor } as React.CSSProperties
@@ -26,6 +32,13 @@ export function CharacterCard({
   // Get responsive image sources - use 512 for higher quality with fewer guides
   const imageSrc = image || getCharacterImageUrl(slug, 512)
   const imageSrcSet = getCharacterImageSrcSet(slug)
+
+  // Build custom image styles for non-standard character images
+  const imageStyle: React.CSSProperties & { '--image-scale'?: number; '--image-translate-y'?: string } = {
+    ...(imagePosition && { objectPosition: imagePosition }),
+    ...(imageScale && { '--image-scale': imageScale }),
+    ...(imageTranslateY && { '--image-translate-y': imageTranslateY }),
+  }
 
   const cardContent = (
     <>
@@ -38,6 +51,7 @@ export function CharacterCard({
               sizes="(max-width: 480px) 40vw, (max-width: 768px) 30vw, 200px"
               alt={name} 
               className={styles.image}
+              style={Object.keys(imageStyle).length > 0 ? imageStyle : undefined}
               loading="lazy"
               decoding="async"
             />

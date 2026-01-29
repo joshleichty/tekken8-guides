@@ -15,6 +15,19 @@ export const characterImages = {
     ],
     "basePath": "/characters/alisa-bosconovitch"
   },
+  "armor-king": {
+    "sizes": [
+      128,
+      256,
+      512,
+      1024
+    ],
+    "formats": [
+      "webp",
+      "png"
+    ],
+    "basePath": "/characters/armor-king"
+  },
   "asuka-kazama": {
     "sizes": [
       128,
@@ -105,6 +118,19 @@ export const characterImages = {
       "png"
     ],
     "basePath": "/characters/eddy-gordo"
+  },
+  "fahkumram": {
+    "sizes": [
+      128,
+      256,
+      512,
+      1024
+    ],
+    "formats": [
+      "webp",
+      "png"
+    ],
+    "basePath": "/characters/fahkumram"
   },
   "feng-wei": {
     "sizes": [

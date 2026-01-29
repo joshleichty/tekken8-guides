@@ -17,6 +17,7 @@ const slugToImageFolder: Record<string, string> = {
   'devil-jin': 'devil-jin',
   'dragunov': 'sergei-dragunov',
   'eddy': 'eddy-gordo',
+  'fahkumram': 'fahkumram',
   'feng': 'feng-wei',
   'heihachi': 'heihachi-mishima',
   'hwoarang': 'hwoarang',
