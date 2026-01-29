@@ -28,16 +28,16 @@ export const kingConfig: CharacterConfig = {
       // King's theme: Championship gold with black leather accents
       accent: '#fbbf24',           // Gold
       accentDim: '#d97706',
-      accentSecondary: '#1f2937',   // Black leather
-      accentSecondaryDim: '#111827',
+      accentSecondary: '#f59e0b',   // Brighter gold for highlight-secondary
+      accentSecondaryDim: '#d97706',
       bgPrimary: '#0a0a0a',         // Near black
       bgSecondary: '#111111',       // Dark grey
       bgCard: '#1a1a1a',            // Card grey
       bgCardHover: '#262626',       // Hover grey
-      textPrimary: '#f9fafb',       // Off-white
-      textSecondary: '#d1d5db',     // Light grey
-      textMuted: '#9ca3af',          // Medium grey
-      border: '#374151',            // Border grey
+      textPrimary: '#ffffff',       // Pure white for maximum contrast
+      textSecondary: '#e5e7eb',     // Brighter light grey
+      textMuted: '#b8bcc4',         // Brighter medium grey
+      border: '#4b5563',            // Lighter border grey for better visibility
       characterGlow: 'rgba(251, 191, 36, 0.25)',
       heatGlow: 'rgba(31, 41, 55, 0.4)',
     },
