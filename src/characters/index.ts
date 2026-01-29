@@ -8,6 +8,7 @@ import { jack8Config } from './jack-8/config'
 import { jinConfig } from './jin/config'
 import { lawConfig } from './law/config'
 import { victorConfig } from './victor/config'
+import { yoshimitsuConfig } from './yoshimitsu/config'
 import { zafinaConfig } from './zafina/config'
 
 // Character registry - add new characters here
@@ -21,6 +22,7 @@ export const characters: Record<string, CharacterConfig> = {
   'jin': jinConfig,
   'law': lawConfig,
   'victor': victorConfig,
+  'yoshimitsu': yoshimitsuConfig,
   'zafina': zafinaConfig,
 }
 
