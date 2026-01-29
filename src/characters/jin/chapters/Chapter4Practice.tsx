@@ -3,7 +3,6 @@ import {
   KeyConcept, 
   TipBox,
   ConstraintPlay,
-  GameChallenge,
   MatchScenario,
   ConceptBuilder
 } from '../../../components/ui'

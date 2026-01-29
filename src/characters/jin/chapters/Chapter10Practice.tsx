@@ -4,8 +4,7 @@ import {
   TipBox,
   GameChallenge,
   MatchScenario,
-  SkillCheck,
-  Flowchart
+  SkillCheck
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
@@ -30,32 +29,25 @@ export function Chapter10Practice({ goToChapter }: ChapterProps) {
           leads to oki or wall. Every wall situation uses ZEN. It's all one system.
         </p>
 
-        <Flowchart
-          title="Jin's Game Flow"
-          nodes={[
-            { id: 'neutral', label: 'Neutral', description: 'Poke with jab, df+1, f+4' },
-            { id: 'plus', label: '+Frames', description: 'After db+4 (+3), jab (+1)' },
-            { id: 'launch', label: 'Launch', description: 'uf+4, ws2, CH f+4, EWHF' },
-            { id: 'combo', label: 'Combo', description: 'Standard routes' },
-            { id: 'wall', label: 'Wall', description: 'ZEN pressure' },
-            { id: 'oki', label: 'Oki', description: 'd+2, ZEN.4, mixup' },
-          ]}
-          startNode="neutral"
-          middleNode="launch"
-          branches={[
-            { from: 'neutral', to: 'plus', label: 'Land a low' },
-            { from: 'neutral', to: 'launch', label: 'They mess up' },
-            { from: 'plus', to: 'neutral', label: 'Continue poking' },
-            { from: 'plus', to: 'launch', label: 'CH f+4' },
-            { from: 'launch', to: 'combo', label: 'Always' },
-            { from: 'combo', to: 'wall', label: 'Carry to wall' },
-            { from: 'combo', to: 'oki', label: 'Open stage' },
-            { from: 'wall', to: 'neutral', label: 'They escape' },
-            { from: 'wall', to: 'launch', label: 'ZEN.1,2 or read' },
-            { from: 'oki', to: 'neutral', label: 'They get up' },
-            { from: 'oki', to: 'launch', label: 'They mess up' },
-          ]}
-        />
+        <KeyConcept title="Jin's Game Flow" icon="🔄">
+          <div style={{ display: 'grid', gap: '12px' }}>
+            <div><strong>Neutral</strong> → Poke with jab, df+1, f+4</div>
+            <div style={{ paddingLeft: '20px', color: 'var(--text-secondary)' }}>
+              ↳ Land a low → <strong>+Frames</strong> (db+4 is +3, jab is +1)
+            </div>
+            <div style={{ paddingLeft: '20px', color: 'var(--text-secondary)' }}>
+              ↳ They mess up → <strong>Launch</strong> (uf+4, ws2, CH f+4, EWHF)
+            </div>
+            <div><strong>+Frames</strong> → Continue poking or fish for CH f+4</div>
+            <div><strong>Launch</strong> → Always leads to <strong>Combo</strong></div>
+            <div><strong>Combo</strong> → Carry to <strong>Wall</strong> or knockdown for <strong>Oki</strong></div>
+            <div><strong>Wall</strong> → ZEN pressure. They escape? Back to neutral. Read them? Another launch.</div>
+            <div><strong>Oki</strong> → d+2, ZEN.4, mixup. They get up clean? Back to neutral.</div>
+          </div>
+          <p style={{ marginTop: '16px', fontStyle: 'italic' }}>
+            Everything loops back. Neutral leads to damage, damage leads to pressure, pressure leads back to neutral or more damage.
+          </p>
+        </KeyConcept>
       </Section>
 
       <Section title="Situational Awareness">
