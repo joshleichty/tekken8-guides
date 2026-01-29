@@ -2,6 +2,7 @@ import type { CharacterConfig } from '../types'
 import { armorKingConfig } from './armor-king/config'
 import { bryanConfig } from './bryan/config'
 import { cliveConfig } from './clive/config'
+import { dragunovConfig } from './dragunov/config'
 import { fahkumramConfig } from './fahkumram/config'
 import { hwoarangConfig } from './hwoarang/config'
 import { jack8Config } from './jack-8/config'
@@ -16,6 +17,7 @@ export const characters: Record<string, CharacterConfig> = {
   'armor-king': armorKingConfig,
   'bryan': bryanConfig,
   'clive': cliveConfig,
+  'dragunov': dragunovConfig,
   'fahkumram': fahkumramConfig,
   'hwoarang': hwoarangConfig,
   'jack-8': jack8Config,
