@@ -52,6 +52,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'Sets up the d+1 → ws+4 frame trap',
               ],
             }}
+          showVideo
           />
           <p>
             d+1 is your <span className="highlight">bread and butter low</span>. At +2 on hit, 
@@ -74,6 +75,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
         <SubSection title="FC df+2 — Long Range Low">
           <MoveCard character="clive"
+            videoId="FC.df+2"
             move={{
               input: 'FC df+2',
               hitLevel: ['l'],
@@ -89,6 +91,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'Enter FC from d+1 or crouch block',
               ],
             }}
+          showVideo
           />
           <p>
             FC df+2 is <span className="highlight">Clive's best "real" low</span>. It has incredible 
@@ -118,6 +121,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'On CH: full combo',
               ],
             }}
+          showVideo
           />
           <p>
             db+4 is your <span className="highlight">high-risk, high-reward low</span>. It's launch 
@@ -132,6 +136,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
         <SubSection title="ws+3 — The Mixup Launcher">
           <MoveCard character="clive"
+            videoId="ws3"
             move={{
               input: 'ws+3',
               hitLevel: ['m', 'm'],
@@ -147,6 +152,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'Incredible pushback on block',
               ],
             }}
+          showVideo
           />
           <p>
             ws+3 is the <span className="highlight">mid option for your crouch mixup</span>. From 
@@ -179,6 +185,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               tags: ['Low', 'Fast', 'High Crush'],
               description: 'Standard d+4. Fast but minus on hit. Use for quick pokes.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -198,6 +205,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'Just frame input adds +4 damage',
               ],
             }}
+          showVideo
           />
         </SubSection>
       </Section>
@@ -223,6 +231,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'First hit is i12, good for pokes',
               ],
             }}
+          showVideo
           />
           <p>
             4,4 is a <span className="highlight">great poke that transitions to PHX</span>. The 
@@ -246,6 +255,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'f+2,2,2 is a heat engager (confirm from CH)',
               ],
             }}
+          showVideo
           />
           <p>
             f+2,2 is a <span className="highlight">workhorse poke</span>. In Heat, f+2,2,2 is 

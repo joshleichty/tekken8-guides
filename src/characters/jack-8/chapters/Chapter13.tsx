@@ -158,6 +158,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
               'Ends your Heat'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Why i10 Matters">

@@ -53,10 +53,12 @@ export function Chapter12({ goToChapter }: ChapterProps) {
                 'Only use for -10 punishes',
                 'On CH would give f,f+4, but punishes aren\'t CH'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <MoveCard character="jack-8"
+            videoId="H.2+3"
             move={{
               input: 'Heat Smash',
               hitLevel: ['h', 'm', 't'],
@@ -71,8 +73,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
                 '50 damage i10 punish is insane',
                 'Wall breaks'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <TipBox variant="tip" title="In Heat = Better Punish">
             In Heat, <strong>Heat Smash replaces f+2</strong> for i10 punishment. 50 damage 
@@ -92,8 +95,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onCH: '+30d (+22)',
               tags: ['High', 'Mid', 'i11 Punish'],
               description: 'Your go-to i11 punish. Good damage, safe followup.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="i12 Punish">
@@ -108,8 +112,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onCH: '+12d',
               tags: ['High', 'Mid', 'i12 Punish'],
               description: 'Quick i12 punish. Can transition to GMH with D.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="i13 Punish">
@@ -123,8 +128,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onHit: '+10a (+1)',
               tags: ['Mid', 'i13 Punish', 'Big Damage'],
               description: 'Big damage i13 punish. Very unsafe on block, punish only.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="i14 Punish">
@@ -139,8 +145,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onCH: '+40d (-7)',
               tags: ['Mid', 'High', 'i14 Punish'],
               description: 'Good i14 punish with knockdown.',
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <MoveCard character="jack-8"
             move={{
@@ -156,8 +163,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
                 'Use when you need the extra range',
                 'Heat engager for activation'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="i15 Punish (LAUNCH)">
@@ -171,10 +179,12 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onHit: '+31a (+21)',
               tags: ['Mid', 'Launcher', 'i15 Punish'],
               description: 'Your launch punish. Full combo on -15 or worse moves.',
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <MoveCard character="jack-8"
+            videoId="df+2,1"
             move={{
               input: 'df+2,1 (hold)',
               hitLevel: ['m', 'h'],
@@ -184,8 +194,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onHit: '+69a (+53)',
               tags: ['Mid', 'High', 'Charged Punish'],
               description: 'Charged version for more damage. Gets GMC on hit.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 
@@ -201,12 +212,14 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onHit: '+5',
               tags: ['Mid', 'WS Punish', 'i11'],
               description: 'Standard WS punish for -11 to -13 lows.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="FC df+4,2 (i12)">
           <MoveCard character="jack-8"
+            videoId="FC.df+4,2"
             move={{
               input: 'FC df+4,2',
               hitLevel: ['m', 'M'],
@@ -217,8 +230,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onCH: '+19d',
               tags: ['Mid', 'Mid', 'WS Punish', 'i12'],
               description: 'Better damage than ws4 for -12 lows.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="ws2,1 / ws2,4 (i14)">
@@ -233,8 +247,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onCH: '+49a',
               tags: ['Mid', 'Mid', 'WS Punish', 'i14'],
               description: 'WS punish for -14 lows. Also ws2,4 for chip.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="ws1 (i15) LAUNCH">
@@ -248,8 +263,9 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               onHit: '+34a (+24)',
               tags: ['Mid', 'Launcher', 'WS Punish', 'i15'],
               description: 'WS launcher for -15 lows. Full combo.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

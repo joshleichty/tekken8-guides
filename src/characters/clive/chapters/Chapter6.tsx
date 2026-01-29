@@ -53,8 +53,10 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'Deals recoverable damage only',
               ],
             }}
+          showVideo
           />
           <MoveCard character="clive"
+            videoId="1,1"
             move={{
               input: '1,1~F',
               hitLevel: ['h', 'h'],
@@ -65,6 +67,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               tags: ['High', 'Punish', 'PHX Transition'],
               description: 'Alternative i10 that goes into PHX. Use when you want stance pressure.',
             }}
+          showVideo
           />
           <TipBox variant="tip" title="When to Use Which">
             Use 1,2 for damage and meter building. Use 1,1~F when you want to continue pressure 
@@ -74,6 +77,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
         <SubSection title="i12 Punish">
           <MoveCard character="clive"
+            videoId="2,1"
             move={{
               input: '2:1',
               hitLevel: ['h', 'h'],
@@ -88,6 +92,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'If you miss timing, just does 2,1 normally',
               ],
             }}
+          showVideo
           />
           <MoveCard character="clive"
             move={{
@@ -100,6 +105,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Punish', 'Weapon'],
               description: 'Safer i12 option. Use at range where 2,1 might whiff.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -119,11 +125,13 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'Heals 5 recoverable health',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
         <SubSection title="i14 Punish">
           <MoveCard character="clive"
+            videoId="df+1,2,1"
             move={{
               input: 'df+1,2:1',
               hitLevel: ['m', 'h', 'm'],
@@ -138,6 +146,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'Natural combo from first hit',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
@@ -157,6 +166,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'Second hit only available on hit or block',
               ],
             }}
+          showVideo
           />
           <TipBox variant="warning" title="The Launch Threshold">
             df+2 is your launch punish. Anything -15 or worse = full combo. This is Clive's 
@@ -176,6 +186,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Heat Engager', 'Punish'],
               description: 'Use when df+2 is too short. Heat engager with huge range.',
             }}
+          showVideo
           />
           <MoveCard character="clive"
             move={{
@@ -188,6 +199,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Heat Engager', 'Punish'],
               description: 'Another option for range when df+2 won\'t reach.',
             }}
+          showVideo
           />
         </SubSection>
       </Section>
@@ -195,6 +207,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       <Section title="While Standing Punishment">
         <SubSection title="ws+4 (i11)">
           <MoveCard character="clive"
+            videoId="ws4"
             move={{
               input: 'ws+4',
               hitLevel: ['m'],
@@ -209,6 +222,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'Use for -11 to -12 lows',
               ],
             }}
+          showVideo
           />
           <TipBox variant="warning" title="No FC d+1">
             Clive doesn't have a standard crouch jab. His FC d+1 is i10 but it's a special low, 
@@ -218,6 +232,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
         <SubSection title="ws+1,2 / ws+1+2 (i13)">
           <MoveCard character="clive"
+            videoId="ws1,2"
             move={{
               input: 'ws+1,2',
               hitLevel: ['m', 'm'],
@@ -232,6 +247,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 'Good damage for i13',
               ],
             }}
+          showVideo
           />
           <MoveCard character="clive"
             move={{
@@ -244,11 +260,13 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'WS Punish', 'Heat Engager'],
               description: 'Alternative i13 WS punish. Heat engager in Heat mode.',
             }}
+          showVideo
           />
         </SubSection>
 
         <SubSection title="ws+2 (i15) LAUNCH">
           <MoveCard character="clive"
+            videoId="ws2"
             move={{
               input: 'ws+2',
               hitLevel: ['m'],
@@ -263,6 +281,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
                 '-14 to -13 on block depending on timing',
               ],
             }}
+          showVideo
           />
         </SubSection>
       </Section>

@@ -54,6 +54,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
             onBlock: '+8',
             onHit: '+60a Launch',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -70,6 +71,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
             onBlock: '+3',
             onHit: '+17a',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -86,6 +88,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
             onBlock: '+5',
             onHit: '+1a',
           }}
+        showVideo
         />
       </Section>
 
@@ -99,6 +102,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
             onBlock: '+9',
             damage: '54',
           }}
+        showVideo
         />
       </Section>
 

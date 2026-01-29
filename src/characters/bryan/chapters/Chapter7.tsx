@@ -30,6 +30,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             tags: ['High', 'Jab', 'Excellent Range'],
             description: 'Bryan\'s jab has exceptional range compared to most characters.',
           }}
+        showVideo
         />
 
         <p>

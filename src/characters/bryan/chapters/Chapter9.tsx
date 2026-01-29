@@ -46,8 +46,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onCH: '+59a',
               tags: ['Mid', 'CH Launcher'],
               description: 'Extension after your i13 mid poke.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <ul>
             <li><strong>Use when:</strong> Opponent is pressing back after df+2</li>
             <li><strong>Don't use when:</strong> They're blocking patiently or stepping</li>
@@ -67,8 +68,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onCH: '+32a (+18)',
               tags: ['Mid', 'CH Launcher', 'Confirmable'],
               description: 'Confirmable CH extension. React to the stagger.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <ul>
             <li><strong>Use when:</strong> You SEE the counter-hit stagger</li>
             <li><strong>Don't use when:</strong> It's a normal hit (not confirmable on NH)</li>
@@ -92,8 +94,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onCH: '+65a',
               tags: ['High', 'Mid', 'CH Launcher', 'Delayable'],
               description: '10 frames of delay make this a mixup tool.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <ul>
             <li><strong>Use when:</strong> You've conditioned them to press after 1,2</li>
             <li><strong>Don't use when:</strong> They're blocking or ducking</li>
@@ -112,8 +115,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onHit: '+19a (+10)',
               tags: ['Mid', 'Extension'],
               description: 'Long string from b+3. Useful for pressure.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <ul>
             <li><strong>Note:</strong> b+3 transitions to Slither Step with f</li>
             <li><strong>b+3,1+2</strong> is another option that spikes on CH</li>
@@ -132,8 +136,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onCH: '+33d (+25)',
               tags: ['High', 'Mid', 'CH Knockdown'],
               description: 'Extension from 4 jab. Can be charged for more damage.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <MoveCard character="bryan"
             move={{
               input: '4,3,f+4',
@@ -145,8 +150,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onCH: '+31a (+21)',
               tags: ['High', 'Mid', 'Safer'],
               description: 'Alternative ender that\'s safer but high.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

@@ -28,6 +28,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             onHit: '+2',
             onCH: '+9',
           }}
+        showVideo
         />
       </Section>
 
@@ -41,6 +42,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             onBlock: '-15c',
             onHit: '-4',
           }}
+        showVideo
         />
       </Section>
 
@@ -60,6 +62,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             onHit: '+3',
             onCH: '+6c',
           }}
+        showVideo
         />
 
         <KeyConcept title="SS+2 into ws+2 Frame Trap" icon="🔑">
@@ -88,6 +91,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             onHit: '+5',
             onCH: '+10',
           }}
+        showVideo
         />
 
         <ExecutionBox title="How to Execute ff,n+2" icon="🎮">
@@ -123,6 +127,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             onBlock: '-16c',
             onHit: '-2',
           }}
+        showVideo
         />
 
         <Collapsible title="d+3+4 Extensions" icon="📖">
@@ -148,6 +153,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
             onHit: '+6',
             onCH: 'Tornado',
           }}
+        showVideo
         />
 
         <TipBox title="Launch Punishable" variant="danger">

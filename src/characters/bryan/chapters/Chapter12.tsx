@@ -49,6 +49,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['High', 'Punish'],
               description: 'Go-to i10 punish. Great range for a jab string.',
             }}
+          showVideo
           />
           <MoveCard character="bryan"
             move={{
@@ -61,6 +62,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['High', 'Mid', 'Punish'],
               description: 'More damage but worse range and pushes far on hit.',
             }}
+          showVideo
           />
           <TipBox variant="tip" title="When to Use Which">
             Use 1,4 when unsure about range. Use 2,3 when you're close and want max damage.
@@ -79,6 +81,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['High', 'Punish', 'Sway Transition'],
               description: 'Good damage. Can transition to Sway with B.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -94,6 +97,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Punish', 'Sway Transition'],
               description: 'Safe mid punish. Sway transition with B.',
             }}
+          showVideo
           />
           <MoveCard character="bryan"
             move={{
@@ -106,6 +110,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Punish', 'Knockdown'],
               description: 'With Snake Eyes, use SNE uf+2,2,2,2,2,3 for more damage.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -121,6 +126,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['High', 'Launch Punish'],
               description: 'YOUR BEST PUNISH. i14 launch. Use this on anything -14 or worse.',
             }}
+          showVideo
           />
           <TipBox variant="warning" title="f,b+2 is High">
             Because it's a high, moves that recover crouching can't be punished with f,b+2. 
@@ -140,6 +146,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Punish', 'Snake Eyes'],
               description: 'Gives Snake Eyes on hit. Good for big punishes.',
             }}
+          showVideo
           />
         </SubSection>
       </Section>
@@ -157,6 +164,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'WS Punish'],
               description: 'Generic ws4. Use for -11 to -12 lows.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -173,11 +181,13 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'WS Punish', 'CH Launcher'],
               description: 'Slightly more damage than ws4. CH launches.',
             }}
+          showVideo
           />
         </SubSection>
 
         <SubSection title="FC df+2,1 (i13)">
           <MoveCard character="bryan"
+            videoId="FC.df+2,1"
             move={{
               input: 'FC df+2,1',
               hitLevel: ['m', 'h'],
@@ -188,6 +198,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'WS Punish'],
               description: 'Great damage for i13 WS punish. Second hit is high.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -203,6 +214,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Launch Punish'],
               description: 'Your crouching launch punish. Use on -15 or worse lows.',
             }}
+          showVideo
           />
         </SubSection>
 
@@ -218,6 +230,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'WS Punish', 'Throw'],
               description: 'For heavily minus lows. Can power up with f+2 or b+2 timing.',
             }}
+          showVideo
           />
           <TipBox variant="tip" title="Blue Spark ws2">
             Input f+2 or b+2 during the grab for +5 damage and blue sparks. Timing is tricky.

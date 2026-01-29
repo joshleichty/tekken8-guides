@@ -38,6 +38,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             onHit: '+5',
             onCH: 'Launch +49a',
           }}
+        showVideo
         />
 
         <TipBox title="When to Use df+3">
@@ -64,6 +65,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             onHit: '+5',
             onCH: 'Launch +35a',
           }}
+        showVideo
         />
       </Section>
 
@@ -83,6 +85,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             onHit: '+6',
             onCH: 'Launch +44a',
           }}
+        showVideo
         />
       </Section>
 
@@ -102,6 +105,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             onHit: '+3',
             onCH: 'True Dark Smash +27a',
           }}
+        showVideo
         />
 
         <KeyConcept title="True Dark Smash" icon="💀">
@@ -131,6 +135,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
             onHit: '+13a',
             onCH: 'Launch +58a',
           }}
+        showVideo
         />
       </Section>
 

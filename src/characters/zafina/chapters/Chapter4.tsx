@@ -70,6 +70,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR 2,1 — The Heat Engager">
         <MoveCard character="zafina"
+          videoId="SCR.2,1"
           move={{
             input: 'SCR 2,1',
             hitLevel: ['m', 'm'],
@@ -106,6 +107,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR 1+2 — The Knockdown Mid">
         <MoveCard character="zafina"
+          videoId="SCR.1+2"
           move={{
             input: 'SCR 1+2',
             hitLevel: ['m'],
@@ -135,6 +137,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR 3 — Fast Mid Poke">
         <MoveCard character="zafina"
+          videoId="SCR.3"
           move={{
             input: 'SCR 3',
             hitLevel: ['m'],
@@ -165,6 +168,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR 4 — Power Crush Launcher">
         <MoveCard character="zafina"
+          videoId="SCR.4"
           move={{
             input: 'SCR 4',
             hitLevel: ['m'],
@@ -202,6 +206,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR 1 — Fast Jab">
         <MoveCard character="zafina"
+          videoId="SCR.1"
           move={{
             input: 'SCR 1',
             hitLevel: ['h'],
@@ -231,6 +236,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR Lows">
         <MoveCard character="zafina"
+          videoId="SCR.df+4"
           move={{
             input: 'SCR df+4',
             hitLevel: ['l'],
@@ -251,6 +257,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="SCR.b+1+2"
           move={{
             input: 'SCR b+1+2',
             hitLevel: ['l'],
@@ -277,6 +284,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="SCR df+1 — Azazel Launcher">
         <MoveCard character="zafina"
+          videoId="SCR.df+1"
           move={{
             input: 'SCR df+1',
             hitLevel: ['m', 'm'],
@@ -335,6 +343,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
 
       <Section title="Heat Smash from SCR">
         <MoveCard character="zafina"
+          videoId="H.2+3"
           move={{
             input: 'SCR.H.2+3 (Heat Smash)',
             hitLevel: ['l', 'm', 'm', 'sm'],

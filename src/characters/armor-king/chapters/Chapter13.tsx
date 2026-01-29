@@ -20,6 +20,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
           tags={['throw', 'ground throw']}
           variant="throw"
           description="Ground throw for face up opponents. 35-40 damage depending on position. Sets up more oki."
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -32,6 +33,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
               From +12, b+1,2 is guaranteed for more damage and Bad Jaguar entry!
             </>
           }
+        showVideo
         />
 
         <KeyConcept title="db+2+4 is Amazing!" icon="🔑">
@@ -49,6 +51,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
           input="d+4,4,3+4"
           tags={['low', 'low', 'mid']}
           description="The multi-hit stomp! Hits grounded opponents. Guaranteed after CD1 hit. Floor breaks on the last hit."
+        showVideo
         />
       </Section>
 
@@ -58,6 +61,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
           tags={['throw', 'stance']}
           variant="throw"
           description="From Bad Jaguar stance, tackles grounded or airborne opponents. High crushes and hits grounded!"
+        showVideo
         />
       </Section>
 
@@ -66,6 +70,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
           input="f+1+4"
           tags={['mid']}
           description="Use when they try to get up with attacks. The shoulder catches wake-up kicks. Also guaranteed after ub+1 hit!"
+        showVideo
         />
       </Section>
 

@@ -184,6 +184,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
               'Good tracking'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="How to Use This String">

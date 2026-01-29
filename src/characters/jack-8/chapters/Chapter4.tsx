@@ -58,6 +58,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               'df+1,2,1 launches naturally'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Why df+1 Matters">
@@ -130,6 +131,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               '-6 on block but huge pushback makes it safe'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Jackhammer is Your Friend">
@@ -183,6 +185,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               'Sets up your low game'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Why 2,1 Works">
@@ -212,6 +215,7 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               'On hit, f,f+4 is guaranteed'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Secret Pressure Tool">

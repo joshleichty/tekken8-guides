@@ -31,6 +31,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             onHit: '+1',
             onCH: '+11',
           }}
+        showVideo
         />
 
         <Collapsible title="1,2,1~F Cancel Explained" icon="📖">
@@ -56,6 +57,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             onBlock: '-3',
             onHit: '+7',
           }}
+        showVideo
         />
       </Section>
 
@@ -78,6 +80,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             onHit: '+8',
             onCH: '+11',
           }}
+        showVideo
         />
 
         <KeyConcept title="b+1,2~F into Bad Jaguar" icon="🔑">
@@ -109,6 +112,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             onHit: '+19a',
             onCH: 'Wallsplat',
           }}
+        showVideo
         />
       </Section>
 
@@ -122,6 +126,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             onBlock: '-11',
             onHit: '+5',
           }}
+        showVideo
         />
 
         <KeyConcept title="f+3,2~df Crouch Dash Cancel" icon="🔑">
@@ -152,6 +157,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             onHit: '+9',
             onCH: '+27d Wallsplat',
           }}
+        showVideo
         />
       </Section>
 

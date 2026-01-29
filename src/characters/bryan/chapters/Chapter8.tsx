@@ -52,8 +52,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Poor range — must be close',
                 'Being 0 on block is incredible for a CH launcher'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <KeyConcept title="Why f+3 is Special" icon="⭐">
             <p>
@@ -81,8 +82,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
               onCH: '+78a (+58)',
               tags: ['Mid', 'CH Launcher', '+4 on Block', 'Elbow', 'Spike'],
               description: 'Plus on block mid that launches on CH. Starts your pressure.',
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <p>
             b+1 is <span className="highlight">+4 on block</span>. This is insane. You're at 
@@ -115,8 +117,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
               onCH: '+59a',
               tags: ['Mid', 'CH Launcher', 'Keepout'],
               description: 'Your mid-range CH launcher. Catches approaches.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

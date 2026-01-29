@@ -55,6 +55,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               '-12 on block means ws4 punish at worst'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Why This Move is Everything">
@@ -115,6 +116,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               'Recovers 2f faster on hit or block'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Range Monster">
@@ -167,6 +169,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               'Primary whiff punisher'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Range is Everything">

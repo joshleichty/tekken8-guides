@@ -66,8 +66,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 '+5 on hit lets you continue',
                 'Use after db+1 to check buttons'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="ws2,1 — Damage Punish">
@@ -86,8 +87,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 'Use for -14 low punishes',
                 'Also has ws2,4 extension'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="ws1 — WS Launcher">
@@ -101,14 +103,16 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onHit: '+34a (+24)',
               tags: ['Mid', 'Launcher', 'WS Punish'],
               description: 'WS launcher for -15 lows. Full combo.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 
       <Section title="Full Crouch (FC) Lows">
         <SubSection title="FC db+1 — The Crouch Low">
           <MoveCard character="jack-8"
+            videoId="FC.db+1"
             move={{
               input: 'FC db+1',
               hitLevel: ['l'],
@@ -123,12 +127,14 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 'FC db+1,1,1 — full string, chargeable',
                 'Max range can be unpunishable'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="d+1,1 (FC) — Double Low">
           <MoveCard character="jack-8"
+            videoId="FC.d+1,1"
             move={{
               input: 'FC d+1,1',
               hitLevel: ['l', 'l'],
@@ -142,12 +148,14 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 'Both hits are low',
                 'Catches people blocking mid'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="FC 1+2 — Power Crouch Low">
           <MoveCard character="jack-8"
+            videoId="FC.1+2"
             move={{
               input: 'FC 1+2',
               hitLevel: ['l'],
@@ -161,14 +169,16 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 'FC 1+2,1+2 is guaranteed on hit',
                 'Total 37 damage if you didn\'t block low'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 
       <Section title="Full Crouch (FC) Mids">
         <SubSection title="FC df+2 — The Mid Starter">
           <MoveCard character="jack-8"
+            videoId="FC.df+2"
             move={{
               input: 'FC df+2',
               hitLevel: ['m'],
@@ -183,12 +193,14 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 'FC df+2,d+1 — mid-low',
                 'FC df+2,f+1 — mid-high (wall splats)'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="FC df+2 Extensions">
           <MoveCard character="jack-8"
+            videoId="FC.df+2,1"
             move={{
               input: 'FC df+2,1',
               hitLevel: ['m', 'm'],
@@ -198,10 +210,12 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onHit: '+7',
               tags: ['Mid', 'Mid', 'FC Extension'],
               description: 'Mid-mid from crouch. +7 on hit.',
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <MoveCard character="jack-8"
+            videoId="FC.df+2,d+1"
             move={{
               input: 'FC df+2,d+1',
               hitLevel: ['m', 'l'],
@@ -211,10 +225,12 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onHit: '+0',
               tags: ['Mid', 'Low', 'FC Extension'],
               description: 'Mid-low from crouch. Mix with mid-mid.',
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <MoveCard character="jack-8"
+            videoId="FC.df+2,f+1"
             move={{
               input: 'FC df+2,f+1',
               hitLevel: ['m', 'h'],
@@ -224,12 +240,14 @@ export function Chapter9({ goToChapter }: ChapterProps) {
               onHit: '+32a',
               tags: ['Mid', 'High', 'FC Extension', 'Wall Splat'],
               description: 'Mid-high from crouch. Wall splats.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="FC df+1,2,1 — Crumple Combo">
           <MoveCard character="jack-8"
+            videoId="FC.df+1,2,1"
             move={{
               input: 'FC df+1,2,1',
               hitLevel: ['m', 'm', 'm'],
@@ -244,8 +262,9 @@ export function Chapter9({ goToChapter }: ChapterProps) {
                 'Crumple state on hit',
                 'Full extension FC df+1,2,1,1 is guard break'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

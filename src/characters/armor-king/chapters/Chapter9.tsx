@@ -33,6 +33,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
             onBlock: '+5',
             onHit: 'KND (stomp guaranteed)',
           }}
+        showVideo
         />
 
         <TipBox title="CD1 Hit = Free Stomp">
@@ -57,6 +58,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
             onBlock: '-10',
             onHit: '+36a Launch',
           }}
+        showVideo
         />
       </Section>
 
@@ -76,6 +78,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
             onHit: '+28a',
             onCH: 'Tornado',
           }}
+        showVideo
         />
       </Section>
 
@@ -94,6 +97,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
             startup: 'i35 (i25 Heat)',
             onHit: '+23g (throws unbreakable)',
           }}
+        showVideo
         />
 
         <TipBox title="Mist is Reactable" variant="warning">
@@ -119,6 +123,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
             startup: 'i12',
             damage: '20 (starter)',
           }}
+        showVideo
         />
       </Section>
 

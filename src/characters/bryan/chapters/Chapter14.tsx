@@ -45,8 +45,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+3a',
               tags: ['Mid', 'Snake Eyes Gain'],
               description: 'Grants Snake Eyes on hit (with 1+2 input).',
-            }}
-          />
+          }}
+        showVideo
+        />
           <MoveCard character="bryan"
             move={{
               input: 'd+3,2',
@@ -57,8 +58,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+35a (+9)',
               tags: ['Low', 'High', 'Snake Eyes Gain'],
               description: 'Grants Snake Eyes on hit. Second hit is duckable.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <MoveCard character="bryan"
             move={{
               input: 'uf+3+4',
@@ -69,8 +71,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+8a',
               tags: ['Mid', 'Tornado', 'Snake Eyes Gain'],
               description: 'Tornado move that gives Snake Eyes. Used in combos.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <MoveCard character="bryan"
             move={{
               input: 'uf+1',
@@ -81,9 +84,11 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+15a',
               tags: ['Mid', 'Power Crush', 'Snake Eyes Gain'],
               description: 'Power crush that gives Snake Eyes on hit.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <MoveCard character="bryan"
+            videoId="1+3+4"
             move={{
               input: '1+3+4 (Taunt)',
               hitLevel: ['m!'],
@@ -93,8 +98,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+16',
               tags: ['Unblockable', 'Snake Eyes Gain'],
               description: 'Completing taunt gives Snake Eyes (doesn\'t need to hit).',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <TipBox variant="tip" title="In Combos">
@@ -106,6 +112,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
       <Section title="Snake Eyes Moves">
         <SubSection title="SNE 3+4,2">
           <MoveCard character="bryan"
+            videoId="SNE.3+4,2"
             move={{
               input: 'SNE 3+4,2',
               hitLevel: ['m', 'm'],
@@ -120,8 +127,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
                 'Consumes Snake Eyes',
                 'Unparryable by traditional parries'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <p>
             This is <span className="highlight">your main Snake Eyes tool</span>. When you 
             land 3+4, you get a free 3+4,2 for massive damage. The 2 extension is only 
@@ -131,6 +139,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
         <SubSection title="SNE 3+4,2 (Charged)">
           <MoveCard character="bryan"
+            videoId="SNE.3+4,2*"
             move={{
               input: 'SNE 3+4,2*',
               hitLevel: ['m', 'M'],
@@ -146,8 +155,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
                 '12% chip damage',
                 'Can be interrupted on reaction'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <TipBox variant="warning" title="Wall Mixup">
             At the wall, you can mix 3+4,2 (fast) with 3+4,2* (charged unblockable). 
             Opponents have to guess. This is one of Bryan's scariest wall tools.
@@ -156,6 +166,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
         <SubSection title="SNE uf+2,2,2,2,2,3">
           <MoveCard character="bryan"
+            videoId="SNE.uf+2,2,2,2,2,3"
             move={{
               input: 'SNE uf+2,2,2,2,2,3',
               hitLevel: ['m x6'],
@@ -165,8 +176,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+3a',
               tags: ['Mid', 'Consumes SNE', 'Extended'],
               description: 'Extended version of uf+2 string. More damage.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <p>
             Use this in wall combos or as a punish when you have Snake Eyes. The extra 
             hits add significant damage.
@@ -175,6 +187,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
 
         <SubSection title="SNE f+2,1,2,3,2">
           <MoveCard character="bryan"
+            videoId="SNE.f+2,1,2,3,2"
             move={{
               input: 'SNE f+2,1,2,3,2',
               hitLevel: ['m', 'm', 'm', 'm', 'm'],
@@ -184,12 +197,14 @@ export function Chapter14({ goToChapter }: ChapterProps) {
               onHit: '+25a (-1)',
               tags: ['Mid', 'Consumes SNE', 'Extended'],
               description: 'Extended version of f+2,1,4. Safer at -10.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="SNE f,f+1+2">
           <MoveCard character="bryan"
+            videoId="SNE.f,F+1+2"
             move={{
               input: 'SNE f,f+1+2',
               hitLevel: ['h'],
@@ -205,8 +220,9 @@ export function Chapter14({ goToChapter }: ChapterProps) {
                 '14% chip damage',
                 'Unparryable'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <TipBox variant="tip" title="Pseudo-Parry">
             This move <strong>parries attacks</strong>. Use it when you expect the opponent 
             to press. It's +5 on block anyway, so even if they block, you're at advantage.

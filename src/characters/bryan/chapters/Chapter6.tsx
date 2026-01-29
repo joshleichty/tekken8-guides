@@ -54,6 +54,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               '-13 means ws4 punish maximum for most characters'
             ]
           }}
+        showVideo
         />
 
         <TipBox variant="tip" title="Hatchet Risk/Reward">
@@ -89,6 +90,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Great tracking'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Spacing Magic">
@@ -133,6 +135,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Leaves you in crouch for FC mixups'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Why Use db+3?">
@@ -176,6 +179,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Good for conditioning'
             ]
           }}
+        showVideo
         />
 
         <TipBox variant="warning" title="Risky String">

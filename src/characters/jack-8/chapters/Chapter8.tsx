@@ -64,8 +64,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'On hit → GMH: +15c (huge advantage)',
                 'Use for conditioning, not spam'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="b+3,2 D — String into GMH">
@@ -84,8 +85,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'On hit → GMH: +5 (slight advantage)',
                 'Second hit is high — can be ducked'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="uf+3 — Jumping Low into GMH">
@@ -106,14 +108,16 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Low crushes',
                 'Heat only move (H.uf+3) also available'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 
       <Section title="GMH Offensive Moves">
         <SubSection title="GMH 2 — The Money Maker">
           <MoveCard character="jack-8"
+            videoId="GMH.2"
             move={{
               input: 'GMH 2',
               hitLevel: ['h'],
@@ -129,8 +133,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'It\'s high — can be ducked',
                 'Mix with GMH 1 to catch duckers'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
 
           <TipBox variant="tip" title="The Threat">
             GMH 2 being +11 on block is <span className="highlight">terrifying</span>. 
@@ -141,6 +146,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
 
         <SubSection title="GMH 1 — The Mid Launcher">
           <MoveCard character="jack-8"
+            videoId="GMH.1"
             move={{
               input: 'GMH 1',
               hitLevel: ['m'],
@@ -156,12 +162,14 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Use when they duck GMH 2',
                 'With GMC: becomes -6 and launches'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="GMH 4 — Fast Heat Engager">
           <MoveCard character="jack-8"
+            videoId="GMH.4"
             move={{
               input: 'GMH 4',
               hitLevel: ['h'],
@@ -177,12 +185,14 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 '9 chip damage on block',
                 'Heat engager'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="GMH 3 — Mid Stomp">
           <MoveCard character="jack-8"
+            videoId="GMH.3"
             move={{
               input: 'GMH 3',
               hitLevel: ['M'],
@@ -199,12 +209,14 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Can transition to crouch with D',
                 'Slower but catches people respecting GMH 4'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="GMH f+1 — Tornado Punch">
           <MoveCard character="jack-8"
+            videoId="GMH.f+1"
             move={{
               input: 'GMH f+1',
               hitLevel: ['M'],
@@ -219,12 +231,14 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Use in combos, not neutral',
                 '-17 on block is very punishable'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="GMH f+2 — Wall Ender">
           <MoveCard character="jack-8"
+            videoId="GMH.f+2"
             move={{
               input: 'GMH f+2',
               hitLevel: ['m'],
@@ -239,12 +253,14 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Primary wall combo ender',
                 '-13 but pushback helps'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="GMH 1+2 — Stance Throw">
           <MoveCard character="jack-8"
+            videoId="GMH.1+2"
             move={{
               input: 'GMH 1+2',
               hitLevel: ['th'],
@@ -260,8 +276,9 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Catches people blocking GMH mixups',
                 'From Gigas (eye flash animation)'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

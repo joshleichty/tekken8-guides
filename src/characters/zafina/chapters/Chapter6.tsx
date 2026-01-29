@@ -85,6 +85,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="TRT.3"
           move={{
             input: 'TRT 3',
             hitLevel: ['m'],
@@ -105,6 +106,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="TRT.1"
           move={{
             input: 'TRT 1',
             hitLevel: ['l'],
@@ -138,6 +140,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="TRT df+1 — The Payoff">
         <MoveCard character="zafina"
+          videoId="TRT.df+1"
           move={{
             input: 'TRT df+1',
             hitLevel: ['m'],
@@ -174,6 +177,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="Other TRT Options">
         <MoveCard character="zafina"
+          videoId="TRT.2"
           move={{
             input: 'TRT 2',
             hitLevel: ['m'],
@@ -194,6 +198,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="TRT.1+2"
           move={{
             input: 'TRT 1+2',
             hitLevel: ['m', 'm'],
@@ -213,6 +218,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="TRT.d+1+2"
           move={{
             input: 'TRT d+1+2',
             hitLevel: ['l'],
@@ -232,6 +238,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="TRT.4,3"
           move={{
             input: 'TRT 4,3',
             hitLevel: ['m', 'm'],

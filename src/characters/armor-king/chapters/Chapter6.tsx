@@ -37,6 +37,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             onBlock: '+5',
             onHit: '+39d KND',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -53,6 +54,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             onBlock: '+5',
             onHit: '+16a',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -70,6 +72,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             onHit: '+7c',
             onCH: '+12c',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -87,6 +90,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
             onHit: '+12c',
             onCH: 'Launch +40a',
           }}
+        showVideo
         />
       </Section>
 

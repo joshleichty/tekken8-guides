@@ -58,8 +58,9 @@ export function Chapter15({ goToChapter }: ChapterProps) {
                 'Some high evasion built in',
                 'Good recovery even on whiff'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <p>
             Orbital is your <span className="highlight">best escape option</span>. It low 
             crushes, has some evasion, and launches on hit. Use it when you expect a low 
@@ -78,8 +79,9 @@ export function Chapter15({ goToChapter }: ChapterProps) {
               onHit: '+8a',
               tags: ['Mid', 'Tornado', 'Low Crush'],
               description: 'Fast low crush with Tornado. Gives Snake Eyes.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <p>
             Faster than orbital but less evasive. Use when you need a quick low crush.
           </p>
@@ -102,8 +104,9 @@ export function Chapter15({ goToChapter }: ChapterProps) {
                 'Wall splats',
                 '-9 with chip after absorbing'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <TipBox variant="warning" title="Risky Power Crush">
             At -13 on block, this power crush is <span className="highlight-secondary">very 
             punishable</span>. Only use it when you're confident they'll attack, not as 
@@ -113,6 +116,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
 
         <SubSection title="f,f+4 (Mock Kick)">
           <MoveCard character="bryan"
+            videoId="f,F+4"
             move={{
               input: 'f,f+4',
               hitLevel: ['h'],
@@ -127,8 +131,9 @@ export function Chapter15({ goToChapter }: ChapterProps) {
                 'Recovers crouching',
                 'Built-in sidestep left evades some attacks'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <p>
             Mock kick's <strong>built-in SSL</strong> makes it surprisingly evasive. Against 
             characters weak to SSL (like Mishimas), this can steal turns.
@@ -155,9 +160,11 @@ export function Chapter15({ goToChapter }: ChapterProps) {
               onCH: '+33a (+27)',
               tags: ['Mid', 'CH Launcher'],
               description: 'From crouch, ws3 CH launches. Use after db+3 or as a panic tool.',
-            }}
-          />
+          }}
+        showVideo
+        />
           <MoveCard character="bryan"
+            videoId="FC.df+4"
             move={{
               input: 'FC df+4',
               hitLevel: ['m'],
@@ -168,8 +175,9 @@ export function Chapter15({ goToChapter }: ChapterProps) {
               onCH: '+25d',
               tags: ['Mid', 'Slide', 'Evasive'],
               description: 'Evasive slide from crouch. Great for crushing highs.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

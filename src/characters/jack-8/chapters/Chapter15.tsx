@@ -70,6 +70,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Wall Splat', 'Heat Engager'],
             description: 'Wall splats. Use near wall for combo.',
           }}
+        showVideo
         />
 
         <MoveCard character="jack-8"
@@ -83,6 +84,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
             tags: ['Mid', 'Wall Splat', 'Plus on Block'],
             description: 'Running shoulder. Wall splats near wall.',
           }}
+        showVideo
         />
 
         <MoveCard character="jack-8"
@@ -96,6 +98,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
             tags: ['High', 'Wall Splat', 'Plus on Block'],
             description: 'Sidestep 2. Wall splats for combo.',
           }}
+        showVideo
         />
 
         <MoveCard character="jack-8"
@@ -114,6 +117,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
               'Wall splat leads to huge damage'
             ]
           }}
+        showVideo
         />
       </Section>
 
@@ -175,6 +179,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
             tags: ['Low', 'Low', 'Wall Only Natural'],
             description: 'At wall, both hits combo naturally. Free 18 damage.',
           }}
+        showVideo
         />
 
         <TipBox variant="tip" title="Wall Pressure Loop">

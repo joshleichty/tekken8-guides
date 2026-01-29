@@ -37,6 +37,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             startup: 'i10',
             damage: '40-45',
           }}
+        showVideo
         />
 
         <ExecutionBox title="Giant Swing Execution" icon="🎮">
@@ -73,6 +74,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             startup: 'i11',
             damage: '40-45',
           }}
+        showVideo
         />
 
         <ExecutionBox title="Tombstone Execution" icon="🎮">
@@ -100,6 +102,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             startup: 'i10 (from run)',
             damage: '40-45',
           }}
+        showVideo
         />
       </Section>
 
@@ -113,6 +116,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             startup: 'i12',
             damage: '35',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -124,6 +128,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             startup: 'i12',
             damage: '40',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -135,6 +140,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
             startup: 'i26',
             damage: 'Varies',
           }}
+        showVideo
         />
       </Section>
 

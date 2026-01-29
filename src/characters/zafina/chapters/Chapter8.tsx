@@ -60,6 +60,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="SCR.2,1"
           move={{
             input: 'SCR 2,1',
             hitLevel: ['m', 'm'],
@@ -153,6 +154,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         </p>
 
         <MoveCard character="zafina"
+          videoId="H.2+3"
           move={{
             input: 'H.2+3 (Neutral Heat Smash)',
             hitLevel: ['h', 'sm'],
@@ -181,6 +183,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         </KeyConcept>
 
         <MoveCard character="zafina"
+          videoId="H.2+3"
           move={{
             input: 'SCR.H.2+3 (Scarecrow Heat Smash)',
             hitLevel: ['l', 'm', 'm', 'sm'],
@@ -247,6 +250,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
 
       <Section title="The Reversal (b+1+3)">
         <MoveCard character="zafina"
+          videoId="b+1+3"
           move={{
             input: 'b+1+3 (or b+2+4)',
             hitLevel: ['parry'],

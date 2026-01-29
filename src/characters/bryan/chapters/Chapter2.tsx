@@ -55,6 +55,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               'Huge range and excellent recovery'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Why This Move is Broken">
@@ -104,6 +105,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               'Balcony break on airborne hit'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Mid-Range Monster">
@@ -148,6 +150,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               '+5 on normal hit starts your offense'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Power Low">

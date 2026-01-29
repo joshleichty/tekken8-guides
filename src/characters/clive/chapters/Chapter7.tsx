@@ -56,6 +56,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'In Heat: becomes a launcher for full combo',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
@@ -75,6 +76,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'Interrupt with i8 from 2nd block',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
@@ -90,11 +92,13 @@ export function Chapter7({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Heat Engager', 'Fast'],
               description: 'Fast heat engager. Great for punishing or as a panic button.',
             }}
+          showVideo
           />
         </SubSection>
 
         <SubSection title="PHX 1+2">
           <MoveCard character="clive"
+            videoId="PHX.1+2"
             move={{
               input: 'PHX 1+2',
               hitLevel: ['m', 'm'],
@@ -105,11 +109,13 @@ export function Chapter7({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Heat Engager', 'Safe', 'Stance'],
               description: 'Safe heat engager from Phoenix Shift. Great for frame traps.',
             }}
+          showVideo
           />
         </SubSection>
 
         <SubSection title="SS 2,1">
           <MoveCard character="clive"
+            videoId="SS.2,1"
             move={{
               input: 'SS 2,1',
               hitLevel: ['m', 'm'],
@@ -124,6 +130,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'Combo from first hit with 11f delay',
               ],
             }}
+          showVideo
           />
         </SubSection>
       </Section>
@@ -150,6 +157,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'Consumes Heat',
               ],
             }}
+          showVideo
           />
           <MoveCard character="clive"
             move={{
@@ -166,6 +174,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 '14 chip damage on block',
               ],
             }}
+          showVideo
           />
           <TipBox variant="tip" title="The Heat Loop">
             In Heat: df+1,1~F puts you at +14 in PHX. At +14, PHX 1+2 becomes a frame trap. 
@@ -189,6 +198,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 '7 chip damage on block',
               ],
             }}
+          showVideo
           />
           <MoveCard character="clive"
             move={{
@@ -205,6 +215,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'Interrupt with i24 from 2nd block',
               ],
             }}
+          showVideo
           />
           <TipBox variant="warning" title="The Guard Break">
             If you hold 1 during f+2,2,1, it becomes a guard break that's +11 on block. 
@@ -263,6 +274,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'Best used at end of combos',
               ],
             }}
+          showVideo
           />
           <TipBox variant="tip" title="Combo Ender">
             The best use of Zantetsuken is at the end of a long combo. The damage barely 

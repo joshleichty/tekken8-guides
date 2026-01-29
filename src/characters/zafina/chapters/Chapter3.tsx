@@ -124,6 +124,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="f,f+3 — The Pressure Mid">
         <MoveCard character="zafina"
+          videoId="f,F+3"
           move={{
             input: 'f,f+3',
             hitLevel: ['m'],
@@ -169,6 +170,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="f,f+4 — The Homing Mid">
         <MoveCard character="zafina"
+          videoId="f,F+4"
           move={{
             input: 'f,f+4',
             hitLevel: ['m'],
@@ -204,6 +206,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="f,f+3+4 — The Starfish">
         <MoveCard character="zafina"
+          videoId="f,F+3+4"
           move={{
             input: 'f,f+3+4',
             hitLevel: ['m', 'm'],
@@ -239,6 +242,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="WR1+2 — Plus Frame Running Move">
         <MoveCard character="zafina"
+          videoId="f,f,F+1+2"
           move={{
             input: 'WR1+2 (f,f,F+1+2)',
             hitLevel: ['h'],
@@ -272,6 +276,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
       <Section title="WR3 — Running Mid Alternative">
         <MoveCard character="zafina"
+          videoId="f,f,F+3"
           move={{
             input: 'WR3 (f,f,F+3)',
             hitLevel: ['m'],

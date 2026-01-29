@@ -52,8 +52,9 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               onCH: '+72a (+56)',
               tags: ['High', 'CH Launcher', 'Plus on Block'],
               description: 'Throw this out at mid-range constantly. +5 on block means even if they block, you\'re at advantage.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="3+4 (Review)">
@@ -72,8 +73,9 @@ export function Chapter4({ goToChapter }: ChapterProps) {
               onCH: '+59a',
               tags: ['Mid', 'CH Launcher', 'Safe (pushback)'],
               description: 'Huge range, CH launches, safe due to pushback. The ultimate keepout mid.',
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
 
         <SubSection title="u+4 (Orbital)">
@@ -93,8 +95,9 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'Can low crush heat smashes',
                 'Difficult to whiff punish due to quick recovery'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
           <TipBox variant="tip" title="u+4 vs uf+4">
             Always use <strong>u+4</strong> for keepout. The uf+4 version moves you forward, 
             reducing evasion and putting you at risk. u+4 stays in place with better high evasion.
@@ -118,8 +121,9 @@ export function Chapter4({ goToChapter }: ChapterProps) {
                 'Can be buffered from crouch dash',
                 'Use after sidesteps and backdashes'
               ]
-            }}
-          />
+          }}
+        showVideo
+        />
         </SubSection>
       </Section>
 

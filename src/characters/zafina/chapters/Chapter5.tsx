@@ -79,6 +79,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT 1,3 — The SCR Transition">
         <MoveCard character="zafina"
+          videoId="MNT.1,3"
           move={{
             input: 'MNT 1,3',
             hitLevel: ['m', 'h'],
@@ -109,6 +110,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT 3,1 — The Safe Low-Mid">
         <MoveCard character="zafina"
+          videoId="MNT.3,1"
           move={{
             input: 'MNT 3,1',
             hitLevel: ['l', 'm'],
@@ -145,6 +147,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT df+2 — Safe Launcher">
         <MoveCard character="zafina"
+          videoId="MNT.df+2"
           move={{
             input: 'MNT df+2',
             hitLevel: ['m'],
@@ -174,6 +177,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT df+1 — Heat Engager">
         <MoveCard character="zafina"
+          videoId="MNT.df+1"
           move={{
             input: 'MNT df+1',
             hitLevel: ['m'],
@@ -204,6 +208,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT 2 & Extensions">
         <MoveCard character="zafina"
+          videoId="MNT.2"
           move={{
             input: 'MNT 2',
             hitLevel: ['m'],
@@ -236,6 +241,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT 4 — Counter-Hit Low">
         <MoveCard character="zafina"
+          videoId="MNT.4"
           move={{
             input: 'MNT 4',
             hitLevel: ['l'],
@@ -267,6 +273,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT 1+2 — Power Crush">
         <MoveCard character="zafina"
+          videoId="MNT.1+2"
           move={{
             input: 'MNT 1+2',
             hitLevel: ['m'],
@@ -288,6 +295,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="MNT df+4 — Homing Mid to TRT">
         <MoveCard character="zafina"
+          videoId="MNT.df+4"
           move={{
             input: 'MNT df+4',
             hitLevel: ['m'],
@@ -309,6 +317,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="Paradox (MNT 2+3)">
         <MoveCard character="zafina"
+          videoId="MNT.2+3"
           move={{
             input: 'MNT 2+3',
             hitLevel: [],

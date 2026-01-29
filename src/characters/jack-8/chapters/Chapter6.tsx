@@ -41,6 +41,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="f,f,f+1+2 — Running Shoulder">
         <MoveCard character="jack-8"
+          videoId="f,f,F+1+2"
           move={{
             input: 'f,f,f+1+2',
             hitLevel: ['m'],
@@ -57,6 +58,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Great oki tool after knockdowns'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Shoulder is Your Friend">
@@ -98,6 +100,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Use when panicking or for punishes'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Jack's 10-Framer">
@@ -120,6 +123,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
 
       <Section title="f,f+4 — The Big Boot">
         <MoveCard character="jack-8"
+          videoId="f,F+4"
           move={{
             input: 'f,f+4',
             hitLevel: ['m'],
@@ -136,6 +140,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Guaranteed after CH f+2, ss2, etc.'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Boot's Uses">
@@ -169,6 +174,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               '-14 on block, use for punishes not pokes'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Whiff Punish King">
@@ -203,6 +209,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Wall splats'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Heat Activation Tool">
@@ -232,6 +239,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Use for punishing, not poking'
             ]
           }}
+        showVideo
         />
 
         <TipBox variant="warning" title="Punishment Only">
@@ -258,6 +266,7 @@ export function Chapter6({ goToChapter }: ChapterProps) {
               'Use when they\'re stepping your linear moves'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="Anti-Sidestep">

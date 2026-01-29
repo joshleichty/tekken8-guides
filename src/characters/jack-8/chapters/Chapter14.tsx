@@ -262,6 +262,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
             tags: ['Throw', 'Wall Throw', 'Unbreakable'],
             description: 'Unbreakable wall throw. uf+1+2 also works.',
           }}
+        showVideo
         />
       </Section>
 

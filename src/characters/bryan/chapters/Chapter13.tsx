@@ -147,6 +147,7 @@ export function Chapter13({ goToChapter }: ChapterProps) {
               '+9 on block is nice but the damage is bad'
             ]
           }}
+        showVideo
         />
 
         <TipBox variant="warning" title="Avoid Heat Smash">

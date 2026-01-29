@@ -27,6 +27,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             onBlock: '-3',
             onHit: '+7',
           }}
+        showVideo
         />
 
         <TipBox title="Critical Weakness" variant="warning">
@@ -55,6 +56,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             onBlock: '-6',
             onCH: 'Tornado',
           }}
+        showVideo
         />
       </Section>
 
@@ -75,6 +77,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             onHit: '+5',
             onCH: '+13',
           }}
+        showVideo
         />
 
         <TipBox title="Counter Hit Follow-up">
@@ -96,6 +99,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             onBlock: '-4',
             onHit: '+7',
           }}
+        showVideo
         />
       </Section>
 
@@ -111,6 +115,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             onBlock: '-9',
             onHit: '+12a KND',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -127,6 +132,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             onBlock: '+5',
             onHit: '+39d KND',
           }}
+        showVideo
         />
 
         <TipBox title="ub+1 Setup">

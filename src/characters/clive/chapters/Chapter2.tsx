@@ -41,6 +41,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 '5 chip damage on block, 7 in Heat',
               ],
             }}
+            showVideo
           />
           <p>
             This is your <strong>signature move</strong>. It's a mid-range nuclear option that:
@@ -75,6 +76,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 'On hit, EVERY PHX option is guaranteed except PHX 3+4',
               ],
             }}
+          showVideo
           />
           <p>
             b+2 is your <span className="highlight">mixup starter</span>. On hit, you get 
@@ -105,6 +107,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 'Massive pushback makes it safe at distance',
               ],
             }}
+          showVideo
           />
           <p>
             Titan is your <strong>answer to everything</strong> at range. Opponent mashing? Titan. 
@@ -114,6 +117,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
 
         <SubSection title="f,f+2 — Zantetsuken Builder">
           <MoveCard character="clive"
+            videoId="f,F+2"
             move={{
               input: 'f,f+2',
               hitLevel: ['m'],
@@ -129,6 +133,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 'Great for chip damage and meter building',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
@@ -149,6 +154,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 '4 chip damage on block',
               ],
             }}
+          showVideo
           />
           <p>
             Running 2 is <span className="highlight">insane</span>. You're +14 in Phoenix Shift 
@@ -180,6 +186,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 'Use this when people are in your face',
               ],
             }}
+          showVideo
           />
           <p>
             1,1 is what you use when people get close. It jails (they can't duck the second hit), 
@@ -203,6 +210,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 'df+1,4 is a natural combo mid ender',
               ],
             }}
+          showVideo
           />
           <TipBox variant="warning" title="i14 Not i13">
             Clive's df+1 is i14, not the standard i13. This means you can't poke as freely as 
@@ -227,6 +235,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 'Best defensive button up close',
               ],
             }}
+          showVideo
           />
           <p>
             1+2 is your <span className="highlight">panic button</span>. It's i13, mid, heat engager, 
@@ -246,6 +255,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Weapon'],
               description: 'i12 mid that leaves you at range. Good for checking opponents.',
             }}
+          showVideo
           />
         </SubSection>
       </Section>
@@ -273,6 +283,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
                 '5 chip damage on block',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
@@ -289,6 +300,7 @@ export function Chapter2({ goToChapter }: ChapterProps) {
               tags: ['Mid', 'Homing', 'CH Launcher', 'Weapon'],
               description: 'Homing mid that launches on counter-hit. Minus 13 but great range.',
             }}
+          showVideo
           />
           <TipBox variant="tip" title="When to Use">
             Use b+1 when opponents are stepping your f+1+2 and b+2. It's riskier at -13, but 

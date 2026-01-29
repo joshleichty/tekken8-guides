@@ -24,6 +24,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
             startup: 'i12',
             damage: '20 (starter)',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -35,6 +36,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
             startup: 'i12',
             damage: '20 (starter)',
           }}
+        showVideo
         />
       </Section>
 
@@ -74,6 +76,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
           tags={['throw', 'ground chain']}
           variant="throw"
           description="From back mount, mash any combination of 1s and 2s. Opponent must break with the opposite button. Can also escape with UT 1+2."
+        showVideo
         />
       </Section>
 

@@ -50,6 +50,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             onHit: '+3c',
             onCH: 'Launch +26a',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -61,6 +62,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             onBlock: '-12',
             onHit: 'Throw',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -77,6 +79,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             onBlock: '-7',
             onHit: 'Tornado',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -94,6 +97,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             onHit: '+12c',
             onCH: 'Launch +40a',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -109,6 +113,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             onBlock: '-12',
             onHit: '+18a',
           }}
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -121,6 +126,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
             onHit: '+11a',
             onCH: 'Launch +26d',
           }}
+        showVideo
         />
       </Section>
 
@@ -132,6 +138,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           tags={['throw', 'stance']}
           description="Giant Swing from stance. Same properties as standing Giant Swing."
           variant="throw"
+        showVideo
         />
 
         <MoveCard character="armor-king"
@@ -139,6 +146,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           tags={['throw', 'stance']}
           description="A ground throw that catches grounded, airborne, and backturn opponents. Leaves you FDFA on whiff."
           variant="throw"
+        showVideo
         />
 
         <TipBox title="The BAD Mixup at +8">

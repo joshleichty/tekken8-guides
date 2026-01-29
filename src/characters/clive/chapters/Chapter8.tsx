@@ -61,6 +61,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Two followup options',
               ],
             }}
+          showVideo
           />
         </SubSection>
 
@@ -81,6 +82,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Wall splats',
               ],
             }}
+          showVideo
           />
           <MoveCard character="clive"
             move={{
@@ -98,6 +100,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Transitions to attack throw',
               ],
             }}
+          showVideo
           />
           <TipBox variant="tip" title="Which Followup?">
             <ul>
@@ -149,6 +152,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'At max range, -14 is often unpunishable',
               ],
             }}
+          showVideo
           />
           <p>
             Titan is your <span className="highlight">get-off-me tool</span>. The range is absurd — 
@@ -179,6 +183,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Great timing for defense',
               ],
             }}
+          showVideo
           />
           <p>
             When you're being pressured and need to interrupt, 1+2 is your best option. It's 
@@ -198,6 +203,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
               tags: ['High', 'Jail', 'PHX Transition'],
               description: 'Your fastest button. Use to interrupt and go into stance.',
             }}
+          showVideo
           />
           <p>
             1,1 is stubby but it's i10. Use it when you need speed. On hit, you can go into 
@@ -222,6 +228,7 @@ export function Chapter8({ goToChapter }: ChapterProps) {
                 'Cancel with db, d, or df',
               ],
             }}
+          showVideo
           />
           <TipBox variant="tip" title="Situational Tool">
             3+4 is useful against opponents who spam lows, especially predictable lows like 

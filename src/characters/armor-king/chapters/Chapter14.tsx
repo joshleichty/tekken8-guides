@@ -25,6 +25,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
           stats={{
             startup: 'i17',
           }}
+        showVideo
         />
 
         <TipBox title="Parry Follow-up">
@@ -49,6 +50,7 @@ export function Chapter14({ goToChapter }: ChapterProps) {
           stats={{
             startup: 'i25-34',
           }}
+        showVideo
         />
 
         <KeyConcept title="Stance Parry Follow-up" icon="🔑">

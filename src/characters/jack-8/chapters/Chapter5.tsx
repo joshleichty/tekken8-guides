@@ -54,6 +54,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
               '-12 means ws4 punish max'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Foundation">
@@ -79,6 +80,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
       <Section title="FC db+1 — The Crouch Low">
         <MoveCard character="jack-8"
+          videoId="FC.db+1"
           move={{
             input: 'FC db+1',
             hitLevel: ['l'],
@@ -96,6 +98,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
               'Can be unpunishable at max range'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="The Range Monster">
@@ -108,6 +111,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
         <SubSection title="Extensions">
           <MoveCard character="jack-8"
+            videoId="FC.db+1,1"
             move={{
               input: 'FC db+1,1',
               hitLevel: ['l', 'm'],
@@ -121,6 +125,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
           />
 
           <MoveCard character="jack-8"
+            videoId="FC.db+1,1,1"
             move={{
               input: 'FC db+1,1,1',
               hitLevel: ['l', 'm', 'm'],
@@ -169,6 +174,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
               'Slower than db+1, use for big damage reads'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="When to Use Power Lows">
@@ -206,6 +212,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
               'On hit you\'re -5 but they\'re grounded'
             ]
           }}
+        showVideo
         />
 
         <TipBox variant="warning" title="Extremely Unsafe">
@@ -232,6 +239,7 @@ export function Chapter5({ goToChapter }: ChapterProps) {
               'Use for variation'
             ]
           }}
+        showVideo
         />
 
         <SubSection title="When to Use d+4">

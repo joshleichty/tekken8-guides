@@ -29,6 +29,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             onBlock: '-10',
             onHit: '+36a Launch',
           }}
+        showVideo
         />
 
         <ExecutionBox title="How to Execute Dark Upper (CD+2)" icon="🎮">
@@ -57,6 +58,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             onBlock: '-12',
             onHit: '+66a Tornado',
           }}
+        showVideo
         />
 
         <TipBox title="b+3 for Push-Back Punishes">
@@ -77,6 +79,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             onBlock: '-12',
             onHit: '+11a',
           }}
+        showVideo
         />
       </Section>
 
@@ -94,6 +97,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             onBlock: '-12',
             onHit: '+8',
           }}
+        showVideo
         />
       </Section>
 
@@ -107,6 +111,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             onBlock: '-19',
             onHit: '+17d',
           }}
+        showVideo
         />
 
         <TipBox title="Shoulder is -19!" variant="danger">
@@ -126,6 +131,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
             onBlock: '-8',
             onHit: '+13c',
           }}
+        showVideo
         />
       </Section>
 

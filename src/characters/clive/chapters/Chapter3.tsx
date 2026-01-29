@@ -54,6 +54,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
         <SubSection title="PHX 2 — The Safe Mid">
           <MoveCard character="clive"
+            videoId="PHX.2"
             move={{
               input: 'PHX 2',
               hitLevel: ['m'],
@@ -70,6 +71,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 '3 chip damage on block',
               ],
             }}
+          showVideo
           />
           <p>
             PHX 2 is your <span className="highlight">default option</span>. It's safe, it's mid, 
@@ -86,6 +88,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
         <SubSection title="PHX 4 — The Fast Low">
           <MoveCard character="clive"
+            videoId="PHX.4"
             move={{
               input: 'PHX 4',
               hitLevel: ['l'],
@@ -101,6 +104,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 'High crush frames 6+',
               ],
             }}
+          showVideo
           />
           <p>
             PHX 4 is your <span className="highlight">main low from stance</span>. It's the same 
@@ -114,6 +118,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
         <SubSection title="PHX 1+2 — Heat Engager">
           <MoveCard character="clive"
+            videoId="PHX.1+2"
             move={{
               input: 'PHX 1+2',
               hitLevel: ['m', 'm'],
@@ -129,6 +134,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 '6 chip damage on block (8 in Heat)',
               ],
             }}
+          showVideo
           />
           <p>
             PHX 1+2 is <strong>i13</strong> internally (i23-24 total), making it a frame trap 
@@ -138,6 +144,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
         <SubSection title="PHX 3,2 — Hell Sweep">
           <MoveCard character="clive"
+            videoId="PHX.3,2"
             move={{
               input: 'PHX 3,2',
               hitLevel: ['l', 'm', 'm'],
@@ -153,6 +160,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 'Power up in Heat (36 damage on final hit)',
               ],
             }}
+          showVideo
           />
           <TipBox variant="warning" title="High Risk, High Reward">
             PHX 3,2 is launch punishable. Use it when opponents are heavily respecting PHX 4 and 
@@ -162,6 +170,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
         <SubSection title="PHX 3+4 — Plus Frame Option">
           <MoveCard character="clive"
+            videoId="PHX.3+4"
             move={{
               input: 'PHX 3+4',
               hitLevel: ['m'],
@@ -176,6 +185,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 'At +7, you can frame trap with anything',
               ],
             }}
+          showVideo
           />
           <p>
             PHX 3+4 is your <span className="highlight">safe pressure option</span>. It's +7 on 
@@ -258,6 +268,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       <Section title="PHX Armor Move">
         <SubSection title="PHX 1 — Power Crush">
           <MoveCard character="clive"
+            videoId="PHX.1"
             move={{
               input: 'PHX 1',
               hitLevel: ['m', 'm', 't'],
@@ -273,6 +284,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 'Heals 5 recoverable health on hit',
               ],
             }}
+          showVideo
           />
           <p>
             PHX 1 is your <span className="highlight">answer to mashers</span>. If you enter PHX 
@@ -306,6 +318,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
 
         <SubSection title="H.PHX 2+3 — Heat Smash">
           <MoveCard character="clive"
+            videoId="H.PHX.2+3"
             move={{
               input: 'H.PHX 2+3',
               hitLevel: ['m'],
@@ -322,6 +335,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
                 '9 chip damage on block',
               ],
             }}
+          showVideo
           />
           <p>
             The PHX Heat Smash is <span className="highlight">+8 on block</span> and builds nearly 

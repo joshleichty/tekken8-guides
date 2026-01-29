@@ -24,22 +24,22 @@ export function Chapter7({ goToChapter }: ChapterProps) {
           attacks. But it's better than regular power crush in several ways.
         </p>
 
-        <StanceBox
-          title="Gamma Howl (GMH)"
-          input="3+4"
-          description="Jack's signature stance with power crush armor. Can absorb attacks to charge up moves."
-          properties={[
-            'Power crush frames 7~22',
-            'Takes half chip damage when absorbing',
-            'Low profiles at startup',
-            'Absorbing attacks grants Gamma Charge (GMC)',
-            'GMC buffs GMH 1 and GMH 2',
-          ]}
-          notes={[
-            'Can transition from many moves by holding D (down)',
-            'Also accessible via ws3+4',
-          ]}
-        />
+        <StanceBox name="Gamma Howl (GMH)" input="3+4">
+          <p>Jack's signature stance with power crush armor. Can absorb attacks to charge up moves.</p>
+          <p style={{ marginTop: '8px' }}><strong>Properties:</strong></p>
+          <ul>
+            <li>Power crush frames 7~22</li>
+            <li>Takes half chip damage when absorbing</li>
+            <li>Low profiles at startup</li>
+            <li>Absorbing attacks grants Gamma Charge (GMC)</li>
+            <li>GMC buffs GMH 1 and GMH 2</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}><strong>Notes:</strong></p>
+          <ul>
+            <li>Can transition from many moves by holding D (down)</li>
+            <li>Also accessible via ws3+4</li>
+          </ul>
+        </StanceBox>
       </Section>
 
       <Section title="Why GMH Armor is Superior">
@@ -73,6 +73,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
 
         <SubSection title="GMC 1 — Safe Homing Launcher">
           <MoveCard character="jack-8"
+            videoId="GMC.1"
             move={{
               input: 'GMC 1',
               hitLevel: ['m'],
@@ -89,11 +90,13 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'Only available after absorbing attack or in Heat'
               ]
             }}
+          showVideo
           />
         </SubSection>
 
         <SubSection title="GMC 2 — Guard Break">
           <MoveCard character="jack-8"
+            videoId="GMC.2"
             move={{
               input: 'GMC 2',
               hitLevel: ['h'],
@@ -110,6 +113,7 @@ export function Chapter7({ goToChapter }: ChapterProps) {
                 'It\'s high, so can be ducked'
               ]
             }}
+          showVideo
           />
           
           <TipBox variant="warning" title="High Move">

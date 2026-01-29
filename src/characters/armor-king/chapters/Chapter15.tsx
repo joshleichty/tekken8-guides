@@ -134,7 +134,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
           { id: 'ch15-12f', text: 'Punish a -12 move with b+1,2~F', detail: 'Practice the Bad Jaguar entry after', type: 'counter', target: 10 },
           { id: 'ch15-15f', text: 'Punish a -15 move with Dark Upper (CD+2)', detail: 'Your optimal 15f punish with execution', type: 'counter', target: 10 },
         ]}
-      />
+        />
 
       <Quiz
         question="You block a -12 move. What's your best punish option?"
@@ -146,7 +146,7 @@ export function Chapter15({ goToChapter }: ChapterProps) {
         ]}
         correctFeedback="Correct! b+1,2 is your 12-frame punish with excellent range. Holding F after it hits gives you Bad Jaguar at +8, which is a deadly mixup situation!"
         incorrectFeedback="Not quite. While 2,1 is faster, b+1,2 is your optimal 12-frame punish because it has great range and leads to Bad Jaguar at +8 for a mixup. CD+2 is for -15 or worse."
-      />
+        />
     </Chapter>
   )
 }

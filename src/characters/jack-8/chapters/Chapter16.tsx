@@ -199,6 +199,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
               'Risky but necessary sometimes'
             ]
           }}
+        showVideo
         />
 
         <TipBox variant="warning" title="Use Sparingly">

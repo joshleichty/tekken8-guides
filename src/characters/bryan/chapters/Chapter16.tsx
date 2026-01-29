@@ -49,6 +49,7 @@ export function Chapter16({ goToChapter }: ChapterProps) {
               '-34 if not cancelled'
             ]
           }}
+        showVideo
         />
 
         <KeyConcept title="Taunt Properties" icon="🎭">
