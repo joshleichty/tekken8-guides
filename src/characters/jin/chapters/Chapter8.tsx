@@ -10,12 +10,12 @@ import type { ChapterProps } from '../../../types'
 export function Chapter8({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={10}
+      number={8}
       title="Standard Combos"
-      intro="You learned the beginner route in Chapter 6. Now let's level up with optimized routes that squeeze out maximum damage from every launcher."
-      onPrevious={() => goToChapter(9)}
-      onNext={() => goToChapter(11)}
-      nextLabel="Punishment"
+      intro="You learned the beginner route in Chapter 5. Now let's level up with optimized routes that squeeze out maximum damage from every launcher."
+      onPrevious={() => goToChapter(7)}
+      onNext={() => goToChapter(9)}
+      nextLabel="Learn Punishment"
     >
       <Section title="Combo Route Overview">
         <p>

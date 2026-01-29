@@ -10,11 +10,11 @@ import type { ChapterProps } from '../../../types'
 export function Chapter11({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={14}
+      number={12}
       title="Defense & Parry"
       intro="Good Jin players don't just attack — they know when to block, when to move, and when to parry. Jin has one of the best parries in Tekken. Here's how to use it."
-      onPrevious={() => goToChapter(13)}
-      onNext={() => goToChapter(15)}
+      onPrevious={() => goToChapter(11)}
+      onNext={() => goToChapter(13)}
       nextLabel="Complete Jin"
     >
       <Section title="Jin's Parry">

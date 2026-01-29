@@ -15,7 +15,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
       intro="Jabs are great, but they're highs — opponents can duck them. To have complete offense, you need mids that hit crouching opponents and lows that force them to block low."
       onPrevious={() => goToChapter(2)}
       onNext={() => goToChapter(4)}
-      nextLabel="Feel Your Neutral"
+      nextLabel="Learn Jab Strings"
     >
       <Section title="The High-Mid-Low Triangle">
         <p>

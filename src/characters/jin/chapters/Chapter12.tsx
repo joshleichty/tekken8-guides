@@ -9,10 +9,10 @@ import type { ChapterProps } from '../../../types'
 export function Chapter12({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={15}
+      number={13}
       title="Complete Jin"
       intro="You've learned the pieces. Now let's put them together into a complete gameplan. This chapter covers oki, counter-hit fishing, and how Jin plays at each stage of a round."
-      onPrevious={() => goToChapter(14)}
+      onPrevious={() => goToChapter(12)}
       hasNext={false}
     >
       <Section title="Jin's Oki (Wake-up Pressure)">
