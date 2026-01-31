@@ -11,3 +11,9 @@ export { Chapter10FrameTraps } from './Chapter10FrameTraps'
 export { Chapter10 } from './Chapter10'
 export { Chapter11 } from './Chapter11'
 export { Chapter12 } from './Chapter12'
+
+// Part 2: Advanced Jin
+export { Chapter14HotCold } from './Chapter14HotCold'
+export { Chapter15DrillingPressure } from './Chapter15DrillingPressure'
+export { Chapter16ReadingAdapting } from './Chapter16ReadingAdapting'
+export { Chapter17Integration } from './Chapter17Integration'

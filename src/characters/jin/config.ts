@@ -12,6 +12,11 @@ import { Chapter10FrameTraps } from './chapters/Chapter10FrameTraps'
 import { Chapter10 } from './chapters/Chapter10'
 import { Chapter11 } from './chapters/Chapter11'
 import { Chapter12 } from './chapters/Chapter12'
+// Part 2: Advanced Jin
+import { Chapter14HotCold } from './chapters/Chapter14HotCold'
+import { Chapter15DrillingPressure } from './chapters/Chapter15DrillingPressure'
+import { Chapter16ReadingAdapting } from './chapters/Chapter16ReadingAdapting'
+import { Chapter17Integration } from './chapters/Chapter17Integration'
 
 export const jinConfig: CharacterConfig = {
   slug: 'jin',
@@ -64,7 +69,13 @@ export const jinConfig: CharacterConfig = {
     { id: 11, title: 'Heat System', section: 'Heat & Defense', content: Chapter10 },
     { id: 12, title: 'Defense & Parry', section: 'Heat & Defense', content: Chapter11 },
     
-    // Phase 6: Mastery
+    // Phase 6: Mastery (Part 1 Conclusion)
     { id: 13, title: 'Complete Jin', section: 'Mastery', content: Chapter12 },
+    
+    // Part 2: Advanced Jin - Practice & Integration
+    { id: 14, title: 'The Hot & Cold Mindset', section: 'Advanced Training', content: Chapter14HotCold },
+    { id: 15, title: 'Drilling Jin\'s Pressure', section: 'Advanced Training', content: Chapter15DrillingPressure },
+    { id: 16, title: 'Reading & Adapting', section: 'Advanced Training', content: Chapter16ReadingAdapting },
+    { id: 17, title: 'Integration Challenges', section: 'Advanced Training', content: Chapter17Integration },
   ],
 }

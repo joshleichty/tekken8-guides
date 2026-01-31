@@ -13,7 +13,8 @@ export function Chapter12({ goToChapter }: ChapterProps) {
       title="Complete Jin"
       intro="You've learned the pieces. Now let's put them together into a complete gameplan. This chapter covers oki, counter-hit fishing, and how Jin plays at each stage of a round."
       onPrevious={() => goToChapter(12)}
-      hasNext={false}
+      onNext={() => goToChapter(14)}
+      nextLabel="Part 2: Advanced Training"
     >
       <Section title="Jin's Oki (Wake-up Pressure)">
         <p>
@@ -277,7 +278,7 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </div>
       </Collapsible>
 
-      <Section title="You're Ready">
+      <Section title="Part 1 Complete">
         <p>
           Congratulations — you now have a complete Jin toolkit. You understand:
         </p>
@@ -294,13 +295,24 @@ export function Chapter12({ goToChapter }: ChapterProps) {
         </ul>
 
         <p style={{ marginTop: '16px' }}>
-          Now go into ranked and put it into practice. Remember: you'll lose matches while 
-          learning. That's part of the process. Every loss teaches you something. Every win 
-          proves your improvement.
+          You know the moves. You know the concepts. But there's a difference between 
+          <em> knowing</em> Jin and <em>playing</em> Jin.
         </p>
 
+        <TipBox variant="tip" title="Ready for Part 2?">
+          Part 2 focuses on <strong>practice and integration</strong>. You'll learn:
+          <ul>
+            <li>The Hot & Cold mindset — when to be defensive vs aggressive</li>
+            <li>Specific drills with practice mode setups you can run today</li>
+            <li>How to read opponents and adapt in real-time</li>
+            <li>Integration challenges that combine everything into real gameplay</li>
+          </ul>
+          If you feel like you know the tools but don't know how to actually <em>play</em> Jin — 
+          Part 2 is where you'll find the answer.
+        </TipBox>
+
         <p>
-          <strong>Good luck. Make the Mishima bloodline proud.</strong> ⚡
+          <strong>Continue to Part 2 to start drilling. ⚡</strong>
         </p>
       </Section>
     </Chapter>
