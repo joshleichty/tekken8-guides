@@ -92,7 +92,7 @@ export function Chapter16ReadingAdapting({ goToChapter }: ChapterProps) {
           title="Reading Plus Frame Responses"
           scenario="You've just landed db+4 (+3). What does your opponent do?"
           whatToWatch="Their hands and their character's animation in the moment after the hit."
-          tells={[
+          theTells={[
             {
               observation: "Their character immediately throws a punch",
               meaning: "They're mashing. They press after every hit.",
@@ -114,27 +114,28 @@ export function Chapter16ReadingAdapting({ goToChapter }: ChapterProps) {
               response: "Use a mid like df+1 or b+2,1 to open them up."
             }
           ]}
-          practiceSetup={{
-            cpuBehavior: "Record 4 slots: 1=Jab, 2=Block, 3=Sidestep R, 4=Crouch",
+          setup={{
+            cpuBehavior: "Repeat Action (Random)",
             recordings: [
               "Slot 1: Standing, then jab",
               "Slot 2: Standing, hold back",
               "Slot 3: Standing, sidestep right",
               "Slot 4: Standing, crouch"
             ],
-            position: "Open"
+            playbackMode: "Random"
           }}
-          levels={[
+          goal="Identify and correctly respond to each opponent reaction after db+4"
+          progressionLevels={[
             {
-              name: "Level 1",
+              level: "Level 1",
               description: "CPU on single recording. Know what's coming, practice the response."
             },
             {
-              name: "Level 2",
+              level: "Level 2",
               description: "CPU on 'Random'. React to what they do after each db+4."
             },
             {
-              name: "Level 3",
+              level: "Level 3",
               description: "Real match. Apply this read against actual opponents."
             }
           ]}
@@ -225,67 +226,24 @@ export function Chapter16ReadingAdapting({ goToChapter }: ChapterProps) {
       <Section title="Adapting Your Gameplan">
         <Flowchart
           title="Hot vs Cold Decision Tree"
-          start={{
-            label: "What information do I have?",
-            nextNodes: ["info_none", "info_some", "info_pattern"]
-          }}
-          nodes={[
+          startNode="What information do I have?"
+          middleNode="Evaluate opponent patterns"
+          branches={[
             {
-              id: "info_none",
-              type: "decision",
-              label: "No info (early game)",
-              action: "Start COLD",
-              nextNodes: ["cold_outcome"]
+              label: "No info / 1-2 interactions",
+              action: "Stay COLD → Keep probing"
             },
             {
-              id: "info_some",
-              type: "decision",
-              label: "Some data (1-2 interactions)",
-              action: "Stay COLD, gather more",
-              nextNodes: ["cold_outcome"]
+              label: "Clear pattern (3+ times)",
+              action: "Go HOT → Exploit the pattern"
             },
             {
-              id: "info_pattern",
-              type: "decision",
-              label: "Clear pattern (3+ instances)",
-              action: "Go HOT, exploit the pattern",
-              nextNodes: ["hot_outcome"]
+              label: "They're adapting",
+              action: "Go COLD → Reset and gather new data"
             },
             {
-              id: "cold_outcome",
-              type: "decision",
-              label: "Did they show a pattern?",
-              nextNodes: ["yes_pattern", "no_pattern"]
-            },
-            {
-              id: "yes_pattern",
-              type: "end",
-              label: "GO HOT - Exploit",
-              action: "Switch to aggressive pressure targeting their pattern"
-            },
-            {
-              id: "no_pattern",
-              type: "end",
-              label: "STAY COLD - Wait",
-              action: "Keep probing until you find something"
-            },
-            {
-              id: "hot_outcome",
-              type: "decision",
-              label: "Are they adapting?",
-              nextNodes: ["adapting_yes", "adapting_no"]
-            },
-            {
-              id: "adapting_yes",
-              type: "end",
-              label: "GO COLD - Reset",
-              action: "They've figured you out. Back to information gathering."
-            },
-            {
-              id: "adapting_no",
-              type: "end",
-              label: "STAY HOT - Keep Winning",
-              action: "Free damage. Keep exploiting until they stop you."
+              label: "Pattern still works",
+              action: "Stay HOT → Keep winning"
             }
           ]}
         />

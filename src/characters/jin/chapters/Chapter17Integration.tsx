@@ -282,22 +282,22 @@ export function Chapter17Integration({ goToChapter }: ChapterProps) {
 
         <SkillCheck
           title="Jin Mastery Checklist"
+          subtitle="Check off each skill you can confidently perform"
           skills={[
-            { id: "execution_frametraps", label: "Execute db+4 → f+4 frame trap without thinking" },
-            { id: "execution_zen", label: "Transition to ZEN from 3+ different moves naturally" },
-            { id: "execution_tracking", label: "Catch sidesteps with b,f+2 series or magic 4" },
-            { id: "execution_wallpressure", label: "Maintain wall pressure for 15+ seconds" },
-            { id: "execution_combos", label: "Execute BnB combos from every starter" },
-            { id: "reading_plusframes", label: "Recognize what opponents do after your plus frames" },
-            { id: "reading_patterns", label: "Identify patterns within 2-3 instances" },
-            { id: "reading_adaptation", label: "Recognize when opponents adapt and adjust" },
-            { id: "gameplan_hotcold", label: "Consciously switch between Hot and Cold playstyles" },
-            { id: "gameplan_wallwork", label: "Work towards wall in every match" },
-            { id: "gameplan_comeback", label: "Come back from health deficit without panicking" },
-            { id: "mental_present", label: "Stay present without autopiloting" }
+            { id: "execution_frametraps", skill: "Execute db+4 → f+4 frame trap without thinking" },
+            { id: "execution_zen", skill: "Transition to ZEN from 3+ different moves naturally" },
+            { id: "execution_tracking", skill: "Catch sidesteps with b,f+2 series or magic 4" },
+            { id: "execution_wallpressure", skill: "Maintain wall pressure for 15+ seconds" },
+            { id: "execution_combos", skill: "Execute BnB combos from every starter" },
+            { id: "reading_plusframes", skill: "Recognize what opponents do after your plus frames" },
+            { id: "reading_patterns", skill: "Identify patterns within 2-3 instances" },
+            { id: "reading_adaptation", skill: "Recognize when opponents adapt and adjust" },
+            { id: "gameplan_hotcold", skill: "Consciously switch between Hot and Cold playstyles" },
+            { id: "gameplan_wallwork", skill: "Work towards wall in every match" },
+            { id: "gameplan_comeback", skill: "Come back from health deficit without panicking" },
+            { id: "mental_present", skill: "Stay present without autopiloting" }
           ]}
-          completionThreshold={10}
-          completionMessage="You're ready. Go climb ranked."
+          requiredToPass={10}
         />
       </Section>
 
