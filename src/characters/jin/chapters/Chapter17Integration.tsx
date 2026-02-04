@@ -16,7 +16,8 @@ export function Chapter17Integration({ goToChapter }: ChapterProps) {
       title="Integration Challenges"
       intro="This is where it all comes together. These challenges simulate real match situations that require you to combine everything: execution, pressure, reading, and adaptation. Complete these and you'll be playing Jin, not just knowing Jin."
       onPrevious={() => goToChapter(16)}
-      hasNext={false}
+      onNext={() => goToChapter(18)}
+      nextLabel="Offensive Flowcharts"
     >
       <Section title="The Integration Test">
         <p>
