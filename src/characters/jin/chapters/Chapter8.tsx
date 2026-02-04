@@ -41,28 +41,16 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         </p>
 
         <ComboCard
-          title="Standard Route (No Electric)"
-          starter="uf+4 / d+3+4 / ws2"
-          route={['df+2,4', '3,1~f', 'ZEN.2', 'b+3~f', 'ZEN.u+1 T!', 'f+3+4~f', 'ZEN.1,3']}
-          damage="~68"
-          difficulty="intermediate"
+          title="Standard Route"
+          starter="uf+4 / ws2 / d+3+4 / CD.df+1"
+          route={['df+2,4', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~65"
+          difficulty="beginner"
           wallCarry
           notes={[
-            'Consistent damage without Electric execution',
-            'Good wall carry'
-          ]}
-        />
-
-        <ComboCard
-          title="Electric Route"
-          starter="uf+4 / d+3+4 / ws2"
-          route={['CD.df:2', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
-          damage="~72"
-          difficulty="advanced"
-          wallCarry
-          notes={[
-            'Requires Electric after launch',
-            'Maximum damage route'
+            'Works from any standard launcher',
+            'Good damage and wall carry',
+            'The go-to route for consistency'
           ]}
         />
 
@@ -79,27 +67,16 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         </p>
 
         <ComboCard
-          title="EWHF Starter Route"
-          starter="EWHF (CD.df:2)"
-          route={['b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
-          damage="~72"
+          title="EWHF Starter / Low Parry Route"
+          starter="EWHF (f,n,d,df+2) / Low Parry"
+          route={['EWHF', 'b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
+          damage="~55"
           difficulty="advanced"
           wallCarry
           notes={[
-            'EWHF is both your launcher AND filler',
-            'Great for whiff punishment'
-          ]}
-        />
-
-        <ComboCard
-          title="Double Electric Route"
-          starter="EWHF (CD.df:2)"
-          route={['f+3+4', 'BRS.2', 'b+3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
-          damage="~75"
-          difficulty="advanced"
-          notes={[
-            'f+3+4 into Breaking Step for second Electric',
-            'Maximum execution, maximum damage'
+            'When you launch WITH Electric',
+            'Also the optimal low parry route',
+            'Shorter route but great damage per hit'
           ]}
         />
       </Section>
@@ -112,65 +89,123 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         <ComboCard
           title="CH f+4 Route"
           starter="CH f+4"
-          route={['dash', 'b+3,f,1', 'b+3,f,1', 'b+3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.2', 'b+3,2']}
+          route={['dash', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
           damage="~75"
           difficulty="intermediate"
           notes={[
             'Must dash to pick up the crumple',
-            'Watch for the CH animation to confirm'
+            'Watch for the CH animation to confirm',
+            'Same route as ff+3 starters'
           ]}
         />
 
         <ComboCard
-          title="CH f+4 (Simplified)"
-          starter="CH f+4"
-          route={['dash', 'bf+2,3~f', 'ZEN.u+1 T!', 'b+3~f', 'ZEN.1,3']}
-          damage="~62"
+          title="ff+3 / ff+3,1 / CH uf+3 Route"
+          starter="ff+3 / ff+3,1 / CH uf+3 / CH (3,1),4 / CH (1,d+3),4"
+          route={['dash', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~70"
+          difficulty="intermediate"
+          notes={[
+            'All these starters use the same pickup',
+            'Dash before the b+3~f to reach them'
+          ]}
+        />
+
+        <ComboCard
+          title="ff+3,1,2 Route"
+          starter="ff+3,1,2"
+          route={['bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~65"
           difficulty="beginner"
           notes={[
-            'Easier execution, less damage',
-            'Use this until you\'re comfortable with the full route'
+            'No pickup needed - go straight into route',
+            'Simpler execution than ff+3 alone'
+          ]}
+        />
+
+        <ComboCard
+          title="CH bf+2,3~f Route"
+          starter="CH (bf+2),3~f"
+          route={['ZEN.2', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~68"
+          difficulty="intermediate"
+          notes={[
+            'When bf+2 counter-hits and you transition to ZEN',
+            'Start with ZEN.2 to pick them up'
+          ]}
+        />
+
+        <ComboCard
+          title="CH db+2,2 Route"
+          starter="CH db+2,2"
+          route={['3,1', '3,1~f', 'ZEN.u+1 T!']}
+          damage="~55"
+          difficulty="intermediate"
+          notes={[
+            'Shorter combo from this counter-hit',
+            'Use 3,1 to pick up'
           ]}
         />
 
         <ComboCard
           title="CH FC.df+4 Route"
-          starter="CH FC.df+4~f (ZEN)"
-          route={['ZEN.df+2', 'b+3,f,1', 'b+3,f,1,3']}
+          starter="CH FC.df+4~f"
+          route={['(hold df) BRS.2', 'b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
           damage="~65"
           difficulty="intermediate"
           notes={[
             'FC.df+4 is a low sweep that launches on CH',
-            'Transition to ZEN with ~f on hit'
+            'Hold df to transition to Breaking Step',
+            'BRS.2 is the pickup'
           ]}
         />
       </Section>
 
-      <Section title="Heat Combo Extensions">
+      <Section title="Heat Combos">
         <p>
-          In Heat, you can Heat Dash to extend combos. Heat Dash costs meter but adds 
-          significant damage.
+          When you activate Heat from a Heat Engager, you get extended combo routes.
         </p>
 
         <ComboCard
-          title="Heat Dash Extension"
-          starter="Any launcher (in Heat)"
-          route={['starter combo', '...after T!', '(2),4~f', 'ZEN.2', 'Heat Dash', 'bf+2,1,df+2 T!', 'ender']}
-          damage="+15-20"
-          difficulty="intermediate"
+          title="Heat Engager Route"
+          starter="Heat on df+4~f / ff+2~f / f+3,1~f / ZEN.1,2~f"
+          route={['EWHF', 'b+3~f', 'ZEN.1', '3,1~f', 'ZEN.2', 'b+3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~85"
+          difficulty="advanced"
           notes={[
-            'Heat Dash after ZEN.2 gives second Tornado',
-            'Significant damage increase'
+            'Maximum damage Heat combo',
+            'EWHF starts the extension',
+            'Long route but high reward'
           ]}
         />
 
-        <TipBox variant="tip" title="When to Heat Dash">
-          Heat Dash in combos when:
-          <ul>
-            <li>You need the extra damage to kill</li>
-            <li>You want to guarantee wall carry</li>
-            <li>It's the last round and meter doesn't matter</li>
-          </ul>
+        <ComboCard
+          title="Heat on Power Stance 1"
+          starter="Heat on (db+1+2),1"
+          route={['EWHF', 'b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
+          damage="~70"
+          difficulty="advanced"
+          notes={[
+            'Same as EWHF starter route',
+            'Power Stance 1 launches high'
+          ]}
+        />
+
+        <ComboCard
+          title="Heat on Power Stance 2/3"
+          starter="Heat on (db+1+2),2 / (db+1+2),3"
+          route={['df+2,4', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~75"
+          difficulty="beginner"
+          notes={[
+            'Same as standard route',
+            'Easier than Heat Engager route'
+          ]}
+        />
+
+        <TipBox variant="tip" title="Heat Burst Ender">
+          After Tornado, you can follow with (2),4~f and cancel into Heat Burst 
+          to extend your combo further. Use this when you need maximum damage to close a round.
         </TipBox>
       </Section>
 
@@ -194,12 +229,24 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         <ComboCard
           title="Wall Combo with Tornado"
           starter="Wall Splat (T! available)"
-          route={['b+1,2 T!', '1', 'db+2,2,3']}
+          route={['CD.df+1 T!', '1', 'db+2,2,3']}
+          damage="~45"
+          difficulty="intermediate"
+          notes={[
+            'f,n,d,df+1 uses Tornado at wall',
+            'More damage if you haven\'t used T! yet'
+          ]}
+        />
+
+        <ComboCard
+          title="Wall Combo with Tornado (Alt)"
+          starter="Wall Splat (T! available)"
+          route={['b+1,2 T!', 'bf+2,1,df+2']}
           damage="~40"
           difficulty="intermediate"
           notes={[
-            'b+1,2 uses Tornado at wall',
-            'More damage if you haven\'t used T! yet'
+            'b+1,2 for Tornado, then bf+2,1,df+2',
+            'Delay the last hit for maximum damage'
           ]}
         />
 
@@ -211,35 +258,41 @@ export function Chapter8({ goToChapter }: ChapterProps) {
           difficulty="beginner"
           notes={[
             'Simple and consistent',
-            'Good when spacing is awkward'
+            'Delay the last hit for maximum damage'
           ]}
         />
 
         <KeyConcept title="Wall Combo Decision" icon="🧱">
           <ul>
-            <li><strong>Have Tornado?</strong> → Use b+1,2 first for extra damage</li>
+            <li><strong>Have Tornado?</strong> → Use CD.df+1 T! or b+1,2 T! first for extra damage</li>
             <li><strong>No Tornado?</strong> → Use 1 → db+2,2,3</li>
-            <li><strong>Awkward spacing?</strong> → Use bf+2,1,df+2</li>
+            <li><strong>Awkward spacing?</strong> → Use bf+2,1,df+2 (delay last hit)</li>
           </ul>
         </KeyConcept>
+
+        <TipBox variant="tip" title="Wall Carry Options">
+          You can swap ZEN.1,3 for ZEN.1,2 for better wall carry, or use b+2,1 
+          for short distance carry when you're already close to the wall.
+        </TipBox>
       </Section>
 
       <Collapsible title="Floor Break Combos" icon="📖" defaultOpen={false}>
         <div style={{ marginTop: '12px' }}>
           <p style={{ marginBottom: '16px' }}>
-            On stages with breakable floors, use these enders:
+            On stages with breakable floors or walls, use these moves:
           </p>
 
-          <ComboCard
-            title="Floor Break Ender"
-            starter="Standard combo"
-            route={['...standard filler', 'CD.df+4,2']}
-            damage="Varies"
-            notes={[
-              'CD.df+4,2 breaks floors',
-              'Follow up with normal combo after floor break'
-            ]}
-          />
+          <p><strong>Floor Break:</strong> db+2,3 or df+4</p>
+          <ul style={{ marginBottom: '12px' }}>
+            <li>Use at the end of combos on breakable floors</li>
+            <li>Follow up with a ground combo after the break</li>
+          </ul>
+
+          <p><strong>Wall Break:</strong> ff+2</p>
+          <ul style={{ marginBottom: '12px' }}>
+            <li>Use ff+2 to break through walls</li>
+            <li>Continues into the next stage area</li>
+          </ul>
 
           <p style={{ marginTop: '16px' }}>
             After the floor breaks, you continue with a ground combo. The scaling makes it 
@@ -292,24 +345,29 @@ export function Chapter8({ goToChapter }: ChapterProps) {
         <div style={{ marginTop: '12px' }}>
           <p style={{ marginBottom: '12px' }}>Quick copy-paste notation:</p>
           
-          <p><strong>Beginner (No Electric)</strong></p>
+          <p><strong>Standard Route (uf+4, ws2, d+3+4, CD.df+1)</strong></p>
           <p style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '8px', borderRadius: '4px', marginBottom: '12px' }}>
-            uf+4 → bf+2,3~f → ZEN.u+1 T! → b+3~f → ZEN.1,3
+            df+2,4 → bf+2,3~f → ZEN.u+1 T! → (2),4~f → ZEN.1,3
           </p>
 
-          <p><strong>Standard (No Electric)</strong></p>
+          <p><strong>CH f+4 / ff+3 Starters</strong></p>
           <p style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '8px', borderRadius: '4px', marginBottom: '12px' }}>
-            uf+4 → df+2,4 → 3,1~f → ZEN.2 → b+3~f → ZEN.u+1 T! → f+3+4~f → ZEN.1,3
+            (dash) b+3~f → ZEN.1 → bf+2,3~f → ZEN.u+1 T! → (2),4~f → ZEN.1,3
           </p>
 
-          <p><strong>Electric Route</strong></p>
+          <p><strong>EWHF / Low Parry</strong></p>
           <p style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '8px', borderRadius: '4px', marginBottom: '12px' }}>
-            uf+4 → EWHF → b+3~f → ZEN.1 → bf+2,3~f → ZEN.u+1 T! → (2),4~f → ZEN.1,3
+            EWHF → b+3~f → ZEN.1 → b+3~f → ZEN.1,3
           </p>
 
-          <p><strong>Wall Combo</strong></p>
+          <p><strong>Wall Combo (General)</strong></p>
           <p style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '8px', borderRadius: '4px', marginBottom: '12px' }}>
-            Wall splat → 1 → db+2,2,3
+            1 → db+2,2,3
+          </p>
+
+          <p><strong>Wall Combo (With Tornado)</strong></p>
+          <p style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '8px', borderRadius: '4px', marginBottom: '12px' }}>
+            CD.df+1 T! → 1 → db+2,2,3
           </p>
         </div>
       </Collapsible>

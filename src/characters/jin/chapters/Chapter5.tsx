@@ -91,24 +91,25 @@ export function Chapter5({ goToChapter }: ChapterProps) {
 
         <ComboCard
           title="Universal Beginner Route"
-          starter="uf+4 / d+3+4 / ws2 / CH uf+3"
-          route={['bf+2,3~f', 'ZEN.u+1 T!', 'b+3,f', 'ZEN.1,3']}
-          damage="~60"
+          starter="uf+4 / ws2 / d+3+4 / CD.df+1"
+          route={['df+2,4', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+          damage="~65"
           difficulty="beginner"
           wallCarry
           notes={[
+            'df+2,4 is the filler after any launcher',
             'bf+2,3~f transitions into ZEN stance',
             'ZEN.u+1 is your Tornado move',
-            'b+3,f goes back into ZEN for the ender',
-            'Works everywhere, good wall carry'
+            '(2),4~f goes back into ZEN for the ender'
           ]}
         />
 
         <KeyConcept title="Breaking Down the Route" icon="📝">
           <ol>
+            <li><code>df+2,4</code> — Filler that launches them a bit higher</li>
             <li><code>bf+2,3~f</code> — A string that ends in ZEN stance</li>
             <li><code>ZEN.u+1</code> — <span className="highlight">Tornado move</span>. Gives you the spin.</li>
-            <li><code>b+3,f</code> — Back into ZEN stance for the ender</li>
+            <li><code>(2),4~f</code> — Back into ZEN stance for the ender</li>
             <li><code>ZEN.1,3</code> — The combo ender that throws them forward</li>
           </ol>
         </KeyConcept>
@@ -132,13 +133,13 @@ export function Chapter5({ goToChapter }: ChapterProps) {
         <ComboCard
           title="CH f+4 Route"
           starter="CH f+4"
-          route={['dash', 'b+3,f,1', 'b+3,f,1', 'b+3,f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.2', 'b+3,2']}
+          route={['dash', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
           damage="~75"
           difficulty="intermediate"
           notes={[
             'Requires a dash to pick them up',
             'Watch for the crumple animation to confirm CH',
-            'Alternative: bf+2,3~f,1,3 after the dash (easier)'
+            'b+3~f into ZEN.1 starts the pickup'
           ]}
         />
 
@@ -157,19 +158,21 @@ export function Chapter5({ goToChapter }: ChapterProps) {
         <ComboCard
           title="Low Parry Route"
           starter="Low Parry (df)"
-          route={['3,1', 'bf+2,3~f', 'ZEN.1,3']}
-          damage="~40"
-          difficulty="beginner"
+          route={['EWHF', 'b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
+          damage="~55"
+          difficulty="intermediate"
           notes={[
-            '3,1 is the starter after low parry',
-            'Less damage than a normal launch',
-            'Same route concept, just shorter'
+            'EWHF after low parry for best damage',
+            'Same route as EWHF starter combo',
+            'If you can\'t do EWHF: 3,1 → bf+2,3~f → ZEN.1,3'
           ]}
         />
 
         <TipBox variant="tip" title="Low Parries vs Block">
           Low parries are riskier than just blocking — if you time it wrong, you get hit. 
-          But the reward is a full combo instead of a simple punish. Worth learning.
+          But the reward is a full combo instead of a simple punish. Worth learning. The 
+          EWHF route is optimal, but if your Electric isn't consistent yet, use 
+          3,1 → bf+2,3~f → ZEN.1,3 instead.
         </TipBox>
       </Section>
 
@@ -197,26 +200,27 @@ export function Chapter5({ goToChapter }: ChapterProps) {
           </p>
 
           <ComboCard
-            title="Standard Optimized"
-            starter="uf+4 / d+3+4 / ws2"
-            route={['df+2,4', '3,1~f', 'ZEN.2', 'b+3~f', 'ZEN.u+1 T!', 'f+3+4~f', 'ZEN.1,3']}
-            damage="~68"
-            difficulty="intermediate"
+            title="EWHF Starter Route"
+            starter="EWHF (f,n,d,df+2)"
+            route={['b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
+            damage="~55"
+            difficulty="advanced"
             notes={[
-              'Uses df+2,4 as filler',
-              'More wall carry'
+              'When you launch WITH Electric',
+              'Also works after low parry',
+              'Shorter but requires execution'
             ]}
           />
 
           <ComboCard
-            title="Max Damage Route"
-            starter="uf+4 / d+3+4 / ws2"
-            route={['CD.df:2', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', 'dash', '(2),4~f', 'ZEN.1,3']}
-            damage="~72"
-            difficulty="advanced"
+            title="ff+3 Starters"
+            starter="ff+3 / ff+3,1 / CH uf+3 / CH (3,1),4"
+            route={['dash', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
+            damage="~70"
+            difficulty="intermediate"
             notes={[
-              'Requires Electric (CD.df:2) execution',
-              'Covered in Chapter 6'
+              'Need to dash before pickup',
+              'Same route as CH f+4'
             ]}
           />
         </div>
