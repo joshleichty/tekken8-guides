@@ -368,14 +368,15 @@ export function FeedbackMode() {
 
         setToastTone('success')
         setToastMessage('Note saved')
+        setMessageDraft('')
+        setSelectedTarget(null)
+        setIsGeneralDraft(false)
+        setIsEnabled(false)
       } catch {
         setToastTone('error')
         setToastMessage('Could not save note')
       } finally {
         setIsSubmitting(false)
-        setMessageDraft('')
-        setSelectedTarget(null)
-        setIsGeneralDraft(false)
       }
     },
     [currentPath, isGeneralDraft, messageDraft, notesApiUrl, selectedTarget],
