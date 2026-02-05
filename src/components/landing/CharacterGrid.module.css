@@ -3,10 +3,10 @@
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(118px, 1fr));
   gap: 24px;
-  justify-content: center;
+  justify-items: center;
 }
 
 /* Animation for cards */
@@ -14,7 +14,8 @@
   animation: cardFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   animation-delay: var(--delay, 0s);
   opacity: 0;
-  width: 160px;
+  width: 100%;
+  max-width: 138px;
   display: flex;
   flex-direction: column;
 }
@@ -33,21 +34,23 @@
 /* Responsive grid breakpoints */
 @media (min-width: 480px) {
   .cardWrapper {
-    width: 180px;
+    max-width: 146px;
   }
   
   .grid {
-    gap: 28px;
+    grid-template-columns: repeat(auto-fill, minmax(126px, 1fr));
+    gap: 20px;
   }
 }
 
 @media (min-width: 768px) {
   .cardWrapper {
-    width: 200px;
+    max-width: 156px;
   }
   
   .grid {
-    gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+    gap: 18px;
   }
 }
 
