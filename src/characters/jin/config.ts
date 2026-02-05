@@ -18,6 +18,7 @@ import { Chapter15DrillingPressure } from './chapters/Chapter15DrillingPressure'
 import { Chapter16ReadingAdapting } from './chapters/Chapter16ReadingAdapting'
 import { Chapter17Integration } from './chapters/Chapter17Integration'
 import { Chapter18OffensiveFlowcharts } from './chapters/Chapter18OffensiveFlowcharts'
+import { CheatSheet } from './chapters/CheatSheet'
 
 export const jinConfig: CharacterConfig = {
   slug: 'jin',
@@ -79,5 +80,8 @@ export const jinConfig: CharacterConfig = {
     { id: 16, title: 'Reading & Adapting', section: 'Advanced Training', content: Chapter16ReadingAdapting },
     { id: 17, title: 'Integration Challenges', section: 'Advanced Training', content: Chapter17Integration },
     { id: 18, title: 'Offensive Flowcharts', section: 'Advanced Training', content: Chapter18OffensiveFlowcharts },
+    
+    // Quick Reference
+    { id: 19, title: 'Cheat Sheet', section: 'Quick Reference', content: CheatSheet },
   ],
 }

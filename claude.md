@@ -71,6 +71,26 @@ The principles below tell you WHAT to achieve. They don't tell you HOW. The "how
 
 If you find yourself copying structure from another guide, you've already failed. Start over. Think about THIS character.
 
+## Writing Quality and Reader Experience
+
+The guide should be enjoyable to read, not just useful to reference.
+
+- Chapter 1 should open with a readable character overview before technical instruction:
+  - who the character is in Tekken 8,
+  - what it feels like to play them,
+  - what player type they fit,
+  - where their core strengths and risks live.
+- Do not jump straight into move lists or drills in the opening screen.
+- The opening should feel like an explainer that helps the reader understand the character’s identity first, then transitions into gameplay systems.
+- Every chapter should begin with a short theory-first explanation of:
+  - what skill this chapter builds,
+  - why it matters in real matches,
+  - how it connects to the previous chapter.
+- Do not present chapters as move buckets. Moves are supporting tools for a concept, not the concept itself.
+- Use enough prose to create flow and personality, but avoid walls of text. Aim for clear, vivid writing that helps the player picture match situations.
+- Avoid rigid templating (for example: the exact same chapter rhythm, checklist cadence, and component pattern across characters). Reuse ideas when useful, not by default.
+- By the end of each chapter, the reader should feel one concrete upgrade in how they think and play the character.
+
 ---
 
 ## Core Principles

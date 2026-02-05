@@ -17,4 +17,5 @@ export { Chapter14HotCold } from './Chapter14HotCold'
 export { Chapter15DrillingPressure } from './Chapter15DrillingPressure'
 export { Chapter16ReadingAdapting } from './Chapter16ReadingAdapting'
 export { Chapter17Integration } from './Chapter17Integration'
-export { Chapter18OffensiveFlowcharts } from './Chapter18OffensiveFlowcharts'
+export { Chapter18OffensiveFlowcharts } from './Chapter18OffensiveFlowcharts'// Quick Reference
+export { CheatSheet } from './CheatSheet'
