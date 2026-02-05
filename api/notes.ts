@@ -6,6 +6,7 @@ interface NoteRequestBody {
   context?: unknown
   selectedText?: unknown
   selector?: unknown
+  selectedHtml?: unknown
   website?: unknown
 }
 
@@ -48,6 +49,7 @@ export default async function handler(req: any, res: any) {
   const context = asText(rawBody.context, 80)
   const selectedText = asText(rawBody.selectedText, 600)
   const selector = asText(rawBody.selector, 600)
+  const selectedHtml = asText(rawBody.selectedHtml, 12000)
 
   if (!message) {
     return res.status(400).json({ error: 'Message is required' })
@@ -68,6 +70,7 @@ export default async function handler(req: any, res: any) {
     context: context || 'General note',
     selectedText: selectedText || null,
     selector: selector || null,
+    selectedHtml: selectedHtml || null,
     userAgent: asText(req.headers['user-agent'], 500) || null,
   }
 

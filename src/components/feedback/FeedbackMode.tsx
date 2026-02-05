@@ -14,6 +14,7 @@ interface SelectedTarget {
   element: HTMLElement
   selector: string
   textPreview: string
+  htmlSnippet: string
 }
 
 const FEEDBACK_UI_SELECTOR = '[data-feedback-ui="true"]'
@@ -70,6 +71,12 @@ function getTextPreview(element: HTMLElement): string {
   const cleanText = element.textContent?.replace(/\s+/g, ' ').trim() ?? ''
   if (!cleanText) return 'This selection has no text content.'
   return cleanText.length > 120 ? `${cleanText.slice(0, 117)}...` : cleanText
+}
+
+function getElementHtmlSnippet(element: HTMLElement): string {
+  const raw = element.outerHTML || ''
+  const compact = raw.replace(/\s+/g, ' ').trim()
+  return compact.slice(0, 8000)
 }
 
 function getElementSelector(element: HTMLElement): string {
@@ -285,6 +292,7 @@ export function FeedbackMode() {
         element: chosenTarget,
         selector: getElementSelector(chosenTarget),
         textPreview: getTextPreview(chosenTarget),
+        htmlSnippet: getElementHtmlSnippet(chosenTarget),
       })
       setIsGeneralDraft(false)
     }
@@ -358,6 +366,7 @@ export function FeedbackMode() {
             context: feedbackContext,
             selectedText: selectedTarget?.textPreview ?? '',
             selector: selectedTarget?.selector ?? '',
+            selectedHtml: selectedTarget?.htmlSnippet ?? '',
             website: '',
           }),
         })

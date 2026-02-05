@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "process-images": "node scripts/process-images.mjs"
+    "process-images": "node scripts/process-images.mjs",
+    "notes:list": "set -a; source .vercel/.env.development.local; set +a; node scripts/list-notes.mjs"
   },
   "dependencies": {
     "@vercel/blob": "^2.1.0",
