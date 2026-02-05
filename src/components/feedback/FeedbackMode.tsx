@@ -16,14 +16,6 @@ interface SelectedTarget {
   textPreview: string
 }
 
-interface QueuedFeedback {
-  id: string
-  message: string
-  page: string
-  createdAt: string
-  context: string
-}
-
 const FEEDBACK_UI_SELECTOR = '[data-feedback-ui="true"]'
 
 function clamp(value: number, min: number, max: number): number {
@@ -168,9 +160,9 @@ export function FeedbackMode() {
   const [selectedTarget, setSelectedTarget] = useState<SelectedTarget | null>(null)
   const [isGeneralDraft, setIsGeneralDraft] = useState(false)
   const [messageDraft, setMessageDraft] = useState('')
-  const [queuedFeedback, setQueuedFeedback] = useState<QueuedFeedback[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState('')
+  const [toastMessage, setToastMessage] = useState<string | null>(null)
+  const [toastTone, setToastTone] = useState<'success' | 'error'>('success')
   const [viewportTick, setViewportTick] = useState(0)
 
   const topLayerRef = useRef<HTMLElement | null>(null)
@@ -214,6 +206,12 @@ export function FeedbackMode() {
       setSelectedTarget(null)
     }
   }, [location.key, selectedTarget])
+
+  useEffect(() => {
+    if (!toastMessage) return
+    const timer = window.setTimeout(() => setToastMessage(null), 2200)
+    return () => window.clearTimeout(timer)
+  }, [toastMessage])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -346,21 +344,9 @@ export function FeedbackMode() {
       if (!messageDraft.trim()) return
       if (!selectedTarget && !isGeneralDraft) return
 
-      const now = new Date()
       const feedbackContext = selectedTarget ? 'Selected content' : 'General note'
-      const baseQueuedItem: QueuedFeedback = {
-        id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
-        message: messageDraft.trim(),
-        page: currentPath,
-        createdAt: now.toLocaleTimeString([], {
-          hour: 'numeric',
-          minute: '2-digit',
-        }),
-        context: feedbackContext,
-      }
 
       setIsSubmitting(true)
-      setSubmitStatus('')
 
       try {
         const response = await fetch(notesApiUrl, {
@@ -380,11 +366,11 @@ export function FeedbackMode() {
           throw new Error('Request failed')
         }
 
-        setQueuedFeedback(prev => [baseQueuedItem, ...prev].slice(0, 4))
-        setSubmitStatus('Note saved.')
+        setToastTone('success')
+        setToastMessage('Note saved')
       } catch {
-        setQueuedFeedback(prev => [baseQueuedItem, ...prev].slice(0, 4))
-        setSubmitStatus('Could not reach the server. Saved locally for now.')
+        setToastTone('error')
+        setToastMessage('Could not save note')
       } finally {
         setIsSubmitting(false)
         setMessageDraft('')
@@ -490,7 +476,6 @@ export function FeedbackMode() {
                 <p className={styles.helperText}>
                   Use this for guide corrections, visual bugs, or improvement ideas.
                 </p>
-                {submitStatus && <p className={styles.submitStatus}>{submitStatus}</p>}
 
                 <label htmlFor="feedback-message" className={styles.formLabel}>
                   What should be updated?
@@ -519,23 +504,16 @@ export function FeedbackMode() {
               </form>
             </aside>
           )}
-
-          {queuedFeedback.length > 0 && (
-            <div className={styles.queue} data-feedback-ui="true">
-              <p className={styles.queueTitle}>Recent notes</p>
-              <ul className={styles.queueList}>
-                {queuedFeedback.map(item => (
-                  <li key={item.id} className={styles.queueItem}>
-                    <p className={styles.queueMessage}>{item.message}</p>
-                    <p className={styles.queueMeta}>
-                      {item.context} • {item.createdAt}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </>
+      )}
+
+      {toastMessage && (
+        <div
+          className={`${styles.toast} ${toastTone === 'error' ? styles.toastError : ''}`}
+          data-feedback-ui="true"
+        >
+          {toastMessage}
+        </div>
       )}
     </div>,
     document.body,

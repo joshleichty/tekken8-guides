@@ -74,9 +74,9 @@ export default async function handler(req: any, res: any) {
   const pathname = `notes/${day}/${timestamp}-${id}.json`
 
   const blob = await put(pathname, JSON.stringify(noteRecord, null, 2), {
-    access: 'private',
+    access: 'public',
     contentType: 'application/json; charset=utf-8',
-    addRandomSuffix: false,
+    addRandomSuffix: true,
   })
 
   return res.status(200).json({

@@ -254,12 +254,6 @@
   color: rgba(228, 207, 172, 0.9);
 }
 
-.submitStatus {
-  margin: 0;
-  font-size: 12px;
-  color: rgba(244, 214, 161, 0.95);
-}
-
 .formLabel {
   font-size: 12px;
   font-weight: 600;
@@ -341,58 +335,26 @@
   text-overflow: ellipsis;
 }
 
-.queue {
+.toast {
   position: fixed;
-  left: 16px;
-  bottom: 85px;
-  width: min(340px, calc(100vw - 32px));
-  max-height: 280px;
-  overflow-y: auto;
-  border-radius: 14px;
-  border: 1px solid rgba(156, 128, 89, 0.5);
-  background: rgba(35, 27, 19, 0.93);
-  color: rgba(246, 234, 214, 0.95);
-  padding: 12px;
-  pointer-events: auto;
-  box-shadow: 0 16px 34px rgba(22, 13, 6, 0.3);
-}
-
-.queueTitle {
-  margin: 0 0 8px;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(223, 198, 154, 0.9);
-}
-
-.queueList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.queueItem {
-  border-radius: 10px;
-  border: 1px solid rgba(151, 126, 89, 0.42);
-  background: rgba(51, 38, 26, 0.74);
-  padding: 8px;
-}
-
-.queueMessage {
-  margin: 0 0 5px;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  border: 1px solid rgba(156, 128, 89, 0.56);
+  background: rgba(35, 27, 19, 0.96);
+  color: rgba(246, 234, 214, 0.96);
+  padding: 8px 13px;
   font-size: 12px;
-  line-height: 1.4;
-  color: rgba(247, 234, 211, 0.95);
+  font-weight: 600;
+  pointer-events: none;
+  box-shadow: 0 10px 20px rgba(22, 13, 6, 0.3);
 }
 
-.queueMeta {
-  margin: 0;
-  font-size: 11px;
-  color: rgba(221, 197, 158, 0.85);
+.toastError {
+  border-color: rgba(199, 120, 107, 0.62);
+  color: rgba(255, 218, 206, 0.97);
+  background: rgba(62, 29, 24, 0.96);
 }
 
 @media (max-width: 900px) {
@@ -412,12 +374,8 @@
     max-height: min(60vh, 470px);
   }
 
-  .queue {
-    left: 10px;
-    right: 10px;
-    width: auto;
+  .toast {
     bottom: 12px;
-    max-height: 180px;
   }
 
   .toggle {
