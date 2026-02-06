@@ -3,6 +3,7 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
+  Flowchart,
   Collapsible
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
@@ -11,82 +12,18 @@ export function Chapter2({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={2}
-      title="First Buttons"
-      intro="Every Tekken character has jabs and a df+1. They're the foundation of offense — fast, safe, and used to start your pressure. Jin's versions are excellent."
+      title="Your Poke Loops"
+      intro="Jin's offense starts with pokes — but not random pokes. Specific sequences that create real pressure. This chapter gives you the three poke loops that form the backbone of all Jin offense."
       onPrevious={() => goToChapter(1)}
       onNext={() => goToChapter(3)}
-      nextLabel="Learn Mids & Lows"
+      nextLabel="Counter-Hit Weapons"
     >
-      <Section title="Your Fastest Button: The Jab">
-        <MoveCard character="jin"
-          move={{
-            input: '1',
-            hitLevel: ['h'],
-            damage: '5',
-            startup: 'i10',
-            onBlock: '+1',
-            onHit: '+8',
-            tags: ['High', 'Plus on Block'],
-            description: 'Your fastest button. Being +1 on block means you can continue pressure even when they block it.',
-          }}
-          showVideo
-        />
-
+      <Section title="The Foundation: 2,1">
         <p>
-          Jin's jab is <span className="highlight">plus on block</span>. This is significant — 
-          most jabs are neutral or minus. Being +1 means if they press a button after blocking 
-          your jab, your next move will beat theirs.
+          <code>2,1</code> is not just 'a good poke.' It IS your offense. It is the single most 
+          important string Jin has. Everything branches from this.
         </p>
 
-        <KeyConcept title="When to Use Jab" icon="👊">
-          <ul>
-            <li><strong>To interrupt</strong> — If opponent is pressing, jab shuts them down</li>
-            <li><strong>To start offense</strong> — Jab → your next move comes out faster</li>
-            <li><strong>As a quick check</strong> — Throw it out to see what they do</li>
-          </ul>
-        </KeyConcept>
-      </Section>
-
-      <Section title="The 1,2 String">
-        <MoveCard character="jin"
-          move={{
-            input: '1,2',
-            hitLevel: ['h', 'h'],
-            damage: '5, 12',
-            startup: 'i10',
-            onBlock: '-3',
-            onHit: '+6',
-            tags: ['High', 'High', 'Natural Combo', '10f Punish'],
-            description: 'Your basic punish and pressure string. Has powerful extensions covered in Chapter 4.',
-          }}
-          showVideo
-        />
-
-        <p>
-          1,2 is Jin's <span className="highlight">10-frame punish</span>. When you block something 
-          unsafe (at least -10), this is what you hit them with. It's also great for general pressure.
-        </p>
-
-        <TipBox variant="tip" title="What 'Jails' Means">
-          1,2 "jails" on block — the opponent <strong>cannot duck</strong> the second hit if they 
-          blocked the first. Even though both hits are high, they're stuck blocking. This makes 
-          1,2 very safe to throw out.
-        </TipBox>
-
-        <Collapsible title="1,2 Extensions Preview" icon="📖">
-          <p style={{ marginTop: '12px' }}>
-            1,2 has three important extensions that we'll cover in Chapter 4:
-          </p>
-          <ul>
-            <li><code>1,2,3</code> — Safe mid ender, neutral on block</li>
-            <li><code>1,2,4</code> — Heat engager, but can be ducked</li>
-            <li><code>1,2,1</code> — Tornado move, but launch punishable</li>
-          </ul>
-          <p>For now, just use 1,2 by itself. We'll add the extensions later.</p>
-        </Collapsible>
-      </Section>
-
-      <Section title="The 2,1 Alternative">
         <MoveCard character="jin"
           move={{
             input: '2,1',
@@ -95,147 +32,233 @@ export function Chapter2({ goToChapter }: ChapterProps) {
             startup: 'i10',
             onBlock: '-3',
             onHit: '+6',
-            tags: ['High', 'Mid', 'Natural Combo'],
-            description: 'High-mid jab string. The second hit catches people who try to duck after the first jab.',
+            tags: ['High-Mid', 'Natural Combo', 'Core Poke'],
+            description: 'Your main string. High-mid natural combo. At -3 on block, you can still sidestep or poke. At +6 on hit, you can enforce your next move.',
           }}
           showVideo
         />
 
+        <KeyConcept title="Why 2,1 Is Everything" icon="⚡">
+          <ul>
+            <li><strong>+6 on hit</strong> — At +6, your 16-frame moves now trade with their jab. Your 15-frame moves beat their jab. You have real frame advantage.</li>
+            <li><strong>-3 on block</strong> — At -3, their jab beats your jab, but you can <strong>sidestep or backdash</strong>. You are NOT stuck. In Tekken 8, sidestepping is effective up to about -5.</li>
+            <li><strong>It has a mid extension (2,1,4)</strong> — This creates a mental game: will the 4 come out or won't it?</li>
+          </ul>
+        </KeyConcept>
+
+        <MoveCard character="jin"
+          move={{
+            input: '2,1,4',
+            hitLevel: ['h', 'm', 'm'],
+            damage: '9, 9, 18',
+            startup: 'i10',
+            onBlock: '-10',
+            onHit: '+3',
+            onCH: '+19a (wall splat)',
+            tags: ['High-Mid-Mid', 'Safe-ish', 'CH Wall Splat'],
+            description: 'The mid extension. If they press after 2,1, they eat this for a knockdown. On CH at the wall, free wall splat combo. -10 on block means only jab punishable.',
+          }}
+          showVideo
+        />
+      </Section>
+
+      <Section title="Poke Loop #1: The Jab Loop">
         <p>
-          2,1 is <span className="highlight">high-mid</span> instead of high-high. If someone 
-          tries to duck after the first hit, the second hit catches them. Use this against 
-          opponents who figured out that 1,2 is double-high.
+          This is the most basic Jin pressure sequence and it works from round start to Tekken God.
         </p>
 
-        <KeyConcept title="1,2 vs 2,1 — When to Use Each" icon="🔄">
-          <ul>
-            <li><strong>1,2</strong> — Default punish, safer extensions available</li>
-            <li><strong>2,1</strong> — Against duck-happy opponents, when you suspect they'll duck</li>
-          </ul>
-          <p style={{ marginTop: '12px' }}>
-            Mix them up. If they keep standing, 1,2 is fine. If they start ducking, 
-            switch to 2,1 to catch them.
+        <Flowchart
+          title="The Jab Loop"
+          nodes={[
+            { type: 'start', label: '2,1 hits (+6)' },
+            { type: 'decision', label: 'What does opponent do?', branches: [
+              { label: 'They press buttons', action: '2,1,4 — the mid catches them. Knockdown. Free d+2 on the ground. Restart.' },
+              { label: 'They block', action: '2,1 again (it\'s only -3, so +6 on hit, you\'re looping). Or go to d+4/db+4 for the low.' },
+              { label: 'They sidestep', action: '4 (magic four) — homing, catches sidestep, CH gives free combo.' },
+              { label: 'They duck (reading the jab)', action: 'df+1 or df+3 — quick mids that check ducking.' },
+            ]},
+          ]}
+        />
+
+        <p>
+          <strong>The key insight:</strong> At +6, you don't need to do anything fancy. Just <code>2,1</code> again. 
+          If they keep blocking, you're building mental pressure. If they press, <code>2,1,4</code> 
+          catches them. This is a <em>real</em> loop — not just "poke and hope."
+        </p>
+
+        <TipBox variant="tip" title="The 2,1 Trap">
+          After landing 2,1 on hit two or three times, your opponent WILL start pressing buttons. 
+          That's when you go for the full 2,1,4 string. The delayed 4 catches mashers. 
+          At the wall, the CH version wall splats for a full combo.
+        </TipBox>
+      </Section>
+
+      <Section title="Poke Loop #2: The Low Harassment">
+        <p>
+          Once opponents start respecting your jabs, you need lows to make them duck. 
+          Jin has two key low pokes:
+        </p>
+
+        <MoveCard character="jin"
+          move={{
+            input: 'd+4',
+            hitLevel: ['L'],
+            damage: '11',
+            startup: 'i16',
+            onBlock: '-12',
+            onHit: '-1',
+            tags: ['Low', 'High Crush', 'Fast', 'Main Low Poke'],
+            description: 'Your fastest low poke. High crushes — goes under jabs and standing highs. Only -1 on hit, meaning it\'s essentially neutral. Use this constantly to chip and annoy.',
+          }}
+          showVideo
+        />
+
+        <MoveCard character="jin"
+          move={{
+            input: 'db+4',
+            hitLevel: ['l'],
+            damage: '18',
+            startup: 'i20',
+            onBlock: '-13',
+            onHit: '+3',
+            onCH: '+13g',
+            tags: ['Low', 'Plus on Hit', 'Great Range', 'Core Low'],
+            description: 'Your big low poke. Slower but much more rewarding. +3 on hit means you\'re plus and can enforce moves. Incredible range — catches people from distances they don\'t expect.',
+          }}
+          showVideo
+        />
+
+        <Flowchart
+          title="The Low Harassment Loop"
+          nodes={[
+            { type: 'start', label: 'db+4 hits (+3)' },
+            { type: 'decision', label: 'What does opponent do?', branches: [
+              { label: 'They jab back', action: '4 (magic four) — at +3, magic four trades with their jab. You get a full combo from the trade.' },
+              { label: 'They block mid', action: 'Another db+4 or d+4 — keep chipping. They\'re scared to press.' },
+              { label: 'They start ducking', action: 'df+1 or b,f+2,1 — mid check. Catch the duck.' },
+              { label: 'They do nothing', action: 'Throw (qcb+1+3 or df+2+4) or 2,1 to restart jab loop.' },
+            ]},
+          ]}
+        />
+
+        <KeyConcept title="The +3 Magic" icon="✨">
+          <p>
+            +3 is Jin's magic number. At +3, his <code>4</code> (magic four, i13) will trade with 
+            the opponent's jab (i10). The trade gives Jin a guaranteed follow-up for a full combo 
+            because magic four's trade situation leaves Jin at massive advantage.
+          </p>
+          <p style={{ marginTop: '8px' }}>
+            This means after <code>db+4</code> hits, your opponent literally cannot jab safely. If they jab 
+            and you do <code>4</code>, they eat a full combo. If they block, you get to poke again. 
+            <strong>This is real pressure.</strong>
           </p>
         </KeyConcept>
       </Section>
 
-      <Section title="Your Main Mid Poke: df+1">
+      <Section title="Poke Loop #3: The Mid Check">
+        <p>
+          When opponents start ducking your lows, you need mid pokes to keep them honest.
+        </p>
+
         <MoveCard character="jin"
           move={{
             input: 'df+1',
             hitLevel: ['m'],
             damage: '10',
-            startup: 'i13-14',
+            startup: 'i13',
             onBlock: '-3',
             onHit: '+4',
-            onCH: '+6',
-            tags: ['Mid', 'Poke', 'Safe'],
-            description: 'Your primary mid check. Hits crouching opponents and has useful extensions.',
+            tags: ['Mid', 'Safe', 'Core Mid Poke'],
+            description: 'Your main mid check. Fast, safe, and +4 on hit. Has extensions (df+1,4 and df+1,4~4) that catch people pressing after.',
           }}
           showVideo
         />
 
+        <MoveCard character="jin"
+          move={{
+            input: 'df+3',
+            hitLevel: ['m'],
+            damage: '16',
+            startup: 'i12',
+            onBlock: '-8',
+            onHit: '+3',
+            tags: ['Mid', 'Fast', '12-frame Mid'],
+            description: 'Jin\'s fastest mid at i12. Safe at -8. Good for frame traps when you need a quick mid check that beats power crushes.',
+          }}
+          showVideo
+        />
+
+        <Flowchart
+          title="The Mid Check Loop"
+          nodes={[
+            { type: 'start', label: 'df+1 hits (+4)' },
+            { type: 'decision', label: 'What does opponent do?', branches: [
+              { label: 'They press', action: 'df+1,4 — the natural high extension catches them. Wallsplats on CH.' },
+              { label: 'They duck (expecting more df+1)', action: 'df+1,4~4 — the mid ender instead of the high. Knocks down.' },
+              { label: 'They block', action: 'Go back to 2,1 or throw. Keep the loop going.' },
+              { label: 'They sidestep', action: '4 (magic four) — homing, catches all stepping.' },
+            ]},
+          ]}
+        />
+
+        <TipBox variant="warning" title="Don't Over-Extend">
+          The extensions <code>df+1,4</code> (high) and <code>df+1,4~4</code> (mid) are strong but 
+          the high can be ducked and the mid is -12. Use them when you've seen the opponent mash, 
+          not every time. Most of the time, just <code>df+1</code> by itself is perfect.
+        </TipBox>
+      </Section>
+
+      <Section title="Connecting the Loops">
         <p>
-          df+1 is your answer to <strong>opponents who duck</strong>. Jabs are highs — they go 
-          over crouching opponents. df+1 is a mid, so it hits them regardless.
+          These three loops aren't separate — they feed into each other. Here's how a typical 
+          Jin offensive sequence actually looks in a real match:
         </p>
 
-        <p>
-          It's also only -3 on block, making it very safe to throw out. Use it constantly to 
-          check your opponent.
+        <div style={{ padding: '20px', background: 'var(--background-secondary)', borderRadius: '8px', marginTop: '16px', borderLeft: '3px solid var(--accent)' }}>
+          <p style={{ fontWeight: 700, color: 'var(--accent)', marginBottom: '12px' }}>Example Sequence</p>
+          <ol style={{ color: 'var(--text-secondary)', lineHeight: '2' }}>
+            <li><code>2,1</code> on hit (+6) — start the jab loop</li>
+            <li><code>d+4</code> — they were standing, so the low chips them. You're at -1.</li>
+            <li><code>2,1</code> again — you're roughly neutral, but they're rattled from the low</li>
+            <li>They start pressing → <code>2,1,4</code> catches them → knockdown</li>
+            <li>On their wakeup → <code>db+4</code> hits (+3) — now you're plus from a low</li>
+            <li>They try to jab → you do <code>4</code> (magic four) → trade → full combo</li>
+          </ol>
+        </div>
+
+        <p style={{ marginTop: '16px' }}>
+          See how it works? No single move is doing the heavy lifting. The <strong>sequence of decisions</strong> 
+          creates the pressure. This is what Jin players mean when they say "conditioning."
         </p>
 
-        <Collapsible title="df+1 Extensions" icon="📖">
+        <KeyConcept title="The Core Idea" icon="🎯">
+          <p>
+            <strong>Jin's offense is a conversation.</strong> You say something with a poke. 
+            Your opponent answers with their response. You punish that answer with the right follow-up. 
+            After enough exchanges, they stop answering — and that's when you go for the big moves.
+          </p>
+        </KeyConcept>
+      </Section>
+
+      <Section title="Drill It">
+        <p>
+          Go into Practice Mode. Set the opponent to guard randomly. Practice these sequences 
+          until they feel natural — not memorized, but natural.
+        </p>
+
+        <Collapsible title="Practice Checklist" icon="🎯" defaultOpen>
           <div style={{ marginTop: '12px' }}>
-            <p><strong>df+1,4</strong> — Natural high extension. Knocks down on counter-hit.</p>
-            <ul>
-              <li>The second hit is HIGH — can be ducked</li>
-              <li>Good players will duck and launch you</li>
-              <li>Use sparingly to catch people pressing buttons</li>
-            </ul>
-            
-            <p style={{ marginTop: '16px' }}><strong>df+1,4~4</strong> — Mid alternative to the high.</p>
-            <ul>
-              <li>Changes the second hit to a MID</li>
-              <li>-12 on block but can't be ducked</li>
-              <li>Use when they've learned to duck df+1,4</li>
-            </ul>
+            <ol style={{ lineHeight: '2.2' }}>
+              <li><strong>2,1 × 10 reps</strong> — Get the timing crisp. Make sure both hits come out clean.</li>
+              <li><strong>2,1 → 2,1 → 2,1</strong> — Practice chaining the jab loop. Feel the +6 rhythm.</li>
+              <li><strong>2,1 → d+4 → 2,1</strong> — Mix the low into your jab pressure.</li>
+              <li><strong>2,1 → db+4 → 4</strong> — The magic four trade setup after db+4.</li>
+              <li><strong>df+1 → df+1 → 2,1</strong> — Mid checks flowing back to jabs.</li>
+              <li><strong>Set opponent to "after block, 1" and practice 2,1,4 catching their mash</strong></li>
+            </ol>
           </div>
         </Collapsible>
-
-        <TipBox variant="warning" title="Don't Autopilot the Extension">
-          If you always do df+1,4, good opponents will duck and launch you. Mix it up — 
-          sometimes just df+1, sometimes df+1,4, sometimes df+1,4~4 (the mid version).
-        </TipBox>
       </Section>
-
-      <Section title="Putting It Together">
-        <p>
-          With just these four moves (<code>1</code>, <code>1,2</code>, <code>2,1</code>, <code>df+1</code>), 
-          you have a functional offense:
-        </p>
-
-        <KeyConcept title="The Basic Pressure Loop" icon="🔄">
-          <ol>
-            <li><strong>Start with jab (1)</strong> — You're +1 on block, they have to respect</li>
-            <li><strong>If they keep standing</strong> — Use 1,2 for damage</li>
-            <li><strong>If they start ducking</strong> — Use df+1 or 2,1 to hit them</li>
-            <li><strong>Repeat</strong> — This simple mix is Jin's foundation</li>
-          </ol>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="Practice This">
-          Go to Practice Mode and just cycle through these moves for a few minutes. 
-          Get comfortable with the inputs. Try: <code>1 → df+1 → 1,2 → 2,1 → repeat</code>. 
-          Feel the rhythm. That's Jin's basic pressure.
-        </TipBox>
-      </Section>
-
-      <Collapsible title="Frame Data Reference" icon="📊">
-        <div style={{ marginTop: '12px', overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Move</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Speed</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>On Block</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>On Hit</th>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Notes</th>
-              </tr>
-            </thead>
-            <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr>
-                <td style={{ padding: '8px' }}><code>1</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i10</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>+1</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+8</td>
-                <td style={{ padding: '8px' }}>Plus on block!</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>1,2</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i10</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-3</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+6</td>
-                <td style={{ padding: '8px' }}>10f punish, jails</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>2,1</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i10</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-3</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+6</td>
-                <td style={{ padding: '8px' }}>h-m, catches duckers</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>df+1</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i13</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-3</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+4</td>
-                <td style={{ padding: '8px' }}>Main mid poke</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </Collapsible>
     </Chapter>
   )
 }

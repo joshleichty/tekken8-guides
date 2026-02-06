@@ -2,318 +2,222 @@ import { Chapter, Section } from '../../../components/guide'
 import { 
   KeyConcept, 
   TipBox,
-  Collapsible
+  Flowchart
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter12({ goToChapter }: ChapterProps) {
   return (
     <Chapter
-      number={13}
-      title="Complete Jin"
-      intro="You've learned the pieces. Now let's put them together into a complete gameplan. This chapter covers oki, counter-hit fishing, and how Jin plays at each stage of a round."
-      onPrevious={() => goToChapter(12)}
-      onNext={() => goToChapter(14)}
-      nextLabel="Part 2: Advanced Training"
+      number={12}
+      title="Putting It All Together"
+      intro="You've learned Jin's tools individually. Now let's assemble them into a complete gameplan — how to play the beginning, middle, and end of a round, and how to adapt to different opponents."
+      onPrevious={() => goToChapter(11)}
+      nextLabel="Complete"
     >
-      <Section title="Jin's Oki (Wake-up Pressure)">
+      <Section title="The Round Start">
         <p>
-          <span className="highlight">Oki</span> is the pressure you apply when your opponent is 
-          knocked down. Jin got significant oki buffs in Tekken 8.
+          Round start is important in Tekken because both players are at range 0. Jin has 
+          several strong round-start options:
         </p>
 
-        <KeyConcept title="Grounded Hit Moves" icon="⬇️">
-          <ul>
-            <li><code>d+2</code> — Hits grounded, high crushes. Your main oki tool.</li>
-            <li><code>CD.df+1</code> — Flips grounded opponents (must be Electric timing)</li>
-            <li><code>ZEN.4</code> — Hits grounded, gives guaranteed d+2 on hit</li>
-            <li><code>d+4</code> — Flips grounded opponents, resets situation</li>
-          </ul>
-        </KeyConcept>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+          {[
+            { move: 'df+1', risk: 'Low', reward: 'Low', note: 'Safe mid check. If it hits, +7 and you start your poke game. Best default option.' },
+            { move: '1,2', risk: 'Low', reward: 'Low', note: 'Fast jab string. Creates frametraps on block. Low commitment round start.' },
+            { move: 'f+4', risk: 'Medium', reward: 'High', note: 'CH launcher. If they press, you get a full combo. -12 if they block. High risk/reward.' },
+            { move: 'db+4', risk: 'Low', reward: 'Medium', note: 'Low poke that high crushes. Evades round-start highs. Sets up magic four on hit.' },
+            { move: 'Backdash', risk: 'None', reward: 'High', note: 'Create space. Bait a whiff. Electric the whiff. The safest option.' },
+            { move: 'b+3+4', risk: 'Low', reward: 'Medium', note: 'High crush into ZEN. Evades round-start jabs. Choose ZEN option based on what happens.' },
+          ].map((item, i) => (
+            <div key={i} style={{ padding: '12px 16px', background: 'var(--background-secondary)', borderRadius: '6px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+              <div style={{ minWidth: '80px' }}>
+                <code style={{ color: 'var(--accent)' }}>{item.move}</code>
+              </div>
+              <div style={{ flex: 1 }}>
+                <div style={{ display: 'flex', gap: '12px', marginBottom: '4px' }}>
+                  <span style={{ fontSize: '0.8rem', color: item.risk === 'None' ? 'var(--success)' : item.risk === 'Low' ? '#10b981' : item.risk === 'Medium' ? '#f59e0b' : '#ef4444' }}>
+                    Risk: {item.risk}
+                  </span>
+                  <span style={{ fontSize: '0.8rem', color: item.reward === 'Low' ? 'var(--text-muted)' : item.reward === 'Medium' ? '#f59e0b' : '#ef4444' }}>
+                    Reward: {item.reward}
+                  </span>
+                </div>
+                <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{item.note}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
-        <KeyConcept title="Oki Decision Tree" icon="🎯">
-          <p>When opponent is knocked down:</p>
-          <ol>
-            <li><strong>If they stay down</strong> → <code>d+2</code> or <code>ZEN.4</code></li>
-            <li><strong>If they tech roll</strong> → Mix with hellsweep / ff+4 / throws</li>
-            <li><strong>If they back roll</strong> → Dash in and repeat pressure</li>
-            <li><strong>If they wake-up kick</strong> → Block and launch punish</li>
-          </ol>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="Respect Wake-up Options">
-          Don't always go for oki. Sometimes just dashing in and blocking is safer, 
-          especially if they have rage (rage art on wake-up).
+        <TipBox variant="tip" title="Default Round Start">
+          Until you know your opponent, start with <code>df+1</code> or <code>backdash</code>. 
+          These are zero-risk options that give you information. If they press, your df+1 checks 
+          them. If they whiff, your backdash creates a punish opportunity. Upgrade to riskier 
+          options once you've read their habits.
         </TipBox>
       </Section>
 
-      <Section title="Counter-Hit Fishing">
+      <Section title="Phase 1: Information Gathering (First 20 Seconds)">
         <p>
-          Jin has excellent <span className="highlight">counter-hit tools</span>. The goal is to 
-          make opponents scared to press buttons.
+          The first moments of a round are about figuring out your opponent. Are they aggressive? 
+          Passive? Do they duck? Do they press when minus?
         </p>
 
-        <KeyConcept title="Top Counter-Hit Moves" icon="⚡">
-          <ul>
-            <li><code>f+4</code> — The star. CH launches for full combo.</li>
-            <li><code>4</code> — Magic 4. Homing, CH gives guaranteed df+1,4.</li>
-            <li><code>df+1,4</code> — Second hit CH knocks down.</li>
-            <li><code>2,1,4</code> — Third hit CH wall splats.</li>
-            <li><code>b+4</code> — CH gives bigger knockdown.</li>
-          </ul>
-        </KeyConcept>
-
-        <KeyConcept title="How to Fish for Counter-Hits" icon="🎣">
-          <ol>
-            <li><strong>Establish respect</strong> — Land jabs, show you'll pressure</li>
-            <li><strong>Create uncertainty</strong> — Mix timing, make them guess</li>
-            <li><strong>Use plus frames</strong> — After db+4 (+3), f+4 catches mashers</li>
-            <li><strong>Delay your offense</strong> — Small gaps bait them to press</li>
-            <li><strong>Profit</strong> — CH f+4 = 75+ damage</li>
-          </ol>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="Frame Traps">
-          Classic trap: <code>1 (+1)</code> → <code>f+4 (i16)</code>. If they press anything 
-          slower than i14 after the jab, f+4 counter-hits them.
-        </TipBox>
+        <div style={{ padding: '16px', background: 'var(--background-secondary)', borderRadius: '8px', marginTop: '16px' }}>
+          <p style={{ fontWeight: 600, color: 'var(--accent)', margin: '0 0 12px' }}>What to Look For</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            {[
+              { q: 'Do they press after your plus moves?', a: 'If yes → stop being fancy, just df+1 and punish. If no → escalate to electric and ZEN.' },
+              { q: 'Do they duck your highs?', a: 'If yes → use more mids (df+1, f+4, ZEN 4). If no → electric and ZEN 3+4 freely.' },
+              { q: 'Do they sidestep?', a: 'If yes → use homing moves (ZEN 3, b+4). If no → standard pressure.' },
+              { q: 'How do they respond to lows?', a: 'If they eat them → more db+4 and d+2. If they low parry → fake the low, go mid.' },
+            ].map((item, i) => (
+              <div key={i} style={{ padding: '12px', background: 'var(--background)', borderRadius: '6px' }}>
+                <p style={{ fontWeight: 600, color: 'var(--accent)', margin: '0 0 4px', fontSize: '0.9rem' }}>{item.q}</p>
+                <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.85rem' }}>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </Section>
 
-      <Section title="The Complete Gameplan">
-        <KeyConcept title="Round Start" icon="🏁">
+      <Section title="Phase 2: Executing the Gameplan">
+        <Flowchart
+          title="Jin's Core Gameplan"
+          nodes={[
+            { type: 'start', label: 'You\'ve read the opponent' },
+            { type: 'decision', label: 'Opponent type:', branches: [
+              { label: 'Aggressive (presses a lot)', action: 'Keep-out with f+4 and electric. Backdash → punish. Parry reads. Let them hang themselves.' },
+              { label: 'Passive (blocks everything)', action: 'Escalate: db+4 → d+2 → electric chip → ZEN 3+4 loop. Climb the plus frame ladder. Chip them out.' },
+              { label: 'Balanced (adapts)', action: 'This is the real game. Mix your tools. Sometimes poke, sometimes electric, sometimes ZEN. Be unpredictable.' },
+              { label: 'Unfamiliar character', action: 'Block and punish. Use 2,4 to punish everything. Don\'t take risks against unknown strings.' },
+            ]},
+          ]}
+        />
+
+        <KeyConcept title="The Jin Triangle" icon="🔺">
+          <p>
+            Jin's gameplan is a triangle that adapts to the opponent:
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px', marginBottom: '16px' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '20px' }}>
+                <span style={{ color: 'var(--accent)', fontWeight: 700 }}>POKES</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '80px' }}>
+                <span style={{ color: 'var(--accent-secondary)', fontWeight: 700 }}>PLUS FRAMES</span>
+                <span style={{ color: '#f59e0b', fontWeight: 700 }}>DEFENSE</span>
+              </div>
+              <p style={{ color: 'var(--text-muted)', marginTop: '16px', fontSize: '0.9rem' }}>
+                Pokes condition → Plus frames punish respect → Defense punishes aggression → Loop
+              </p>
+            </div>
+          </div>
           <ul>
-            <li><code>f+4</code> — Catches aggressive openers</li>
-            <li><code>df+1</code> — Safe mid check</li>
-            <li><code>Backdash → see what they do</code> — Information</li>
+            <li><strong>Pokes</strong> (Chapter 3-4) condition the opponent to stop pressing</li>
+            <li><strong>Plus frames</strong> (Chapter 5) punish opponents who respect your pokes</li>
+            <li><strong>Defense</strong> (Chapter 11) punishes opponents who get aggressive against your plus frame game</li>
           </ul>
-          <p style={{ marginTop: '12px', color: 'var(--text-secondary)' }}>
-            Feel out your opponent early. Don't commit to big moves until you know their tendencies.
+          <p style={{ marginTop: '8px' }}>
+            Cycle through all three based on what the opponent is doing. That's the complete Jin game.
           </p>
         </KeyConcept>
+      </Section>
 
-        <KeyConcept title="Neutral Game" icon="⚔️">
-          <ol>
-            <li><strong>Poke with jabs and df+1</strong> — Establish your turn</li>
-            <li><strong>Fish with f+4</strong> — Catch them pressing</li>
-            <li><strong>Mix lows</strong> — db+4 for plus frames, d+4 for speed</li>
-            <li><strong>Look for whiff punish</strong> — EWHF or ff+2</li>
-            <li><strong>Work towards wall</strong> — That's where Jin dominates</li>
-          </ol>
-        </KeyConcept>
+      <Section title="Phase 3: Closing the Round">
+        <p>
+          You've built your lead. Now close it:
+        </p>
 
-        <KeyConcept title="Wall Pressure" icon="🧱">
-          <ol>
-            <li><strong>Get to ZEN</strong> — Via ff+3~f, 2,4~f, or b+3+4</li>
-            <li><strong>Dive kick (ZEN.3+4)</strong> — Plus on block, chip damage</li>
-            <li><strong>Mix ZEN.4</strong> — Mid option, catches duckers</li>
-            <li><strong>ZEN.1,2</strong> — Wall splat for heat or combos</li>
-            <li><strong>Electric from BRS</strong> — Uninterruptible pressure</li>
-          </ol>
-          <p style={{ marginTop: '12px', color: 'var(--text-secondary)' }}>
-            The wall is Jin's domain. Get there and don't let them escape.
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '16px' }}>
+          <div style={{ padding: '16px', background: 'var(--background-secondary)', borderRadius: '8px', borderLeft: '3px solid #10b981' }}>
+            <p style={{ fontWeight: 600, color: '#10b981', margin: '0 0 8px' }}>You're Ahead on Life</p>
+            <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+              Play safe. Use df+1, backdash, and punishment. Let them take risks. They have to approach you — 
+              that's where your whiff punishment and keep-out shine. Don't yolo when you're winning.
+            </p>
+          </div>
+
+          <div style={{ padding: '16px', background: 'var(--background-secondary)', borderRadius: '8px', borderLeft: '3px solid #f59e0b' }}>
+            <p style={{ fontWeight: 600, color: '#f59e0b', margin: '0 0 8px' }}>Even Life</p>
+            <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+              Push to the wall if possible. Use running 3 and electric to create wall situations. 
+              At the wall, the chip loop can close out rounds even when you're even. Activate heat 
+              for the free electric pressure.
+            </p>
+          </div>
+
+          <div style={{ padding: '16px', background: 'var(--background-secondary)', borderRadius: '8px', borderLeft: '3px solid #ef4444' }}>
+            <p style={{ fontWeight: 600, color: '#ef4444', margin: '0 0 8px' }}>You're Behind on Life</p>
+            <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+              Time to take calculated risks. f+4 for CH launch attempts. Heat activation for 
+              free electrics. Electric whiff punishes from backdash. If you have rage, electric 
+              into rage art is always available as a closer. Don't panic — Jin's comeback tools 
+              are among the best.
+            </p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Common Mistakes to Avoid">
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '16px' }}>
+          {[
+            { mistake: 'Overusing electric in neutral', fix: 'Electric is a whiff punish and pressure tool, not a neutral poke. In neutral, use df+1, f+4, and movement. Save electric for when you\'re plus or they whiff.' },
+            { mistake: 'Entering ZEN randomly', fix: 'ZEN on block from most transitions is minus. Only enter ZEN from plus situations (f+4 hit, b,f+2,3 hit, wall pressure).' },
+            { mistake: 'Not punishing consistently', fix: 'Use 2,4 for everything at first. Graduate to optimal punishes over time. A bad punish is better than no punish.' },
+            { mistake: 'Ignoring defense', fix: 'Jin CAN play defense. Use backdash, parry, and high crush. Don\'t try to out-aggro aggressive players — out-defend them.' },
+            { mistake: 'Using the same options every round', fix: 'If you always do the same thing, opponents adapt. Mix your round-start, your poke patterns, and your ZEN options.' },
+            { mistake: 'Dropping combos chasing max damage', fix: 'Use the universal BnB until it\'s muscle memory. Consistent 75 damage > occasional 85 damage with frequent drops.' },
+          ].map((item, i) => (
+            <div key={i} style={{ padding: '14px 16px', background: 'var(--background-secondary)', borderRadius: '6px' }}>
+              <p style={{ fontWeight: 600, color: '#ef4444', margin: '0 0 4px' }}>{item.mistake}</p>
+              <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{item.fix}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Practice Priorities">
+        <p>
+          Here's what to practice, in order of importance:
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '16px' }}>
+          {[
+            { priority: '1', task: 'Punishment', detail: '2,4 for everything, then b+1,2 for -12, then ws+2 for lows. This wins games immediately.' },
+            { priority: '2', task: 'Universal combo', detail: 'One combo from every launcher. 75+ damage every time you launch. No drops.' },
+            { priority: '3', task: 'Poke game (df+1, db+4, d+2)', detail: 'Know your frametraps and poke patterns from Chapter 3. This is your bread and butter.' },
+            { priority: '4', task: 'Electric consistency', detail: 'Practice EWHF input. Even 30% consistency changes the game. Heat mode gives you free ones.' },
+            { priority: '5', task: 'Movement (backdash, sidestep)', detail: 'Clean backdashes create whiff opportunities. Practice backdash → electric.' },
+            { priority: '6', task: 'Wall pressure loop', detail: 'ZEN 3+4 → electric → running 3 at the wall. Practice the timing and rhythm.' },
+            { priority: '7', task: 'ZEN transitions', detail: 'Learn which moves go to ZEN and what frames you have. Start with f+4~F and b,f+2,3~F.' },
+            { priority: '8', task: 'Parry timing', detail: 'Lab specific strings from characters you face often. Parry the third hit of common jab strings.' },
+          ].map((item, i) => (
+            <div key={i} style={{ padding: '12px 16px', background: 'var(--background-secondary)', borderRadius: '6px', display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+              <span style={{ fontWeight: 700, color: 'var(--accent)', fontSize: '1.1rem', minWidth: '24px' }}>{item.priority}</span>
+              <div>
+                <p style={{ fontWeight: 600, margin: 0 }}>{item.task}</p>
+                <p style={{ margin: '4px 0 0', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="You're Ready">
+        <div style={{ padding: '24px', background: 'linear-gradient(135deg, var(--background-secondary), var(--background))', borderRadius: '12px', marginTop: '16px', border: '1px solid var(--accent)', textAlign: 'center' }}>
+          <p style={{ fontSize: '1.3rem', fontWeight: 700, color: 'var(--accent)', margin: '0 0 16px' }}>
+            That's the complete Jin gameplan.
           </p>
-        </KeyConcept>
-
-        <KeyConcept title="When Behind" icon="📉">
-          <ul>
-            <li><strong>Save Heat</strong> — You'll need it for comeback</li>
-            <li><strong>Go for big reads</strong> — CH f+4, parry, hellsweep</li>
-            <li><strong>Don't panic</strong> — Jin can kill from 30% life lead deficit</li>
-            <li><strong>Get to wall</strong> — One wall carry combo can flip the round</li>
-          </ul>
-        </KeyConcept>
-
-        <KeyConcept title="When Ahead" icon="📈">
-          <ul>
-            <li><strong>Stay patient</strong> — You don't need to take risks</li>
-            <li><strong>Poke them out</strong> — Chip damage with safe moves</li>
-            <li><strong>Use your life lead</strong> — Force them to approach</li>
-            <li><strong>Punish their desperation</strong> — They'll get risky</li>
-          </ul>
-        </KeyConcept>
-      </Section>
-
-      <Section title="Adapting to Opponents">
-        <KeyConcept title="Against Aggressive Players" icon="🔥">
-          <ul>
-            <li>Use f+4 to fish for counter-hits</li>
-            <li>Parry their predictable pressure</li>
-            <li>Backdash and whiff punish with EWHF</li>
-            <li>Let them kill themselves on your defense</li>
-          </ul>
-        </KeyConcept>
-
-        <KeyConcept title="Against Turtles" icon="🐢">
-          <ul>
-            <li>Use lows to force reactions (db+4, d+4)</li>
-            <li>Work towards wall — they can't run forever</li>
-            <li>Mix throws — Jin has command grabs</li>
-            <li>Use ZEN chip damage</li>
-          </ul>
-        </KeyConcept>
-
-        <KeyConcept title="Against Sidestepping" icon="🔄">
-          <ul>
-            <li>Use homing moves: 4 (magic 4), ZEN.3</li>
-            <li>Delay your attacks to catch movement</li>
-            <li>Mix hellsweep (tracks well)</li>
-            <li>Electric tracks both ways</li>
-          </ul>
-        </KeyConcept>
-      </Section>
-
-      <Section title="Final Tips">
-        <TipBox variant="tip" title="Jin is a Marathon, Not a Sprint">
-          Jin has depth. You won't master him quickly, and that's okay. Focus on fundamentals 
-          first, then layer in advanced tools as they become comfortable. Every pro Jin 
-          player started with jabs and df+1.
-        </TipBox>
-
-        <TipBox variant="tip" title="Record Your Matches">
-          Watch your replays. Look for:
-          <ul>
-            <li>Missed punishes</li>
-            <li>Dropped combos</li>
-            <li>Patterns you're doing that got punished</li>
-            <li>Situations where you didn't know what to do</li>
-          </ul>
-          Then practice those specific scenarios.
-        </TipBox>
-
-        <TipBox variant="tip" title="Have Fun">
-          Jin is the main character for a reason. He's satisfying to play, has iconic moves, 
-          and can win in any style. Enjoy the journey of mastering him.
-        </TipBox>
-      </Section>
-
-      <Collapsible title="Quick Reference Card" icon="📋" defaultOpen>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ fontWeight: 600, color: 'var(--accent)', marginBottom: '12px' }}>Essential Moves</p>
-          <ul style={{ marginBottom: '16px' }}>
-            <li><code>1</code> / <code>1,2</code> — Jabs</li>
-            <li><code>df+1</code> — Mid poke</li>
-            <li><code>f+4</code> — CH launcher</li>
-            <li><code>db+4</code> — Plus low</li>
-            <li><code>2,4</code> — Punish + ZEN</li>
-            <li><code>EWHF</code> — Everything</li>
-          </ul>
-
-          <p style={{ fontWeight: 600, color: 'var(--accent)', marginBottom: '12px' }}>Punishment</p>
-          <ul style={{ marginBottom: '16px' }}>
-            <li>-10: <code>2,4</code></li>
-            <li>-12: <code>b+1,2</code></li>
-            <li>-13: <code>1+2</code></li>
-            <li>-14: <code>f+1+2</code></li>
-            <li>-15: <code>d+3+4</code></li>
-            <li>ws-14: <code>ws2</code></li>
-          </ul>
-
-          <p style={{ fontWeight: 600, color: 'var(--accent)', marginBottom: '12px' }}>Heat Engagers</p>
-          <ul style={{ marginBottom: '16px' }}>
-            <li><code>ff+2</code> — Best, safe</li>
-            <li><code>1+2</code> — 13f punish</li>
-            <li><code>df+4</code> — Zero risk</li>
-          </ul>
-
-          <p style={{ fontWeight: 600, color: 'var(--accent)', marginBottom: '12px' }}>Bread and Butter Combo</p>
-          <p style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '8px', borderRadius: '4px' }}>
-            uf+4 → bf+2,3~f → ZEN.u+1 T! → b+3~f → ZEN.1,3
+          <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8', maxWidth: '600px', margin: '0 auto' }}>
+            You don't need to master everything at once. Start with pokes and punishment. 
+            Add electric when you're comfortable. Layer in ZEN when the time is right. 
+            Jin rewards patience — both in matches and in learning. 
+          </p>
+          <p style={{ color: 'var(--text-muted)', marginTop: '16px', fontStyle: 'italic' }}>
+            The strongest steel is forged in the hottest fire. Go fight.
           </p>
         </div>
-      </Collapsible>
-
-      <Collapsible title="Command Grabs Reference" icon="🤼" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <ul>
-            <li><code>qcb+1+3</code> — 1 break. Leaves them face-up.</li>
-            <li><code>df+2+4</code> — 2 break. Quick command grab.</li>
-            <li><code>uf+1+2</code> — 1+2 break. Floor breaks.</li>
-          </ul>
-          <p style={{ marginTop: '12px', color: 'var(--text-secondary)' }}>
-            Mix these in against turtles. Many players can't break command grabs.
-          </p>
-        </div>
-      </Collapsible>
-
-      <Collapsible title="Matchup Quick Tips" icon="📖" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Brief notes on common matchups:
-          </p>
-
-          <p><strong>vs Kazuya</strong></p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Respect his 50/50 from crouch dash</li>
-            <li>Your f+4 outranges his</li>
-            <li>Parry df+1,4 series</li>
-          </ul>
-
-          <p><strong>vs Law</strong></p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Duck highs in his strings</li>
-            <li>Sidestep right vs Dragon Tail</li>
-            <li>Punish slides with ws2</li>
-          </ul>
-
-          <p><strong>vs King</strong></p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Learn throw breaks (1, 2, 1+2)</li>
-            <li>Don't let him get close</li>
-            <li>f+4 controls mid-range well</li>
-          </ul>
-
-          <p><strong>vs Paul</strong></p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Punish Deathfist with ff+2 or Electric</li>
-            <li>Respect his 50/50 mixups</li>
-            <li>Stay patient — he wants you to panic</li>
-          </ul>
-
-          <p><strong>vs Bryan</strong></p>
-          <ul>
-            <li>Don't press into his keepout (b+1, f+4)</li>
-            <li>Punish Snake Edge with ws2</li>
-            <li>Force him to the wall where you dominate</li>
-          </ul>
-        </div>
-      </Collapsible>
-
-      <Section title="Part 1 Complete">
-        <p>
-          Congratulations — you now have a complete Jin toolkit. You understand:
-        </p>
-
-        <ul>
-          <li>Pokes and pressure with jabs, df+1, and f+4</li>
-          <li>Combo routes from every starter</li>
-          <li>The Electric and how to use it (or Breaking Step alternatives)</li>
-          <li>ZEN stance and wall pressure</li>
-          <li>Punishment for every frame range</li>
-          <li>Heat system and when to engage</li>
-          <li>Defense with parry and movement</li>
-          <li>The complete gameplan for any situation</li>
-        </ul>
-
-        <p style={{ marginTop: '16px' }}>
-          You know the moves. You know the concepts. But there's a difference between 
-          <em> knowing</em> Jin and <em>playing</em> Jin.
-        </p>
-
-        <TipBox variant="tip" title="Ready for Part 2?">
-          Part 2 focuses on <strong>practice and integration</strong>. You'll learn:
-          <ul>
-            <li>The Hot & Cold mindset — when to be defensive vs aggressive</li>
-            <li>Specific drills with practice mode setups you can run today</li>
-            <li>How to read opponents and adapt in real-time</li>
-            <li>Integration challenges that combine everything into real gameplay</li>
-          </ul>
-          If you feel like you know the tools but don't know how to actually <em>play</em> Jin — 
-          Part 2 is where you'll find the answer.
-        </TipBox>
-
-        <p>
-          <strong>Continue to Part 2 to start drilling. ⚡</strong>
-        </p>
       </Section>
     </Chapter>
   )

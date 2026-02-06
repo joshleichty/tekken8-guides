@@ -1,9 +1,9 @@
 import { Chapter, Section } from '../../../components/guide'
 import { 
-  ComboCard,
+  MoveCard,
   KeyConcept, 
   TipBox,
-  Collapsible
+  Flowchart
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
@@ -11,251 +11,219 @@ export function Chapter5({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={5}
-      title="First Combos"
-      intro="You've learned pokes and strings. Now it's time to convert your launchers into real damage. We'll start with one simple route that works everywhere."
+      title="Plus Frame Weapons"
+      intro="Once you've conditioned the opponent to stop pressing, you can skip straight to the endgame: plus frame moves that lock them in place and force real 50/50s. This is where Jin becomes truly dangerous."
       onPrevious={() => goToChapter(4)}
       onNext={() => goToChapter(6)}
-      nextLabel="Learn the Electric"
+      nextLabel="ZEN Stance"
     >
-      <Section title="How Combos Work in Tekken">
-        <p>
-          When you launch an opponent, they're airborne and can't block. You have a limited 
-          window to hit them with additional moves before they land and can tech (recover).
-        </p>
+      <Section title="The Electric — EWHF">
+        <MoveCard character="jin"
+          videoId="f,n,d,df+2"
+          move={{
+            input: 'f,n,d,df:2 (EWHF)',
+            hitLevel: ['h'],
+            damage: '25',
+            startup: 'i11~12',
+            onBlock: '+5',
+            onHit: '+76a (full combo)',
+            tags: ['High', 'Plus on Block', 'Launcher', 'Core Tool'],
+            description: 'The best move in Tekken, tied with other electrics. +5 on block means your opponent CANNOT press after blocking this. Launches on hit. The entire game changes when you can do this consistently.',
+            notes: ['Just-frame input: f,n,d,df:2 — must press 2 on the df frame', 'Non-just-frame (WGF) is -10 on block'],
+          }}
+          showVideo
+        />
 
-        <KeyConcept title="The Combo Structure" icon="📐">
-          <ol>
-            <li><strong>Launcher</strong> — The move that puts them in the air</li>
-            <li><strong>Filler</strong> — Moves that continue the combo</li>
-            <li><strong>Tornado (T!)</strong> — A special state that extends combos</li>
-            <li><strong>Ender</strong> — The final hit before they land</li>
-          </ol>
-        </KeyConcept>
-
-        <KeyConcept title="What is Tornado (T!)?" icon="🌀">
+        <KeyConcept title="Why +5 Matters" icon="⚡">
           <p>
-            <strong>Tornado</strong> is a spinning state that extends combos. When you hit 
-            someone with a Tornado move, they spin in place and fall slowly, letting you 
-            add more hits.
+            At +5 on block, here's what your opponent CAN'T do:
           </p>
-          <p style={{ marginTop: '12px' }}>
-            <strong>You only get ONE Tornado per combo.</strong> Once you've used it, 
-            Tornado moves become regular hits. Plan your route accordingly.
+          <ul>
+            <li><strong>Jab</strong> — Your df+3 (i12) beats their jab (i10). That's a 12-frame mid check that beats jab at +5.</li>
+            <li><strong>Sidestep</strong> — You're too plus. Most movement gets stuffed.</li>
+            <li><strong>Power crush</strong> — Your i12 mid (df+3) or magic four beats it.</li>
+            <li><strong>Do nothing</strong> — Free throw, free poke, free low, free everything.</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}>
+            Electric on block is effectively a free turn. That's why it's the best move in the game.
+          </p>
+        </KeyConcept>
+
+        <TipBox variant="tip" title="Don't Panic About Execution">
+          The just-frame electric (EWHF) requires practice but it's much easier in Tekken 8 
+          than previous games. In Heat mode, you get free electrics without the just-frame timing. 
+          Even the non-just-frame version (WGF) is usable — it's -10 on block, which means only 
+          jab punishable. Not ideal, but not a death sentence.
+        </TipBox>
+
+        <Flowchart
+          title="After Electric on Block (+5)"
+          nodes={[
+            { type: 'start', label: 'EWHF blocked (+5)' },
+            { type: 'decision', label: 'Opponent responds:', branches: [
+              { label: 'They freeze', action: 'Throw, d+2, db+4, or another electric. Free mixup.' },
+              { label: 'They press jab', action: 'df+3 (i12 mid) beats their jab. Or magic four trades for full combo.' },
+              { label: 'They try to duck', action: 'Another electric launches. Or df+1 checks.' },
+              { label: 'They power crush', action: 'df+3 or d+2 beats power crush at +5.' },
+            ]},
+          ]}
+        />
+      </Section>
+
+      <Section title="While Running 3 (f,f,F+3)">
+        <MoveCard character="jin"
+          videoId="f,f,F+3"
+          move={{
+            input: 'f,f,F+3',
+            hitLevel: ['m'],
+            damage: '30',
+            startup: 'i22',
+            onBlock: '+6',
+            onHit: '+13a',
+            tags: ['Mid', 'Plus on Block', 'Wall Splat', 'Chip Damage', 'ZEN Transition'],
+            description: 'While running 3. Plus SIX on block as a MID. Wall splats. 9 chip damage on block. Transitions into ZEN with F. This is how you close distance and start wall pressure.',
+          }}
+          showVideo
+        />
+
+        <p>
+          At +6 on block, <code>f,f,F+3</code> gives you the same benefits as electric but 
+          it's a <strong>mid</strong> — meaning it can't be ducked. The trade-off is it's slower (i22) 
+          and requires running momentum. Use it to approach and at the wall.
+        </p>
+
+        <TipBox variant="tip" title="Breaking Step Into Running 3">
+          You can cancel Breaking Step into running 3 with the <code>uf+3</code> input. 
+          At the wall, the sequence <code>ZEN 3+4 → Breaking Step → running 3</code> is 
+          completely uninterruptible and does massive chip damage.
+        </TipBox>
+      </Section>
+
+      <Section title="ZEN 3+4 — Wall Pressure King">
+        <MoveCard character="jin"
+          videoId="ZEN.3+4"
+          move={{
+            input: 'ZEN 3+4',
+            hitLevel: ['h'],
+            damage: '25',
+            startup: 'i21~27',
+            onBlock: '+9g~+15g',
+            onHit: '+19a',
+            tags: ['High', 'Massively Plus', 'Chip Damage', 'Wall Pressure', 'Breaking Step'],
+            description: 'The wall pressure move. +9 to +15 on block depending on spacing. Huge chip damage. Transitions to Breaking Step with df. At the wall, this into electric is uninterruptible. Can be ducked — that\'s the weakness.',
+          }}
+          showVideo
+        />
+
+        <p>
+          <code>ZEN 3+4</code> is Jin's version of Law's Legend Kick — massively plus on block 
+          with chip damage. The catch: it's a <strong>high</strong>, so opponents can duck it. 
+          That's why you only use it when they're conditioned to block:
+        </p>
+
+        <Flowchart
+          title="ZEN 3+4 at the Wall"
+          nodes={[
+            { type: 'start', label: 'ZEN 3+4 blocked (about +9)' },
+            { type: 'decision', label: 'Opponent response:', branches: [
+              { label: 'They freeze', action: 'Another ZEN 3+4, or electric, or throw. Loop the pressure.' },
+              { label: 'They duck', action: 'ZEN 4 (diving mid, +2 on block) or electric (launches). Switch to mids.' },
+              { label: 'They press', action: 'Electric is uninterruptible at +9. Free launch. Or BRS running 3 into +6.' },
+              { label: 'They sidestep', action: 'ZEN 3 (homing mid, safe) catches stepping.' },
+            ]},
+          ]}
+        />
+      </Section>
+
+      <Section title="df+3~3 (Brazilian Kick) — The Setup Mid">
+        <MoveCard character="jin"
+          videoId="df+3,3"
+          move={{
+            input: 'df+3~3',
+            hitLevel: ['m'],
+            damage: '20',
+            startup: 'i23',
+            onBlock: '+6c',
+            onHit: '+13c (guaranteed follow-up)',
+            tags: ['Mid', 'Plus on Block', 'Forced Crouch', 'Breaking Step'],
+            description: 'A slow mid that is +6 on block and forces crouch. On hit, +13 with guaranteed df+1,4 or 1+2 (heat). Enters Breaking Step with df. Use when opponent is scared to press.',
+          }}
+          showVideo
+        />
+
+        <p>
+          We covered this in Chapter 3 but it deserves emphasis here. After <code>df+3~3</code> 
+          on block, your opponent is <strong>crouching at -6</strong>. From here:
+        </p>
+
+        <ul>
+          <li><strong>Electric from Breaking Step</strong> — uninterruptible mid(special mid), +4 on block from BRS</li>
+          <li><strong>Another df+3~3</strong> — loop the pressure if they keep blocking</li>
+          <li><strong>Throw</strong> — they can't interrupt at -6</li>
+          <li><strong>Hell sweep</strong> — catches crouch blockers expecting a mid</li>
+        </ul>
+      </Section>
+
+      <Section title="The Plus Frame Ladder">
+        <p>
+          Think of Jin's plus frame moves as a <strong>ladder</strong> you climb based on how 
+          much respect the opponent is showing:
+        </p>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '16px' }}>
+          {[
+            { frames: '+1 to +3', moves: 'Jab hit, db+4 hit, df+1 hit', color: 'var(--text-secondary)', note: 'Enough for poke loops. Can enforce magic four trades.' },
+            { frames: '+4 to +6', moves: 'EWHF block, f,f,F+3 block, df+3~3 block, d+2 hit', color: 'var(--accent)', note: 'Real advantage. Your 12f mid beats their jab. Free mixup territory.' },
+            { frames: '+7 to +9', moves: 'ZEN 3+4 block (low end)', color: '#f59e0b', note: 'Opponent can\'t do anything fast enough. Electric is uninterruptible.' },
+            { frames: '+10 to +15', moves: 'ZEN 3+4 block (tip range), ZEN 4 hit, f+4 hit into ZEN', color: '#ef4444', note: 'Total lockdown. Any move you throw is guaranteed to come out first.' },
+          ].map((level, i) => (
+            <div key={i} style={{ padding: '14px 16px', background: 'var(--background-secondary)', borderRadius: '6px', borderLeft: `3px solid ${level.color}` }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                <span style={{ fontWeight: 700, color: level.color }}>{level.frames}</span>
+                <code style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{level.moves}</code>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-muted)' }}>{level.note}</p>
+            </div>
+          ))}
+        </div>
+
+        <KeyConcept title="Climb the Ladder" icon="📈">
+          <p>
+            Start with pokes (+1 to +3). If the opponent respects those, escalate to electric 
+            and df+3~3 (+4 to +6). If they still don't move, go to ZEN 3+4 and running 3 (+7+). 
+            If they ever start pressing, drop back down to pokes and counter-hit them. 
+            <strong>The ladder goes both ways.</strong>
           </p>
         </KeyConcept>
       </Section>
 
-      <Section title="Jin's Main Launchers">
+      <Section title="Looping Plus Frames Against Patient Opponents">
         <p>
-          These moves start combos. When any of these connect, you do the combo route below:
+          Against turtles who just block everything, you can loop plus frame moves to chip 
+          them down. This is unique to Jin and it's devastating:
         </p>
 
-        <div style={{ display: 'grid', gap: '12px', marginTop: '16px' }}>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>uf+4</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>Hopkick — Low crushes</p>
-            </div>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>d+3+4</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>Can-Can — i15 launcher</p>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>ws2</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>While standing 2 — i14 launcher</p>
-            </div>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>CH f+4</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>Counter-hit f+4 crumples</p>
-            </div>
-          </div>
-        </div>
-
-        <TipBox variant="tip" title="When to Use Each Launcher">
-          <ul>
-            <li><strong>uf+4</strong> — When you need to crush a low attack</li>
-            <li><strong>d+3+4</strong> — Your main 15f punish launcher</li>
-            <li><strong>ws2</strong> — After blocking a low (14f punish from crouch)</li>
-            <li><strong>CH f+4</strong> — You won't "choose" this — just confirm when it happens</li>
-          </ul>
-        </TipBox>
-      </Section>
-
-      <Section title="The Beginner Combo">
-        <p>
-          This combo works off <strong>any launcher</strong>. It's simple, does good damage, 
-          and carries to the wall. Learn this first before anything else.
-        </p>
-
-        <ComboCard
-          title="Universal Beginner Route"
-          starter="uf+4 / ws2 / d+3+4 / CD.df+1"
-          route={['df+2,4', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
-          damage="~65"
-          difficulty="beginner"
-          wallCarry
-          notes={[
-            'df+2,4 is the filler after any launcher',
-            'bf+2,3~f transitions into ZEN stance',
-            'ZEN.u+1 is your Tornado move',
-            '(2),4~f goes back into ZEN for the ender'
-          ]}
-        />
-
-        <KeyConcept title="Breaking Down the Route" icon="📝">
-          <ol>
-            <li><code>df+2,4</code> — Filler that launches them a bit higher</li>
-            <li><code>bf+2,3~f</code> — A string that ends in ZEN stance</li>
-            <li><code>ZEN.u+1</code> — <span className="highlight">Tornado move</span>. Gives you the spin.</li>
-            <li><code>(2),4~f</code> — Back into ZEN stance for the ender</li>
-            <li><code>ZEN.1,3</code> — The combo ender that throws them forward</li>
+        <div style={{ padding: '20px', background: 'var(--background-secondary)', borderRadius: '8px', marginTop: '16px', borderLeft: '3px solid var(--accent)' }}>
+          <p style={{ fontWeight: 700, color: 'var(--accent)', marginBottom: '12px' }}>Plus Frame Loop (at the wall)</p>
+          <ol style={{ color: 'var(--text-secondary)', lineHeight: '2' }}>
+            <li><code>ZEN 3+4</code> on block → +9, chip damage</li>
+            <li><code>EWHF</code> → +5, chip damage (uninterruptible at +9)</li>
+            <li><code>f,f,F+3</code> → +6, chip damage, wall pushback</li>
+            <li>Electric again → +5, more chip</li>
+            <li>Eventually go for <code>heat smash</code> or throw when they're too scared</li>
           </ol>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="Practice Tips">
-          <ul>
-            <li>Start with just uf+4 as the launcher</li>
-            <li>The <code>~f</code> means hold forward to transition</li>
-            <li>Don't rush — each step has a rhythm</li>
-            <li>Once you can do it 10 times in a row, try other starters</li>
-          </ul>
-        </TipBox>
-      </Section>
-
-      <Section title="Counter-Hit f+4 Combo">
-        <p>
-          When f+4 lands on counter-hit, the opponent crumples. You need to dash forward 
-          and pick them up. Here's the simple version:
-        </p>
-
-        <ComboCard
-          title="CH f+4 Route"
-          starter="CH f+4"
-          route={['dash', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
-          damage="~75"
-          difficulty="intermediate"
-          notes={[
-            'Requires a dash to pick them up',
-            'Watch for the crumple animation to confirm CH',
-            'b+3~f into ZEN.1 starts the pickup'
-          ]}
-        />
-
-        <TipBox variant="warning" title="Confirm the Counter-Hit">
-          If f+4 lands on normal hit (+4), you DON'T get a combo. Watch for the crumple 
-          animation before committing to the dash. This takes practice to recognize.
-        </TipBox>
-      </Section>
-
-      <Section title="Low Parry Combo">
-        <p>
-          In Tekken, you can <strong>parry lows</strong> by tapping <code>df</code> right before 
-          a low attack hits. When successful, you launch the opponent.
-        </p>
-
-        <ComboCard
-          title="Low Parry Route"
-          starter="Low Parry (df)"
-          route={['EWHF', 'b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
-          damage="~55"
-          difficulty="intermediate"
-          notes={[
-            'EWHF after low parry for best damage',
-            'Same route as EWHF starter combo',
-            'If you can\'t do EWHF: 3,1 → bf+2,3~f → ZEN.1,3'
-          ]}
-        />
-
-        <TipBox variant="tip" title="Low Parries vs Block">
-          Low parries are riskier than just blocking — if you time it wrong, you get hit. 
-          But the reward is a full combo instead of a simple punish. Worth learning. The 
-          EWHF route is optimal, but if your Electric isn't consistent yet, use 
-          3,1 → bf+2,3~f → ZEN.1,3 instead.
-        </TipBox>
-      </Section>
-
-      <Section title="What to Focus On">
-        <KeyConcept title="Combo Learning Priority" icon="🎯">
-          <ol>
-            <li><strong>Learn the universal route</strong> — uf+4 → beginner combo</li>
-            <li><strong>Get it consistent</strong> — 10 reps in a row without dropping</li>
-            <li><strong>Apply other starters</strong> — d+3+4, ws2, etc.</li>
-            <li><strong>Learn CH f+4</strong> — Practice recognizing the crumple</li>
-            <li><strong>Try optimized routes</strong> — Once basics are solid (see below)</li>
-          </ol>
-        </KeyConcept>
-
-        <p>
-          Don't worry about maximum damage yet. A dropped combo does zero damage. A completed 
-          beginner combo does full damage. Consistency first, optimization later.
-        </p>
-      </Section>
-
-      <Collapsible title="Optimized Routes (Advanced)" icon="⚡" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Once you've mastered the beginner route, these do more damage:
+          <p style={{ marginTop: '12px', fontStyle: 'italic', color: 'var(--text-muted)' }}>
+            Three ZEN 3+4s worth of chip damage is nearly half a health bar. Against patient 
+            opponents, this is how Jin wins rounds without ever opening them up.
           </p>
-
-          <ComboCard
-            title="EWHF Starter Route"
-            starter="EWHF (f,n,d,df+2)"
-            route={['b+3~f', 'ZEN.1', 'b+3~f', 'ZEN.1,3']}
-            damage="~55"
-            difficulty="advanced"
-            notes={[
-              'When you launch WITH Electric',
-              'Also works after low parry',
-              'Shorter but requires execution'
-            ]}
-          />
-
-          <ComboCard
-            title="ff+3 Starters"
-            starter="ff+3 / ff+3,1 / CH uf+3 / CH (3,1),4"
-            route={['dash', 'b+3~f', 'ZEN.1', 'bf+2,3~f', 'ZEN.u+1 T!', '(2),4~f', 'ZEN.1,3']}
-            damage="~70"
-            difficulty="intermediate"
-            notes={[
-              'Need to dash before pickup',
-              'Same route as CH f+4'
-            ]}
-          />
         </div>
-      </Collapsible>
 
-      <Collapsible title="Combo Enders Explained" icon="📖" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Different enders have different purposes:
-          </p>
-
-          <p><strong>ZEN.1,3</strong> — Standard ender</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Good wall carry</li>
-            <li>Throws opponent far forward</li>
-          </ul>
-
-          <p><strong>b+3,2</strong> — Alternative ender</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Slightly less carry</li>
-            <li>Good when close to wall</li>
-          </ul>
-
-          <p><strong>b+2,1</strong> — Short carry ender</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Use when you just need to finish</li>
-          </ul>
-
-          <p><strong>CD.df:4,2</strong> — Floor break ender</p>
-          <ul>
-            <li>Use on stages with breakable floors</li>
-            <li>Extends combos through floor breaks</li>
-          </ul>
-        </div>
-      </Collapsible>
+        <TipBox variant="warning" title="Respect the Duck">
+          ZEN 3+4 and electric are both highs. If your opponent starts ducking, they can launch 
+          you. The counter: mix in ZEN 4 (mid), ZEN 1,2 (mid string), or just throw them. 
+          Read whether they're blocking or ducking and adjust.
+        </TipBox>
+      </Section>
     </Chapter>
   )
 }

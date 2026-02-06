@@ -8,17 +8,9 @@ import { Chapter6 } from './chapters/Chapter6'
 import { Chapter7 } from './chapters/Chapter7'
 import { Chapter8 } from './chapters/Chapter8'
 import { Chapter9 } from './chapters/Chapter9'
-import { Chapter10FrameTraps } from './chapters/Chapter10FrameTraps'
 import { Chapter10 } from './chapters/Chapter10'
 import { Chapter11 } from './chapters/Chapter11'
 import { Chapter12 } from './chapters/Chapter12'
-// Part 2: Advanced Jin
-import { Chapter14HotCold } from './chapters/Chapter14HotCold'
-import { Chapter15DrillingPressure } from './chapters/Chapter15DrillingPressure'
-import { Chapter16ReadingAdapting } from './chapters/Chapter16ReadingAdapting'
-import { Chapter17Integration } from './chapters/Chapter17Integration'
-import { Chapter18OffensiveFlowcharts } from './chapters/Chapter18OffensiveFlowcharts'
-import { CheatSheet } from './chapters/CheatSheet'
 
 export const jinConfig: CharacterConfig = {
   slug: 'jin',
@@ -49,39 +41,26 @@ export const jinConfig: CharacterConfig = {
   },
   
   chapters: [
-    // Phase 1: Foundation
-    { id: 1, title: 'Meet Jin Kazama', section: 'Foundation', content: Chapter1 },
-    { id: 2, title: 'First Buttons', section: 'Foundation', content: Chapter2 },
-    { id: 3, title: 'Core Mids & Lows', section: 'Foundation', content: Chapter3 },
+    // Phase 1: Understanding Jin (for Law players)
+    { id: 1, title: 'How Jin Wins', section: 'Foundation', content: Chapter1 },
+    { id: 2, title: 'Your Poke Loops', section: 'Foundation', content: Chapter2 },
     
-    // Phase 2: Strings & Combos
-    { id: 4, title: 'Jab Strings', section: 'Strings & Combos', content: Chapter4 },
-    { id: 5, title: 'First Combos', section: 'Strings & Combos', content: Chapter5 },
+    // Phase 2: Building Offense
+    { id: 3, title: 'Counter-Hit Weapons', section: 'Offense', content: Chapter3 },
+    { id: 4, title: 'Opening People Up', section: 'Offense', content: Chapter4 },
+    { id: 5, title: 'Plus Frame Weapons', section: 'Offense', content: Chapter5 },
     
     // Phase 3: Core Tools
-    { id: 6, title: 'The Electric', section: 'Core Tools', content: Chapter6 },
-    { id: 7, title: 'ZEN Stance', section: 'Core Tools', content: Chapter7 },
+    { id: 6, title: 'ZEN Stance', section: 'Core Tools', content: Chapter6 },
+    { id: 7, title: 'Combos', section: 'Core Tools', content: Chapter7 },
+    { id: 8, title: 'Punishment', section: 'Core Tools', content: Chapter8 },
     
     // Phase 4: Game Systems
-    { id: 8, title: 'Standard Combos', section: 'Game Systems', content: Chapter8 },
-    { id: 9, title: 'Punishment', section: 'Game Systems', content: Chapter9 },
-    { id: 10, title: 'Frame Traps & Setups', section: 'Game Systems', content: Chapter10FrameTraps },
+    { id: 9, title: 'Heat System', section: 'Game Systems', content: Chapter9 },
+    { id: 10, title: 'Wall Game', section: 'Game Systems', content: Chapter10 },
+    { id: 11, title: 'Defense', section: 'Game Systems', content: Chapter11 },
     
-    // Phase 5: Heat & Defense
-    { id: 11, title: 'Heat System', section: 'Heat & Defense', content: Chapter10 },
-    { id: 12, title: 'Defense & Parry', section: 'Heat & Defense', content: Chapter11 },
-    
-    // Phase 6: Mastery (Part 1 Conclusion)
-    { id: 13, title: 'Complete Jin', section: 'Mastery', content: Chapter12 },
-    
-    // Part 2: Advanced Jin - Practice & Integration
-    { id: 14, title: 'The Hot & Cold Mindset', section: 'Advanced Training', content: Chapter14HotCold },
-    { id: 15, title: 'Drilling Jin\'s Pressure', section: 'Advanced Training', content: Chapter15DrillingPressure },
-    { id: 16, title: 'Reading & Adapting', section: 'Advanced Training', content: Chapter16ReadingAdapting },
-    { id: 17, title: 'Integration Challenges', section: 'Advanced Training', content: Chapter17Integration },
-    { id: 18, title: 'Offensive Flowcharts', section: 'Advanced Training', content: Chapter18OffensiveFlowcharts },
-    
-    // Quick Reference
-    { id: 19, title: 'Cheat Sheet', section: 'Quick Reference', content: CheatSheet },
+    // Phase 5: Mastery
+    { id: 12, title: 'Putting It All Together', section: 'Mastery', content: Chapter12 },
   ],
 }

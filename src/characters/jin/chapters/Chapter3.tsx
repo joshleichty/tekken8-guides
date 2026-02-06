@@ -3,7 +3,9 @@ import {
   MoveCard,
   KeyConcept, 
   TipBox,
-  Collapsible
+  Flowchart,
+  Collapsible,
+  DecisionGrid
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
@@ -11,309 +13,238 @@ export function Chapter3({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={3}
-      title="Core Mids & Lows"
-      intro="Jabs are great, but they're highs — opponents can duck them. To have complete offense, you need mids that hit crouching opponents and lows that force them to block low."
+      title="Counter-Hit Weapons"
+      intro="Your pokes create openings. Your counter-hit tools exploit them. This chapter covers the moves that punish opponents for pressing buttons — and how to set them up so they actually land."
       onPrevious={() => goToChapter(2)}
       onNext={() => goToChapter(4)}
-      nextLabel="Learn Jab Strings"
+      nextLabel="Opening People Up"
     >
-      <Section title="The High-Mid-Low Triangle">
+      <Section title="Why Counter-Hits Matter for Jin">
         <p>
-          Tekken offense is built on three attack heights:
+          In Chapter 2, you learned to poke. But poking alone doesn't kill people. You need 
+          <strong> counter-hits</strong> — moves that deal massive damage specifically because 
+          your opponent was pressing buttons when they shouldn't have been.
         </p>
 
-        <KeyConcept title="Attack Heights" icon="📐">
-          <ul>
-            <li><strong>Highs</strong> — Fast, but can be ducked</li>
-            <li><strong>Mids</strong> — Hit crouching opponents, can't be ducked</li>
-            <li><strong>Lows</strong> — Must be blocked crouching, force reaction</li>
-          </ul>
-          <p style={{ marginTop: '12px' }}>
-            Good offense mixes all three. If you only use one height, opponents adapt and shut you down.
-          </p>
-        </KeyConcept>
+        <p>
+          The trick is: <strong>pokes create the situations where counter-hit moves land.</strong> 
+          After blocking your 2,1 three times, your opponent WILL press a button eventually. 
+          When they do, these moves are waiting.
+        </p>
       </Section>
 
-      <Section title="f+4 — The Star of Jin's Gameplan">
+      <Section title="The Magic Four">
+        <MoveCard character="jin"
+          move={{
+            input: '4',
+            hitLevel: ['h'],
+            damage: '15',
+            startup: 'i13',
+            onBlock: '-9',
+            onHit: '+10g',
+            onCH: '+13c (guaranteed follow-up)',
+            tags: ['High', 'Homing', 'CH Tool', 'Heat Engager'],
+            description: 'Jin\'s most important counter-hit tool. Homing (catches sidestep). On CH, guarantees df+1,4 or 1+2 for heat. At +3 after db+4, it TRADES with opponent jabs — and the trade gives Jin a full combo.',
+          }}
+          showVideo
+        />
+
+        <KeyConcept title="The +3 Trade" icon="💥">
+          <p>
+            This is critical to understand. When you're at +3 (after <code>db+4</code> hit or 
+            <code>1,3,4</code> hit), and you do <code>4</code> while they jab:
+          </p>
+          <ul>
+            <li>Their jab (i10) hits at frame 10 → you're +3, so from YOUR perspective it's frame 7</li>
+            <li>Your <code>4</code> (i13) hits at frame 13 → from their perspective that's frame 10</li>
+            <li><strong>Both moves hit at the same time = trade</strong></li>
+            <li>But Jin's trade situation gives him +27 → guaranteed full combo follow-up</li>
+          </ul>
+          <p style={{ marginTop: '8px' }}>
+            In other words: after <code>db+4</code> hits, pressing jab is a death sentence for 
+            your opponent if you're ready with <code>4</code>.
+          </p>
+        </KeyConcept>
+
+        <TipBox variant="tip" title="When to Use Magic Four">
+          After db+4 hit (+3), after 1,3,4 hit (+3), in neutral when opponent is stepping, 
+          or whenever you suspect your opponent is about to press a button. It's homing so 
+          it catches sidesteps too — one move covering two defensive options.
+        </TipBox>
+      </Section>
+
+      <Section title="Forward Four — The Range Monster">
         <MoveCard character="jin"
           move={{
             input: 'f+4',
             hitLevel: ['m'],
             damage: '21',
-            startup: 'i16-17',
+            startup: 'i16',
             onBlock: '-8',
             onHit: '+4',
-            onCH: '+42a (Launch)',
-            tags: ['Mid', 'Counter-Hit Launcher', 'Safe', 'Long Range'],
-            description: 'One of Jin\'s best moves. Safe, long range, and LAUNCHES on counter-hit for a full combo.',
+            onCH: '+42a (full combo)',
+            tags: ['Mid', 'Safe', 'CH Launcher', 'Keep-Out', 'ZEN Transition'],
+            description: 'One of the best moves in Tekken. Safe mid with enormous range that counter-hit launches. Can transition into ZEN with F. Use it to punish people pressing from range 2+.',
           }}
           showVideo
         />
 
         <p>
-          f+4 is arguably <span className="highlight">Jin's most important move</span>. Let's break down why:
+          <code>f+4</code> is your answer to opponents who like to press buttons from mid-range. 
+          The range is deceptive — it reaches much further than it looks.
+        </p>
+
+        <Flowchart
+          title="f+4 Situations"
+          nodes={[
+            { type: 'start', label: 'Throw out f+4 in neutral' },
+            { type: 'decision', label: 'What happens?', branches: [
+              { label: 'CH (they pressed)', action: 'Dash in → b+3~F → ZEN combo. Easy 70+ damage.' },
+              { label: 'Normal hit (+4)', action: 'You\'re +4. Go to df+1 or db+4. Keep pressure.' },
+              { label: 'Blocked (-8)', action: 'It\'s safe. They can\'t launch you. You lose your turn but nothing bad happens.' },
+              { label: 'Whiffs', action: 'Recover is decent. Not ideal but you won\'t die for it usually.' },
+            ]},
+          ]}
+        />
+
+        <TipBox variant="tip" title="f+4 Into ZEN">
+          On hit, you can hold F to transition into ZEN stance at +11. From there, 
+          ZEN 3 (homing mid) beats everything. This is a free mixup opportunity — 
+          we'll cover ZEN fully in Chapter 6.
+        </TipBox>
+      </Section>
+
+      <Section title="b,f+2 String Series — The Mid Pressure">
+        <MoveCard character="jin"
+          move={{
+            input: 'b,f+2,1',
+            hitLevel: ['m', 'h'],
+            damage: '15, 14',
+            startup: 'i15',
+            onBlock: '-5',
+            onHit: '+6',
+            onCH: '+9',
+            tags: ['Mid-High', 'Safe', 'Great Range', 'Delayable'],
+            description: 'Mid-high string with excellent range and tracking. The high can be ducked, but the delay catches people pressing. On CH of the second hit, the third hits (safe mid or launcher) are guaranteed.',
+            notes: ['Can be delayed significantly to catch mashers'],
+          }}
+          videoId="b,f+2,1"
+          showVideo
+        />
+
+        <MoveCard character="jin"
+          move={{
+            input: 'b,f+2,3',
+            hitLevel: ['m', 'm'],
+            damage: '15, 17',
+            startup: 'i15',
+            onBlock: '-9',
+            onHit: '+6',
+            onCH: '+59a (full combo)',
+            tags: ['Mid-Mid', 'Safe', 'CH Launcher', 'ZEN Transition'],
+            description: 'The safer extension. Both hits are mids. -9 on block. On CH, full combo. Can transition into ZEN with F for plus frames (+2 on block, +17 on hit).',
+          }}
+          videoId="b,f+2,3"
+          showVideo
+        />
+
+        <p>
+          The <code>b,f+2</code> series is Jin's mid-range pressure string. By itself, <code>b,f+2</code> 
+          is only -7 on block with great range. The extensions create a mental game:
+        </p>
+
+        <DecisionGrid
+          title="b,f+2 Extension Mixup"
+          rows={[
+            { situation: 'Opponent blocks b,f+2 and presses', response: 'b,f+2,1 or b,f+2,3', reason: 'The extension catches them pressing', risk: 'Low (both safe)' },
+            { situation: 'Opponent blocks and waits', response: 'Just b,f+2 → sidestep or dash in', reason: 'You\'re only -7, can still move', risk: 'None' },
+            { situation: 'Opponent ducks after b,f+2', response: 'b,f+2,3 (both mids)', reason: 'They expected the high (b,f+2,1)', risk: 'Low' },
+            { situation: 'Opponent tries to sidestep', response: 'b,f+2,1 tracks well', reason: 'Good tracking on the second hit', risk: 'Low' },
+          ]}
+        />
+
+        <TipBox variant="tip" title="b,f+2,3~F at the Wall">
+          Transition to ZEN with F after <code>b,f+2,3</code> at the wall. On hit you're +17 in ZEN — 
+          basically a free mixup. On block you're +2 in ZEN, which is still your turn.
+        </TipBox>
+      </Section>
+
+      <Section title="df+3~3 — The Secret Mid">
+        <MoveCard character="jin"
+          move={{
+            input: 'df+3~3',
+            hitLevel: ['m'],
+            damage: '20',
+            startup: 'i23',
+            onBlock: '+6c',
+            onHit: '+13c',
+            tags: ['Mid', 'Plus on Block', 'Forced Crouch', 'Breaking Step'],
+            description: 'A 23-frame mid that is PLUS SIX on block and forces crouch. This is huge — at +6 in forced crouch, you can enforce a mixup. On hit at +13, you get a guaranteed follow-up (df+1,4 or 1+2 for heat).',
+          }}
+          videoId="df+3,3"
+          showVideo
+        />
+
+        <p>
+          This move is slower (i23) so you can't just throw it out raw in neutral. But after 
+          conditioning with pokes, when your opponent is scared to press, <code>df+3~3</code> 
+          is devastating:
         </p>
 
         <ul>
-          <li><strong>Safe on block</strong> — At -8 with pushback, most characters can only jab punish</li>
-          <li><strong>Great range</strong> — Reaches surprisingly far</li>
-          <li><strong>Counter-hit launches</strong> — If they press a button, full combo</li>
-          <li><strong>ZEN transition</strong> — Can go into stance with <code>f+4~f</code></li>
+          <li><strong>On block (+6, forced crouch)</strong> — Your opponent is crouching. You can go for ws+4,4, another df+3~3, throw, or electric.</li>
+          <li><strong>On hit (+13)</strong> — Guaranteed <code>df+1,4</code> or <code>1+2</code> for heat engage.</li>
+          <li><strong>You can enter Breaking Step</strong> — Hold df to go into Breaking Step for free electric inputs.</li>
         </ul>
 
-        <TipBox variant="tip" title="How to Confirm Counter-Hits">
-          When f+4 lands on counter-hit, the opponent crumples slowly. This is your cue to 
-          dash up and combo. Practice recognizing this animation — it's distinct from normal hit.
+        <TipBox variant="warning" title="Timing Matters">
+          At 23 frames, this move will lose to anyone pressing jabs in neutral. Only use it when 
+          you've conditioned the opponent to block — after landing multiple pokes, at the wall 
+          when they're scared, or in situations where you're already plus.
         </TipBox>
-
-        <KeyConcept title="When to Use f+4" icon="🎯">
-          <ul>
-            <li><strong>When opponent approaches</strong> — They walk into it, eat CH combo</li>
-            <li><strong>After plus frames</strong> — Jab (+1) → f+4 catches button presses</li>
-            <li><strong>At round start</strong> — Catches aggressive openers</li>
-            <li><strong>To check spacing</strong> — The range is incredible</li>
-          </ul>
-        </KeyConcept>
       </Section>
 
-      <Section title="df+3 — The Fast Mid">
-        <MoveCard character="jin"
-          move={{
-            input: 'df+3',
-            hitLevel: ['m'],
-            damage: '16',
-            startup: 'i12',
-            onBlock: '-8',
-            onHit: '+3',
-            tags: ['Mid', 'Fast', 'Safe'],
-            description: 'Jin\'s fastest standing mid at i12. Use when you need speed over range.',
-          }}
-          showVideo
-        />
-
+      <Section title="The Counter-Hit Setup Flow">
         <p>
-          df+3 is <span className="highlight">faster than df+1</span> (i12 vs i13). Use it when you 
-          need a quick mid check and f+4 would be too slow.
+          Here's how all these pieces connect to your poke loops from Chapter 2:
         </p>
 
-        <p>
-          It doesn't have the range or CH reward of f+4, but the speed makes it valuable in 
-          tight situations.
-        </p>
+        <div style={{ padding: '20px', background: 'var(--background-secondary)', borderRadius: '8px', marginTop: '16px', borderLeft: '3px solid var(--accent)' }}>
+          <p style={{ fontWeight: 700, color: 'var(--accent)', marginBottom: '12px' }}>Phase 1: Establish your pokes (Chapter 2)</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>
+            <code>2,1</code> · <code>df+1</code> · <code>d+4</code> · <code>db+4</code> — chip, annoy, condition.
+          </p>
 
-        <Collapsible title="df+3~3 — The Breaking Step Transition" icon="⚡">
+          <p style={{ fontWeight: 700, color: 'var(--accent-secondary)', marginBottom: '12px' }}>Phase 2: Punish their frustration (This Chapter)</p>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '16px' }}>
+            They start pressing → <code>f+4</code> CH launch · <code>4</code> trade combo · <code>2,1,4</code> knockdown · <code>b,f+2,3</code> CH combo
+          </p>
+
+          <p style={{ fontWeight: 700, color: '#10b981', marginBottom: '12px' }}>Phase 3: Exploit their respect (Chapter 4)</p>
+          <p style={{ color: 'var(--text-secondary)' }}>
+            They stop pressing → hell sweep · throws · df+3~3 · EWHF pressure — the real mixups.
+          </p>
+        </div>
+
+        <p style={{ marginTop: '16px' }}>
+          <strong>This is the cycle.</strong> Poke → they press → you counter-hit → they stop pressing → 
+          you mixup → they start pressing again → you counter-hit again. Jin's entire game is 
+          reading which phase your opponent is in and choosing the right weapon.
+        </p>
+      </Section>
+
+      <Section title="Drill It">
+        <Collapsible title="Counter-Hit Practice" icon="🎯" defaultOpen>
           <div style={{ marginTop: '12px' }}>
-            <p>
-              <code>df+3~3</code> transitions into Breaking Step, giving you access to easy electrics.
-              It's +6c on hit, leaving them crouching with you at advantage.
-            </p>
-            <p style={{ marginTop: '8px' }}>
-              We'll cover Breaking Step more in Chapter 6 (The Electric).
-            </p>
+            <ol style={{ lineHeight: '2.2' }}>
+              <li><strong>f+4 CH combo</strong> — Set opponent to "after block, 1". Do 2,1 on block → f+4. The f+4 will CH their jab. Practice the pickup: dash → b+3,f → ZEN combo.</li>
+              <li><strong>Magic four trade</strong> — Set opponent to "after hit, 1". Do db+4 → 4. You'll trade and get the combo opportunity.</li>
+              <li><strong>df+3~3 pressure</strong> — Practice df+3~3 on block, then immediately doing ws+4 or EWHF from the forced crouch advantage.</li>
+              <li><strong>b,f+2,3 CH</strong> — Set opponent to mash after b,f+2. The second hit catches them for a CH combo.</li>
+            </ol>
           </div>
         </Collapsible>
       </Section>
-
-      <Section title="d+4 — The Quick Low">
-        <MoveCard character="jin"
-          move={{
-            input: 'd+4',
-            hitLevel: ['l'],
-            damage: '11',
-            startup: 'i16-17',
-            onBlock: '-12',
-            onHit: '-1',
-            tags: ['Low', 'Poke', 'High Crush'],
-            description: 'Quick low poke that crushes highs. Chips damage and keeps them honest.',
-          }}
-          showVideo
-        />
-
-        <p>
-          d+4 is Jin's <span className="highlight">quick low</span>. It doesn't do much damage, 
-          but it's fast and <strong>crushes highs</strong> — it goes under high attacks.
-        </p>
-
-        <KeyConcept title="When to Use d+4" icon="👇">
-          <ul>
-            <li><strong>To chip turtles</strong> — Opponents blocking everything? d+4 hits low.</li>
-            <li><strong>To crush highs</strong> — Predict a jab string? d+4 ducks and hits.</li>
-            <li><strong>At round end</strong> — Low HP opponent? d+4 can finish them.</li>
-          </ul>
-        </KeyConcept>
-
-        <TipBox variant="warning" title="-12 on Block">
-          d+4 is -12 on block — opponents can punish with ws4 or similar. Don't overuse it 
-          against players who block and punish consistently.
-        </TipBox>
-      </Section>
-
-      <Section title="db+4 — The Chunky Low">
-        <MoveCard character="jin"
-          move={{
-            input: 'db+4',
-            hitLevel: ['l'],
-            damage: '18',
-            startup: 'i20-21',
-            onBlock: '-13',
-            onHit: '+3',
-            onCH: '+13g',
-            tags: ['Low', 'Plus on Hit', 'Long Range'],
-            description: 'Your main damage low. Plus on hit lets you continue pressure.',
-          }}
-          showVideo
-        />
-
-        <p>
-          db+4 is Jin's <span className="highlight">real low threat</span>. It does actual damage 
-          (18) and you're <strong>+3 on hit</strong>. That means after landing db+4, your jab 
-          comes out faster than their jab — you get to continue pressure.
-        </p>
-
-        <KeyConcept title="Why +3 Matters" icon="➕">
-          <p>When you're +3, your i10 jab effectively becomes i7 from the opponent's perspective.</p>
-          <ol>
-            <li>Land db+4 (you're +3)</li>
-            <li>They have to respect your frame advantage</li>
-            <li>You can do another low, a mid, or throw</li>
-            <li>Eventually they stop respecting, you jab them</li>
-          </ol>
-        </KeyConcept>
-
-        <TipBox variant="warning" title="-13 on Block">
-          db+4 is launch punishable by some characters. Use it when you've conditioned them 
-          to stand block, not randomly. The risk-reward is 18 damage vs potential 40+ punish.
-        </TipBox>
-      </Section>
-
-      <Section title="The Basic Gameplan">
-        <p>
-          With your jabs (Chapter 2) and these mids/lows, you now have functional Jin offense:
-        </p>
-
-        <KeyConcept title="Mixing Your Offense" icon="🎲">
-          <ol>
-            <li><strong>Poke with jabs</strong> — Build respect, check opponents</li>
-            <li><strong>Fish with f+4</strong> — Catch them pressing, get CH combos</li>
-            <li><strong>Chip with d+4</strong> — Force them to block low</li>
-            <li><strong>Punish blocking with db+4</strong> — Real damage, plus frames</li>
-            <li><strong>Repeat and adapt</strong></li>
-          </ol>
-        </KeyConcept>
-
-        <p>
-          Opponents who block everything eat lows. Opponents who try to duck your lows eat f+4. 
-          Opponents who press buttons eat counter-hits. This triangle wins games.
-        </p>
-      </Section>
-
-      <Collapsible title="Other Mids to Know" icon="📖" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Jin has more mids beyond f+4 and df+3. These are situationally useful:
-          </p>
-
-          <p><strong>b+4</strong> (i17, -7 oB, knockdown)</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Safe mid that knocks down on hit</li>
-            <li>Good for ending rounds</li>
-          </ul>
-
-          <p><strong>df+4</strong> (i20, +0 oB, spike)</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Neutral on block — completely safe</li>
-            <li>Heat engager</li>
-            <li>Slower but zero risk</li>
-          </ul>
-
-          <p><strong>b+2,1</strong> (i15, -9 oB)</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Mid-mid string with good range</li>
-            <li>Safe, good for ending rounds</li>
-          </ul>
-
-          <p><strong>ff+3</strong> (i22, +6 oB when running)</p>
-          <ul>
-            <li>While-running mid that's PLUS on block</li>
-            <li>Chip damage, can transition to ZEN</li>
-          </ul>
-        </div>
-      </Collapsible>
-
-      <Collapsible title="Other Lows to Know" icon="📖" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Jin's other lows have specific uses:
-          </p>
-
-          <p><strong>d+2</strong> (i22, -14 oB, +4c oH)</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Chunky low that high crushes</li>
-            <li>Hits grounded opponents — key for oki (Chapter 12)</li>
-            <li>-14 on block so be careful</li>
-          </ul>
-
-          <p><strong>d+3</strong> (i15, -14 oB)</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Fast low kick</li>
-            <li>Has extensions: d+3,4 and d+3,4,3</li>
-          </ul>
-
-          <p><strong>FC.df+4</strong> (i21, -26 oB, launches on CH)</p>
-          <ul>
-            <li>Full crouch sweep</li>
-            <li>Counter-hit LAUNCHES for full combo</li>
-            <li>Very risky but huge reward</li>
-            <li>Can transition to ZEN on hit</li>
-          </ul>
-        </div>
-      </Collapsible>
-
-      <Collapsible title="Frame Data Reference" icon="📊">
-        <div style={{ marginTop: '12px', overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Move</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Speed</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>On Block</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>On Hit</th>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Notes</th>
-              </tr>
-            </thead>
-            <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr>
-                <td style={{ padding: '8px' }}><code>f+4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i16</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-8</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+4</td>
-                <td style={{ padding: '8px' }}>CH launches!</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>df+3</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i12</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-8</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+3</td>
-                <td style={{ padding: '8px' }}>Fastest mid</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>d+4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i16</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-12</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>-1</td>
-                <td style={{ padding: '8px' }}>Quick low, high crush</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>db+4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i20</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-13</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>+3</td>
-                <td style={{ padding: '8px' }}>Chunky, plus on hit</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </Collapsible>
     </Chapter>
   )
 }

@@ -17,6 +17,7 @@ import { paulConfig } from './paul/config'
 import { reinaConfig } from './reina/config'
 import { victorConfig } from './victor/config'
 import { yoshimitsuConfig } from './yoshimitsu/config'
+import { xiaoyuConfig } from './xiaoyu/config'
 import { zafinaConfig } from './zafina/config'
 
 // Character registry - add new characters here
@@ -39,6 +40,7 @@ export const characters: Record<string, CharacterConfig> = {
   'reina': reinaConfig,
   'victor': victorConfig,
   'yoshimitsu': yoshimitsuConfig,
+  'xiaoyu': xiaoyuConfig,
   'zafina': zafinaConfig,
 }
 
