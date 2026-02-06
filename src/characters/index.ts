@@ -11,7 +11,9 @@ import { jinConfig } from './jin/config'
 import { junConfig } from './jun/config'
 import { kingConfig } from './king/config'
 import { kazuyaConfig } from './kazuya/config'
+import { larsConfig } from './lars/config'
 import { lawConfig } from './law/config'
+import { paulConfig } from './paul/config'
 import { reinaConfig } from './reina/config'
 import { victorConfig } from './victor/config'
 import { yoshimitsuConfig } from './yoshimitsu/config'
@@ -31,7 +33,9 @@ export const characters: Record<string, CharacterConfig> = {
   'jun': junConfig,
   'king': kingConfig,
   'kazuya': kazuyaConfig,
+  'lars': larsConfig,
   'law': lawConfig,
+  'paul': paulConfig,
   'reina': reinaConfig,
   'victor': victorConfig,
   'yoshimitsu': yoshimitsuConfig,

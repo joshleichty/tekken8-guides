@@ -45,15 +45,22 @@ function escapeSelectorValue(value: string): string {
 function getInspectableElements(x: number, y: number): HTMLElement[] {
   if (typeof document === 'undefined' || !document.elementsFromPoint) return []
 
-  return document
-    .elementsFromPoint(x, y)
-    .filter((node): node is HTMLElement => node instanceof HTMLElement)
-    .filter(el => !el.closest(FEEDBACK_UI_SELECTOR))
-    .filter(el => el.tagName !== 'HTML' && el.tagName !== 'BODY')
-    .filter(el => {
-      const rect = el.getBoundingClientRect()
-      return rect.width >= 4 && rect.height >= 4
-    })
+  const raw = document.elementsFromPoint(x, y)
+  const result: HTMLElement[] = []
+
+  for (let i = 0; i < raw.length; i++) {
+    const node = raw[i]
+    if (!(node instanceof HTMLElement)) continue
+    const tag = node.tagName
+    if (tag === 'HTML' || tag === 'BODY') continue
+    if (node.closest(FEEDBACK_UI_SELECTOR)) continue
+    const rect = node.getBoundingClientRect()
+    if (rect.width >= 4 && rect.height >= 4) {
+      result.push(node)
+    }
+  }
+
+  return result
 }
 
 function getTextPreview(element: HTMLElement): string {
@@ -171,10 +178,21 @@ export function FeedbackMode() {
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [toastTone, setToastTone] = useState<'success' | 'error'>('success')
   const [viewportTick, setViewportTick] = useState(0)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [notesSent, setNotesSent] = useState(() => {
+    try {
+      const stored = parseInt(localStorage.getItem('feedback-notes-sent') || '0', 10)
+      return Number.isFinite(stored) ? stored : 0
+    } catch {
+      return 0
+    }
+  })
 
   const topLayerRef = useRef<HTMLElement | null>(null)
   const layeredElementsRef = useRef<HTMLElement[]>([])
   const layerIndexRef = useRef(0)
+  const moveRafRef = useRef(0)
+  const viewportRafRef = useRef(0)
 
   useEffect(() => {
     setIsMounted(true)
@@ -194,6 +212,7 @@ export function FeedbackMode() {
       setLayerIndex(0)
       setSelectedTarget(null)
       setIsGeneralDraft(false)
+      setIsSuccess(false)
       topLayerRef.current = null
     }
   }, [isEnabled])
@@ -219,6 +238,18 @@ export function FeedbackMode() {
     const timer = window.setTimeout(() => setToastMessage(null), 2200)
     return () => window.clearTimeout(timer)
   }, [toastMessage])
+
+  useEffect(() => {
+    if (!isSuccess) return
+    const timer = window.setTimeout(() => {
+      setIsSuccess(false)
+      setMessageDraft('')
+      setSelectedTarget(null)
+      setIsGeneralDraft(false)
+      setIsEnabled(false)
+    }, 2800)
+    return () => window.clearTimeout(timer)
+  }, [isSuccess])
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -257,21 +288,33 @@ export function FeedbackMode() {
     const updateLayers = (x: number, y: number) => {
       if (composerOpen) return
       const stack = getInspectableElements(x, y)
-      setLayeredElements(stack)
-
-      const previousTop = topLayerRef.current
       const currentTop = stack[0] ?? null
-      topLayerRef.current = currentTop
+      const previousTop = topLayerRef.current
 
-      if (currentTop !== previousTop) {
-        setLayerIndex(0)
-      } else {
-        setLayerIndex(prev => clamp(prev, 0, Math.max(0, stack.length - 1)))
+      // Always keep the ref current for keyboard layer navigation
+      layeredElementsRef.current = stack
+
+      // Skip React re-render when hovering the same top element
+      if (currentTop === previousTop) {
+        const maxIdx = Math.max(0, stack.length - 1)
+        if (layerIndexRef.current > maxIdx) {
+          setLayerIndex(maxIdx)
+        }
+        return
       }
+
+      topLayerRef.current = currentTop
+      setLayeredElements(stack)
+      setLayerIndex(0)
     }
 
     const handleMove = (event: MouseEvent) => {
-      updateLayers(event.clientX, event.clientY)
+      const x = event.clientX
+      const y = event.clientY
+      cancelAnimationFrame(moveRafRef.current)
+      moveRafRef.current = requestAnimationFrame(() => {
+        updateLayers(x, y)
+      })
     }
 
     const handleClickCapture = (event: MouseEvent) => {
@@ -313,7 +356,10 @@ export function FeedbackMode() {
     }
 
     const handleViewportChange = () => {
-      setViewportTick(prev => prev + 1)
+      cancelAnimationFrame(viewportRafRef.current)
+      viewportRafRef.current = requestAnimationFrame(() => {
+        setViewportTick(prev => prev + 1)
+      })
     }
 
     window.addEventListener('mousemove', handleMove, true)
@@ -323,6 +369,8 @@ export function FeedbackMode() {
     window.addEventListener('scroll', handleViewportChange, true)
 
     return () => {
+      cancelAnimationFrame(moveRafRef.current)
+      cancelAnimationFrame(viewportRafRef.current)
       window.removeEventListener('mousemove', handleMove, true)
       window.removeEventListener('click', handleClickCapture, true)
       window.removeEventListener('wheel', handleWheelCapture, true)
@@ -375,12 +423,14 @@ export function FeedbackMode() {
           throw new Error('Request failed')
         }
 
-        setToastTone('success')
-        setToastMessage('Note saved')
-        setMessageDraft('')
-        setSelectedTarget(null)
-        setIsGeneralDraft(false)
-        setIsEnabled(false)
+        const newCount = notesSent + 1
+        setNotesSent(newCount)
+        try {
+          localStorage.setItem('feedback-notes-sent', String(newCount))
+        } catch {
+          // Storage unavailable
+        }
+        setIsSuccess(true)
       } catch {
         setToastTone('error')
         setToastMessage('Could not save note')
@@ -388,7 +438,7 @@ export function FeedbackMode() {
         setIsSubmitting(false)
       }
     },
-    [currentPath, isGeneralDraft, messageDraft, notesApiUrl, selectedTarget],
+    [currentPath, isGeneralDraft, messageDraft, notesSent, notesApiUrl, selectedTarget],
   )
 
   if (!isMounted) return null
@@ -404,16 +454,35 @@ export function FeedbackMode() {
         data-feedback-ui="true"
       >
         <span className={styles.toggleDot} />
-        {isEnabled ? 'Notes Mode On' : 'Add Note'}
+        {isEnabled ? 'Exit Notes' : 'Add Note'}
       </button>
 
       {isEnabled && (
         <>
           <div className={styles.scrim} data-feedback-ui="true" />
 
+          {composerOpen && (
+            <div
+              className={styles.sheetBackdrop}
+              data-feedback-ui="true"
+              onClick={() => {
+                if (isSuccess) {
+                  setIsSuccess(false)
+                  setMessageDraft('')
+                }
+                setSelectedTarget(null)
+                setIsGeneralDraft(false)
+                if (isSuccess) setIsEnabled(false)
+              }}
+            />
+          )}
+
           <div className={styles.toolbar} data-feedback-ui="true">
-            <span className={styles.toolbarTitle}>Make a quick guide note</span>
-            <span className={styles.toolbarHint}>Esc to close</span>
+            <span className={styles.toolbarTitle}>
+              <span className={styles.desktopText}>Click any element to leave a note</span>
+              <span className={styles.mobileText}>Tap any element</span>
+            </span>
+            <span className={styles.toolbarHint}>Esc</span>
             <button
               type="button"
               className={styles.toolbarAction}
@@ -423,6 +492,15 @@ export function FeedbackMode() {
               }}
             >
               General note
+            </button>
+            <button
+              type="button"
+              className={styles.toolbarClose}
+              onClick={() => setIsEnabled(false)}
+              aria-label="Close notes mode"
+              data-feedback-ui="true"
+            >
+              ×
             </button>
           </div>
 
@@ -444,7 +522,7 @@ export function FeedbackMode() {
             </>
           )}
 
-          {selectedRect && (
+          {selectedRect && !isSuccess && (
             <div
               className={styles.selectedHighlight}
               style={rectStyle(selectedRect)}
@@ -454,64 +532,70 @@ export function FeedbackMode() {
 
           {(selectedTarget || isGeneralDraft) && (
             <aside className={styles.panel} data-feedback-ui="true">
-              <div className={styles.panelHeader}>
-                <h2 className={styles.panelTitle}>Add a note</h2>
-                <button
-                  type="button"
-                  className={styles.secondaryAction}
-                  onClick={() => {
-                    setSelectedTarget(null)
-                    setIsGeneralDraft(false)
-                  }}
-                >
-                  Close
-                </button>
-              </div>
-
-              {selectedTarget ? (
-                <div className={styles.targetDetails}>
-                  <p className={styles.detailTitle}>Note about this area</p>
-                  <p className={styles.detailText}>{selectedTarget.textPreview}</p>
-                </div>
-              ) : (
-                <div className={styles.targetDetails}>
-                  <p className={styles.detailTitle}>General note</p>
-                  <p className={styles.detailText}>
-                    Share feedback that applies to the page or website overall.
+              {isSuccess ? (
+                <div className={styles.successState}>
+                  <div className={styles.successIcon}>✓</div>
+                  <p className={styles.successTitle}>Thanks for the feedback</p>
+                  <p className={styles.successText}>
+                    This helps keep the guide accurate and up to date.
                   </p>
                 </div>
+              ) : (
+                <>
+                  <div className={styles.panelHeader}>
+                    <h2 className={styles.panelTitle}>Add a note</h2>
+                    <button
+                      type="button"
+                      className={styles.secondaryAction}
+                      onClick={() => {
+                        setSelectedTarget(null)
+                        setIsGeneralDraft(false)
+                      }}
+                    >
+                      Close
+                    </button>
+                  </div>
+
+                  {selectedTarget ? (
+                    <div className={styles.targetDetails}>
+                      <p className={styles.detailTitle}>Selected element</p>
+                      <p className={styles.detailText}>{selectedTarget.textPreview}</p>
+                    </div>
+                  ) : (
+                    <div className={styles.targetDetails}>
+                      <p className={styles.detailTitle}>General</p>
+                      <p className={styles.detailText}>
+                        Feedback about the page overall.
+                      </p>
+                    </div>
+                  )}
+
+                  <form onSubmit={submitFeedback} className={styles.form}>
+                    <textarea
+                      id="feedback-message"
+                      className={styles.textarea}
+                      value={messageDraft}
+                      onChange={event => setMessageDraft(event.target.value)}
+                      placeholder="e.g. This says -14 but I think it should be -13"
+                      aria-label="Your note"
+                      rows={4}
+                      data-feedback-ui="true"
+                      autoFocus={window.innerWidth > 900}
+                    />
+
+                    <div className={styles.actions}>
+                      <span className={styles.pagePill}>{currentPath}</span>
+                      <button
+                        type="submit"
+                        className={styles.primaryAction}
+                        disabled={!messageDraft.trim() || isSubmitting}
+                      >
+                        {isSubmitting ? 'Saving...' : 'Save note'}
+                      </button>
+                    </div>
+                  </form>
+                </>
               )}
-
-              <form onSubmit={submitFeedback} className={styles.form}>
-                <p className={styles.helperText}>
-                  Use this for guide corrections, visual bugs, or improvement ideas.
-                </p>
-
-                <label htmlFor="feedback-message" className={styles.formLabel}>
-                  What should be updated?
-                </label>
-                <textarea
-                  id="feedback-message"
-                  className={styles.textarea}
-                  value={messageDraft}
-                  onChange={event => setMessageDraft(event.target.value)}
-                  placeholder="Example: This says -14, but I think this is -13."
-                  rows={5}
-                  data-feedback-ui="true"
-                  autoFocus
-                />
-
-                <div className={styles.actions}>
-                  <span className={styles.pagePill}>{currentPath}</span>
-                  <button
-                    type="submit"
-                    className={styles.primaryAction}
-                    disabled={!messageDraft.trim() || isSubmitting}
-                  >
-                    {isSubmitting ? 'Saving...' : 'Save note'}
-                  </button>
-                </div>
-              </form>
             </aside>
           )}
         </>
