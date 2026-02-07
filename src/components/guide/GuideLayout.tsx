@@ -19,6 +19,8 @@ interface GuideLayoutProps {
   onChapterSelect: (id: number) => void
   onReset: () => void
   children: ReactNode
+  isCounterMode?: boolean
+  onModeSwitch?: () => void
 }
 
 export function GuideLayout({
@@ -31,6 +33,8 @@ export function GuideLayout({
   onChapterSelect,
   onReset,
   children,
+  isCounterMode = false,
+  onModeSwitch,
 }: GuideLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
@@ -60,6 +64,8 @@ export function GuideLayout({
         onReset={onReset}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
+        isCounterMode={isCounterMode}
+        onModeSwitch={onModeSwitch}
       />
 
       {sidebarOpen && (

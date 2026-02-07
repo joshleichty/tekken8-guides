@@ -114,3 +114,14 @@ export interface GuideProgress {
   tasks: Record<string, boolean | number>
   quizzes: Record<string, boolean>
 }
+
+// Counter (anti) guide configuration
+export interface CounterConfig {
+  slug: string           // Same as character slug
+  name: string           // Display name (e.g., "vs Victor")
+  subtitle: string
+  icon: string
+  description: string
+  theme: Partial<CharacterTheme>
+  chapters: ChapterConfig[]
+}

@@ -201,6 +201,56 @@
   color: var(--warning);
 }
 
+/* Counter mode header */
+.counterHeader {
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05));
+}
+
+/* Mode toggle button */
+.modeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.modeToggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent);
+}
+
+.modeToggleActive {
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+.modeToggleActive:hover {
+  border-color: rgba(220, 38, 38, 0.5);
+}
+
+.modeToggleIcon {
+  font-size: 0.85rem;
+}
+
+.modeToggleLabel {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.modeToggle:hover .modeToggleLabel {
+  color: var(--accent);
+}
+
 @media (max-width: 1000px) {
   .sidebar {
     transform: translateX(-100%);

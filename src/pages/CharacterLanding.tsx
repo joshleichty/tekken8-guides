@@ -1,5 +1,5 @@
 import { CharacterGrid } from '../components/landing'
-import { characters } from '../characters'
+import { characters, hasCounterGuide } from '../characters'
 import { getCharacterImageUrl } from '../utils/character-images'
 import styles from './CharacterLanding.module.css'
 
@@ -22,6 +22,7 @@ export function CharacterLanding() {
         imagePosition: overrides?.position,
         imageScale: overrides?.scale,
         imageTranslateY: overrides?.translateY,
+        hasCounter: hasCounterGuide(char.slug),
       }
     })
     .sort((a, b) => a.name.localeCompare(b.name))
@@ -33,9 +34,7 @@ export function CharacterLanding() {
       </header>
       
       <main className={styles.main}>
-        <CharacterGrid 
-          characters={availableCharacters} 
-        />
+        <CharacterGrid characters={availableCharacters} />
       </main>
     </div>
   )

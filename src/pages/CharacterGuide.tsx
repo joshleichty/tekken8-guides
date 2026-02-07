@@ -1,6 +1,6 @@
-import { useParams, Navigate } from 'react-router-dom'
+import { useParams, Navigate, useNavigate } from 'react-router-dom'
 import { useState, useCallback, useEffect } from 'react'
-import { characters } from '../characters'
+import { characters, hasCounterGuide } from '../characters'
 import { ThemeProvider } from '../themes/ThemeContext'
 import { GuideLayout } from '../components/guide'
 import type { GuideProgress } from '../types'
@@ -9,8 +9,10 @@ const STORAGE_PREFIX = 'tekken-guide-'
 
 export function CharacterGuide() {
   const { characterSlug } = useParams<{ characterSlug: string }>()
+  const navigate = useNavigate()
   
   const character = characterSlug ? characters[characterSlug] : null
+  const counterAvailable = characterSlug ? hasCounterGuide(characterSlug) : false
   
   // Load progress from localStorage
   const [progress, setProgress] = useState<GuideProgress>(() => {
@@ -121,6 +123,8 @@ export function CharacterGuide() {
         completedChapters={progress.completedChapters}
         onChapterSelect={goToChapter}
         onReset={resetProgress}
+        isCounterMode={false}
+        onModeSwitch={counterAvailable ? () => navigate(`/vs/${characterSlug}`) : undefined}
       >
         {renderChapterContent()}
       </GuideLayout>

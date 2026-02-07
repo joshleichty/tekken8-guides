@@ -21,6 +21,8 @@ interface GuideSidebarProps {
   onReset: () => void
   isOpen?: boolean
   onClose?: () => void
+  isCounterMode?: boolean
+  onModeSwitch?: () => void
 }
 
 export function GuideSidebar({
@@ -35,6 +37,8 @@ export function GuideSidebar({
   onReset,
   isOpen = true,
   onClose,
+  isCounterMode = false,
+  onModeSwitch,
 }: GuideSidebarProps) {
   const [settingsOpen, setSettingsOpen] = useState(false)
   // Group chapters by section
@@ -52,10 +56,16 @@ export function GuideSidebar({
         ← All Guides
       </Link>
       
-      <div className={styles.header}>
+      <div className={`${styles.header} ${isCounterMode ? styles.counterHeader : ''}`}>
         <div className={styles.logo}>{characterIcon}</div>
         <div className={styles.title}>{characterName}</div>
         <div className={styles.subtitle}>{characterSubtitle}</div>
+        {onModeSwitch && (
+          <button className={`${styles.modeToggle} ${isCounterMode ? styles.modeToggleActive : ''}`} onClick={onModeSwitch}>
+            <span className={styles.modeToggleIcon}>{isCounterMode ? '📖' : '🎯'}</span>
+            <span className={styles.modeToggleLabel}>{isCounterMode ? 'Character Guide' : 'Counter Guide'}</span>
+          </button>
+        )}
       </div>
 
       <div className={styles.progress}>

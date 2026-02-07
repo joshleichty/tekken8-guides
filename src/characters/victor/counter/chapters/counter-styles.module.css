@@ -1,0 +1,398 @@
+/* ═══════════════════════════════════════════
+   COUNTER GUIDE — Shared Styles
+   Clean, consistent styling for counter guide
+   custom elements. Replaces inline styles.
+   ═══════════════════════════════════════════ */
+
+/* ── Rule Cards (equal-height grid) ─────── */
+.ruleGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.ruleCard {
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ruleIcon {
+  font-size: 1.4rem;
+}
+
+.ruleTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.ruleDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ruleNote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+
+@media (max-width: 640px) {
+  .ruleGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Phase Cards ────────────────────────── */
+.phaseList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.phaseCard {
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.phaseLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.phaseDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Data Table ─────────────────────────── */
+.dataTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 12px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.dataTable tr {
+  background: var(--bg-card);
+}
+
+.dataTable tr:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+.dataTable td {
+  padding: 10px 16px;
+  font-size: 0.875rem;
+}
+
+.dataTable td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.dataTable td:last-child {
+  text-align: right;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.frameRed {
+  color: #ef4444;
+}
+
+.frameAmber {
+  color: var(--accent);
+}
+
+.frameMuted {
+  color: var(--text-muted);
+}
+
+.frameGreen {
+  color: #22c55e;
+}
+
+/* ── Drill Recording Slots ──────────────── */
+.slotList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 8px 0;
+}
+
+.slot {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.slotLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  min-width: 40px;
+}
+
+.slotDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.slotDesc strong {
+  color: var(--text-primary);
+}
+
+/* ── Success Criteria ───────────────────── */
+.successBox {
+  padding: 14px 20px;
+  background: rgba(34, 197, 94, 0.06);
+  border-radius: 8px;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  margin: 16px 0;
+}
+
+.successLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #22c55e;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.successDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Timing Schedule ────────────────────── */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin: 12px 0;
+}
+
+.scheduleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.scheduleTime {
+  color: var(--accent);
+  font-weight: 600;
+  min-width: 48px;
+  flex-shrink: 0;
+}
+
+.scheduleTask {
+  color: var(--text-secondary);
+}
+
+/* ── Stance Decision Block ──────────────── */
+.decisionBlock {
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid;
+  margin: 8px 0;
+}
+
+.decisionBlock.positive {
+  background: rgba(34, 197, 94, 0.05);
+  border-color: rgba(34, 197, 94, 0.15);
+}
+
+.decisionBlock.negative {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.15);
+}
+
+.decisionLabel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.decisionBlock.positive .decisionLabel {
+  color: #22c55e;
+}
+
+.decisionBlock.negative .decisionLabel {
+  color: #ef4444;
+}
+
+.decisionContent {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.decisionContent ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+
+.decisionContent li {
+  margin-bottom: 4px;
+}
+
+.decisionContent strong {
+  color: var(--text-primary);
+}
+
+/* ── Ref Summary Card ───────────────────── */
+.summaryCard {
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin: 16px 0;
+}
+
+.summaryCard p {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.summaryCard p + p {
+  margin-top: 12px;
+}
+
+/* ── IAI Transition Color Blocks ────────── */
+.transitionList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 0.85rem;
+}
+
+.transitionItem {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border-left: 3px solid;
+}
+
+.transitionItem.launch {
+  background: rgba(34, 197, 94, 0.06);
+  border-left-color: #22c55e;
+}
+
+.transitionItem.challenge {
+  background: rgba(59, 130, 246, 0.06);
+  border-left-color: #3b82f6;
+}
+
+.transitionItem.respect {
+  background: rgba(239, 68, 68, 0.06);
+  border-left-color: #ef4444;
+}
+
+.transitionLabel {
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+.transitionItem.launch .transitionLabel {
+  color: #22c55e;
+}
+
+.transitionItem.challenge .transitionLabel {
+  color: #3b82f6;
+}
+
+.transitionItem.respect .transitionLabel {
+  color: #ef4444;
+}
+
+.transitionMoves {
+  color: var(--text-secondary);
+}
+
+/* ── Read Card (simple info block) ──────── */
+.readCard {
+  padding: 14px 20px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.readTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.readDesc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── Heat Ref Row ───────────────────────── */
+.heatRow {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  font-size: 0.875rem;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.heatRow:last-child {
+  border-bottom: none;
+}
+
+.heatMove {
+  color: var(--text-primary);
+  font-weight: 600;
+  min-width: 100px;
+  flex-shrink: 0;
+}
+
+.heatNote {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

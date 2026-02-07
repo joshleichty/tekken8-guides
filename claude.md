@@ -282,6 +282,111 @@ echo -n "f,F+2: " && curl -s -o /dev/null -w "%{http_code}" "https://okizeme.b-c
 - Not all moves have videos on Okizeme—aim for 90%+ coverage
 - Only `MoveCard` supports `showVideo`—don't add it to `ComboCard`, `PracticeBox`, etc.
 
+---
+
+## Counter Guides (Anti-Character Guides)
+
+### The Core Goal
+
+A player completes the counter guide. They queue into that character online. They are meaningfully better at the matchup than they would have been using any other strategy — watching videos, reading frame data, grinding ranked, studying punishment tables, or any combination of those. That's the bar.
+
+If the guide doesn't clear that bar, it doesn't matter how well-designed it is.
+
+### What Matchup Knowledge Actually Is
+
+This is the other half of fighting games that almost nobody teaches well. Character guides teach you to play a character. Counter guides teach you to *beat* one. These are fundamentally different problems.
+
+Here's the proof: players lose mirror matches all the time. A Dragunov main who knows every combo, every frame trap, every setup — losing to another Dragunov. Not because they don't know the character, but because knowing *how to play* a character and knowing *how to fight against* that character are separate skills. Pros debate whether mirror match results come down to player skill or matchup knowledge, and the consensus leans heavily toward matchup knowledge. You can fully understand a character's toolkit and still not know what to do when you're on the receiving end of it.
+
+This means matchup knowledge is its own domain. It's not a subset of character knowledge. It's not the inverse of character knowledge. It's a distinct skill that has to be learned on its own terms.
+
+### Why This Problem Is So Hard
+
+Every character in Tekken has hundreds of moves. Dozens of strings with extensions. Stances with transitions. Frame data for every hit level, on block, on hit. The information space is enormous.
+
+You can't memorize it all. Nobody can. Pros who've played for 20 years still get caught by matchups they haven't studied. And even if you could memorize every frame number, that wouldn't translate to gameplay — you'd know that WR2 is +5 on block into IAI stance, but that fact alone doesn't tell you what to do when it happens at speed in a real match with adrenaline pumping.
+
+But here's the thing: most of those hundreds of moves don't matter. Most strings never get used in real play. Most frame data is irrelevant because you'll never block that move in ranked. The information that *does* matter — the handful of things that actually determine whether you win or lose the matchup — is buried inside the mountain of data that doesn't.
+
+So the problem is really two problems stacked together:
+1. **Figuring out what actually matters** — which moves, situations, and knowledge points are the ones that will change your results?
+2. **Making it stick** — how do you take that knowledge and make it something the player can actually use under pressure in a real match?
+
+Neither of these is solved by existing approaches.
+
+### Why Everything Else Fails
+
+**Frame data and punishment lists** (Tekken Docs, anti-strat pages): These contain all the information but teach nothing. Listing 47 punishable moves doesn't help a player who can't recognize which move they just blocked. The information is correct but completely decontextualized — it's an encyclopedia when what the player needs is a coach.
+
+**Tips and guide videos**: These create the *feeling* of learning. You watch a 15-minute video, you nod along, you feel like you understand. Then you play and nothing is different. The knowledge evaporated because it was never practiced, never drilled, never connected to actual gameplay situations. Watching someone explain a concept is not the same as experiencing it.
+
+**"Just play the matchup"**: This is how most people learn, and it's the slowest possible path. You'll develop heuristics over hundreds of games, but they'll be incomplete, often wrong, and reinforced by bad habits. You'll learn to duck one high but miss the other five. You'll develop a punish for one move but whiff-punish three others because you can't tell them apart. Experience without structure is just slow trial and error.
+
+**Punishment-only approaches**: Learning to punish every unsafe move sounds good in theory. In practice, the player learns punishment in isolation — they see the move, they punish it. In a real match, the move comes embedded in a string, at a different spacing, with different preceding context, and they can't recognize it. The skill doesn't transfer because it was trained out of context.
+
+**Ducking-highs-only approaches**: Same problem. You learn to duck specific strings in a recording. In a match, the timing is different, the preceding pressure is different, and your brain didn't learn to *see* the high — it learned to duck at a specific timing that only exists in the drill.
+
+**Targeted drills (the more sophisticated approach)**: Some content creators set up multi-recording drills that randomize options. This is closer to the right idea, but still has deep problems. Does the drill actually map to what the character does in a real match? Does it train a genuine skill or just pattern-match to the recording order? If you jab and it beats every recording, what did you learn? If it's a 50/50, what are you drilling exactly — guessing?
+
+The common thread: every existing approach either gives you **information without learning** or **learning without transfer**. The information exists (Tekken Docs has it all). The learning tools exist (Practice Mode is powerful). But nobody has solved the bridge between them — taking the right information and turning it into genuine matchup competence.
+
+### What "Better at the Matchup" Actually Means
+
+Being good at a matchup doesn't mean memorizing frame data. It doesn't mean being able to punish every move in isolation. It means:
+
+- **You understand what the opponent is trying to do to you.** Not just the moves, but the intent. The gameplan. What they're building toward. This gives you a mental model that lets you predict and respond to things you've never specifically drilled.
+- **You make the right decision in the common situations.** Not every situation — just the ones that actually come up. The approach, the close-range pressure, the stance transitions, the wall. If you handle these correctly, you handle 90% of real matches.
+- **You know the difference between things you can control and things you have to guess.** Some situations are knowledge checks (you know the answer or you don't). Some are reactable (you can train them). Some are genuine reads (you guess). Knowing which is which prevents you from wasting practice time on coin flips and wasting real matches on things you should have just known.
+- **The knowledge lives in your hands, not just your head.** You don't just know that the gun is a high — you actually duck it when it happens at speed. The gap between knowing and doing is the entire challenge.
+
+### Counter Guides Are a Different Shape Than Character Guides
+
+A character guide can be deep. You're investing in one character for hundreds, maybe thousands of hours. You want mastery.
+
+A counter guide has to be short. You need one for every character in the game — 30+ characters. A player cannot spend 10 hours on every matchup. The guide has to be completable in 1-3 focused sessions while delivering real, lasting improvement.
+
+This constraint changes everything about how you design the guide. You can't be comprehensive. You have to be ruthlessly efficient — figuring out which 20% of the matchup knowledge delivers 80% of the results, and teaching that with maximum density and minimum waste.
+
+It also means you can't just shrink a character guide. The structure, the pacing, the teaching methods — all different. A character guide builds depth over time. A counter guide needs to deliver breadth with targeted depth, quickly.
+
+### The Hard Open Questions
+
+These are problems we've identified but haven't fully solved. They should inform how you approach building counter guides, but don't pretend there are clean answers yet.
+
+**How do you make drill practice actually transfer?** The biggest risk with any drill is that the player learns to beat the drill instead of learning to play the matchup. The brain is lazy — it will find the minimum information needed to succeed in the practice environment and learn exactly that. If one response beats everything, it learns that response regardless of what the opponent did. If the drill has a rhythm, it learns the rhythm instead of the recognition. Designing drills that genuinely teach matchup skills and not just drill-completion skills is the central unsolved challenge.
+
+**How do you represent what a character actually does?** Setting up recordings in Practice Mode is an approximation. Real Victor players don't do random moves — they have patterns, flowcharts, habits. But a recording can only do one thing. Four recordings randomized don't capture the flow of a real opponent's offense. The question is whether and how we can get close enough that the practice transfers.
+
+**Where's the line between knowledge and training?** Some matchup knowledge is pure information — you either know it or you don't, and no drill is needed. Some requires genuine practice under pressure. A lot of it is ambiguous. Telling someone "duck the gun" is knowledge, but can they actually do it at speed against a string they've never seen? At what point does knowledge need to become training? This line is different for every player and every piece of information.
+
+**What should be trained vs. what should be accepted as a read?** Some situations are reactable for tournament pros but effectively random for most players. Where do you draw the line? Is it dishonest to drill something that 80% of players will never react to consistently? Is it a disservice not to, for the 20% who might?
+
+**How do you teach without being formulaic?** Every character demands a different approach. A stance character requires different teaching than a rushdown character. A gimmicky character with one exploitable weakness needs a completely different guide than a fundamentals-heavy character with no easy answers. But there's also a tension: consistency helps players know what to expect. Finding the right balance between character-specific design and learnable structure is an ongoing problem.
+
+### Insights So Far
+
+These aren't final answers. They're observations from thinking about this problem that should guide design decisions.
+
+**Knowledge is disproportionately valuable.** In most matchups, a relatively small number of simple, memorable rules — things you just *know* with no reaction required — cover a huge portion of the matchup. Things like "every gunshot is a high" or "if you blocked the stance transition, you can act" collapse dozens of frame data entries into one principle. Delivering this knowledge clearly and memorably is probably the highest-ROI thing a counter guide can do.
+
+**Understanding intent matters more than understanding data.** Knowing what the opponent is *trying to accomplish* — their gameplan, their win condition, what they're building toward — gives you a mental model that handles novel situations. Frame data doesn't. If you understand that Victor wants to push you to the wall and run his wall mix, you'll make better decisions even in situations the guide never covered.
+
+**The brain does four things in a match: perceiving, classifying, deciding, executing.** Each is trained by a completely different method. Perception is trained by exposure to animations. Classification is trained by understanding (knowledge). Decision is trained by practice under ambiguity — but only when the ambiguity involves something you can actually perceive. Execution is trained by repetition. A good counter guide needs to know which of these it's trying to improve at any given moment, because using the wrong method for the wrong process wastes time.
+
+**Drills fail in specific, identifiable ways.** A drill with only one recording trains timing, not recognition. A drill where one response beats everything teaches the brain to shortcut. A drill on a true 50/50 trains guessing. These are failure modes to watch for, not necessarily problems with a clean solution.
+
+**Experiencing the character's offense from the inside builds intuition fast.** Playing briefly as the opponent character — not to learn them, but to feel what their offense is like from the other side — creates an intuitive model of their gameplan that transfers to defense in a way that reading about it doesn't. This is an underused tool.
+
+**Not everything is trainable, and the guide should be honest about it.** Some situations are genuine reads. Pretending they're drillable wastes the player's time and erodes trust. The guide should clearly distinguish between things you can learn, things you can train, and things you have to guess — and teach the correct response for each side of the guess.
+
+### The Measure of Success
+
+After completing a counter guide, the player should be meaningfully better at the matchup than they would have been spending the same amount of time on any other strategy. They should understand the character's gameplan, handle the common situations correctly, and know where the genuine guesses are.
+
+The counter guide has failed if it produced someone who can recite information but still doesn't know what to do in a real match. It has succeeded if the player can't quote a single frame number but makes the right decision in every common situation they face.
+
+---
+
 ## The Final Question
 
 Every time you write something, ask:

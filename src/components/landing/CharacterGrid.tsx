@@ -11,6 +11,7 @@ interface Character {
   imagePosition?: string
   imageScale?: number
   imageTranslateY?: string
+  hasCounter?: boolean
 }
 
 interface CharacterGridProps {
