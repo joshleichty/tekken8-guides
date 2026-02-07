@@ -21,6 +21,7 @@ import { xiaoyuConfig } from './xiaoyu/config'
 import { zafinaConfig } from './zafina/config'
 
 // Counter guide imports
+import { alisaCounterConfig } from './alisa/counter/config'
 import { victorCounterConfig } from './victor/counter/config'
 
 // Character registry - add new characters here
@@ -49,6 +50,7 @@ export const characters: Record<string, CharacterConfig> = {
 
 // Counter guide registry - add counter guides here
 export const counterGuides: Record<string, CounterConfig> = {
+  'alisa': alisaCounterConfig,
   'victor': victorCounterConfig,
 }
 
