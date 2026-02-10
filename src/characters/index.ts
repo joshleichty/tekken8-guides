@@ -1,5 +1,6 @@
 import type { CharacterConfig, CounterConfig } from '../types'
 import { alisaConfig } from './alisa/config'
+import { azucenaConfig } from './azucena/config'
 import { armorKingConfig } from './armor-king/config'
 import { bryanConfig } from './bryan/config'
 import { cliveConfig } from './clive/config'
@@ -28,6 +29,7 @@ import { victorCounterConfig } from './victor/counter/config'
 // Character registry - add new characters here
 export const characters: Record<string, CharacterConfig> = {
   alisa: alisaConfig,
+  'azucena': azucenaConfig,
   'armor-king': armorKingConfig,
   'bryan': bryanConfig,
   'clive': cliveConfig,
