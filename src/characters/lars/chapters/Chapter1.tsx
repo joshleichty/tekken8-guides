@@ -3,9 +3,6 @@ import {
   MoveCard,
   KeyConcept,
   TipBox,
-  PracticeBox,
-  Flowchart,
-  Collapsible
 } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
@@ -14,116 +11,41 @@ export function Chapter1({ goToChapter }: ChapterProps) {
     <Chapter
       number={1}
       title="The Lion of the Rebellion"
-      intro="Before you press a button, understand what makes Lars different. He doesn't win by overwhelming you. He wins by making you pay for every mistake — and then never giving you your turn back."
+      intro="Lars Alexandersson doesn't rush you down. He waits for you to make a mistake, punishes it, and then never gives you your turn back."
       hasPrevious={false}
       onNext={() => goToChapter(2)}
       nextLabel="Full Punishment Arsenal"
     >
       <Section title="Who Is Lars?">
         <p>
-          Lars Alexandersson is Heihachi's illegitimate son — a rebel leader who turned against the Mishima
-          Zaibatsu and built his own army. In gameplay, that rebellion shows. He doesn't play like a Mishima.
-          No electrics, no hellsweeps, no wavedash 50/50. Lars plays like a <span className="highlight">counter-puncher
-          with a stance engine</span>. He waits for you to make a mistake, punishes it with surgical precision,
-          and then chains that punishment into a stance mixup you can't escape.
+          Lars is Heihachi's illegitimate son — a rebel leader who turned against the Mishima Zaibatsu.
+          In gameplay, he plays nothing like a Mishima. No electrics, no hellsweeps, no wavedash 50/50.
+          Lars is a <span className="highlight">counter-puncher with a stance engine</span>. He waits for
+          mistakes, punishes them with surgical precision, and chains that punishment into stance mixups the
+          opponent can't escape.
         </p>
 
         <p>
-          And in Season 2, he went from a bottom-tier afterthought to <em>arguably the best character in the
-          game</em>. The buffs he received turned an already-solid punishment toolkit into something
-          oppressive. His stances flow into each other. His frame data is absurd. His punishment at every
-          level — 10 frames, 12 frames, 14 frames — is best-in-class. Lars doesn't need gimmicks. He
-          just needs you to press a button at the wrong time.
-        </p>
-      </Section>
-
-      <Section title="What Playing Lars Feels Like">
-        <p>
-          Lars has a patient rhythm that suddenly turns violent. You block. You move. You wait. Then your
-          opponent does something unsafe, and you punish — and the moment that punish connects, the game
-          changes. You're in a stance. They're guessing. You pick an option, and now you're in <em>another</em>
-          {' '}stance. They guess again. The chain keeps going until they guess right or you run out of
-          momentum.
+          In Season 2, he went from bottom-tier to arguably the best character in the game. His punishment
+          at every frame level — 10, 12, 14 — is best-in-class. His three stances (Limited Entry, Silent
+          Entry, Dynamic Entry) chain into each other. He's S-tier for a reason, and it's not gimmicks.
+          It's that every mistake you make against Lars costs you the round.
         </p>
 
         <p>
-          It feels like being a trap. You set yourself up as the bait, invite the opponent to act, then
-          spring when they do. The satisfaction isn't in landing a big read — it's in watching your opponent
-          realize they made one mistake three seconds ago and haven't had a turn since.
+          Lars is for players who believe defense wins games. If you enjoy blocking, recognizing what's
+          unsafe, and making opponents regret every reckless move, Lars gives you the best toolkit in
+          Tekken for that. His weakness is that he needs opponents to act — his lows are risky, and
+          he's less self-sufficient in neutral than characters who can force their way in. But most
+          opponents press buttons. And that's when Lars thrives.
         </p>
       </Section>
 
-      <Section title="Who Lars Is For">
+      <Section title="The Move That Defines Lars">
         <p>
-          Lars is for players who believe <span className="highlight">defense wins games</span>. If you enjoy
-          blocking, recognizing what's unsafe, and making your opponent regret every predictable move — Lars
-          gives you the best toolkit in the game for that. His punishment at every frame level leads into
-          stance mixups that other characters simply don't have access to.
-        </p>
-
-        <p>
-          He's also for players who want structure in their offense. Lars' pressure isn't freeform creativity
-          like Hwoarang or Xiaoyu. It's methodical: punish into stance, stance into mixup, mixup into
-          another stance. If you like knowing exactly where your pressure goes and why, Lars makes that
-          crystal clear.
-        </p>
-
-        <KeyConcept title="The Honest Truth" icon="⚠️">
-          <p>
-            Lars needs his opponents to act. Against someone who turtles perfectly and never presses unsafe
-            buttons, Lars has to work harder to open them up. His lows are risky, and his neutral tools —
-            while solid — aren't the reason you pick him. You pick Lars because when the opponent gives you
-            an inch, you take the whole round. That tradeoff is worth understanding upfront.
-          </p>
-        </KeyConcept>
-      </Section>
-
-      <Section title="Strengths & Weaknesses">
-        <p>
-          Lars' strengths are stacked. He has the best punishment in the game at virtually every frame
-          level — including f,b+2,1, a 14-frame launcher that most characters would kill for. His 10-frame
-          punish (2,1) transitions directly into a stance mixup, meaning every blocked move your opponent
-          does becomes a round-winning opportunity. His three stances — Limited Entry, Silent Entry, and
-          Dynamic Entry — chain into each other, creating pressure loops that are difficult to interrupt.
-          He's S-tier in Season 2 for a reason.
-        </p>
-
-        <p>
-          His weaknesses are the flip side of that coin. Lars is less self-sufficient in neutral than
-          characters who can force their way in — he wants you to come to him, not the other way around.
-          His low pokes are risky, making it harder to chip away at turtling opponents. And while his stance
-          transitions are powerful on hit, they can be interrupted if you use them at the wrong time. Lars
-          rewards discipline. Play reckless, and his tools work against you. Play patient, and the game
-          bends to your will.
-        </p>
-      </Section>
-
-      <Section title="What This Guide Will Build">
-        <p>
-          This guide teaches Lars in layers. First, <strong>your punishment foundation</strong> — the
-          single move that defines his entire game and the mixup it creates. Then, <strong>the full
-          punishment arsenal</strong> — every frame level, every situation, maximum damage every time.
-          From there, <strong>the stance chain</strong> — learning LEN, SEN, and DEN as one connected
-          system. Finally, <strong>neutral, combos, heat, and defense</strong> to round out a complete
-          player.
-        </p>
-
-        <TipBox variant="tip" title="Let's Start">
-          Everything begins with one punish. One stance. Two options. This is the simplest, most
-          effective loop in the game — and it's yours from minute one.
-        </TipBox>
-      </Section>
-
-      <Section title="Block. Punish. Mixup.">
-        <p>
-          Here's everything you need to know about Lars in one sentence: <strong>when your opponent 
-          makes a mistake, you punish them with 2,1 — and then they have to guess.</strong>
-        </p>
-
-        <p>
-          That's not an oversimplification. That IS Lars. His entire game revolves around 
-          turning your opponent's mistakes into a guessing game they can't escape. And it starts 
-          with this move:
+          Every Lars round revolves around one move: <strong>2,1</strong>. It's his 10-frame punish,
+          and it does something no other character's 10-frame punish does — it automatically transitions
+          into Limited Entry stance at +8 on hit.
         </p>
 
         <MoveCard character="lars"
@@ -135,267 +57,46 @@ export function Chapter1({ goToChapter }: ChapterProps) {
             onBlock: '-6',
             onHit: '+8',
             tags: ['10f Punish', 'LEN Transition', 'Mixup Starter'],
-            description: 'Your 10-frame punish that automatically transitions into Limited Entry stance. On hit, the mixup is real — they MUST guess.',
-            notes: ['Fastest punish in your kit', 'Auto-transitions to LEN (cannot cancel)', '+8 on hit = uninterruptable mixup']
+            description: 'Your 10-frame punish that transitions into Limited Entry. +8 on hit means the opponent MUST guess.',
+            notes: ['Auto-transitions to LEN', '+8 on hit = uninterruptable mixup', '-6 on block = don\'t go to LEN']
           }}
           showVideo
         />
 
-        <KeyConcept title="Why 2,1 Is Special" icon="⚡">
+        <p>
+          +8 means your opponent cannot press any button fast enough to interrupt what comes next. From
+          LEN, you have two options: <strong>LEN 1</strong> (a low that's only -12 on block and
+          high-crushes) or <strong>LEN 2</strong> (a safe mid at -9 that does chip damage and becomes a
+          tornado launcher in Heat). Low or mid. They guess.
+        </p>
+
+        <KeyConcept title="The Critical Distinction" icon="🔑">
           <p>
-            Every character has a 10-frame punish. Most of them just do damage and reset to neutral. 
-            Lars' 2,1 does 22 damage <strong>AND</strong> puts you in Limited Entry stance at +8 on hit.
+            When 2,1 <strong>hits</strong>, you're +8 and the LEN mixup is real — they can't interrupt.
+            When 2,1 is <strong>blocked</strong>, you're -6 and the mixup is fake — they can jab you
+            out of LEN options.
           </p>
-          <p style={{ marginTop: '12px' }}>
-            +8 means your opponent cannot press any button fast enough to interrupt what comes next. 
-            They have to guess. And there are only two options.
-          </p>
-        </KeyConcept>
-      </Section>
-
-      <Section title="The Two Options">
-        <p>
-          When 2,1 connects on hit, you automatically enter Limited Entry (LEN) stance. 
-          From here, you have exactly two choices:
-        </p>
-
-        <MoveCard character="lars"
-          videoId="LEN.1"
-          move={{
-            input: 'LEN 1',
-            hitLevel: ['l'],
-            damage: '20',
-            startup: 'i16~17',
-            onBlock: '-12',
-            onHit: '+4c',
-            tags: ['Low', 'High Crush', 'Mixup Option'],
-            description: 'The low option. Hits crouching opponents, crushes highs. Only -12 on block — most characters can\'t launch this.',
-            notes: ['High crush from frame 1', '+4 on hit, you\'re in crouch with options', '-12 is relatively safe for a low']
-          }}
-          showVideo
-        />
-
-        <MoveCard character="lars"
-          videoId="LEN.2"
-          move={{
-            input: 'LEN 2',
-            hitLevel: ['m'],
-            damage: '25',
-            startup: 'i16~17',
-            onBlock: '-9',
-            onHit: '+25 (+15)',
-            tags: ['Mid', 'Safe', 'Tornado', 'Chip Damage'],
-            description: 'The mid option. Safe on block, does chip damage. In heat, this becomes a tornado launcher for a full combo.',
-            notes: ['Safe at -9, nobody launches this', '8 chip damage on block', 'Tornado in heat for full combo']
-          }}
-          showVideo
-        />
-
-        <KeyConcept title="The 50/50" icon="🎲">
-          <ul>
-            <li><strong>They stand block</strong> → LEN 1 (low) hits them for 20 damage</li>
-            <li><strong>They crouch</strong> → LEN 2 (mid) hits them for 25 damage + chip</li>
-            <li><strong>They press a button</strong> → Both options come out before their jab. They get hit regardless.</li>
-          </ul>
-          <p style={{ marginTop: '12px' }}>
-            This is the simplest mixup in the game. Low or mid. That's it. And because you're +8 
-            from the 2,1 hit, <strong>they cannot escape it</strong>.
+          <p style={{ marginTop: '8px' }}>
+            At lower ranks, opponents won't know to jab after a blocked 2,1. Take advantage. As you
+            climb, only go to LEN on hit. That discipline is the difference between Warrior Lars
+            and Fujin Lars.
           </p>
         </KeyConcept>
-
-        <TipBox variant="tip" title="The Beautiful Part">
-          If LEN 1 (low) hits, you're +4 in crouch. You can immediately go into FC df+2 as a frame 
-          trap, or do another low. If LEN 2 (mid) connects, in heat it's a full combo. 
-          Your punishment leads into pressure leads into more damage. Lars never stops.
-        </TipBox>
-      </Section>
-
-      <Section title="When Is This Real?">
-        <p>
-          Here's the critical distinction that separates good Lars players from great ones:
-        </p>
-
-        <KeyConcept title="On Hit vs On Block" icon="🔑">
-          <table style={{ width: '100%', marginTop: '12px', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Situation</th>
-                <th style={{ textAlign: 'center', padding: '8px' }}>Frames</th>
-                <th style={{ textAlign: 'left', padding: '8px' }}>Mixup?</th>
-              </tr>
-            </thead>
-            <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr>
-                <td style={{ padding: '8px' }}>2,1 <strong>on hit</strong></td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>+8</td>
-                <td style={{ padding: '8px' }}><strong style={{ color: 'var(--success)' }}>REAL</strong> — LEN options beat their jab</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}>2,1 <strong>on block</strong></td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-6</td>
-                <td style={{ padding: '8px' }}><strong style={{ color: 'var(--danger)' }}>FAKE</strong> — they can jab you out of LEN</td>
-              </tr>
-            </tbody>
-          </table>
-        </KeyConcept>
-
-        <p>
-          On block, the LEN mixup is NOT real. Your opponent recovers 6 frames before you, so their 
-          10-frame jab comes out way before your LEN options (i16). <strong>However</strong> — at low 
-          and mid ranks, most players don't know this. They see you in a stance and freeze. 
-          Take advantage of that.
-        </p>
-
-        <TipBox variant="warning" title="Knowing This Will Save You">
-          As you climb ranks, opponents will start jabbing after a blocked 2,1. When that happens, 
-          stop going for the LEN mixup on block. Instead, use 2,1 purely as a punish tool — 
-          only go to LEN when it <strong>hits</strong>. This is the difference between Warrior 
-          rank Lars and Fujin rank Lars.
-        </TipBox>
-      </Section>
-
-      <Section title="Where Does 2,1 Come From?">
-        <p>
-          2,1 isn't just a punishment tool. Here are the three main situations where you'll use it:
-        </p>
-
-        <KeyConcept title="Your Three Entry Points" icon="🚪">
-          <ol>
-            <li>
-              <strong>Punishment</strong> — Any time your opponent does a -10 or worse move, 
-              2,1 is your go-to punish. Every round, multiple times per round. This is your bread and butter.
-            </li>
-            <li style={{ marginTop: '8px' }}>
-              <strong>Poking</strong> — 2,1 is a fast i10 string. At close range, you can use it 
-              as a quick check. If it hits, free mixup. If blocked, you're -6 (don't go into LEN).
-            </li>
-            <li style={{ marginTop: '8px' }}>
-              <strong>Whiff punishment</strong> — See your opponent miss a move? 2,1 is fast 
-              enough to catch many whiffs and gives you a mixup on hit. For bigger whiffs, 
-              you'll use launchers instead (Chapter 2).
-            </li>
-          </ol>
-        </KeyConcept>
-      </Section>
-
-      <Section title="The Loop">
-        <Flowchart
-          title="Lars' Core Loop"
-          nodes={[
-            { type: 'start', label: 'Opponent does a punishable move (-10 or worse)' },
-            { type: 'decision', label: 'Punish with 2,1. Did it hit?', branches: [
-              { label: 'Yes → +8 LEN', action: 'REAL mixup: LEN 1 (low) or LEN 2 (mid)' },
-              { label: 'Blocked → -6', action: 'Don\'t go to LEN. Reset to neutral.' }
-            ]},
-            { type: 'end', label: 'Repeat. Lars\' momentum never stops.' }
-          ]}
-        />
-
-        <p>
-          This is the entire foundation. Everything else you'll learn — stances, neutral tools, 
-          combos, heat — is built on top of this loop. Punish. Mixup. Repeat.
-        </p>
-      </Section>
-
-      <Section title="Practice: The Punish Loop">
-        <PracticeBox
-          title="2,1 Into LEN Drill"
-          setup="Go to Practice Mode. Set opponent to repeat a -10 move (like a basic jab string). Set Guard to Stand."
-          tasks={[
-            { id: 'lars-21-basic', text: 'Block the move and punish with 2,1 five times', detail: 'Get the timing of blocking → 2,1 comfortable', type: 'counter', target: 5 },
-            { id: 'lars-len1', text: 'Do 2,1 → LEN 1 (press 1 after) ten times', detail: 'This is the low option. Just press 1 after 2,1 connects.', type: 'counter', target: 10 },
-            { id: 'lars-len2', text: 'Do 2,1 → LEN 2 (press 2 after) ten times', detail: 'This is the mid option. Just press 2 after 2,1 connects.', type: 'counter', target: 10 },
-            { id: 'lars-mix', text: 'Alternate randomly between LEN 1 and LEN 2 for 20 reps', detail: 'Build the muscle memory to CHOOSE, not just default to one option', type: 'counter', target: 20 },
-          ]}
-        />
-
-        <PracticeBox
-          title="Real Match Simulation"
-          setup="Set opponent to Random Guard and repeat a -10 move."
-          tasks={[
-            { id: 'lars-sim1', text: 'Punish with 2,1 → Only go to LEN when it HITS', detail: 'If they block, just reset. No LEN on block.', type: 'toggle' },
-            { id: 'lars-sim2', text: 'Do 10 punishes. Track how many times you chose correctly.', detail: 'Can you resist going to LEN when they block?', type: 'counter', target: 10 },
-          ]}
-        />
-
-        <TipBox variant="tip" title="How to Know You've Got It">
-          You've internalized this when 2,1 is automatic — you don't think about inputs, you just 
-          see a punishable move and your fingers do it. The LEN choice should feel like a decision, 
-          not a guess. "They've been standing, so I'll go low." That's the mindset.
-        </TipBox>
       </Section>
 
       <Section title="What's Coming Next">
         <p>
-          2,1 is your 10-frame punish. But Lars has the <strong>best punishment in the game</strong> 
-          at every frame level. In the next chapter, you'll learn:
+          2,1 is your 10-frame punish. But Lars has the best punishment in the game at <em>every</em> frame
+          level — including <strong>f,b+2,1</strong>, a 14-frame launcher most characters don't have. Next
+          chapter builds the full punishment arsenal and teaches you how to turn every opponent mistake into
+          maximum damage.
         </p>
 
-        <ul>
-          <li>The legendary <strong>f,b+2,1</strong> — a 14-frame launcher that most characters don't have</li>
-          <li>How to punish moves at every frame from -10 to -17+</li>
-          <li>While standing punishment that also leads into LEN mixups</li>
-          <li>How to turn every opponent mistake into maximum damage</li>
-        </ul>
-
-        <KeyConcept title="Lars' Identity" icon="🦁">
-          <p>
-            Lars is not a character who hopes to land a lucky hit. He's a character who <strong>waits 
-            for you to make a mistake, punishes it perfectly, and then never gives you your turn back</strong>.
-          </p>
-          <p style={{ marginTop: '12px' }}>
-            That cycle — punish → mixup → pressure → punish again — is the Lion of the Rebellion.
-          </p>
-        </KeyConcept>
+        <TipBox variant="tip" title="The Core Identity">
+          Lars doesn't hope to land a lucky hit. He waits for a mistake, punishes it perfectly, and
+          never gives the turn back. Punish, mixup, pressure, repeat — that's the Lion of the Rebellion.
+        </TipBox>
       </Section>
-
-      <Collapsible title="Quick Reference" icon="📋">
-        <div style={{ marginTop: '12px' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
-            <div style={{
-              background: 'var(--bg-card)',
-              padding: '16px',
-              borderRadius: '8px',
-              border: '1px solid var(--border)'
-            }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>The Punish</div>
-              <code style={{ fontSize: '1.1em' }}>2,1</code>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em', marginTop: '4px' }}>
-                i10, +8 on hit → LEN<br />
-                22 damage + free mixup
-              </div>
-            </div>
-
-            <div style={{
-              background: 'var(--bg-card)',
-              padding: '16px',
-              borderRadius: '8px',
-              border: '1px solid var(--border)'
-            }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>The Low</div>
-              <code style={{ fontSize: '1.1em' }}>LEN 1</code>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em', marginTop: '4px' }}>
-                20 dmg, -12 on block<br />
-                High crush, +4 on hit
-              </div>
-            </div>
-
-            <div style={{
-              background: 'var(--bg-card)',
-              padding: '16px',
-              borderRadius: '8px',
-              border: '1px solid var(--border)'
-            }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>The Mid</div>
-              <code style={{ fontSize: '1.1em' }}>LEN 2</code>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em', marginTop: '4px' }}>
-                25 dmg, -9 on block<br />
-                Safe, chip damage, tornado in heat
-              </div>
-            </div>
-          </div>
-        </div>
-      </Collapsible>
     </Chapter>
   )
 }
