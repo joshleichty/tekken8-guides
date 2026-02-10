@@ -40,7 +40,7 @@ export const larsConfig: CharacterConfig = {
 
   chapters: [
     // Phase 1: Take Your Turn — Punishment is the gateway
-    { id: 1, title: 'The Lion\'s Roar', section: 'Take Your Turn', content: Chapter1 },
+    { id: 1, title: 'The Lion of the Rebellion', section: 'Take Your Turn', content: Chapter1 },
     { id: 2, title: 'Punishment Arsenal', section: 'Take Your Turn', content: Chapter2 },
 
     // Phase 2: Never Let Go — Stances as one flowing system

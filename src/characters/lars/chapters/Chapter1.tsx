@@ -13,12 +13,107 @@ export function Chapter1({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={1}
-      title="The Lion's Roar"
-      intro="Most characters have to earn their pressure. Lars punishes your mistake and then makes you guess. One move. Two outcomes. This is how rebellions start."
+      title="The Lion of the Rebellion"
+      intro="Before you press a button, understand what makes Lars different. He doesn't win by overwhelming you. He wins by making you pay for every mistake — and then never giving you your turn back."
       hasPrevious={false}
       onNext={() => goToChapter(2)}
       nextLabel="Full Punishment Arsenal"
     >
+      <Section title="Who Is Lars?">
+        <p>
+          Lars Alexandersson is Heihachi's illegitimate son — a rebel leader who turned against the Mishima
+          Zaibatsu and built his own army. In gameplay, that rebellion shows. He doesn't play like a Mishima.
+          No electrics, no hellsweeps, no wavedash 50/50. Lars plays like a <span className="highlight">counter-puncher
+          with a stance engine</span>. He waits for you to make a mistake, punishes it with surgical precision,
+          and then chains that punishment into a stance mixup you can't escape.
+        </p>
+
+        <p>
+          And in Season 2, he went from a bottom-tier afterthought to <em>arguably the best character in the
+          game</em>. The buffs he received turned an already-solid punishment toolkit into something
+          oppressive. His stances flow into each other. His frame data is absurd. His punishment at every
+          level — 10 frames, 12 frames, 14 frames — is best-in-class. Lars doesn't need gimmicks. He
+          just needs you to press a button at the wrong time.
+        </p>
+      </Section>
+
+      <Section title="What Playing Lars Feels Like">
+        <p>
+          Lars has a patient rhythm that suddenly turns violent. You block. You move. You wait. Then your
+          opponent does something unsafe, and you punish — and the moment that punish connects, the game
+          changes. You're in a stance. They're guessing. You pick an option, and now you're in <em>another</em>
+          {' '}stance. They guess again. The chain keeps going until they guess right or you run out of
+          momentum.
+        </p>
+
+        <p>
+          It feels like being a trap. You set yourself up as the bait, invite the opponent to act, then
+          spring when they do. The satisfaction isn't in landing a big read — it's in watching your opponent
+          realize they made one mistake three seconds ago and haven't had a turn since.
+        </p>
+      </Section>
+
+      <Section title="Who Lars Is For">
+        <p>
+          Lars is for players who believe <span className="highlight">defense wins games</span>. If you enjoy
+          blocking, recognizing what's unsafe, and making your opponent regret every predictable move — Lars
+          gives you the best toolkit in the game for that. His punishment at every frame level leads into
+          stance mixups that other characters simply don't have access to.
+        </p>
+
+        <p>
+          He's also for players who want structure in their offense. Lars' pressure isn't freeform creativity
+          like Hwoarang or Xiaoyu. It's methodical: punish into stance, stance into mixup, mixup into
+          another stance. If you like knowing exactly where your pressure goes and why, Lars makes that
+          crystal clear.
+        </p>
+
+        <KeyConcept title="The Honest Truth" icon="⚠️">
+          <p>
+            Lars needs his opponents to act. Against someone who turtles perfectly and never presses unsafe
+            buttons, Lars has to work harder to open them up. His lows are risky, and his neutral tools —
+            while solid — aren't the reason you pick him. You pick Lars because when the opponent gives you
+            an inch, you take the whole round. That tradeoff is worth understanding upfront.
+          </p>
+        </KeyConcept>
+      </Section>
+
+      <Section title="Strengths & Weaknesses">
+        <p>
+          Lars' strengths are stacked. He has the best punishment in the game at virtually every frame
+          level — including f,b+2,1, a 14-frame launcher that most characters would kill for. His 10-frame
+          punish (2,1) transitions directly into a stance mixup, meaning every blocked move your opponent
+          does becomes a round-winning opportunity. His three stances — Limited Entry, Silent Entry, and
+          Dynamic Entry — chain into each other, creating pressure loops that are difficult to interrupt.
+          He's S-tier in Season 2 for a reason.
+        </p>
+
+        <p>
+          His weaknesses are the flip side of that coin. Lars is less self-sufficient in neutral than
+          characters who can force their way in — he wants you to come to him, not the other way around.
+          His low pokes are risky, making it harder to chip away at turtling opponents. And while his stance
+          transitions are powerful on hit, they can be interrupted if you use them at the wrong time. Lars
+          rewards discipline. Play reckless, and his tools work against you. Play patient, and the game
+          bends to your will.
+        </p>
+      </Section>
+
+      <Section title="What This Guide Will Build">
+        <p>
+          This guide teaches Lars in layers. First, <strong>your punishment foundation</strong> — the
+          single move that defines his entire game and the mixup it creates. Then, <strong>the full
+          punishment arsenal</strong> — every frame level, every situation, maximum damage every time.
+          From there, <strong>the stance chain</strong> — learning LEN, SEN, and DEN as one connected
+          system. Finally, <strong>neutral, combos, heat, and defense</strong> to round out a complete
+          player.
+        </p>
+
+        <TipBox variant="tip" title="Let's Start">
+          Everything begins with one punish. One stance. Two options. This is the simplest, most
+          effective loop in the game — and it's yours from minute one.
+        </TipBox>
+      </Section>
+
       <Section title="Block. Punish. Mixup.">
         <p>
           Here's everything you need to know about Lars in one sentence: <strong>when your opponent 
