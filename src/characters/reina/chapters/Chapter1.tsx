@@ -12,12 +12,109 @@ export function Chapter1({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={1}
-      title="Your First Weapon"
-      intro="Forget the move list. Forget frame data. In five minutes, you'll have a loop that works against anyone. This is how Reina plays—and it starts with one move."
+      title="Purple Lightning"
+      intro="Before you touch a button, understand who Reina is. She's not just another Mishima — she's something new. This chapter introduces her identity, then hands you the one move that makes the whole character click."
       hasPrevious={false}
       onNext={() => goToChapter(2)}
       nextLabel="Learn Why This Works"
     >
+      <Section title="Who Is Reina?">
+        <p>
+          Reina is Heihachi Mishima's secret daughter — the newest member of Tekken's most infamous bloodline.
+          But calling her "another Mishima" misses the point. Her fighting style fuses <span className="highlight">Mishima Karate</span> with
+          {' '}<span className="highlight">Taido</span>, a real Japanese martial art built on evasive, acrobatic movement.
+          Where Kazuya plants his feet and waits for the perfect moment, Reina never stops moving. Where Jin alternates
+          between patient defense and explosive punishment, Reina chains pressure until something breaks.
+        </p>
+
+        <p>
+          She has the electric — the signature Mishima tool — but it's not the center of her game. It's one weapon
+          among many. The center of her game is <em>stance flow</em>: three interconnected stances (Sentai, Heaven's Wrath,
+          and Unsoku) that feed into each other like a machine. You enter one, threaten an option, transition to
+          the next, threaten again. The opponent is never defending one thing — they're defending a current.
+        </p>
+      </Section>
+
+      <Section title="What Playing Reina Feels Like">
+        <p>
+          Most characters have a rhythm: poke, wait, react. Reina's rhythm is different. You poke — then flow
+          into a stance. From that stance, you threaten — then flow into another stance. There's no pause. No
+          reset to neutral where the opponent gets to breathe. When Reina is playing well, it feels like being
+          a river: always moving, always finding the path of least resistance, always pressing forward.
+        </p>
+
+        <p>
+          This doesn't mean she's mindless aggression. Every stance transition is a decision. Every option has a
+          counter. The skill is knowing which branch to take, when to keep pressing, and when to step back and
+          start the current again from neutral. Reina rewards players who think two moves ahead — not because
+          they memorized a flowchart, but because they <em>feel</em> where the pressure should go next.
+        </p>
+      </Section>
+
+      <Section title="Who Reina Is For">
+        <p>
+          Reina is for players who want <span className="highlight">Mishima tools without pure Mishima rigidity</span>. If you've
+          looked at Kazuya or Heihachi and liked the electric, the hellsweep, the powerful 50/50 game — but
+          wished the character had more flow, more creativity, more routes through a round — Reina is your answer.
+        </p>
+
+        <p>
+          She's also for players who enjoy stance characters but want real power behind the transitions. Reina
+          isn't doing stance tricks for style points. Every transition leads to genuine threats — launchers,
+          counter-hit tools, plus frames. The stances aren't gimmicks. They're the engine.
+        </p>
+
+        <KeyConcept title="Be Honest With Yourself" icon="⚠️">
+          <p>
+            Reina is rated advanced difficulty for a reason. Her execution ceiling is high, her stance transitions
+            demand muscle memory, and her electric (while not required early) becomes important at higher levels.
+            This guide will build you up gradually — but know that Reina gives back exactly what you put in.
+            She's one of the strongest characters in Season 2, and she rewards investment like few others.
+          </p>
+        </KeyConcept>
+      </Section>
+
+      <Section title="Strengths & Weaknesses">
+        <p>
+          Reina's strengths are numerous and genuine. Her approach tool — f,f+2 into Sentai — is one of the
+          best in the game, leaving her plus on block and in a stance loaded with options. Her three stances
+          interconnect, meaning she can chain pressure for as long as her opponent lets her. She has an i11
+          electric that's +5 on block — a Mishima trademark that most characters would kill for. In Heat,
+          her WRA stance gains an auto-parry, making her close-range pressure even scarier. Her movement is
+          excellent (one of the best sidesteps in the game), and she's consistently rated S-tier in Season 2.
+        </p>
+
+        <p>
+          But she has clear weaknesses. Her best low poke, d+4, is launch punishable at -15 on block — risky
+          for a move you'd want to throw out casually. Her electric, while powerful, is linear and doesn't
+          track opponents stepping to her right. Her combo damage is lower than other Mishimas, meaning she
+          needs more openings to close out rounds. And her execution demands are real — as you climb ranks,
+          the things she needs you to do get harder. None of these are dealbreakers. They're tradeoffs, and
+          they're worth understanding now so you know what you're investing in.
+        </p>
+      </Section>
+
+      <Section title="What This Guide Will Build">
+        <p>
+          This guide teaches Reina in three layers. First, <strong>the core loop</strong> — the single approach
+          tool and follow-up that wins rounds from day one. Then, <strong>stance flow</strong> — learning
+          Sentai, Heaven's Wrath, and Unsoku not as separate move lists but as one connected system.
+          Finally, <strong>the full arsenal</strong> — neutral tools, combos, punishment, defense, Heat,
+          wall game, and the electric. Each layer builds on the last. Nothing is wasted.
+        </p>
+
+        <p>
+          By the end, you won't just know Reina's moves. You'll understand <em>how she thinks</em> — and
+          you'll be able to construct your own pressure, adapt to any opponent, and keep growing long after
+          this guide is finished.
+        </p>
+
+        <TipBox variant="tip" title="Let's Start">
+          Everything begins with one move. One approach. One follow-up. Forget the move list.
+          Forget frame data. In five minutes, you'll have a loop that works against anyone.
+        </TipBox>
+      </Section>
+
       <Section title="The Move That Starts Everything">
         <p>
           Every Reina round starts the same way. Not with a jab. Not with a poke. 

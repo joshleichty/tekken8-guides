@@ -16,7 +16,7 @@ import { Chapter13 } from './chapters/Chapter13'
 export const reinaConfig: CharacterConfig = {
   slug: 'reina',
   name: 'Reina',
-  subtitle: 'Purple Lightning — Tekken 8',
+  subtitle: 'Purple Lightning — Tekken 8 Season 2',
   icon: '⚡',
   description: 'A Mishima-style stance character who chains pressure through fluid stance transitions. Master her core loop, learn to flow between Sentai and Heaven\'s Wrath, and overwhelm opponents with relentless offense.',
   
@@ -43,7 +43,7 @@ export const reinaConfig: CharacterConfig = {
   
   chapters: [
     // Phase 1: The Core Loop - Give them something that works IMMEDIATELY
-    { id: 1, title: 'Your First Weapon', section: 'The Core', content: Chapter1 },
+    { id: 1, title: 'Purple Lightning', section: 'The Core', content: Chapter1 },
     { id: 2, title: 'Why This Works', section: 'The Core', content: Chapter2 },
     
     // Phase 2: Stance Flow - Teach stances as connected, not separate
