@@ -5,6 +5,7 @@ import { armorKingConfig } from './armor-king/config'
 import { bryanConfig } from './bryan/config'
 import { cliveConfig } from './clive/config'
 import { dragunovConfig } from './dragunov/config'
+import { eddyConfig } from './eddy/config'
 import { fahkumramConfig } from './fahkumram/config'
 import { hwoarangConfig } from './hwoarang/config'
 import { jack8Config } from './jack-8/config'
@@ -34,6 +35,7 @@ export const characters: Record<string, CharacterConfig> = {
   'bryan': bryanConfig,
   'clive': cliveConfig,
   'dragunov': dragunovConfig,
+  'eddy': eddyConfig,
   'fahkumram': fahkumramConfig,
   'hwoarang': hwoarangConfig,
   'jack-8': jack8Config,
