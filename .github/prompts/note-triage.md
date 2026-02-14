@@ -1,6 +1,6 @@
 # Note Triage
 
-Evaluate the note. If it's actionable (wrong data, typo, formatting issue, factual error), implement it. If it's spam, vague, a question, or a feature request — skip it. If it requires an architectural change or significant restructuring, skip it.
+Evaluate the note. If it's actionable, do it. If it's spam, vague, a question, or a large feature request, skip it. If it requires an architectural change or significant restructuring, skip it.
 
 These are small edits only. Don't test. Don't build. Just make the edit and open a PR.
 
@@ -16,7 +16,7 @@ Use the `selector` and `selected_html` to find the exact spot.
 
 ## Verification
 
-Frame data source of truth: `data/framedata/<character>.json` (always Season 2). If the note contradicts it, trust the JSON. If unsure, skip.
+Frame data source of truth: `data/framedata/<character>.json` (always Season 2).
 
 ## Making the change
 
