@@ -1,4 +1,4 @@
-name: Handle user note with Codex
+name: Handle user note with Claude
 
 on:
   repository_dispatch:
@@ -17,13 +17,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Codex on note
-        uses: openai/codex-action@v1
+      - name: Run Claude on note
+        uses: anthropics/claude-code-action@v1
         with:
-          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-          model: gpt-5.3-codex
-          effort: medium
-          sandbox: workspace-write
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
             A user left the following note on the Tekken 8 character guides website.
             Your job is to evaluate it and, if it's a legitimate actionable request, implement the fix and open a PR.
@@ -40,3 +37,4 @@ jobs:
             ---
 
             Follow the instructions in .github/prompts/note-triage.md to decide what to do and how to do it.
+          claude_args: "--max-turns 30 --model claude-opus-4-6"
