@@ -348,6 +348,65 @@
   border-color: rgba(233, 193, 117, 0.6);
 }
 
+/* ─── Image Attachment ─── */
+
+.imagePreview {
+  position: relative;
+  display: inline-block;
+  border-radius: 10px;
+  border: 1px solid rgba(160, 132, 88, 0.28);
+  overflow: hidden;
+  max-width: 160px;
+}
+
+.imageThumb {
+  display: block;
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 9px;
+}
+
+.imageRemove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(20, 15, 10, 0.85);
+  color: rgba(245, 232, 212, 0.9);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageButton {
+  border: 1px solid rgba(156, 130, 90, 0.3);
+  border-radius: 6px;
+  background: rgba(40, 32, 23, 0.6);
+  color: rgba(200, 180, 148, 0.72);
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.imageButton:hover {
+  border-color: rgba(232, 194, 119, 0.5);
+}
+
+.actionsLeft {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .actions {
   display: flex;
   justify-content: space-between;

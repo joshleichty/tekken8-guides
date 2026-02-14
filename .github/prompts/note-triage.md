@@ -12,7 +12,7 @@ If you skip, just exit. Don't create a PR.
 - `/<character>/chapter-<N>` → `src/characters/<character>/chapters/Chapter<N>.tsx`
 - `/vs/<character>/chapter-<N>` → `src/characters/<character>/counter/chapters/Chapter<N>.tsx`
 
-Use the `selector` and `selected_html` to find the exact spot.
+Use the `selector` and `selected_html` to find the exact spot. If a screenshot URL is included, reference it in the PR description so the reviewer can see what the user saw.
 
 ## Verification
 
@@ -34,6 +34,7 @@ Description:
 
 **Page:** <page>
 **Note ID:** <note-id>
+**Screenshot:** <screenshot URL if provided>
 
 <what you changed and why>
 ```

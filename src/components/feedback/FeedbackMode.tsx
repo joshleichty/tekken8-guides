@@ -174,7 +174,10 @@ export function FeedbackMode() {
   const [selectedTarget, setSelectedTarget] = useState<SelectedTarget | null>(null)
   const [isGeneralDraft, setIsGeneralDraft] = useState(false)
   const [messageDraft, setMessageDraft] = useState('')
+  const [imageFile, setImageFile] = useState<File | null>(null)
+  const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
   const [toastMessage, setToastMessage] = useState<string | null>(null)
   const [toastTone, setToastTone] = useState<'success' | 'error'>('success')
   const [viewportTick, setViewportTick] = useState(0)
@@ -384,6 +387,31 @@ export function FeedbackMode() {
     (import.meta.env.DEV
       ? import.meta.env.VITE_NOTES_API_URL_DEV
       : import.meta.env.VITE_NOTES_API_URL) || '/api/notes'
+  const uploadApiUrl =
+    (import.meta.env.DEV
+      ? import.meta.env.VITE_NOTES_API_URL_DEV?.replace('/notes', '/upload')
+      : import.meta.env.VITE_NOTES_API_URL?.replace('/notes', '/upload')) || '/api/upload'
+
+  const handleImageSelect = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (!file) return
+    if (!file.type.startsWith('image/')) return
+    if (file.size > 5 * 1024 * 1024) {
+      setToastTone('error')
+      setToastMessage('Image too large (5 MB max)')
+      return
+    }
+    setImageFile(file)
+    const url = URL.createObjectURL(file)
+    setImagePreview(url)
+  }, [])
+
+  const removeImage = useCallback(() => {
+    setImageFile(null)
+    if (imagePreview) URL.revokeObjectURL(imagePreview)
+    setImagePreview(null)
+    if (fileInputRef.current) fileInputRef.current.value = ''
+  }, [imagePreview])
   const hoveredElement = layeredElements[Math.min(layerIndex, Math.max(0, layeredElements.length - 1))] ?? null
   const hoveredRect = useMemo(() => (hoveredElement ? getPaddedRect(hoveredElement, 4) : null), [
     hoveredElement,
@@ -405,6 +433,20 @@ export function FeedbackMode() {
       setIsSubmitting(true)
 
       try {
+        // Upload image first if one is attached
+        let screenshotUrl = ''
+        if (imageFile) {
+          const uploadResp = await fetch(uploadApiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': imageFile.type },
+            body: imageFile,
+          })
+          if (uploadResp.ok) {
+            const uploadData = await uploadResp.json()
+            screenshotUrl = uploadData.url || ''
+          }
+        }
+
         const response = await fetch(notesApiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -415,6 +457,7 @@ export function FeedbackMode() {
             selectedText: selectedTarget?.textPreview ?? '',
             selector: selectedTarget?.selector ?? '',
             selectedHtml: selectedTarget?.htmlSnippet ?? '',
+            screenshotUrl,
             website: '',
           }),
         })
@@ -430,6 +473,7 @@ export function FeedbackMode() {
         } catch {
           // Storage unavailable
         }
+        removeImage()
         setIsSuccess(true)
       } catch {
         setToastTone('error')
@@ -438,7 +482,7 @@ export function FeedbackMode() {
         setIsSubmitting(false)
       }
     },
-    [currentPath, isGeneralDraft, messageDraft, notesSent, notesApiUrl, selectedTarget],
+    [currentPath, imageFile, isGeneralDraft, messageDraft, notesSent, notesApiUrl, removeImage, selectedTarget, uploadApiUrl],
   )
 
   if (!isMounted) return null
@@ -583,8 +627,42 @@ export function FeedbackMode() {
                       autoFocus={window.innerWidth > 900}
                     />
 
+                    {imagePreview && (
+                      <div className={styles.imagePreview} data-feedback-ui="true">
+                        <img src={imagePreview} alt="Attached screenshot" className={styles.imageThumb} />
+                        <button
+                          type="button"
+                          className={styles.imageRemove}
+                          onClick={removeImage}
+                          aria-label="Remove image"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    )}
+
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageSelect}
+                      style={{ display: 'none' }}
+                      data-feedback-ui="true"
+                    />
+
                     <div className={styles.actions}>
-                      <span className={styles.pagePill}>{currentPath}</span>
+                      <div className={styles.actionsLeft}>
+                        <span className={styles.pagePill}>{currentPath}</span>
+                        <button
+                          type="button"
+                          className={styles.imageButton}
+                          onClick={() => fileInputRef.current?.click()}
+                          aria-label="Attach screenshot"
+                          data-feedback-ui="true"
+                        >
+                          {imageFile ? '1 image' : 'Add image'}
+                        </button>
+                      </div>
                       <button
                         type="submit"
                         className={styles.primaryAction}

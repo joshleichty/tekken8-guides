@@ -35,6 +35,7 @@ jobs:
             **Selected text:** ${{ github.event.client_payload.selected_text }}
             **CSS selector:** ${{ github.event.client_payload.selector }}
             **Selected HTML:** ${{ github.event.client_payload.selected_html }}
+            **Screenshot:** ${{ github.event.client_payload.screenshot_url }}
             **Submitted at:** ${{ github.event.client_payload.created_at }}
             ---
 

@@ -7,6 +7,7 @@ interface NoteRequestBody {
   selectedText?: unknown
   selector?: unknown
   selectedHtml?: unknown
+  screenshotUrl?: unknown
   website?: unknown
 }
 
@@ -19,6 +20,7 @@ interface NoteRecord {
   selectedText: string | null
   selector: string | null
   selectedHtml: string | null
+  screenshotUrl: string | null
   userAgent: string | null
 }
 
@@ -62,6 +64,7 @@ async function dispatchToGitHub(note: NoteRecord): Promise<void> {
           selected_text: note.selectedText ?? '',
           selector: note.selector ?? '',
           selected_html: note.selectedHtml ?? '',
+          screenshot_url: note.screenshotUrl ?? '',
           created_at: note.createdAt,
         },
       }),
@@ -112,6 +115,7 @@ export default async function handler(req: any, res: any) {
   const selectedText = asText(rawBody.selectedText, 600)
   const selector = asText(rawBody.selector, 600)
   const selectedHtml = asText(rawBody.selectedHtml, 12000)
+  const screenshotUrl = asText(rawBody.screenshotUrl, 500)
 
   if (!message) {
     return res.status(400).json({ error: 'Message is required' })
@@ -133,6 +137,7 @@ export default async function handler(req: any, res: any) {
     selectedText: selectedText || null,
     selector: selector || null,
     selectedHtml: selectedHtml || null,
+    screenshotUrl: screenshotUrl || null,
     userAgent: asText(req.headers['user-agent'], 500) || null,
   }
 
