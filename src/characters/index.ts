@@ -16,6 +16,7 @@ import { kazuyaConfig } from './kazuya/config'
 import { larsConfig } from './lars/config'
 import { lawConfig } from './law/config'
 import { leeConfig } from './lee/config'
+import { liliConfig } from './lili/config'
 import { paulConfig } from './paul/config'
 import { reinaConfig } from './reina/config'
 import { victorConfig } from './victor/config'
@@ -46,6 +47,7 @@ export const characters: Record<string, CharacterConfig> = {
   'lars': larsConfig,
   'law': lawConfig,
   'lee': leeConfig,
+  'lili': liliConfig,
   'paul': paulConfig,
   'reina': reinaConfig,
   'victor': victorConfig,
