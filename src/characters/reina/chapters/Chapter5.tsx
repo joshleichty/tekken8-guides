@@ -22,70 +22,86 @@ export function Chapter5({ goToChapter }: ChapterProps) {
     >
       <Section title="The Full Picture">
         <p>
-          Reina has more stances than just Sentai and Heaven's Wrath. She has <strong>Unsoku</strong> 
-          (evasive stances), <strong>Fuki</strong> (crouch stance), and <strong>Wind God Step</strong>. 
+          Reina has more stances than just Sentai and Heaven's Wrath. She has <strong>Unsoku</strong>{' '}
+          (evasive stances), <strong>Fuki</strong> (crouch stance), and <strong>Wind God Step</strong>.
           But here's the secret: they all connect.
         </p>
 
         <KeyConcept title="Reina's Stance Map" icon="🗺️">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginTop: '12px' }}>
-            <div style={{ 
-              background: 'var(--bg-secondary)', 
-              padding: '16px', 
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '12px' }}>
+            <div style={{
+              background: 'var(--bg-secondary)',
+              padding: '16px',
               borderRadius: '8px',
               border: '1px solid var(--border)'
             }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>SENTAI (SEN)</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
-                Entry: f+3, f,f+2~F, 1,1,2, df+1~F, f+2,3~F, ws+1
-              </div>
-              <div style={{ color: 'var(--text-muted)', fontSize: '0.85em', marginTop: '4px' }}>
-                Exits to: WRA (via SEN 1+2, SEN 2~D), WGS (via df), Neutral (via db)
+              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '10px', fontSize: '1em' }}>SENTAI (SEN)</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Entry:</span>{' '}
+                  f+3, f,f+2~F, 1,1,2, df+1~F, f+2,3~F, ws+1
+                </div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Exits to:</span>{' '}
+                  WRA (via SEN 1+2, SEN 2~D) · WGS (via df) · Neutral (via db)
+                </div>
               </div>
             </div>
 
-            <div style={{ 
-              background: 'var(--bg-secondary)', 
-              padding: '16px', 
+            <div style={{
+              background: 'var(--bg-secondary)',
+              padding: '16px',
               borderRadius: '8px',
               border: '1px solid var(--border)'
             }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>HEAVEN'S WRATH (WRA)</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
-                Entry: d+1+2, SEN 1+2, SEN 2~D, df+4,2~D, ws+4,4~D, WGS.df+4,2~D, f,f,F+4~D
-              </div>
-              <div style={{ color: 'var(--text-muted)', fontSize: '0.85em', marginTop: '4px' }}>
-                Exits to: SEN (via f+3, WRA 1~F), WGS (via df), Neutral (via db)
+              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '10px', fontSize: '1em' }}>HEAVEN'S WRATH (WRA)</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Entry:</span>{' '}
+                  d+1+2, SEN 1+2, SEN 2~D, df+4,2~D, ws+4,4~D, WGS.df+4,2~D, f,f,F+4~D
+                </div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Exits to:</span>{' '}
+                  SEN (via f+3, WRA 1~F) · WGS (via df) · Neutral (via db)
+                </div>
               </div>
             </div>
 
-            <div style={{ 
-              background: 'var(--bg-secondary)', 
-              padding: '16px', 
+            <div style={{
+              background: 'var(--bg-secondary)',
+              padding: '16px',
               borderRadius: '8px',
               border: '1px solid var(--border)'
             }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>UNSOKU (UNS)</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
-                Entry: b+3, d+3, u+3 (Gen/Kou variations)
-              </div>
-              <div style={{ color: 'var(--text-muted)', fontSize: '0.85em', marginTop: '4px' }}>
-                Exits to: SEN (via f+3), WGS (via df), Neutral (via db)
+              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '10px', fontSize: '1em' }}>UNSOKU (UNS)</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Entry:</span>{' '}
+                  b+3, d+3, u+3 (Gen/Kou variations)
+                </div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Exits to:</span>{' '}
+                  SEN (via f+3) · WGS (via df) · Neutral (via db)
+                </div>
               </div>
             </div>
 
-            <div style={{ 
-              background: 'var(--bg-secondary)', 
-              padding: '16px', 
+            <div style={{
+              background: 'var(--bg-secondary)',
+              padding: '16px',
               borderRadius: '8px',
               border: '1px solid var(--border)'
             }}>
-              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '8px' }}>WIND GOD STEP (WGS)</div>
-              <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
-                Entry: f,n,d,df (crouch dash), df+3 (easy mode), stance~df
-              </div>
-              <div style={{ color: 'var(--text-muted)', fontSize: '0.85em', marginTop: '4px' }}>
-                Has: Electric, Hell sweep, WGS 1 series, Thunder Godfist
+              <div style={{ color: 'var(--accent)', fontWeight: 600, marginBottom: '10px', fontSize: '1em' }}>WIND GOD STEP (WGS)</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Entry:</span>{' '}
+                  f,n,d,df (crouch dash), df+3 (easy mode), stance~df
+                </div>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.9em' }}>
+                  <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>Options:</span>{' '}
+                  Electric · Hell sweep · WGS 1 series · Thunder Godfist
+                </div>
               </div>
             </div>
           </div>
