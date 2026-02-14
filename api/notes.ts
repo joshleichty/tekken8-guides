@@ -36,10 +36,16 @@ const GITHUB_REPO = 'joshleichty/tekken8-guides'
  */
 async function dispatchToGitHub(note: NoteRecord): Promise<void> {
   const token = process.env.GITHUB_PAT
-  if (!token) return
+  if (!token) {
+    console.log('[dispatch] GITHUB_PAT is not set — skipping dispatch')
+    return
+  }
+
+  console.log(`[dispatch] Firing repository_dispatch for note ${note.id}`)
+  console.log(`[dispatch] Token prefix: ${token.slice(0, 8)}...`)
 
   try {
-    await fetch(`https://api.github.com/repos/${GITHUB_REPO}/dispatches`, {
+    const resp = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/dispatches`, {
       method: 'POST',
       headers: {
         Accept: 'application/vnd.github+json',
@@ -60,8 +66,14 @@ async function dispatchToGitHub(note: NoteRecord): Promise<void> {
         },
       }),
     })
-  } catch {
-    // Swallow — note is already persisted; dispatch is best-effort.
+
+    console.log(`[dispatch] GitHub responded ${resp.status} ${resp.statusText}`)
+    if (!resp.ok) {
+      const body = await resp.text().catch(() => '(no body)')
+      console.log(`[dispatch] Error body: ${body}`)
+    }
+  } catch (err) {
+    console.log(`[dispatch] Fetch failed: ${err instanceof Error ? err.message : String(err)}`)
   }
 }
 
