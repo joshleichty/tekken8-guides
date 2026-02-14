@@ -1,29 +1,26 @@
 # Note Triage
 
-Evaluate the note. If it's a real, specific fix (wrong frame data, typo, incorrect move property, factual error), implement it. If it's spam, a vague opinion, a question, or a feature request — skip it.
+Evaluate the note. If it's actionable (wrong data, typo, formatting issue, factual error), implement it. If it's spam, vague, a question, or a feature request — skip it. If it requires an architectural change or significant restructuring, skip it.
 
-## Skip behavior
+These are small edits only. Don't test. Don't build. Just make the edit and open a PR.
 
 If you skip, just exit. Don't create a PR.
 
 ## Locating the file
 
-The `page` field maps to source files:
-
+- `/<character>` → `src/characters/<character>/chapters/Chapter1.tsx`
 - `/<character>/chapter-<N>` → `src/characters/<character>/chapters/Chapter<N>.tsx`
 - `/vs/<character>/chapter-<N>` → `src/characters/<character>/counter/chapters/Chapter<N>.tsx`
 
-The `selector` and `selected_html` fields tell you exactly what the user was looking at.
+Use the `selector` and `selected_html` to find the exact spot.
 
 ## Verification
 
-Frame data JSON lives in `data/framedata/<character>.json`. That file is the source of truth (synced from Tekken Docs, always Season 2). If the note contradicts it, trust the JSON.
-
-If you're unsure whether the note is correct, skip it.
+Frame data source of truth: `data/framedata/<character>.json` (always Season 2). If the note contradicts it, trust the JSON. If unsure, skip.
 
 ## Making the change
 
-Minimal edit. Don't refactor. Don't restructure. Just fix what the note describes.
+Read the file, find the section, make the minimal edit. If the note says "fix all instances," search and fix every occurrence.
 
 ## PR format
 
