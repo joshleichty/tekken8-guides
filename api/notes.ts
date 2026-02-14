@@ -10,9 +10,59 @@ interface NoteRequestBody {
   website?: unknown
 }
 
+interface NoteRecord {
+  id: string
+  createdAt: string
+  message: string
+  page: string
+  context: string
+  selectedText: string | null
+  selector: string | null
+  selectedHtml: string | null
+  userAgent: string | null
+}
+
 function asText(value: unknown, maxLength: number): string {
   if (typeof value !== 'string') return ''
   return value.trim().slice(0, maxLength)
+}
+
+const GITHUB_REPO = 'joshleichty/tekken8-guides'
+
+/**
+ * Fire a repository_dispatch event so the Claude workflow can pick it up.
+ * Best-effort: if the token is missing or the request fails we still return
+ * success to the user — the note is already stored in Blob.
+ */
+async function dispatchToGitHub(note: NoteRecord): Promise<void> {
+  const token = process.env.GITHUB_PAT
+  if (!token) return
+
+  try {
+    await fetch(`https://api.github.com/repos/${GITHUB_REPO}/dispatches`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/vnd.github+json',
+        Authorization: `Bearer ${token}`,
+        'X-GitHub-Api-Version': '2022-11-28',
+      },
+      body: JSON.stringify({
+        event_type: 'user-note',
+        client_payload: {
+          note_id: note.id,
+          message: note.message,
+          page: note.page,
+          context: note.context,
+          selected_text: note.selectedText ?? '',
+          selector: note.selector ?? '',
+          selected_html: note.selectedHtml ?? '',
+          created_at: note.createdAt,
+        },
+      }),
+    })
+  } catch {
+    // Swallow — note is already persisted; dispatch is best-effort.
+  }
 }
 
 export default async function handler(req: any, res: any) {
@@ -62,7 +112,7 @@ export default async function handler(req: any, res: any) {
     ? crypto.randomUUID()
     : Math.random().toString(16).slice(2)
 
-  const noteRecord = {
+  const noteRecord: NoteRecord = {
     id,
     createdAt: now.toISOString(),
     message,
@@ -81,6 +131,9 @@ export default async function handler(req: any, res: any) {
     contentType: 'application/json; charset=utf-8',
     addRandomSuffix: true,
   })
+
+  // Trigger Claude agent in the background — don't block the response.
+  dispatchToGitHub(noteRecord).catch(() => {})
 
   return res.status(200).json({
     ok: true,
