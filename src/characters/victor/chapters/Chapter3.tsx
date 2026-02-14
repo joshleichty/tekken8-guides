@@ -195,11 +195,6 @@ export function Chapter3({ goToChapter }: ChapterProps) {
             <li>Against passive/turtling opponents</li>
           </ul>
         </TipBox>
-
-        <TipBox variant="warning" title="Whiff Recovery">
-          f+1+2 has TERRIBLE whiff recovery. If it misses, you're getting launched. Only 
-          use it when you're confident it will connect or be blocked.
-        </TipBox>
       </Section>
 
       <Section title="f,f,f+2 — The Running Mid">
