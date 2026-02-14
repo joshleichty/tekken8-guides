@@ -144,8 +144,8 @@ export default async function handler(req: any, res: any) {
     addRandomSuffix: true,
   })
 
-  // Trigger Claude agent in the background — don't block the response.
-  dispatchToGitHub(noteRecord).catch(() => {})
+  // Trigger Claude agent — await so Vercel doesn't kill the function early.
+  await dispatchToGitHub(noteRecord)
 
   return res.status(200).json({
     ok: true,
