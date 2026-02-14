@@ -24,8 +24,10 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           prompt: |
-            A user left the following note on the Tekken 8 character guides website.
-            Your job is to evaluate it and, if it's a legitimate actionable request, implement the fix and open a PR.
+            A note was left on the Tekken 8 character guides website requesting a change.
+            Read the note, figure out what's being asked, and implement it if it's a small to medium change.
+            If it's a massive change, or you get stuck and can't figure it out, just exit without creating a PR.
+            Don't build or test — just make the changes and open the PR.
 
             ---
             **Note ID:** ${{ github.event.client_payload.note_id }}
@@ -39,5 +41,18 @@ jobs:
             **Submitted at:** ${{ github.event.client_payload.created_at }}
             ---
 
-            Follow the instructions in .github/prompts/note-triage.md to decide what to do and how to do it.
+            Follow the instructions in .github/prompts/note-triage.md for guidance on locating files and formatting the PR.
           claude_args: "--max-turns 30 --model claude-opus-4-6 --dangerously-skip-permissions"
+
+      - name: Auto-merge Claude's PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="note/${{ github.event.client_payload.note_id }}"
+          PR_NUMBER=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number' 2>/dev/null || true)
+          if [ -n "$PR_NUMBER" ]; then
+            echo "Merging PR #$PR_NUMBER from branch $BRANCH"
+            gh pr merge "$PR_NUMBER" --squash --delete-branch
+          else
+            echo "No open PR found for branch $BRANCH — Claude may have skipped this note"
+          fi

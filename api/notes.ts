@@ -149,8 +149,21 @@ export default async function handler(req: any, res: any) {
     addRandomSuffix: true,
   })
 
-  // Trigger Claude agent — await so Vercel doesn't kill the function early.
-  await dispatchToGitHub(noteRecord)
+  // Only dispatch to GitHub (triggering the Claude workflow) for notes
+  // from the owner's IP address. Everyone else's notes are still stored
+  // in Blob but don't create GitHub Actions runs.
+  const callerIp = (
+    req.headers['x-forwarded-for']?.split(',')[0]?.trim() ||
+    req.headers['x-real-ip'] ||
+    ''
+  )
+  const ownerIp = process.env.OWNER_IP || '23.115.195.116'
+
+  if (ownerIp && callerIp === ownerIp) {
+    await dispatchToGitHub(noteRecord)
+  } else {
+    console.log(`[dispatch] Skipped — caller IP (${callerIp}) is not the owner`)
+  }
 
   return res.status(200).json({
     ok: true,

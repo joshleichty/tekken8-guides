@@ -1,10 +1,10 @@
 # Note Triage
 
-Evaluate the note. If it's actionable, do it. If it's spam, vague, a question, or a large feature request, skip it. If it requires an architectural change or significant restructuring, skip it.
+This workflow is designed for small to medium changes — fixing content, rewriting a section, updating move data, adding or removing things from a chapter, etc. Keep it quick and focused.
 
-These are small edits only. Don't test. Don't build. Just make the edit and open a PR.
+If the note is ambiguous about scope, bias towards the smaller interpretation. Don't overthink it. If it's a huge change that would touch many files or require architectural work, skip it. If you get stuck or it feels impossible, skip it. Skipping means just exit without creating a PR.
 
-If you skip, just exit. Don't create a PR.
+Don't build. Don't test. Just make the changes and open the PR.
 
 ## Locating the file
 
@@ -16,21 +16,21 @@ Use the `selector` and `selected_html` to find the exact spot. If a screenshot U
 
 ## Verification
 
-Frame data source of truth: `data/framedata/<character>.json` (always Season 2).
+Frame data source of truth: `data/framedata/<character>.json` (always Season 2). Cross-reference when the note involves frame data or move properties.
 
 ## Making the change
 
-Read the file, find the section, make the minimal edit. If the note says "fix all instances," search and fix every occurrence.
+Read the file, understand the context, and make the change. Match the style and tone of the surrounding content. If the note asks to fix something across the whole guide, search and fix every occurrence.
 
 ## PR format
 
 Branch: `note/<note-id>`
 
-Title: short description of the fix.
+Title: short description of the change.
 
 Description:
 ```
-> <user's message>
+> <the note's message>
 
 **Page:** <page>
 **Note ID:** <note-id>
