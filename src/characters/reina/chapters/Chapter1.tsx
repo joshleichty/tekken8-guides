@@ -68,7 +68,7 @@ export function Chapter1({ goToChapter }: ChapterProps) {
         <p>
           By itself, f,f+2 is a safe mid at -9 on block. But hold forward and it transitions to
           Sentai at <span className="highlight">+2 on block</span> — your opponent can't press
-          buttons. On hit, you're +13 in Sentai and they're frozen. From there, <strong>SEN 3</strong>
+          buttons. On hit, you're +13 in Sentai and they're frozen. From there, <strong>SEN 3</strong>{' '}
           (a fast homing high, heat engager, +1 on block) is guaranteed as a true combo.
         </p>
 
