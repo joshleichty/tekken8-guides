@@ -40,4 +40,4 @@ jobs:
             ---
 
             Follow the instructions in .github/prompts/note-triage.md to decide what to do and how to do it.
-          claude_args: "--max-turns 30 --model claude-opus-4-6"
+          claude_args: "--max-turns 30 --model claude-opus-4-6 --dangerously-skip-permissions"
