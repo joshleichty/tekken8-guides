@@ -221,40 +221,28 @@ export function Chapter2({ goToChapter }: ChapterProps) {
 
         <MatchScenario
           title="f,f+2 On Block → Sentai"
-          situation="You're in Sentai at +2. The opponent just blocked your f,f+2. What do they do?"
+          situation="You're in Sentai at +2. The opponent just blocked your f,f+2. They jab to challenge your stance."
           options={[
             {
-              action: 'They jab',
-              input: 'SEN 3 or SEN 3+4',
-              result: 'SEN 3 trades favorably (your 12f homing high vs their 10f jab — you\'re +2 so it wins). SEN 3+4 high crushes under the jab. If they do anything slower than a jab, SEN 1,2 power crush also works.',
+              action: 'SEN 3',
+              result: 'Correct. SEN 3 trades favorably — your 12f homing high beats their 10f jab because you\'re +2. It\'s also +1 on block and a heat engager.',
               isOptimal: true,
-              followup: 'Once they stop jabbing, all your other options become available again.',
+              followup: 'Once they stop jabbing, your slower options like SEN 1+2 and SEN 4 become available.',
             },
             {
-              action: 'They duck',
-              input: 'SEN 1+2 or SEN 2',
-              result: 'SEN 1+2 is your highest damage mid (51 damage). SEN 2 is safer at -4 on block. Both punish the duck. SEN 4 is also plus on block if they duck and block.',
-              followup: 'Once they\'re scared to duck, your throw and low become live again.',
+              action: 'SEN 3+4',
+              result: 'Also works. SEN 3+4 high crushes under the jab. But it\'s launch punishable if blocked, so SEN 3 is safer as your default.',
             },
             {
-              action: 'They stand block',
-              input: 'SEN 3+4 or SEN 1+3',
-              result: 'The low or the unbreakable throw. Low risk per hit, but accumulated chip and throws add up. The real power is that standing block means they accept your pressure.',
-              followup: 'When they stand block, you\'re winning. Cycle between your options to keep them guessing.',
+              action: 'SEN 1+2',
+              result: 'Too slow. At i14 vs their i10 jab, even with +2 you\'re trading at best. SEN 1+2 is better when they duck or stand block.',
             },
             {
-              action: 'They sidestep right',
-              input: 'SEN 3',
-              result: 'SEN 3 is homing — it catches all sidesteps. Once they know this, they stop stepping and have to commit to one of the other defensive options.',
-            },
-            {
-              action: 'They power crush',
-              input: 'SEN 3+4 or throw',
-              result: 'SEN 3+4 low crushes early in many power crush startups. The throw beats power crush clean. You can also just block and launch the power crush.',
-              followup: 'Cancel Sentai into nothing (hold back) and block. Most power crushes are launch punishable.',
+              action: 'SEN 1+3 (throw)',
+              result: 'The throw loses to jabs — they\'ll hit you before the throw connects. Save the throw for when they stand block.',
             },
           ]}
-          keyTakeaway="There is no single option that beats everything from Sentai at +2. But SEN 3 is your safest default because it's fast, homing, +1 on block, and a heat engager. Use it until the opponent proves they can deal with it, then adapt."
+          keyTakeaway="When the opponent jabs after blocking f,f+2, SEN 3 is your best answer. It's fast enough to win at +2, it's homing, and it's +1 on block. Once they respect SEN 3 and stop jabbing, your slower but more rewarding options open up."
         />
 
         <TipBox variant="tip" title="The Yagami Approach">
