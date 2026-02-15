@@ -20,7 +20,7 @@ export function Chapter10({ goToChapter }: ChapterProps) {
     >
       <Section title="Heat Activation">
         <p>
-          You can activate heat two ways: <strong>Heat Burst</strong> (2+3) or landing a 
+          You can activate heat two ways: <strong>Heat Burst</strong> (2+3) or landing a{' '}
           <strong>Heat Engager</strong>.
         </p>
 
