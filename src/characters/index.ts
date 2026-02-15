@@ -18,6 +18,7 @@ import { lawConfig } from './law/config'
 import { leeConfig } from './lee/config'
 import { liliConfig } from './lili/config'
 import { paulConfig } from './paul/config'
+import { reinaConfig } from './reina/config'
 import { victorConfig } from './victor/config'
 import { yoshimitsuConfig } from './yoshimitsu/config'
 import { xiaoyuConfig } from './xiaoyu/config'
@@ -48,6 +49,7 @@ export const characters: Record<string, CharacterConfig> = {
   'lee': leeConfig,
   'lili': liliConfig,
   'paul': paulConfig,
+  'reina': reinaConfig,
   'victor': victorConfig,
   'yoshimitsu': yoshimitsuConfig,
   'xiaoyu': xiaoyuConfig,
