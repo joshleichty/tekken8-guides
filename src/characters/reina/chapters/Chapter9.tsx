@@ -90,7 +90,7 @@ export function Chapter9({ goToChapter }: ChapterProps) {
         </KeyConcept>
 
         <p>
-          Reina also has <strong>punch parry</strong> on d+3 and u+3 (Unsoku Kou), and a 
+          Reina also has <strong>punch parry</strong> on d+3 and u+3 (Unsoku Kou), and a{' '}
           <strong>Wind God Step parry</strong> on f,n:
         </p>
 

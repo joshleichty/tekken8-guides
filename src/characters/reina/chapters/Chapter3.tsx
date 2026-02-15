@@ -240,7 +240,7 @@ export function Chapter3({ goToChapter }: ChapterProps) {
         />
 
         <p>
-          SEN 1,2 is your power crush. The first hit absorbs attacks, and you can <strong>hit confirm</strong> 
+          SEN 1,2 is your power crush. The first hit absorbs attacks, and you can <strong>hit confirm</strong>{' '}
           into the second hit. If they block the first hit, don't press 2.
         </p>
 
