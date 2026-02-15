@@ -1,5 +1,5 @@
 import { Chapter, Section } from '../../../components/guide'
-import { KeyConcept, TipBox, PracticeBox, Collapsible } from '../../../components/ui'
+import { ComboCard, KeyConcept, TipBox, PracticeBox, Collapsible } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter6({ goToChapter }: ChapterProps) {
@@ -43,107 +43,135 @@ export function Chapter6({ goToChapter }: ChapterProps) {
           go-to until you're comfortable with character-specific optimizations.
         </p>
 
-        <Collapsible title="Universal Combo" defaultOpen>
-          <p><strong>Launcher → df+2 → df+1 → f+2,3~F → SEN 2 T! → uf+3+4,1+2</strong></p>
-          <ul>
-            <li>Works from: df+2, EWGF, FC df+4, FC df+3</li>
-            <li>Damage: ~65-70 depending on launcher</li>
-            <li>Good wall carry</li>
-            <li>Consistent and reliable</li>
-          </ul>
-          <p>
-            If you need more wall carry, substitute the ender: use <strong>df+1,1</strong> for short
-            distance carry, <strong>3,2</strong> or <strong>uf+3+4,1+2</strong> for longer distance.
-          </p>
-        </Collapsible>
+        <ComboCard
+          title="Universal Combo"
+          starter="df+2 / EWGF / FC df+4 / FC df+3"
+          route={['Launcher', 'df+2', 'df+1', 'f+2,3~F', 'SEN 2 T!', 'uf+3+4,1+2']}
+          damage="~65-70"
+          difficulty="beginner"
+          wallCarry
+          notes={[
+            'Works from any standard launcher',
+            'Consistent and reliable',
+            'For more wall carry, substitute ender: df+1,1 (short carry) or 3,2 / uf+3+4,1+2 (long carry)'
+          ]}
+        />
       </Section>
 
       <Section title="Launcher-Specific Routes">
-        <Collapsible title="EWGF Combo (Optimal)">
-          <p><strong>EWGF → df+2 → df+1 → f+2,3~F → SEN 2 T! → uf+3+4,1+2</strong></p>
-          <ul>
-            <li>Damage: ~72</li>
-            <li>The universal route — always works</li>
-          </ul>
-          <p>For higher damage with execution:</p>
-          <p><strong>EWGF → df+2 → df+1 → f+2,3~F → SEN 1,qcf+2</strong></p>
-          <ul>
-            <li>Damage: ~77</li>
-            <li>Skips tornado for raw damage</li>
-            <li>Blue spark SEN 1,qcf+2 for 5 extra damage</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="EWGF Combo (Standard)"
+          starter="EWGF"
+          route={['df+2', 'df+1', 'f+2,3~F', 'SEN 2 T!', 'uf+3+4,1+2']}
+          damage="~72"
+          difficulty="intermediate"
+          wallCarry
+          notes={['The universal route from EWGF — always works']}
+        />
 
-        <Collapsible title="df+2 Combo">
-          <p><strong>df+2 → df+1 → f+2,3~F → SEN 2 T! → uf+3+4,1+2</strong></p>
-          <ul>
-            <li>Damage: ~65</li>
-            <li>Standard and consistent</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="EWGF Combo (Optimal)"
+          starter="EWGF"
+          route={['df+2', 'df+1', 'f+2,3~F', 'SEN 1,qcf+2']}
+          damage="~77"
+          difficulty="advanced"
+          notes={[
+            'Skips tornado for raw damage',
+            'Blue spark SEN 1,qcf+2 for 5 extra damage'
+          ]}
+        />
 
-        <Collapsible title="FC df+4 / FC df+3 Combo">
-          <p><strong>FC df+4 → f+2,3~F → SEN 3 → df+2 → df+1 → f+2,3~F → SEN 2 T! → uf+3+4,1+2</strong></p>
-          <ul>
-            <li>Damage: ~70</li>
-            <li>FC df+3 does 5 more damage but is -17 on block</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="df+2 Combo"
+          starter="df+2"
+          route={['df+1', 'f+2,3~F', 'SEN 2 T!', 'uf+3+4,1+2']}
+          damage="~65"
+          difficulty="beginner"
+          notes={['Standard and consistent']}
+        />
 
-        <Collapsible title="CH f,f+3+4 Combo">
-          <p><strong>CH f,f+3+4 → SSR → f+2,3~F → SEN 3 → df+2 → df+1 → f+2,3~F → SEN 1,qcf+2</strong></p>
-          <ul>
-            <li>Sidestep right immediately after the launch, then f+2,3</li>
-            <li>Damage: ~75</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="FC df+4 / FC df+3 Combo"
+          starter="FC df+4 / FC df+3"
+          route={['f+2,3~F', 'SEN 3', 'df+2', 'df+1', 'f+2,3~F', 'SEN 2 T!', 'uf+3+4,1+2']}
+          damage="~70"
+          difficulty="intermediate"
+          wallCarry
+          notes={['FC df+3 does 5 more damage but is -17 on block']}
+        />
 
-        <Collapsible title="CH CD3 (EWGK) Combo">
-          <p><strong>CH CD3 → ws+3 → df+1,1 → f+2,3~F → SEN 2 T! → uf+3+4,1+2</strong></p>
-          <ul>
-            <li>Damage: ~73</li>
-            <li>ws+3 picks up after the counter hit CD3 crumple</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="CH f,f+3+4 Combo"
+          starter="CH f,f+3+4"
+          route={['SSR', 'f+2,3~F', 'SEN 3', 'df+2', 'df+1', 'f+2,3~F', 'SEN 1,qcf+2']}
+          damage="~75"
+          difficulty="advanced"
+          notes={['Sidestep right immediately after the launch, then f+2,3']}
+        />
 
-        <Collapsible title="b+4 / CH b+4 Combo">
-          <p><strong>b+4 T! → f,f+3+4 → df+2 → df+1 → f+2,3~F → SEN 1,qcf+2</strong></p>
-          <ul>
-            <li>b+4 is a tornado, so this is a post-tornado route</li>
-            <li>On normal hit, b+4 gives guaranteed CD3 (stomp)</li>
-            <li>On counter hit, full launch combo</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="CH CD3 (EWGK) Combo"
+          starter="CH CD3"
+          route={['ws+3', 'df+1,1', 'f+2,3~F', 'SEN 2 T!', 'uf+3+4,1+2']}
+          damage="~73"
+          difficulty="intermediate"
+          wallCarry
+          notes={['ws+3 picks up after the counter hit CD3 crumple']}
+        />
 
-        <Collapsible title="CH 3,2 Combo">
-          <p><strong>CH 3,2 → f,f+3+4 → df+2 → df+1 → f+2,3~F → SEN 2 T! → uf+3+4,1+2</strong></p>
-          <ul>
-            <li>Note: the second hit counts as your second scaled hit</li>
-            <li>Adjust accordingly — slightly less damage than a raw launcher</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="b+4 / CH b+4 Combo"
+          starter="b+4"
+          route={['b+4 T!', 'f,f+3+4', 'df+2', 'df+1', 'f+2,3~F', 'SEN 1,qcf+2']}
+          damage="~70"
+          difficulty="intermediate"
+          notes={[
+            'b+4 is a tornado, so this is a post-tornado route',
+            'On normal hit, b+4 gives guaranteed CD3 (stomp)',
+            'On counter hit, full launch combo'
+          ]}
+        />
+
+        <ComboCard
+          title="CH 3,2 Combo"
+          starter="CH 3,2"
+          route={['f,f+3+4', 'df+2', 'df+1', 'f+2,3~F', 'SEN 2 T!', 'uf+3+4,1+2']}
+          damage="~68"
+          difficulty="intermediate"
+          wallCarry
+          notes={[
+            'The second hit counts as your second scaled hit',
+            'Slightly less damage than a raw launcher'
+          ]}
+        />
       </Section>
 
       <Section title="Wall Combos">
-        <Collapsible title="Standard Wall Combo" defaultOpen>
-          <p><strong>df+1,1 → 1+2</strong></p>
-          <ul>
-            <li>Damage: ~35</li>
-            <li>Consistent and reliable</li>
-            <li>Good oki — you're plus enough to sidestep into a mixup</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="Standard Wall Combo"
+          starter="Wall splat"
+          route={['df+1,1', '1+2']}
+          damage="~35"
+          difficulty="beginner"
+          notes={[
+            'Consistent and reliable',
+            'Good oki — you\'re plus enough to sidestep into a mixup'
+          ]}
+        />
 
-        <Collapsible title="Optimal Wall Combo (b+1,1,3)">
-          <p><strong>1,1 → b+1,1,3 (delay the third hit)</strong></p>
-          <ul>
-            <li>Damage: ~55</li>
-            <li>The delay on the third hit is critical — wait until you see Reina start sliding down</li>
-            <li>If done too fast, the SEN transition whiffs</li>
-            <li>Transitions to Sentai for a post-wall mixup</li>
-            <li>Best oki in her kit — opponent must guess between mid, throw, and grounded hit</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="Optimal Wall Combo"
+          starter="Wall splat"
+          route={['1,1', 'b+1,1,3 (delay the third hit)']}
+          damage="~55"
+          difficulty="advanced"
+          notes={[
+            'The delay on the third hit is critical — wait until Reina starts sliding down',
+            'If done too fast, the SEN transition whiffs',
+            'Transitions to Sentai for a post-wall mixup',
+            'Best oki in her kit — opponent must guess between mid, throw, and grounded hit'
+          ]}
+        />
 
         <Collapsible title="Alternative Wall Combos">
           <ul>
@@ -161,15 +189,18 @@ export function Chapter6({ goToChapter }: ChapterProps) {
       </Section>
 
       <Section title="Heat Burst and Combo Extensions">
-        <Collapsible title="Heat Burst Combo Ender">
-          <p>If your combo is long and you haven't used heat yet, you can heat burst for extra damage:</p>
-          <p><strong>...T! → f,f,f+4 → Heat Burst → d+2,1+2</strong></p>
-          <ul>
-            <li>Use after a long combo that used tornado</li>
-            <li>The d+2,1+2 stomp does great damage at the end of a scaled combo</li>
-            <li>Also consider: <strong>...T! → 4,4,3 → Heat Dash → d+4:1</strong> for max damage (accounts for scaling)</li>
-          </ul>
-        </Collapsible>
+        <ComboCard
+          title="Heat Burst Combo Ender"
+          starter="Any combo after T!"
+          route={['...T!', 'f,f,f+4', 'Heat Burst', 'd+2,1+2']}
+          damage="varies"
+          difficulty="intermediate"
+          notes={[
+            'Use after a long combo that used tornado',
+            'The d+2,1+2 stomp does great damage at the end of a scaled combo',
+            'Alt: ...T! → 4,4,3 → Heat Dash → d+4:1 for max damage'
+          ]}
+        />
 
         <Collapsible title="Floor Break and Wall Break">
           <ul>
