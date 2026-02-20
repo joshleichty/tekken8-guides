@@ -1,249 +1,209 @@
 import { Chapter, Section } from '../../../components/guide'
-import { 
-  KeyConcept, 
-  TipBox,
-  Collapsible
-} from '../../../components/ui'
+import { KeyConcept, TipBox, StanceBox, Collapsible } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter1({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={1}
-      title="Meet Hwoarang"
-      intro="Hwoarang is one of the most aggressive characters in Tekken. With four stances, devastating mixups, and relentless pressure, he suffocates opponents who don't know when it's their turn. If you love offense and never letting your opponent breathe, Blood Talon is your character."
+      title="Blood Talon"
+      intro="Hwoarang has 156 moves across four stances. That sounds insane. It's not. Every expert who teaches this character arrives at the same conclusion: learn the loops first, and 80% of the stances teach themselves."
       hasPrevious={false}
       onNext={() => goToChapter(2)}
-      nextLabel="Learn Your First Buttons"
+      nextLabel="The First Loop"
     >
-      <Section title="The Relentless Pressure Machine">
+      <Section title="What It Feels Like">
         <p>
-          Hwoarang is categorized as a <span className="highlight">"stance-based rushdown"</span> character. 
-          He has four distinct stances, each with unique moves, and his gameplan revolves around 
-          transitioning between them while maintaining pressure.
+          Playing Hwoarang feels like driving a manual transmission with no brakes. You shift between stances
+          the way a boxer shifts between orthodox and southpaw — each position opens different angles, different
+          threats. When it clicks, your opponent is blocking a kick that came from your left leg, then your right
+          leg, then you're in a completely different stance throwing a low they've never seen before, and before
+          they can react you've already transitioned again.
         </p>
-
         <p>
-          Unlike characters who play neutral and fish for whiffs, Hwoarang wants to get in your face 
-          and stay there. His strings loop into stances, his stances have plus-frame moves, and 
-          before you know it, he's thrown 15 kicks and you're at the wall.
+          The character doesn't have one big move that wins rounds. He has <strong>pressure that never ends</strong>.
+          His kicks chain into stances that chain into more kicks that chain into more stances. Each transition point
+          is a decision — for both you and your opponent. You pick the option that beats what they're doing. They
+          try to escape. You adapt. The round ends with accumulated damage from twenty small decisions, not one
+          explosive launcher.
         </p>
-
-        <KeyConcept title="What Hwoarang Wants to Do" icon="🦅">
-          <ul>
-            <li><strong>Suffocate with pressure</strong> — Keep attacking, never give them a turn</li>
-            <li><strong>Mix with stances</strong> — LFS, RFS, RFF all have unique threats</li>
-            <li><strong>Fish for counter-hits</strong> — db+4, b+4, RFS f+4,4 all CH launch</li>
-            <li><strong>Force guessing</strong> — d+3,4 into RFS is a constant 50/50</li>
-            <li><strong>Punish whiffs hard</strong> — b+3 is one of the best whiff punishers in Tekken</li>
-          </ul>
-        </KeyConcept>
-      </Section>
-
-      <Section title="Strengths">
-        <ul>
-          <li><strong>Relentless pressure</strong> — Plus frames from stances mean your turn never ends</li>
-          <li><strong>Huge damage potential</strong> — Counter-hit combos are devastating</li>
-          <li><strong>Excellent punishment</strong> — 4,3 at i11, b+3 at i16 for whiff punish</li>
-          <li><strong>Multiple heat engagers</strong> — Most are safe, giving flexible Heat activation</li>
-          <li><strong>Best chip damage</strong> — In Heat, his pressure drains health even on block</li>
-          <li><strong>Strong throw game</strong> — Full 1+2 break mixup with qcb+3 for style</li>
-          <li><strong>Elite counter-hit tools</strong> — db+4, b+4, RFS f+4,4 are all terrifying</li>
-        </ul>
-      </Section>
-
-      <Section title="Weaknesses">
-        <ul>
-          <li><strong>Complexity</strong> — Four stances, 150+ moves, steep learning curve</li>
-          <li><strong>Linear offense</strong> — Many moves can be sidestepped or sidewalked</li>
-          <li><strong>Can't block in flamingo</strong> — Committing to LFS/RFS is risky</li>
-          <li><strong>Weak panic moves</strong> — No great "get off me" buttons</li>
-          <li><strong>Execution requirement</strong> — JFSR requires practice to use consistently</li>
-          <li><strong>Struggles vs. strong defense</strong> — Good players can shut him down</li>
-        </ul>
-
-        <TipBox variant="tip" title="Don't Fear the Complexity">
-          Hwoarang looks intimidating because of his stance system, but you don't need to learn 
-          everything at once. We'll start simple — jabs, a few mids, one low — and gradually add 
-          stances as your foundation solidifies. By the end of this guide, you'll flow through 
-          all four stances naturally.
-        </TipBox>
+        <p>
+          This is what makes Hwoarang simultaneously the most fun and most misunderstood character in Tekken.
+          People see the button mashing and think it's random. It's not. Every kick in a pressure sequence has
+          specific frame data, specific tracking, specific counters. The Hwoarang player who understands <em>why</em> each
+          kick matters will always beat the one who just presses buttons and hopes.
+        </p>
       </Section>
 
       <Section title="The Four Stances">
         <p>
-          Before diving into moves, understand Hwoarang's stance system at a high level. We'll 
-          cover each in detail later, but here's what you're working with:
+          Hwoarang has four stances. That's a lot. But here's the mental model that makes it manageable: two stances
+          are <strong>safe</strong> (you can block), and two are <strong>committed</strong> (you can't block). Everything
+          flows between them.
         </p>
 
-        <KeyConcept title="Hwoarang's Stance System" icon="🥋">
-          <ul>
-            <li><strong>LFF (Left Foot Forward)</strong> — Your default stance. Can block, full movement.</li>
-            <li><strong>RFF (Right Foot Forward)</strong> — Secondary neutral stance. Can block, limited sidestep.</li>
-            <li><strong>LFS (Left Flamingo)</strong> — Left leg raised. Cannot block! Pressure stance.</li>
-            <li><strong>RFS (Right Flamingo)</strong> — Right leg raised. Cannot block! Your deadliest stance.</li>
-          </ul>
-          <p style={{ marginTop: '12px', fontStyle: 'italic', color: 'var(--text-secondary)' }}>
-            In flamingo stances, you trade the ability to block for incredible offense. 
-            The risk-reward is what makes Hwoarang exciting.
-          </p>
-        </KeyConcept>
-
-        <TipBox variant="warning" title="Flamingo = Commitment">
-          When you enter Left or Right Flamingo, you <strong>cannot block</strong>. This is crucial. 
-          Every time you go to flamingo, you're betting that your offense will beat whatever they do. 
-          Learn when to commit and when to stay in LFF/RFF.
-        </TipBox>
-      </Section>
-
-      <Section title="Notation Guide">
-        <p>
-          Throughout this guide, you'll see notation like <code>d+3,4</code> or <code>RFS f+4</code>. 
-          Here's what it all means.
-        </p>
-
-        <Collapsible title="Button Notation" icon="🎮" defaultOpen>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '12px' }}>
-            <div>
-              <p style={{ marginBottom: '8px', fontWeight: 600, color: 'var(--accent)' }}>Buttons</p>
-              <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                <li><code>1</code> = Left Punch (Square / X)</li>
-                <li><code>2</code> = Right Punch (Triangle / Y)</li>
-                <li><code>3</code> = Left Kick (X / A)</li>
-                <li><code>4</code> = Right Kick (Circle / B)</li>
-              </ul>
-            </div>
-            <div>
-              <p style={{ marginBottom: '8px', fontWeight: 600, color: 'var(--accent)' }}>Combinations</p>
-              <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                <li><code>1+2</code> = Both punches</li>
-                <li><code>3+4</code> = Both kicks</li>
-                <li><code>1+3</code> = LP + LK (throw)</li>
-                <li><code>2+4</code> = RP + RK (throw)</li>
-              </ul>
-            </div>
-          </div>
-        </Collapsible>
-
-        <Collapsible title="Direction Notation" icon="🕹️">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginTop: '12px' }}>
-            <div>
-              <p style={{ marginBottom: '8px', fontWeight: 600, color: 'var(--accent)' }}>Cardinals</p>
-              <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                <li><code>f</code> = Forward (tap)</li>
-                <li><code>b</code> = Back (tap)</li>
-                <li><code>d</code> = Down (tap)</li>
-                <li><code>u</code> = Up (tap)</li>
-                <li><code>n</code> = Neutral (let go)</li>
-              </ul>
-            </div>
-            <div>
-              <p style={{ marginBottom: '8px', fontWeight: 600, color: 'var(--accent)' }}>Diagonals</p>
-              <ul style={{ margin: 0, paddingLeft: '20px' }}>
-                <li><code>df</code> = Down-forward</li>
-                <li><code>db</code> = Down-back</li>
-                <li><code>uf</code> = Up-forward</li>
-                <li><code>ub</code> = Up-back</li>
-              </ul>
-            </div>
-          </div>
-        </Collapsible>
-
-        <Collapsible title="Hwoarang-Specific Terms" icon="🦅">
-          <div style={{ marginTop: '12px' }}>
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              <li><strong>LFF</strong> = Left Foot Forward (default stance)</li>
-              <li><strong>RFF</strong> = Right Foot Forward (<code>3+4</code> or from strings)</li>
-              <li><strong>LFS</strong> = Left Flamingo Stance (<code>f+3</code> to enter)</li>
-              <li><strong>RFS</strong> = Right Flamingo Stance (<code>f,n,4</code> to enter)</li>
-              <li><strong>JFSR</strong> = Just Frame Sky Rocket (<code>f,n,df:4</code> with just-frame timing)</li>
-              <li><strong>Backlash</strong> = RFF 3~4 — Power crush high that's plus on block</li>
-            </ul>
-          </div>
-        </Collapsible>
-
-        <Collapsible title="Stance Notation in Commands" icon="📋">
-          <div style={{ marginTop: '12px' }}>
-            <p style={{ marginBottom: '12px' }}>
-              When a move requires a specific stance, we write it like this:
-            </p>
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              <li><code>RFS f+4</code> = From Right Flamingo, press forward+4</li>
-              <li><code>RFF df+3</code> = From Right Foot Forward, press df+3</li>
-              <li><code>LFS 1</code> = From Left Flamingo, press 1</li>
-              <li><code>d+3,4</code> = d+3 then 4 (comma means "then" in strings)</li>
-            </ul>
-          </div>
-        </Collapsible>
-
-        <Collapsible title="Combo & Frame Terms" icon="📊">
-          <div style={{ marginTop: '12px' }}>
-            <ul style={{ margin: 0, paddingLeft: '20px' }}>
-              <li><strong>T!</strong> = <span className="highlight">Tornado</span> — The spinning state that extends combos. You get one per combo.</li>
-              <li><strong>CH</strong> = Counter Hit — Hitting an opponent during their attack startup</li>
-              <li><strong>NH</strong> = Normal Hit</li>
-              <li><strong>oB</strong> = On Block — Frames when opponent blocks</li>
-              <li><strong>oH</strong> = On Hit — Frames when move connects</li>
-              <li><strong>i</strong> = Startup frames (e.g., i15 = 15 frame startup)</li>
-              <li><strong>+</strong> = Plus frames (your advantage)</li>
-              <li><strong>-</strong> = Minus frames (opponent's advantage)</li>
-            </ul>
-          </div>
-        </Collapsible>
-      </Section>
-
-      <Section title="What This Guide Covers">
-        <p>
-          This guide is structured to build your Hwoarang from the ground up. Each chapter adds 
-          new tools on top of what you've already learned. By the end, you'll have a complete 
-          gameplan ready for ranked.
-        </p>
-
-        <KeyConcept title="The Learning Path" icon="📈">
-          <ol>
-            <li><strong>Foundation</strong> — Basic buttons, stances, simple pressure</li>
-            <li><strong>Core Offense</strong> — Mids, lows, strings, transitions</li>
-            <li><strong>Combos & Stances</strong> — Damage conversion, RFS mastery</li>
-            <li><strong>Execution & Systems</strong> — JFSR, punishment, frame traps</li>
-            <li><strong>Pressure & Heat</strong> — Flowcharts, chip damage, engagers</li>
-            <li><strong>Mastery</strong> — Defense, complete gameplan, rank-up strategies</li>
-          </ol>
-        </KeyConcept>
-
-        <p>
-          Take your time with each chapter. Hwoarang has a lot to learn, but everything builds on 
-          what came before. The complexity that makes him intimidating is the same complexity 
-          that makes him terrifying once mastered.
-        </p>
-
-        <TipBox variant="warning" title="Build Habits Early">
-          It's tempting to mash buttons and hope for the best with Hwoarang. Resist that urge. 
-          The flowcharts and pressure in this guide are designed to create good habits. 
-          Random mashing might win at low ranks, but it creates bad habits that hurt you later.
-        </TipBox>
-      </Section>
-
-      <Section title="The Hwoarang Mentality">
-        <p>
-          To play Hwoarang well, you need to embrace a specific mindset:
-        </p>
-
-        <KeyConcept title="Play to Win, Not to Survive" icon="🔥">
+        <StanceBox name="Left Foot Forward (LFF)" input="Default stance" icon="🦶">
           <p>
-            Hwoarang is not a defensive character. He has weak panic moves, can't block in 
-            flamingo, and his best moves require commitment. If you're scared of getting hit, 
-            you'll never unlock his potential.
+            Your home base. Full movement, full blocking. Most of your neutral tools live here — df+1, df+2, b+3,
+            and the critical d+3,4 that starts everything. You'll always return here when you need to play safe.
           </p>
-          <p style={{ marginTop: '12px' }}>
-            Instead, flip the script: make <em>them</em> scared of pressing buttons. Make 
-            <em>them</em> guess wrong. When you land d+3,4, immediately commit to a mixup. 
-            When you enter RFS, throw out your pressure without hesitation.
+          <ul>
+            <li><strong>df+1:</strong> i13 safe mid poke</li>
+            <li><strong>d+3,4:</strong> Low-high into RFS</li>
+            <li><strong>df+2:</strong> i15 safe mid launcher</li>
+            <li><strong>b+3:</strong> i16 whiff punisher</li>
+          </ul>
+        </StanceBox>
+
+        <StanceBox name="Right Foot Forward (RFF)" input="3+4 from LFF" icon="🦶">
+          <p>
+            Your secondary safe stance. You can block and move forward/backward, but sidestepping returns you to LFF.
+            Many of your best pressure tools live here — RFF b+2, RFF f+3 into LFS, RFF df+3 (homing heat engager).
+            Think of RFF as where your loops pass through.
           </p>
-          <p style={{ marginTop: '12px' }}>
-            The best defense in Tekken is a good offense. With Hwoarang, that's not just 
-            strategy — it's survival.
+          <ul>
+            <li><strong>RFF 2:</strong> +2 on block high jab</li>
+            <li><strong>RFF b+2:</strong> +4~5 on block mid</li>
+            <li><strong>RFF f+3:</strong> +12~15 into LFS</li>
+            <li><strong>RFF df+3:</strong> +1 homing heat engager</li>
+          </ul>
+        </StanceBox>
+
+        <StanceBox name="Left Flamingo (LFS)" input="f+3 from LFF" icon="🔥">
+          <p>
+            Committed. You cannot block. Your left leg is raised and you have access to powerful mids (LFS f+3 heat
+            engager, +4 on block) and the same d+3,4 low that starts your loops. LFS is where your mixups live —
+            the opponent has to guess between your plus-frame mid and your lows.
+          </p>
+          <ul>
+            <li><strong>LFS 1:</strong> +5 on block high jab</li>
+            <li><strong>LFS f+3:</strong> +4 mid heat engager</li>
+            <li><strong>LFS d+3,4:</strong> Low-high into RFS</li>
+            <li><strong>LFS d+4:</strong> +4 low into RFF</li>
+          </ul>
+        </StanceBox>
+
+        <StanceBox name="Right Flamingo (RFS)" input="f,n,4 from LFF" icon="🔥">
+          <p>
+            Committed. You cannot block. Your right leg is raised. This is where you land after d+3,4 —
+            and it's where your fastest move lives. RFS f+4 is 8 frames. Nobody can interrupt it. RFS is your
+            string-ending stance: you use it to cash out pressure with mids, lows, or the hell sweep.
+          </p>
+          <ul>
+            <li><strong>RFS f+4:</strong> i8 fastest option</li>
+            <li><strong>RFS 2:</strong> +5 high into RFF</li>
+            <li><strong>RFS df+4:</strong> +1 mid CH launcher</li>
+            <li><strong>RFS d+4,3:</strong> Hell sweep (low-high)</li>
+          </ul>
+        </StanceBox>
+
+        <KeyConcept title="Safe vs. Committed" icon="🔑">
+          <p>
+            In LFF and RFF, you can block. If you're unsure, you can hold back and nothing bad happens.
+            In LFS and RFS, you <strong>cannot block</strong>. If you enter flamingo and the opponent reads it,
+            you eat whatever they throw. This is the core tension: flamingo stances have the best moves, but
+            you're vulnerable while you're there.
+          </p>
+          <p>
+            This is why Hwoarang's pressure works through <strong>transitions</strong>, not through sitting in one
+            stance. You flow in, throw one or two options, and flow back out. The opponent never gets a clean
+            opening because you're never standing still long enough to be predictable.
           </p>
         </KeyConcept>
+      </Section>
+
+      <Section title="The Secret Nobody Tells You">
+        <p>
+          Here's what every guide gets wrong about Hwoarang: they list moves by stance. "Here are 15 LFF moves.
+          Here are 12 RFF moves. Here are 8 LFS moves. Memorize them all." That's backwards.
+        </p>
+        <p>
+          The real way to learn Hwoarang — the way every top player actually learned him — is through
+          <strong> loops</strong>. A loop is a sequence of moves that chains through multiple stances and comes
+          back to where it started. When you learn a loop, you're not memorizing individual moves. You're learning
+          a <em>flow</em> that carries you through the stance system automatically.
+        </p>
+        <p>
+          One coach put it perfectly: "If you just know the infinites, knowing the infinites teaches you damn near
+          eighty percent of all the stances. And then we can fill in the gaps."
+        </p>
+        <p>
+          That's how this guide works. Chapter 2 teaches you one loop. Chapter 3 connects it to more loops.
+          By the time you're done with Chapter 3, you'll be comfortable in all four stances without ever having
+          sat down and memorized a stance-by-stance move list.
+        </p>
+
+        <TipBox variant="warning" title="The 'Fake Plus Frames' Truth">
+          You'll notice Hwoarang has a lot of moves that are +4, +5, even +8 on block. On paper, that looks
+          insane — those are free frame traps, right? Not exactly. His fastest mid from flamingo is i13 or slower.
+          So being +5 in flamingo means your fastest mid comes out at frame 8 — the same speed as your opponent's
+          jab. Your plus frames <strong>don't guarantee frame traps the way a normal character's do</strong>.
+          <br /><br />
+          So why does the pressure work? Because <strong>it never stops</strong>. Your opponent can jab you out of
+          one option, but you have six other options from the same position. They can sidestep one thing, but the
+          next transition tracks. They can duck one high, but you have a mid that crushes lows. Hwoarang wins
+          through volume and variety, not through any single devastating mixup point.
+        </TipBox>
+      </Section>
+
+      <Section title="Who Is Hwoarang For?">
+        <ul>
+          <li><strong>You like being in your opponent's face.</strong> Hwoarang is one of the most aggressive characters in Tekken. His entire design rewards constant offense. If you enjoy keeping pressure and forcing reactions, he's your character.</li>
+          <li><strong>You want to express yourself.</strong> No two Hwoarang players look the same. The loop system gives you massive creative freedom — you choose which transitions to use, which mixups to run, which stances to favor. Your Hwoarang will be unique to you.</li>
+          <li><strong>You're willing to invest time.</strong> He has 156 moves. The loops shortcut the learning process massively, but he still has more mechanical depth than almost any other character. If you want a character that keeps revealing new layers after hundreds of hours, Hwoarang delivers.</li>
+          <li><strong>You can handle risk.</strong> Flamingo stances can't block. Many of his best options are highs that can be ducked and launched. When the opponent reads you, they get big damage. Hwoarang players need composure — the pressure works because you commit to it, not because it's safe.</li>
+        </ul>
+      </Section>
+
+      <Section title="Strengths and Weaknesses">
+        <h3>Why Hwoarang Wins</h3>
+        <ul>
+          <li><strong>Relentless pressure:</strong> His stance transitions create chains of plus-frame situations. The opponent has to make correct decisions repeatedly, and one mistake opens them up to more pressure or a full combo.</li>
+          <li><strong>Counter-hit power:</strong> b+4 (i13 high CH launcher), RFS df+4 (CH launcher), SS4 (CH launcher into RFF), and in heat, his 8-frame RFS f+4,4 becomes a normal-hit launcher. He punishes mashers harder than almost anyone.</li>
+          <li><strong>Punishment feeds offense:</strong> His 10-frame punish (1,2,3 or 1,2,4) transitions directly into flamingo. His ws+4,4 goes to RFF at +4. Every successful punishment starts a pressure sequence.</li>
+          <li><strong>One of the best whiff punishers:</strong> b+3 is i16, hits from massive range, and does tornado damage. At range, Hwoarang plays a patient game backed by one of the scariest whiff punishers in Tekken 8.</li>
+          <li><strong>Safe launchers:</strong> df+2 is -7 on block. JFSR is -8 on block. Both launch standing opponents for full combos. Very few characters have two safe mid launchers.</li>
+        </ul>
+
+        <h3>Why Hwoarang Struggles</h3>
+        <ul>
+          <li><strong>Vulnerable to sidesteps:</strong> Many of his key stance moves can be sidestepped. At higher levels, opponents who move well force Hwoarang to use his limited homing options or risk getting launched from the side.</li>
+          <li><strong>Can't block in flamingo:</strong> Entering LFS or RFS is a commitment. If the opponent reads it with a rage art, a power crush, or a well-timed punish, you eat the full damage with no way to defend.</li>
+          <li><strong>High-dependent pressure:</strong> Many of his best stance transitions involve high attacks (d+3,4's second hit, RFS 2, RFF 2). Opponents who duck at the right moments get free launches. This is why Hwoarang's lows and mids matter so much — they keep the opponent standing.</li>
+          <li><strong>Limited neutral pokes:</strong> From LFF, he really only has df+1 and f+2 as traditional mid pokes. Everything else requires entering a stance or using a move with commitment. Against characters with dominant neutral like Dragunov, he has to work harder to establish his game.</li>
+        </ul>
+
+        <TipBox variant="tip" title="The Key Insight">
+          Hwoarang's weaknesses share one solution: <strong>learning when to press and when to stop</strong>.
+          The character rewards constant pressure — but not <em>infinite</em> pressure. The best Hwoarang players
+          know when to flow through three stance transitions and when to block and reset. This guide teaches both.
+        </TipBox>
+      </Section>
+
+      <Section title="What This Guide Builds">
+        <p>
+          Each chapter adds one layer. You can stop at any chapter and play competently with what you've learned.
+        </p>
+        <ul>
+          <li><strong>Chapter 2:</strong> The d+3,4 loop — one move that teaches you two stances and starts every pressure sequence</li>
+          <li><strong>Chapter 3:</strong> The infinite machine — connecting loops through all four stances</li>
+          <li><strong>Chapter 4:</strong> Punishment that feeds directly into your loops</li>
+          <li><strong>Chapter 5:</strong> Getting in — approach tools, pokes, and controlling space</li>
+          <li><strong>Chapter 6:</strong> Combo routes for every launcher</li>
+          <li><strong>Chapter 7:</strong> Heat system and what it changes for Hwoarang</li>
+          <li><strong>Chapter 8:</strong> Defense — surviving when it's not your turn</li>
+          <li><strong>Chapter 9:</strong> Adaptation — what to do when opponents learn your loops</li>
+          <li><strong>Chapter 10:</strong> Advanced tech — JFSR, fox step, blue spark 3~4</li>
+        </ul>
+
+        <Collapsible title="Quick-Start: Try These Right Now" defaultOpen>
+          <p>If you're in Practice Mode, try these three things to feel how Hwoarang flows:</p>
+          <ol>
+            <li><strong>d+3,4 → RFS 2 → repeat</strong> — The most basic loop. Low-high into flamingo, jab out to RFF, and you're right back in position to pressure. Just do this ten times and feel the rhythm.</li>
+            <li><strong>b+3 at range 3</strong> — Walk back, let the dummy whiff, and punish with b+3. Feel how far this move reaches. This is your whiff punisher — one of the best in the game.</li>
+            <li><strong>3+4 → RFF f+3 → LFS f+3</strong> — Switch to RFF, kick into LFS at +12, then throw the heat engager at +4 on block. This is what it feels like to flow between stances with plus frames.</li>
+          </ol>
+        </Collapsible>
       </Section>
     </Chapter>
   )

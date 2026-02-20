@@ -1,361 +1,288 @@
 import { Chapter, Section } from '../../../components/guide'
-import { 
-  ComboCard,
-  KeyConcept, 
-  TipBox,
-  Collapsible
-} from '../../../components/ui'
+import { ComboCard, KeyConcept, TipBox, Collapsible } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter6({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={6}
-      title="First Combos"
-      intro="You've learned the stances and strings. Now it's time to convert your launchers into damage. Hwoarang's combos can be complex, but we'll start simple and build up."
+      title="Combos"
+      intro="Hwoarang's combos are unlike anyone else's. They flow through the same stances you've been learning — RFS, LFS, RFF. The combo routes feel like pressure sequences because they use the same transitions. If you've drilled the loops, you already have the muscle memory for half the combo."
+      hasPrevious
       onPrevious={() => goToChapter(5)}
       onNext={() => goToChapter(7)}
-      nextLabel="Master Right Flamingo"
+      nextLabel="Heat"
     >
-      <Section title="How Hwoarang Combos Work">
+      <Section title="Combo Building Blocks">
         <p>
-          Hwoarang's combos flow through his stances. Most routes follow this pattern:
+          Before learning specific routes, understand the pieces that build every Hwoarang combo.
+          You'll see these same components reused across every launcher.
         </p>
+        <ul>
+          <li><strong>Screw/Filler:</strong> f+4 → RFS [3~4] is your primary screw setup. The f+4 puts you in RFS, then the just-frame 3~4 (blue spark) screws. If you can't hit the just frame, regular RFS 3~4 works but with less damage.</li>
+          <li><strong>Carry:</strong> uf+3+4~F chains — this is the uf+3+4 transition cancelled into LFS with F, repeated for wall carry. Each rep moves the opponent further toward the wall.</li>
+          <li><strong>Tornado:</strong> LFS uf+4 or RFS uf+4 gives you the Tornado bound. Use d+4,4 as an alternative Tornado starter when the angle is tricky.</li>
+          <li><strong>Ender:</strong> uf+3,4,3 is the standard ender after Tornado for max damage. uf+3+4 chains are the alternative when you need more wall carry instead of raw damage.</li>
+        </ul>
 
-        <KeyConcept title="The Combo Structure" icon="📐">
-          <ol>
-            <li><strong>Launcher</strong> — df+2, b+3, ws2,3, etc.</li>
-            <li><strong>Filler</strong> — f+4, RFS 3~4, stance transitions</li>
-            <li><strong>Tornado (T!)</strong> — Usually from a stance move</li>
-            <li><strong>Ender</strong> — uf+3,4,3 or wall carry options</li>
-          </ol>
-        </KeyConcept>
-
-        <KeyConcept title="What is Tornado (T!)?" icon="🌀">
+        <KeyConcept title="The Key Sequence" icon="🎯">
           <p>
-            <strong>Tornado</strong> is a spinning state that extends combos. When you hit 
-            someone with a Tornado move, they spin in place and fall slowly, letting you 
-            add more hits.
-          </p>
-          <p style={{ marginTop: '12px' }}>
-            <strong>You only get ONE Tornado per combo.</strong> Plan your route accordingly.
+            <strong>RFS [3~4] → uf+3+4~F → LFS uf+4 T!</strong> appears in nearly every combo.
+            This is the core skill: from RFS, hit the just-frame 3~4 for the screw, then cancel
+            uf+3+4 into LFS, and Tornado with LFS uf+4. Practice this sequence in isolation until
+            it's automatic — it's the backbone of Hwoarang's combo game.
           </p>
         </KeyConcept>
       </Section>
 
-      <Section title="Main Launchers">
-        <p>
-          These moves start combos. Know which one to use when:
-        </p>
-
-        <div style={{ display: 'grid', gap: '12px', marginTop: '16px' }}>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>df+2</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>i15-16 launcher — Your standing launch punish</p>
-            </div>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>b+3</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>i16-17 launcher — Best whiff punisher</p>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>ws2,3</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>i15-16 — WS launcher from crouch</p>
-            </div>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>LFS uf+4</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>i19-20 — Tornado launcher from LFS</p>
-            </div>
-          </div>
-          <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>u+3+4</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>i25-26 — Orbital/hopkick, low crushes</p>
-            </div>
-            <div style={{ flex: '1', minWidth: '200px', padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <code style={{ color: 'var(--accent)' }}>JFSR (f,n,df:4)</code>
-              <p style={{ fontSize: '0.9rem', marginTop: '4px' }}>i16 — Safe launcher (Chapter 8)</p>
-            </div>
-          </div>
-        </div>
-
-        <TipBox variant="tip" title="When to Use Each Launcher">
-          <ul>
-            <li><strong>df+2</strong> — 15f block punish (standard)</li>
-            <li><strong>b+3</strong> — Whiff punishes at range</li>
-            <li><strong>ws2,3</strong> — After blocking lows</li>
-            <li><strong>u+3+4</strong> — Read a low, low crush it</li>
-            <li><strong>JFSR</strong> — Safe mid launcher (requires execution)</li>
-          </ul>
-        </TipBox>
-      </Section>
-
-      <Section title="The Beginner Combo">
-        <p>
-          This is your first combo. It works off df+2 and b+3, does good damage, and has 
-          excellent wall carry. Learn this before anything else.
-        </p>
+      <Section title="Standard Launchers">
+        <ComboCard
+          title="df+2 (Safe Launcher)"
+          starter="df+2 (i15, -7)"
+          route={['df+2', 'f+4', 'RFS [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~65"
+          difficulty="intermediate"
+          wallCarry
+          notes={[
+            'Your most common combo — df+2 is safe so you use it frequently',
+            'f+4 must come out quickly after the launch',
+            '[3~4] is the just-frame blue spark version — regular 3~4 works but does less damage',
+          ]}
+        />
 
         <ComboCard
-          title="Universal Beginner Route"
-          starter="df+2 / b+3"
-          route={['f+4', 'RFS.3~4', 'uf+3+4~f', 'LFS.uf+4 T!', 'uf+3,4,3']}
-          damage="~57"
+          title="b+3 (Tornado Launcher)"
+          starter="b+3 (i16, Tornado)"
+          route={['b+3 T!', '3+4', 'RFF f+3', 'LFS f+3', 'LFS 3,f+4']}
+          damage="~60"
           difficulty="beginner"
           wallCarry
           notes={[
-            'f+4 transitions to RFS',
-            'RFS.3~4 is the Flying Eagle (slide 3 into 4)',
-            'uf+3+4~f goes to LFS',
-            'LFS.uf+4 is your Tornado',
-            'uf+3,4,3 is the standard ender'
+            'b+3 already gives Tornado, so no need for separate T! setup',
+            'Easy route — 3+4 switches to RFF, then chain stance transitions into ender',
+            'At the wall: b+3 T! → 3+4 → RFF f+3 → LFS f+3 → LFS 3,f+4 for wall splat',
           ]}
         />
 
-        <KeyConcept title="Breaking Down the Route" icon="📝">
-          <ol>
-            <li><code>f+4</code> — Puts you in RFS on hit</li>
-            <li><code>RFS 3~4</code> — Flying Eagle (slide 3 into 4 quickly)</li>
-            <li><code>uf+3+4~f</code> — Double kick into LFS stance</li>
-            <li><code>LFS uf+4</code> — <span className="highlight">Tornado</span> launcher</li>
-            <li><code>uf+3,4,3</code> — Three-kick ender with good carry</li>
-          </ol>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="Practice Tips">
-          <ul>
-            <li>Start with df+2 as your launcher</li>
-            <li>RFS 3~4 means slide from 3 to 4 quickly (like a piano)</li>
-            <li>The ~f after uf+3+4 means hold forward to transition</li>
-            <li>Practice 10 times in a row before trying in matches</li>
-          </ul>
-        </TipBox>
-      </Section>
-
-      <Section title="WS2,3 Combo">
-        <p>
-          After blocking a low attack, ws2,3 launches. The combo is slightly different:
-        </p>
-
         <ComboCard
-          title="WS2,3 Route"
-          starter="ws2,3"
-          route={['(whiff LFS 1)', 'u+3', 'LFS.uf+3+4~f', 'uf+3+4~f', 'uf+3+4']}
-          damage="~43"
-          difficulty="beginner"
+          title="JFSR (Just Frame Skyrocket)"
+          starter="f,n,df+4 (i16, -8)"
+          route={['JFSR', '3+4', 'RFF [3~4]', 'f+4', 'RFS [3~4]', 'd+4,4 T!', 'uf+3,4,3']}
+          damage="~72"
+          difficulty="advanced"
           notes={[
-            'The ws2,3 already spins them',
-            'Whiff LFS 1 is to adjust timing',
-            'u+3 picks them up into LFS',
-            'Chain uf+3+4 moves for carry'
+            'Highest damage standard combo — requires JFSR execution',
+            'Longer route than df+2 because JFSR gives more height',
+            'Alternative: JFSR → 3+4 → RFF [3~4] → dash → 4,4,u+4,4 T! → uf+3,4,3',
           ]}
         />
 
-        <TipBox variant="warning" title="ws2,3 is Different">
-          ws2,3 causes Tornado by itself, so you can't use another Tornado move. This combo 
-          is shorter but still does decent damage. Use it to punish blocked lows.
-        </TipBox>
-      </Section>
-
-      <Section title="Low Parry Combo">
-        <p>
-          When you low parry an opponent, you get a mini-launch. The combo is similar to 
-          your standard route but without the Tornado:
-        </p>
+        <ComboCard
+          title="ws+2,3 (Crouching Launcher)"
+          starter="ws+2,3 (i15, +3)"
+          route={['ws+2,3', '(whiff LFS 1)', 'u+3', 'LFS uf+3+4~F', 'uf+3+4~F', 'uf+3+4']}
+          damage="~58"
+          difficulty="intermediate"
+          notes={[
+            'ws+2,3 transitions to LFS — the LFS 1 must intentionally whiff for spacing',
+            'The whiffed LFS 1 realigns you for the u+3 pick-up',
+            'Uses uf+3+4 chain carry instead of standard Tornado ender',
+          ]}
+        />
 
         <ComboCard
-          title="Low Parry Route"
-          starter="Low Parry (df)"
-          route={['f+4', 'RFS.3~4', 'uf+3+4~f', 'uf+3+4~f', 'uf+3+4']}
-          damage="~34"
-          difficulty="beginner"
+          title="u+3+4 (Hopkick)"
+          starter="u+3+4"
+          route={['u+3+4', 'db+4~F', 'RFS [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~63"
+          difficulty="intermediate"
+          wallCarry
           notes={[
-            'No Tornado available after low parry',
-            'Same opener as standard combo',
-            'Just chain uf+3+4 for ender'
+            'db+4~F transitions into RFS for the standard screw sequence',
+            'Same core structure as the df+2 combo but different starter and filler',
+          ]}
+        />
+
+        <ComboCard
+          title="Low Parry"
+          starter="Low Parry"
+          route={['Low Parry', 'f+4', 'RFS [3~4]', 'uf+3+4~F', 'uf+3+4~F', 'uf+3+4']}
+          damage="~50"
+          difficulty="intermediate"
+          notes={[
+            'Same f+4 → RFS [3~4] start as df+2 combo',
+            'Less height from low parry, so ender uses carry chain instead of uf+3,4,3',
+            'Still solid damage for a parry — rewards you for reading lows',
           ]}
         />
       </Section>
 
       <Section title="Counter-Hit Combos">
         <p>
-          Hwoarang has several counter-hit launchers. Here are the key ones:
+          Counter-hit launchers are how Hwoarang punishes mashers. These combos start from
+          the CH tools you learned in Chapter 5.
         </p>
 
         <ComboCard
-          title="CH RFS f+4,4"
-          starter="CH RFS f+4,4"
-          route={['RFS.3~4', 'RFS.b+4']}
-          damage="~45"
-          difficulty="beginner"
+          title="CH b+4"
+          starter="CH b+4 (i13)"
+          route={['CH b+4', 'RFF [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~62"
+          difficulty="intermediate"
           notes={[
-            'The 8-frame CH launcher',
-            'Simple route for big damage',
-            'In Heat, this is guaranteed!'
+            'b+4 transitions to RFF on CH — RFF [3~4] starts the screw immediately',
+            'Fast launcher at i13 — your best CH conversion from neutral',
+          ]}
+        />
+
+        <ComboCard
+          title="CH SS 4"
+          starter="CH SS 4 (sidestep low)"
+          route={['CH SS 4', '(varies by angle)']}
+          damage="~55-60"
+          difficulty="intermediate"
+          notes={[
+            'SS 4 launches on CH and transitions to RFF',
+            'Route depends on angle — in most cases: pick up with db+4~F → standard screw sequence',
+            'The sidestep often creates off-axis situations, so be ready to adapt the route',
+          ]}
+        />
+
+        <ComboCard
+          title="CH d+4,4"
+          starter="CH d+4,4"
+          route={['CH d+4,4', 'u+3', 'LFS 1', 'u+3', 'uf+3+4~F', 'uf+3+4~F', 'uf+3+4']}
+          damage="~58"
+          difficulty="intermediate"
+          notes={[
+            'The d+4,4 on CH gives a crumple that lets you pick up with u+3',
+            'Uses the LFS 1 → u+3 loop for carry — the same stance transitions from your infinite loops',
           ]}
         />
 
         <ComboCard
           title="CH RFS df+4"
-          starter="CH RFS df+4"
-          route={['d+4,4', 'f+4', 'RFS.3~4', 'LFS.f+3']}
-          damage="~50"
+          starter="CH RFS df+4 (from stance)"
+          route={['CH RFS df+4', '(standard screw sequence)']}
+          damage="~60"
           difficulty="intermediate"
           notes={[
-            'CH RFS df+4 launches',
-            'd+4,4 picks up (Tornado)',
-            'f+4 into RFS for ender'
+            'RFS df+4 launches on CH — your mid check from flamingo',
+            'Pick up with f+4 → RFS [3~4] → standard Tornado route',
+            'This is the reward for reading a masher during your loops',
           ]}
         />
 
-        <ComboCard
-          title="CH db+4,4"
-          starter="CH db+4,4"
-          route={['ff+3']}
-          damage="~35"
-          difficulty="beginner"
-          notes={[
-            'Simple guaranteed follow-up',
-            'Can do fancier routes but this is reliable'
-          ]}
-        />
-
-        <ComboCard
-          title="CH b+4"
-          starter="CH b+4"
-          route={['RFF.3~4', 'uf+3+4~f', 'LFS.uf+4 T!', 'uf+3,4,3']}
-          damage="~65"
-          difficulty="intermediate"
-          notes={[
-            'i13 CH launcher',
-            'RFF.3~4 is Backlash from RFF',
-            'Standard combo after'
-          ]}
-        />
-      </Section>
-
-      <Section title="JFSR Combo">
-        <p>
-          The Just Frame Skyrocket is covered in Chapter 8, but here's the combo:
-        </p>
-
-        <ComboCard
-          title="JFSR Route"
-          starter="JFSR (f,n,df:4)"
-          route={['3+4', 'RFF.3~4', 'f+4', 'RFS.3~4', 'd+4,4 T!', 'uf+3,4,3']}
-          damage="~65"
-          difficulty="intermediate"
-          notes={[
-            '3+4 switches to RFF',
-            'RFF.3~4 is Backlash',
-            'Standard f+4 → RFS 3~4 filler',
-            'd+4,4 is Tornado',
-            'Massive damage and wall carry'
-          ]}
-        />
+        <Collapsible title="More CH Combos">
+          <ul>
+            <li><strong>CH SS 3,3:</strong> LFS 1 → uf+3+4~F → uf+3+4~F → LFS uf+4 T! → uf+3,4,3</li>
+            <li><strong>CH RFF b+3:</strong> (sidestep left) db+4~F → RFS [3~4] → uf+3+4~F → LFS uf+4 T! → uf+3,4,3</li>
+            <li><strong>Heat: CH RFS f+4,4:</strong> u+3 → LFS 1 → u+3 → uf+3+4~F → uf+3+4~F → uf+3+4</li>
+          </ul>
+        </Collapsible>
       </Section>
 
       <Section title="Wall Combos">
         <p>
-          When your combo wall splats, finish with these:
+          When the opponent splats against the wall, you get guaranteed follow-up damage. Hwoarang's
+          wall combos use his stance transitions to squeeze maximum damage from the splat.
         </p>
 
         <ComboCard
-          title="Standard Wall Ender"
+          title="Standard Wall Combo (No Tornado)"
           starter="Wall Splat"
-          route={['SS 3,3', 'LFS.3,2']}
-          damage="Varies"
+          route={['SS 3,3', 'LFS 3,2']}
+          damage="~30 (wall only)"
           difficulty="beginner"
           notes={[
-            'Sidestep 3,3 picks up',
-            'LFS.3,2 is the finisher',
-            'Works after most wall splats'
+            'Simple and consistent — SS 3,3 into the LFS ender',
+            'Works after most wall splats',
           ]}
         />
 
         <ComboCard
-          title="Alternative Wall Ender"
+          title="Standard Wall Combo (Alt)"
           starter="Wall Splat"
-          route={['RFF.f+3', 'LFS.f+3', 'LFS.3,f+4']}
-          damage="Varies"
-          difficulty="intermediate"
+          route={['RFF f+3', 'LFS f+3', 'LFS 3,f+4']}
+          damage="~32 (wall only)"
+          difficulty="beginner"
           notes={[
-            'More damage than simple ender',
-            'Requires RFF to start'
+            'Stance transition chain at the wall — feels like your pressure loops',
+            'RFF f+3 into LFS, then LFS f+3, then finish with LFS 3,f+4',
           ]}
         />
 
         <ComboCard
-          title="Wall Tornado Ender"
-          starter="Wall Splat with T!"
-          route={['b+3 T!', '3+4', 'RFF.f+3', 'LFS.f+3', 'LFS.3,f+4']}
-          damage="High"
+          title="Wall Combo with Tornado"
+          starter="Wall Splat (with Tornado available)"
+          route={['f+4', 'RFS uf+4 T!', 'RFF [3~4]', 'b+3']}
+          damage="~45 (wall only)"
           difficulty="intermediate"
           notes={[
-            'Use when you still have Tornado',
-            'b+3 is your Tornado at wall',
-            'Full wall ender after'
+            'Higher damage by using Tornado at the wall',
+            'f+4 → RFS uf+4 gives the Tornado, then RFF [3~4] into b+3 for max wall damage',
           ]}
         />
       </Section>
 
-      <Section title="What to Focus On">
-        <KeyConcept title="Combo Learning Priority" icon="🎯">
-          <ol>
-            <li><strong>Master the beginner route</strong> — df+2/b+3 → standard combo</li>
-            <li><strong>Get it consistent</strong> — 10 reps without dropping</li>
-            <li><strong>Learn ws2,3 route</strong> — For punishing lows</li>
-            <li><strong>Add CH RFS f+4,4</strong> — This happens often in pressure</li>
-            <li><strong>Wall enders</strong> — Don't drop damage at the wall</li>
-            <li><strong>JFSR route</strong> — Once you learn the input (Chapter 8)</li>
-          </ol>
+      <Section title="Combo Enders">
+        <KeyConcept title="Choose Your Ender By Situation" icon="🎯">
+          <p>
+            After the screw or Tornado, your ender determines whether you get max damage,
+            wall carry, or a wall break. Choose based on the situation:
+          </p>
+          <ul>
+            <li><strong>Max Damage:</strong> uf+3,4,3 — standard ender, highest raw damage in the open</li>
+            <li><strong>Wall Carry:</strong> u+3 → LFS uf+3+4, uf+3+4 — carry chains push the opponent toward the wall</li>
+            <li><strong>Wall Break:</strong> f,f+4 or df+3,4 or f,n,d,df+3 — break through walls for stage transitions</li>
+            <li><strong>Floor Break:</strong> f,f+3 or LFS 2,3 or u+3+4 — break through floors for additional combo extensions</li>
+            <li><strong>Damage from RFF:</strong> RFF f+3 → LFS [4~3] — when you end up in RFF stance during the combo</li>
+          </ul>
         </KeyConcept>
 
-        <p>
-          Dropped combos do zero damage. A completed beginner combo does full damage. 
-          Consistency first, optimization later.
-        </p>
+        <TipBox variant="tip" title="The Beginner Route">
+          If the combo routes above feel overwhelming, start with one universal approach:{' '}
+          <strong>Launcher → f+4 → RFS 3~4 → uf+3+4~F → uf+3+4</strong>. This works from
+          df+2, u+3+4, and low parry. It won't give maximum damage, but it's consistent and
+          teaches you the core RFS transition that every combo shares. Add the optimized routes
+          once this is automatic.
+        </TipBox>
       </Section>
 
-      <Collapsible title="Combo Enders Explained" icon="📖" defaultOpen={false}>
-        <div style={{ marginTop: '12px' }}>
-          <p style={{ marginBottom: '16px' }}>
-            Different enders have different purposes:
-          </p>
+      <Section title="Heat-Specific Combos">
+        <ComboCard
+          title="Heat Dash (f,f+4 Engager)"
+          starter="f,f+4 (Heat Engage) → Heat Dash"
+          route={['f,f+4~F', 'Heat Dash', 'db+4~F', 'RFS [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~70"
+          difficulty="intermediate"
+          notes={[
+            'f,f+4 is your most common heat engage — db+4~F starts the standard combo',
+            'Same screw sequence as the u+3+4 combo',
+          ]}
+        />
 
-          <p><strong>uf+3,4,3</strong> — Standard ender</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Good wall carry</li>
-            <li>Reliable and consistent</li>
-          </ul>
+        <ComboCard
+          title="Heat: RFS f+4,4 (i8 Launcher)"
+          starter="Heat RFS f+4,4"
+          route={['RFS f+4,4', 'u+3', 'LFS 1', 'u+3', 'uf+3+4~F', 'uf+3+4~F', 'uf+3+4']}
+          damage="~60"
+          difficulty="intermediate"
+          notes={[
+            'In heat, RFS f+4,4 becomes a natural hit launcher at 8 frames',
+            'This is your fastest launcher in the game from any position',
+            'u+3 pick-up into LFS 1 loop for carry — same as CH d+4,4 route',
+          ]}
+        />
 
-          <p><strong>d+4,4</strong> — Tornado ender</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Use when you haven't used Tornado yet</li>
-            <li>Good damage addition</li>
-          </ul>
-
-          <p><strong>RFF f+3 → LFS 4~3</strong> — Damage ender</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>More damage but less carry</li>
-            <li>Use at wall or when carry doesn't matter</li>
-          </ul>
-
-          <p><strong>ff+3</strong> — Floor break</p>
-          <ul style={{ marginBottom: '12px' }}>
-            <li>Breaks floors/balconies</li>
-            <li>Use on stages with breakable floors</li>
-          </ul>
-
-          <p><strong>uf+3+4 chain</strong> — Wall carry</p>
+        <Collapsible title="Other Heat Combo Routes">
           <ul>
-            <li>Maximum wall carry</li>
-            <li>Slightly less damage</li>
+            <li><strong>Heat Dash (LFS f+3 Engager):</strong> LFS f+3~F → Heat Dash → varies by position. At the wall, this gives devastating wall pressure.</li>
+            <li><strong>Heat Dash (RFS b+3 Engager):</strong> RFS b+3~F → Heat Dash → standard screw route. Long range heat engage from RFS.</li>
+            <li><strong>Heat Dash (RFF df+3 Engager):</strong> RFF df+3~F → Heat Dash → standard screw route. Your homing heat engage from RFF.</li>
           </ul>
-        </div>
-      </Collapsible>
+        </Collapsible>
+      </Section>
     </Chapter>
   )
 }

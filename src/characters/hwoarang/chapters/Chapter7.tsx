@@ -1,422 +1,279 @@
 import { Chapter, Section } from '../../../components/guide'
-import { 
-  MoveCard,
-  KeyConcept, 
-  TipBox,
-  Collapsible
-} from '../../../components/ui'
+import { MoveCard, ComboCard, KeyConcept, TipBox, Flowchart } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter7({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={7}
-      title="Right Flamingo Mastery"
-      intro="Right Flamingo Stance (RFS) is where Hwoarang becomes terrifying. The 8-frame counter-hit launcher, the hell sweep, the plus-frame mids — this is your pressure engine."
+      title="Heat"
+      intro="Heat in Tekken 8 gives every character a temporary power boost. For Hwoarang, heat transforms his already oppressive pressure into something nightmarish: his fastest move becomes a launcher, his hell sweep becomes a natural combo, and every kick does chip damage through block. Knowing when and how to activate heat is the difference between wasting your once-per-round resource and winning a round with it."
+      hasPrevious
       onPrevious={() => goToChapter(6)}
       onNext={() => goToChapter(8)}
-      nextLabel="Learn Just Frame Skyrocket"
+      nextLabel="Defense"
     >
-      <Section title="Why RFS is Everything">
+      <Section title="Heat Engagers">
         <p>
-          You've been entering RFS throughout this guide — from d+3,4, from 1,2,4, from RFF 2,4~f. 
-          Now it's time to understand <strong>why</strong> this stance is so important and how to 
-          maximize your pressure from it.
+          You activate heat by landing a heat engager and pressing forward for the heat dash.
+          Hwoarang has five heat engagers, each from a different range and situation. The engager
+          you choose determines your follow-up and how much damage you get.
         </p>
 
-        <KeyConcept title="RFS Is Your Destination" icon="🎯">
-          <p>
-            Think of Hwoarang's gameplan as a map. LFF is your base. RFF is a waypoint. 
-            But <strong>RFS is where you want to be</strong>. Every flowchart, every string, 
-            every pressure sequence should eventually lead to RFS.
-          </p>
-          <p style={{ marginTop: '12px' }}>
-            Why? Because RFS has:
-          </p>
-          <ul style={{ marginTop: '8px' }}>
-            <li>An 8-frame counter-hit launcher</li>
-            <li>A full hell sweep mixup</li>
-            <li>Plus-frame mids</li>
-            <li>Safe options that loop back into pressure</li>
-          </ul>
-        </KeyConcept>
-      </Section>
-
-      <Section title="RFS f+4,4 — The 8-Frame Monster">
-        <MoveCard character="hwoarang"
+        <MoveCard
+          character="hwoarang"
+          videoId="f,F+4"
           move={{
-            input: 'RFS.f+4',
-            hitLevel: ['h', 'h'],
-            damage: '8, 10',
-            startup: 'i8',
-            onBlock: '+0',
-            onHit: '+5',
-            onCH: '+6',
-            tags: ['High', 'High', '8-Frame', 'Jails', 'RFS.Only'],
-            description: 'First two hits of RFS f+4. Lightning fast at 8 frames. Jails on block.',
-          }}
-          showVideo
-        />
-
-        <MoveCard character="hwoarang"
-          move={{
-            input: 'RFS.f+4,4',
-            hitLevel: ['h', 'h', 'h'],
-            damage: '8, 10, 9',
-            startup: 'i8',
-            onBlock: '-6',
-            onHit: '+75a (Tornado)',
-            onCH: '+75a (Tornado)',
-            tags: ['High', 'High', 'High', 'CH Launcher', 'Tornado', 'RFS.Only'],
-            description: 'THE move. 8-frame CH launcher. Full Tornado combo on counter-hit.',
-          }}
-          showVideo
-        />
-
-        <p>
-          <span className="highlight">RFS f+4,4 is an 8-frame counter-hit launcher.</span> This 
-          is extraordinarily rare in Tekken. Most counter-hit launchers are 12-16 frames. Having 
-          one at 8 frames means you can challenge almost anything.
-        </p>
-
-        <KeyConcept title="Why 8 Frames Matters" icon="⚡">
-          <p>
-            When you enter RFS at +3 (from d+3,4 on block), your RFS f+4,4 is effectively 
-            <strong>5 frames</strong> from your opponent's perspective. They CANNOT jab you.
-          </p>
-          <ul style={{ marginTop: '12px' }}>
-            <li>d+3,4 on block = +8 to +10 → f+4,4 is uninterruptible</li>
-            <li>1,2,4 on block = +3 → f+4,4 beats 10f jabs</li>
-            <li>RFF 2,4~f on block = +4 → f+4,4 beats everything</li>
-          </ul>
-        </KeyConcept>
-
-        <TipBox variant="warning" title="All Three Hits Are High">
-          RFS f+4,4 can be ducked. If your opponent ducks the first hit, they launch you. 
-          This is the risk of the move. But if they ever press a button instead of ducking, 
-          they die.
-        </TipBox>
-
-        <p>
-          <strong>The mind game:</strong> They have to choose between ducking (beats f+4,4) or 
-          pressing (loses to f+4,4). If they duck, your mids hit them. If they press, they die. 
-          This is Hwoarang's core pressure.
-        </p>
-      </Section>
-
-      <Section title="RFS d+4,3,4 — Hell Sweep">
-        <MoveCard character="hwoarang"
-          move={{
-            input: 'RFS.d+4,3',
-            hitLevel: ['l', 'h'],
-            damage: '15, 12',
-            startup: 'i20-21',
-            onBlock: '-9',
-            onHit: '-1 / +20a on CH',
-            tags: ['Low', 'High', 'RFS.Only'],
-            description: 'First two hits of hell sweep. Combos on CH.',
-          }}
-          showVideo
-        />
-
-        <MoveCard character="hwoarang"
-          move={{
-            input: 'RFS.d+4,3,4',
-            hitLevel: ['l', 'h', 'h'],
-            damage: '15, 12, 30',
-            startup: 'i20-21',
-            onBlock: '-9',
-            onHit: '+28a (+2 non-heat) / +10a in Heat',
-            tags: ['Low', 'High', 'High', 'Power Low', 'Heat Enhanced', 'RFS.Only'],
-            description: 'The hell sweep. Knockdown. FULL COMBO in Heat!',
-          }}
-          showVideo
-        />
-
-        <p>
-          RFS d+4,3,4 is your <span className="highlight">power low from RFS</span>. Without Heat, 
-          the last hit doesn't combo on normal hit (only on CH). But <strong>in Heat, all three 
-          hits are guaranteed</strong>, and you get a full knockdown with follow-up.
-        </p>
-
-        <KeyConcept title="The Hell Sweep 50/50" icon="🎲">
-          <div style={{ display: 'grid', gap: '12px', marginTop: '12px' }}>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px', borderLeft: '3px solid var(--danger)' }}>
-              <strong style={{ color: 'var(--danger)' }}>They Stand Block</strong>
-              <p style={{ marginTop: '4px', color: 'var(--text-secondary)' }}>
-                Hell sweep hits. In Heat, full combo. Without Heat, knockdown.
-              </p>
-            </div>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px', borderLeft: '3px solid var(--accent)' }}>
-              <strong style={{ color: 'var(--accent)' }}>They Duck</strong>
-              <p style={{ marginTop: '4px', color: 'var(--text-secondary)' }}>
-                Use RFS 4,3 (mid-mid). +4 on block, wall splats on CH.
-              </p>
-            </div>
-          </div>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="Counter-Hit Confirm">
-          Without Heat, RFS d+4,3 combos on counter-hit into the third hit. You have time to 
-          confirm — if you see the CH flash, complete the string. If not, stop at d+4,3 and 
-          you're only -9.
-        </TipBox>
-      </Section>
-
-      <Section title="RFS 4,3 — The Safe Mid">
-        <MoveCard character="hwoarang"
-          move={{
-            input: 'RFS.4,3',
-            hitLevel: ['m', 'm'],
-            damage: '17, 21',
-            startup: 'i14',
-            onBlock: '+4',
-            onHit: '+25a (Tornado)',
-            onCH: '+25a (Tornado)',
-            tags: ['Mid', 'Mid', 'Plus on Block', 'Safe', 'Wall Splat', 'Tornado', 'RFS.Only'],
-            description: 'Your mid mixup option. +4 on block (!), wall splats, Tornado on hit.',
-          }}
-          showVideo
-        />
-
-        <p>
-          RFS 4,3 is <span className="highlight">one of the best moves in Hwoarang's kit</span>. 
-          It's a mid-mid that's +4 on block, wall splats on hit and CH, and gives Tornado for 
-          combo extension.
-        </p>
-
-        <KeyConcept title="Why RFS 4,3 is Broken" icon="💀">
-          <ul>
-            <li><strong>+4 on block</strong> — You're PLUS after they block your mid mixup</li>
-            <li><strong>Transitions to LFS</strong> — Loop back into pressure</li>
-            <li><strong>Wall splats</strong> — Near wall, this leads to huge damage</li>
-            <li><strong>Low crushes</strong> — Beats d+1 attempts</li>
-          </ul>
-        </KeyConcept>
-
-        <p>
-          After RFS 4,3 is blocked, you're in LFS at +4. From here:
-        </p>
-
-        <ul>
-          <li><code>LFS 1</code> — Quick check (+5 on block)</li>
-          <li><code>LFS f+3</code> — Heat engager, stays in LFS (+4 on block)</li>
-          <li><code>LFS d+3,4</code> — Go back to RFS!</li>
-        </ul>
-      </Section>
-
-      <Section title="RFS df+4 — Plus Mid">
-        <MoveCard character="hwoarang"
-          move={{
-            input: 'RFS.df+4',
-            hitLevel: ['m'],
-            damage: '17',
-            startup: 'i17-19',
-            onBlock: '+1',
-            onHit: '+8c',
-            onCH: '+26a (launcher)',
-            tags: ['Mid', 'Plus on Block', 'CH Launcher', 'Forces Crouch', 'RFS.Only'],
-            description: '+1 on BLOCK. Forces crouch on hit. Counter-hit launches.',
-          }}
-          showVideo
-        />
-
-        <p>
-          RFS df+4 is your <span className="highlight">plus-frame mid</span>. When you want to 
-          keep pressure without committing to the 50/50, this is your move. At +1 on block, 
-          you can continue pressure. On hit, they're crouching at -8 — you can mixup.
-        </p>
-
-        <TipBox variant="tip" title="RFS df+4 → df+4 Loop">
-          After RFS df+4 is blocked (+1), you can do another RFS df+4. The animation looks 
-          very plus, and many opponents think they need to keep blocking. Loop this until 
-          they challenge, then use RFS f+4,4 to blow them up.
-        </TipBox>
-      </Section>
-
-      <Section title="RFS 2 — The Reset">
-        <MoveCard character="hwoarang"
-          move={{
-            input: 'RFS.2',
+            input: 'f,f+4',
             hitLevel: ['h'],
-            damage: '6',
-            startup: 'i13',
+            damage: '28',
+            startup: 'i18',
             onBlock: '+5',
-            onHit: '+7',
-            tags: ['High', 'Plus on Block', 'RFF.Transition', 'RFS.Only'],
-            description: 'Jab that goes to RFF. +5 on block lets you continue.',
+            onHit: '+8',
+            tags: ['Heat Engager', 'Approach', 'High', 'Plus on Block'],
+            description: 'Your most common heat engage. You\'re already using this as an approach tool — now it doubles as your heat activation. On hit, heat dash gives massive combo damage. Even on block at +5, you\'re plus in heat with chip damage on every kick. The catch: it\'s a high. If they duck, no heat.',
           }}
           showVideo
         />
 
-        <p>
-          RFS 2 is your <span className="highlight">reset button</span>. It transitions to RFF 
-          at +5 on block, letting you loop back into RFF 2,4~f → RFS. This is how you maintain 
-          pressure indefinitely.
-        </p>
-
-        <KeyConcept title="The Infinite Pressure Loop" icon="🔄">
-          <div style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '16px', borderRadius: '8px', marginTop: '12px' }}>
-            <p>Enter RFS (d+3,4, 1,2,4, etc.)</p>
-            <p>RFS f+4,4 (check) / RFS df+4 (plus mid)</p>
-            <p>RFS 2 → RFF (+5)</p>
-            <p>RFF 2,4~f → RFS (+4)</p>
-            <p>Repeat...</p>
-          </div>
-        </KeyConcept>
-      </Section>
-
-      <Section title="RFS b+3 — Heat Engager">
-        <MoveCard character="hwoarang"
+        <MoveCard
+          character="hwoarang"
+          videoId="LFS.f+3"
           move={{
-            input: 'RFS.b+3',
+            input: 'LFS f+3',
+            hitLevel: ['m'],
+            damage: '23',
+            startup: 'i19',
+            onBlock: '-12',
+            onHit: '+14',
+            tags: ['Heat Engager', 'Mid', 'From LFS'],
+            description: 'Your mid heat engager from Left Flamingo. Heat dash gives +5 and +36a(+26) for full combo. At -12 on block it\'s punishable, but you\'re in LFS when you throw it — the opponent rarely gets a clean punish because of the stance transition. Best used mid-loop when you\'re already in LFS after d+3,4 → RFS 2 → d+3,4 → LFS.',
+          }}
+          showVideo
+        />
+
+        <MoveCard
+          character="hwoarang"
+          videoId="RFS.b+3"
+          move={{
+            input: 'RFS b+3',
             hitLevel: ['m'],
             damage: '21',
-            startup: 'i16-17',
+            startup: 'i16',
             onBlock: '-9',
             onHit: '+7',
-            tags: ['Mid', 'Heat Engager', 'Safe', 'RFS.Only'],
-            description: 'Heat engager from RFS. Safe at -9. Good range.',
+            tags: ['Heat Engager', 'Mid', 'From RFS', 'Safe'],
+            description: 'Safe mid heat engager from Right Flamingo at -9 on block. Heat dash gives +5 and +42a(+27) for the highest heat dash damage of any engager. Use this when you\'re in RFS from d+3,4 and want to cash out with heat. i16 is slower than RFS f+4 but it\'s a mid that can\'t be ducked.',
           }}
           showVideo
         />
 
-        <p>
-          RFS b+3 is your <span className="highlight">safe heat engager from RFS</span>. When 
-          you're in RFS and want to activate Heat, this is your go-to. At -9, it's safe against 
-          most of the cast.
-        </p>
-      </Section>
-
-      <Section title="RFS 3~4 — Flying Eagle">
-        <MoveCard character="hwoarang"
+        <MoveCard
+          character="hwoarang"
+          videoId="RFF.df+3"
           move={{
-            input: 'RFS.3~4',
-            hitLevel: ['m', 'm'],
-            damage: '11, 21',
-            startup: 'i16',
-            onBlock: '-3',
-            onHit: '+26a (+16)',
-            tags: ['Mid', 'Mid', 'Safe', 'Balcony Break', 'RFS.Only'],
-            description: 'Flying Eagle from RFS. Safe mid-mid. Key combo filler.',
+            input: 'RFF df+3',
+            hitLevel: ['m'],
+            damage: '21',
+            startup: 'i22',
+            onBlock: '+1',
+            onHit: '+6',
+            tags: ['Heat Engager', 'Homing', 'From RFF', 'Plus on Block'],
+            description: 'Homing mid from RFF that\'s also a heat engager. +1 on block even without heat dash. Tracks both sides, so the opponent can\'t sidestep it. Heat dash gives +5 and +36a(+26). Your best option when the opponent is sidestepping your RFF pressure.',
           }}
           showVideo
         />
 
-        <p>
-          RFS 3~4 (slide from 3 to 4 quickly) is a safe mid-mid. You've been using it in combos, 
-          but it's also good in pressure. At -3, it's safe, and it low crushes.
-        </p>
+        <MoveCard
+          character="hwoarang"
+          videoId="df+3+4"
+          move={{
+            input: 'df+3+4',
+            hitLevel: ['m', 'h', 'm'],
+            damage: '7, 4, 17',
+            startup: 'i13',
+            onBlock: '-14',
+            onHit: '+4c',
+            tags: ['Heat Engager', '13f Punish', 'Risky'],
+            description: 'Your fastest heat engager at i13 — but -14 on block means you eat a launch if they block it. Heat dash gives +5 and +43d(+35) for massive damage. Best used as a guaranteed punish where the risk doesn\'t exist. Also available from RFF. Jails on block so the full string is guaranteed if the first hit connects.',
+          }}
+          showVideo
+        />
 
-        <TipBox variant="tip" title="Power Up Version">
-          If you input 4 on the exact frame after 3, you get a powered-up version that does 
-          more damage (+1 on block, 37 damage on hit). This is the "perfect" Flying Eagle.
-        </TipBox>
+        <Flowchart
+          title="Which Heat Engager When?"
+          nodes={[
+            { type: 'start', label: 'You want to activate heat' },
+            { type: 'decision', label: 'Where are you?', branches: [
+              { label: 'Neutral / Approaching', action: 'f,f+4 (high, +5 on block, most common)' },
+              { label: 'In RFS (from d+3,4)', action: 'RFS b+3 (safe mid, best heat dash damage)' },
+              { label: 'In LFS (from loops)', action: 'LFS f+3 (mid, -12 but hard to punish from stance)' },
+              { label: 'In RFF (from transitions)', action: 'RFF df+3 (homing mid, +1 on block)' },
+            ]},
+            { type: 'end', label: 'Punishing a -13+ move → df+3+4 (guaranteed, no risk)' },
+          ]}
+        />
       </Section>
 
-      <Section title="Complete RFS Pressure">
-        <KeyConcept title="RFS Decision Tree" icon="🌳">
-          <p>When you're in RFS with advantage, here's your decision tree:</p>
-          
-          <div style={{ marginTop: '16px', display: 'grid', gap: '8px' }}>
-            <div style={{ padding: '8px 12px', background: 'var(--background-secondary)', borderRadius: '4px' }}>
-              <strong>Opponent mashing?</strong> → RFS f+4,4 (CH launcher)
-            </div>
-            <div style={{ padding: '8px 12px', background: 'var(--background-secondary)', borderRadius: '4px' }}>
-              <strong>Opponent ducking?</strong> → RFS 4,3 (mid, +4 on block) or RFS df+4 (+1)
-            </div>
-            <div style={{ padding: '8px 12px', background: 'var(--background-secondary)', borderRadius: '4px' }}>
-              <strong>Opponent stand blocking?</strong> → RFS d+4,3,4 (hell sweep)
-            </div>
-            <div style={{ padding: '8px 12px', background: 'var(--background-secondary)', borderRadius: '4px' }}>
-              <strong>Want to reset?</strong> → RFS 2 → RFF → loop
-            </div>
-            <div style={{ padding: '8px 12px', background: 'var(--background-secondary)', borderRadius: '4px' }}>
-              <strong>Want Heat?</strong> → RFS b+3 (safe engager)
-            </div>
-          </div>
+      <Section title="What Heat Changes">
+        <p>
+          Heat isn't just about the engager combo. Once heat is active, your entire pressure
+          system upgrades. Three things change that matter:
+        </p>
+
+        <KeyConcept title="1. RFS f+4,4 Becomes a Launcher" icon="🔥">
+          <p>
+            In heat, RFS f+4,4 — your <strong>8-frame move</strong> — becomes a natural hit
+            with Tornado on counter hit. This is transformative. After d+3,4 on block (+8 in RFS),
+            RFS f+4,4 comes out at frame 0 and cannot be interrupted by any human being.
+          </p>
+          <p>
+            On normal hit, both hits connect naturally. On counter hit, both hits connect with
+            Tornado for a full combo. At -6 on block, it's safe. This means in heat, your RFS
+            pressure has a <strong>safe 8-frame CH launcher</strong> — the fastest launcher in
+            the entire game from this position.
+          </p>
         </KeyConcept>
 
-        <TipBox variant="warning" title="Don't Be Predictable">
-          If you always do the same option, they'll adapt. Mix up your RFS pressure. Sometimes 
-          f+4,4, sometimes df+4, sometimes hell sweep, sometimes just RFS 2 to reset. The threat 
-          of each option makes the others stronger.
+        <MoveCard
+          character="hwoarang"
+          videoId="RFS.f+4,4"
+          move={{
+            input: 'Heat: RFS f+4,4',
+            hitLevel: ['h', 'h', 'h'],
+            damage: '8, 8, 9',
+            startup: 'i8',
+            onBlock: '-6',
+            onHit: 'Tornado (CH)',
+            tags: ['Heat Enhanced', 'i8', 'CH Tornado', 'Safe'],
+            description: 'In heat, the third hit of RFS f+4 extension becomes natural on hit and gives Tornado on counter hit. At -6 on block, nobody can punish it. This turns every RFS entry in heat into a potential launcher — the opponent has to guess whether to press (and eat CH Tornado) or block (and eat your mids and lows).',
+          }}
+          showVideo
+        />
+
+        <KeyConcept title="2. RFS d+4,3,4 Becomes Natural" icon="🔥">
+          <p>
+            Outside heat, RFS d+4,3 is your hell sweep — but the third hit (4) can be ducked
+            on normal hit. In heat, the full RFS d+4,3,4 becomes a natural combo on hit for
+            a full knockdown. This means your hell sweep goes from a modest-reward low to a
+            <strong>knockdown low</strong> that keeps you in stance.
+          </p>
+          <p>
+            Combined with the RFS f+4,4 threat, your RFS in heat has a low that knocks down AND
+            a high that launches. The opponent is in a true mixup every time you enter RFS in heat.
+          </p>
+        </KeyConcept>
+
+        <KeyConcept title="3. Chip Damage on Every Kick" icon="🔥">
+          <p>
+            In heat, all your kicks do chip damage through block. For a character who throws
+            as many kicks as Hwoarang — often 5-6 per pressure loop — this adds up fast.
+            A full loop cycle in heat might do 15-20 chip damage even if the opponent blocks
+            everything.
+          </p>
+          <p>
+            This changes the math at the end of rounds. If the opponent has 20 health left and
+            you activate heat, they can't just hold back and block — the chip damage will kill
+            them. They have to take a risk, and taking risks against Hwoarang's loops is exactly
+            what you want them to do.
+          </p>
+        </KeyConcept>
+      </Section>
+
+      <Section title="When to Activate">
+        <p>
+          Heat is once per round. Wasting it means losing your strongest tool. Here are the
+          situations where heat activation is most valuable:
+        </p>
+
+        <h3>Best Times to Engage</h3>
+        <ul>
+          <li><strong>Wall pressure:</strong> Activating heat near the wall turns your loops into a death trap. Chip damage prevents the opponent from just blocking, and your wall combo damage is already high. Heat at the wall closes rounds.</li>
+          <li><strong>Mid-loop when you have momentum:</strong> If you've been running loops and the opponent is respecting, RFS b+3 heat engage into heat pressure is devastating. You're already in stance, and heat makes your RFS options lethal.</li>
+          <li><strong>Guaranteed punishment:</strong> df+3+4 at 13f is your fastest engager. When you block something -13 or worse, heat engage for free damage plus heat pressure. Zero risk.</li>
+          <li><strong>Closing a round:</strong> If the opponent is at 30 health or less, heat chip damage alone might finish them. Activate and run your loops — even if they block everything, the chip damage closes it out.</li>
+        </ul>
+
+        <h3>When NOT to Engage</h3>
+        <ul>
+          <li><strong>Full screen:</strong> You need to be in pressure range to benefit from heat. Activating from full screen wastes the timer on approach.</li>
+          <li><strong>When you're losing badly:</strong> If you're at 30 health and they're at 130, heat won't save you. Sometimes it's better to save the engagement opportunity for a later round. Remember: you get one heat per round regardless, but using it poorly wastes your advantage.</li>
+          <li><strong>Against an opponent who's already adapting:</strong> If they're ducking d+3,4, sidestepping your approaches, and punishing your transitions, heat won't fix a broken gameplan. Fix the reads first, then engage.</li>
+        </ul>
+
+        <TipBox variant="tip" title="Heat Timer Management">
+          Heat lasts about 10 seconds, but every attack you land extends it slightly. Hwoarang
+          is one of the best characters at maintaining heat because his loops involve constant
+          contact — each kick in the loop resets the timer a little. A full pressure loop cycle
+          in heat can keep the heat active for much longer than 10 seconds.
         </TipBox>
       </Section>
 
-      <Collapsible title="RFS Move Reference" icon="📊">
-        <div style={{ marginTop: '12px', overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Move</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Height</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Speed</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>On Block</th>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Use</th>
-              </tr>
-            </thead>
-            <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS f+4,4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>h,h,h</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i8</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-6</td>
-                <td style={{ padding: '8px' }}>CH launcher</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS 4,3</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>m,m</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i14</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>+4</td>
-                <td style={{ padding: '8px' }}>Mid mixup, wall splat</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS df+4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>m</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i17</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>+1</td>
-                <td style={{ padding: '8px' }}>Plus mid, CH launch</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS d+4,3,4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>l,h,h</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i20</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-9</td>
-                <td style={{ padding: '8px' }}>Hell sweep</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS 2</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>h</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i13</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>+5</td>
-                <td style={{ padding: '8px' }}>Reset to RFF</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS b+3</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>m</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i16</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-9</td>
-                <td style={{ padding: '8px' }}>Heat engager</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS 3~4</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>m,m</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i16</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-3</td>
-                <td style={{ padding: '8px' }}>Safe mid, combo filler</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><code>RFS uf+3</code></td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>m</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>i24</td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>-7</td>
-                <td style={{ padding: '8px' }}>Safe mid, ground hit</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </Collapsible>
+      <Section title="Heat Smash">
+        <MoveCard
+          character="hwoarang"
+          videoId="H.2+3"
+          move={{
+            input: 'Heat Smash (2+3)',
+            hitLevel: ['m'],
+            damage: '88',
+            startup: 'i17',
+            onBlock: '+11',
+            onHit: '+35d (+14)',
+            tags: ['Heat Smash', 'Plus on Block', 'Mid'],
+            description: 'Your once-per-round super move. i17 mid that does 88 damage on hit and is +11 on block. Yes, +11 on BLOCK — the opponent can\'t punish it even if they block it, and you\'re massively plus. Transitions to RFS. Jails from the first hit. Use this to close out rounds or when you\'re sure the opponent will block (the +11 lets you continue pressure).',
+          }}
+          showVideo
+        />
+
+        <TipBox variant="warning" title="Heat Smash vs. Heat Pressure">
+          The heat smash does 88 damage in one hit. But using heat for pressure — running loops
+          with chip damage, threatening RFS f+4,4 and d+4,3,4 mixups — often does MORE total
+          damage over the heat duration. Only use heat smash when: you need the burst damage to
+          close a round, you want the +11 on block, or you're about to lose heat timer anyway.
+        </TipBox>
+      </Section>
+
+      <Section title="Heat Combos">
+        <ComboCard
+          title="f,f+4 Heat Engage"
+          starter="f,f+4 → Heat Dash"
+          route={['f,f+4', 'Heat Dash', 'db+4~F', 'RFS [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~70"
+          difficulty="intermediate"
+          notes={['Most common heat combo — from your primary approach and engager']}
+        />
+
+        <ComboCard
+          title="RFS b+3 Heat Engage"
+          starter="RFS b+3 → Heat Dash"
+          route={['RFS b+3', 'Heat Dash', 'db+4~F', 'RFS [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~73"
+          difficulty="intermediate"
+          notes={['Highest damage heat dash combo — from mid-loop RFS']}
+        />
+
+        <ComboCard
+          title="df+3+4 Heat Engage (Punishment)"
+          starter="df+3+4 → Heat Dash"
+          route={['df+3+4', 'Heat Dash', 'db+4~F', 'RFS [3~4]', 'uf+3+4~F', 'LFS uf+4 T!', 'uf+3,4,3']}
+          damage="~72"
+          difficulty="intermediate"
+          notes={['Guaranteed from -13 punishment — zero risk heat activation into full combo']}
+        />
+
+        <ComboCard
+          title="Heat: RFS f+4,4 (CH Tornado)"
+          starter="Heat RFS f+4,4 (CH)"
+          route={['RFS f+4,4', 'u+3', 'LFS 1', 'u+3', 'uf+3+4~F', 'uf+3+4~F', 'uf+3+4']}
+          damage="~60"
+          difficulty="intermediate"
+          notes={[
+            'From your 8-frame CH launcher in heat',
+            'Same route as CH d+4,4 — u+3 pick-up into LFS 1 carry loop',
+          ]}
+        />
+      </Section>
     </Chapter>
   )
 }

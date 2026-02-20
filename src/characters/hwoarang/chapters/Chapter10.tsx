@@ -1,343 +1,217 @@
 import { Chapter, Section } from '../../../components/guide'
-import { 
-  KeyConcept, 
-  TipBox,
-  Collapsible
-} from '../../../components/ui'
+import { ExecutionBox, DrillMode, SkillCheck, KeyConcept, TipBox, Collapsible } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter10({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={10}
-      title="Frame Traps & Pressure"
-      intro="This is where Hwoarang becomes terrifying. Frame traps are sequences that catch opponents pressing buttons. With Hwoarang's plus frames, you can create inescapable pressure."
+      title="The Master's Toolkit"
+      intro="Everything up to this point makes you dangerous. This chapter makes you terrifying. JFSR, blue spark 3~4, fox step, power crush cancel — these are the tools that separate good Hwoarang players from great ones. None of them are required to win. All of them multiply your effectiveness when you can execute them."
+      hasPrevious
       onPrevious={() => goToChapter(9)}
-      onNext={() => goToChapter(11)}
-      nextLabel="Heat System"
     >
-      <Section title="What is a Frame Trap?">
-        <KeyConcept title="Frame Trap Definition" icon="🪤">
-          <p>
-            A <strong>frame trap</strong> is using plus frames to make your next attack 
-            beat whatever your opponent does. If you're +4 and do an 8-frame move, it 
-            effectively comes out in 4 frames. Their 10-frame jab loses.
-          </p>
-        </KeyConcept>
-
+      <Section title="JFSR: The Just Frame Skyrocket">
         <p>
-          Hwoarang has some of the best frame traps in Tekken because:
+          You met JFSR in Chapter 5. Now you master it. f,n,df+4 is a safe mid launcher at -8 on
+          block, i16 startup, Tornado on hit. When you can do this consistently, your neutral game
+          transforms — the opponent can never feel safe at range 2 again.
         </p>
 
-        <ul>
-          <li>Multiple moves that leave you plus</li>
-          <li>An 8-frame counter-hit launcher (RFS f+4,4)</li>
-          <li>Stance transitions that maintain advantage</li>
-        </ul>
-      </Section>
-
-      <Section title="Core Frame Traps">
-        <Collapsible title="d+3,4 → RFS f+4,4 (The Classic)" defaultOpen>
-          <p>
-            <strong>d+3,4</strong> leaves you at <strong>+8 to +10</strong> in RFS on block.
-          </p>
-          
-          <KeyConcept title="Why This is Broken" icon="💀">
-            <ul>
-              <li>You're +8 minimum</li>
-              <li>RFS f+4,4 is 8 frames</li>
-              <li>Net result: effectively 0 frames from their POV</li>
-              <li><strong>They cannot jab.</strong> If they press anything, they die.</li>
-            </ul>
-          </KeyConcept>
-
-          <p style={{ marginTop: '12px' }}>
-            After d+3,4 is blocked, doing RFS f+4,4 catches anyone who presses a button. 
-            Full combo on counter-hit.
-          </p>
-
-          <TipBox variant="warning" title="They Can Duck">
-            The counter to this trap is ducking. If they duck, RFS f+4,4 whiffs and you get 
-            launched. This is why you mix in RFS 4,3 and RFS df+4 — mids that beat ducking.
-          </TipBox>
-        </Collapsible>
-
-        <Collapsible title="1,2,4 → RFS f+4,4 (+3)">
-          <p>
-            <strong>1,2,4</strong> leaves you at <strong>+3</strong> in RFS on block.
-          </p>
-          
-          <p style={{ marginTop: '12px' }}>
-            At +3, RFS f+4,4 (8 frames) effectively comes out at 5 frames. Their 10-frame 
-            jab comes out at 10 frames. You win by 5 frames — your attack counter-hits them.
-          </p>
-
-          <p style={{ marginTop: '12px' }}><strong>Common situations:</strong></p>
-          <ul>
-            <li>After punishing with 1,2,4</li>
-            <li>After d+3,4 on hit (actually +14-16, even better)</li>
-            <li>After any string that ends in RFS entry</li>
-          </ul>
-        </Collapsible>
-
-        <Collapsible title="RFF 2,4~f → RFS f+4,4 (+4)">
-          <p>
-            <strong>RFF 2,4~f</strong> leaves you at <strong>+4</strong> in RFS on block.
-          </p>
-          
-          <p style={{ marginTop: '12px' }}>
-            This is your loop from RFF. After any move that goes to RFF (df+4, RFS 2, etc.), 
-            do RFF 2,4~f to enter RFS at +4. Then RFS f+4,4 beats everything.
-          </p>
-
-          <KeyConcept title="The RFF 2,4~f Loop" icon="🔄">
-            <div style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '12px', borderRadius: '8px', marginTop: '8px' }}>
-              <p>df+4 (hit) → RFF (+8)</p>
-              <p>RFF 2,4~f → RFS (+4)</p>
-              <p>RFS f+4,4 / RFS 4,3 / RFS df+4</p>
-              <p>RFS 2 → RFF (+5)</p>
-              <p>RFF 2,4~f → RFS (+4)</p>
-              <p>Loop forever...</p>
-            </div>
-          </KeyConcept>
-        </Collapsible>
-
-        <Collapsible title="RFS df+4 → RFS df+4 (+1)">
-          <p>
-            <strong>RFS df+4</strong> is <strong>+1 on block</strong>.
-          </p>
-          
-          <p style={{ marginTop: '12px' }}>
-            This is a "soft" frame trap. At +1, their jab and your next move trade priority. 
-            But the mental pressure is real — most players don't know it's only +1 because 
-            the animation looks very plus.
-          </p>
-
-          <p style={{ marginTop: '12px' }}><strong>The trick:</strong></p>
-          <ul>
-            <li>Do RFS df+4 → they block, you're +1</li>
-            <li>Do RFS df+4 again → they think "this must be plus"</li>
-            <li>They eventually try to press → RFS f+4,4 CH launches them</li>
-          </ul>
-        </Collapsible>
-
-        <Collapsible title="RFS 4,3 → LFS 1 (+4 → +5)">
-          <p>
-            <strong>RFS 4,3</strong> is <strong>+4 on block</strong> and transitions to LFS.
-          </p>
-          
-          <p style={{ marginTop: '12px' }}>
-            From LFS at +4, your LFS 1 (13f jab) effectively comes out at 9 frames. 
-            LFS 1 is +5 on block, so you can continue with LFS f+3 or loop back to pressure.
-          </p>
-
-          <p style={{ marginTop: '12px' }}><strong>The sequence:</strong></p>
+        <ExecutionBox title="JFSR Input Breakdown">
+          <p>The input is <strong>f,n,df+4</strong> — a crouch dash into 4.</p>
           <ol>
-            <li>RFS 4,3 (blocked, +4 LFS)</li>
-            <li>LFS 1 (beats their jab, +5 on block)</li>
-            <li>LFS f+3 (heat engager, +4) or LFS d+3,4 (back to RFS)</li>
+            <li><strong>f</strong> — Tap forward once. This starts the crouch dash.</li>
+            <li><strong>n</strong> — Return to neutral. This is the "just frame" part — you need a clean neutral between the forward tap and the diagonal.</li>
+            <li><strong>df</strong> — Press down-forward. This completes the crouch dash motion.</li>
+            <li><strong>4</strong> — Press 4 during the df input. The timing must be precise — too early gives nothing, too late gives a generic crouch dash move.</li>
           </ol>
-        </Collapsible>
-
-        <Collapsible title="db+4~f → RFS f+4,4 (CH Setup)">
           <p>
-            <strong>db+4~f</strong> is <strong>+3 on counter-hit</strong> in RFS.
+            The motion feels like a Mishima crouch dash (f,n,df) but with 4 instead of 2. If you've
+            ever done EWGF or electric with Kazuya, the motion is similar. If not, think of it as:
+            forward, let go, down-forward+4 in one fluid motion.
           </p>
-          
-          <p style={{ marginTop: '12px' }}>
-            This is a read-based trap. If you hit db+4 on counter-hit (meaning they were 
-            attacking), you're +3 in RFS. RFS f+4,4 beats their next button.
-          </p>
-
-          <TipBox variant="tip" title="The Conditioning">
-            <ol>
-              <li>Establish d+3,4 pressure → they start respecting</li>
-              <li>Throw in db+4~f → if they try to interrupt, they CH</li>
-              <li>You're +3 → RFS f+4,4 → full combo</li>
-            </ol>
-          </TipBox>
-        </Collapsible>
-      </Section>
-
-      <Section title="Complete Pressure Flowcharts">
-        <KeyConcept title="Flowchart 1: d+3,4 Starter" icon="📊">
-          <div style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '16px', borderRadius: '8px', marginTop: '12px', fontSize: '0.9rem' }}>
-            <p><strong>d+3,4</strong> (hit or block) → RFS (+8 to +16)</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFS f+4,4</strong> → Catches mashers, CH combo</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFS 4,3</strong> → Catches duckers, +4 LFS</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFS df+4</strong> → Plus mid, loop or CH launch</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFS d+4,3,4</strong> → Power low, KD in Heat</p>
-            <p style={{ marginLeft: '16px' }}>└─ <strong>RFS 2</strong> → Reset to RFF, loop</p>
-          </div>
-        </KeyConcept>
-
-        <KeyConcept title="Flowchart 2: Punishment Starter" icon="📊">
-          <div style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '16px', borderRadius: '8px', marginTop: '12px', fontSize: '0.9rem' }}>
-            <p><strong>Block -10 move → 1,2,4</strong> → RFS (+3/+12)</p>
-            <p style={{ marginLeft: '16px' }}>├─ On block (+3): <strong>RFS f+4,4</strong> beats jabs</p>
-            <p style={{ marginLeft: '16px' }}>├─ On hit (+12): <strong>Anything works</strong></p>
-            <p style={{ marginLeft: '16px' }}>└─ Continue with d+3,4 flowchart...</p>
-          </div>
-        </KeyConcept>
-
-        <KeyConcept title="Flowchart 3: RFF Loop" icon="📊">
-          <div style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '16px', borderRadius: '8px', marginTop: '12px', fontSize: '0.9rem' }}>
-            <p><strong>Enter RFF</strong> (df+4, 3+4, RFS 2)</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFF 2,4~f</strong> → RFS (+4) → pressure</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFF df+3</strong> → Heat engager (+1)</p>
-            <p style={{ marginLeft: '16px' }}>├─ <strong>RFF 3~4</strong> → Backlash, PC (+4-7)</p>
-            <p style={{ marginLeft: '16px' }}>└─ <strong>RFF b+2</strong> → Safe mid (+4-5)</p>
-          </div>
-        </KeyConcept>
-      </Section>
-
-      <Section title="The 'Do Nothing' Technique">
-        <KeyConcept title="Why Doing Nothing Works" icon="⏸️">
-          <p>
-            When you have plus frames, you don't HAVE to attack. Sometimes the best option 
-            is to <strong>do nothing</strong> and see what they do.
-          </p>
-          <ul style={{ marginTop: '12px' }}>
-            <li>If they mash → punish with your frame trap next time</li>
-            <li>If they duck → use mids next time</li>
-            <li>If they try to sidestep → use homing moves</li>
+          <p><strong>Common mistakes:</strong></p>
+          <ul>
+            <li>Holding forward too long — you need a clean neutral input</li>
+            <li>Pressing 4 too late — you get a generic crouch dash kick instead</li>
+            <li>Pressing 4 before df — you get a standing 4 or nothing</li>
+            <li>Not committing to the forward motion — the crouch dash needs forward momentum</li>
           </ul>
-        </KeyConcept>
+        </ExecutionBox>
 
-        <p>
-          <strong>The Pattern:</strong>
-        </p>
-        <ol>
-          <li>Do d+3,4 → RFS</li>
-          <li>Do nothing — just stand there</li>
-          <li>Watch what they do</li>
-          <li>Next time, counter their habit</li>
-        </ol>
+        <DrillMode
+          title="JFSR Execution Drill"
+          objective="Build the muscle memory for JFSR in stages. Don't move to the next step until the current one is consistent."
+          steps={[
+            {
+              instruction: 'Crouch Dash Only',
+              detail: 'Do f,n,df without pressing any button. Watch your character crouch dash forward. Get comfortable with the motion before adding the button.',
+              targetReps: 20,
+            },
+            {
+              instruction: 'Slow JFSR',
+              detail: 'f,n,df+4 at slow speed. Don\'t worry about consistency — just find the timing where the Skyrocket comes out. You\'ll see the Tornado spin on success.',
+              targetReps: 10,
+            },
+            {
+              instruction: 'Standing JFSR',
+              detail: 'From standing LFF, do JFSR cleanly. Aim for 3 out of 5 success rate before moving on.',
+              targetReps: 20,
+            },
+            {
+              instruction: 'Moving JFSR',
+              detail: 'Backdash once, then JFSR. Sidestep, then JFSR. Get comfortable doing it from movement, not just standing still.',
+              targetReps: 20,
+            },
+            {
+              instruction: 'Whiff Punish JFSR',
+              detail: 'Record the dummy doing a whiffable move. Backdash to make it whiff, then punish with JFSR. This is the real application.',
+              targetReps: 10,
+            },
+          ]}
+        />
 
-        <TipBox variant="tip" title="Information Gathering">
-          The first few d+3,4s of each match are information gathering. See how they respond. 
-          Do they mash? Duck? Step? Once you know, exploit it.
+        <TipBox variant="tip" title="JFSR From RFF">
+          JFSR is available from both LFF and RFF. From RFF, the input is the same (f,n,df+4). This
+          means mid-loop, if you're in RFF and see a whiff, JFSR is available. Practice it from RFF
+          specifically — during loops you're often in RFF and the whiff punish opportunity appears there.
         </TipBox>
       </Section>
 
-      <Section title="Dealing with Counters">
+      <Section title="Blue Spark 3~4">
         <p>
-          Good players will try to escape your pressure. Here's how to beat their counters:
+          You've seen [3~4] throughout this guide — in RFS 3~4 (Flying Eagle), RFF [3~4] (Backlash),
+          and in combos. The just-frame version (pressing 3 for exactly one frame, then 4) gives a
+          blue spark, more damage, and better frame data.
         </p>
 
-        <KeyConcept title="Counter to Counter" icon="⚔️">
-          <div style={{ display: 'grid', gap: '12px', marginTop: '12px' }}>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <strong>They duck your highs</strong>
-              <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>
-                → Use RFS 4,3, RFS df+4, or JFSR (mids)
-              </p>
-            </div>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <strong>They jab out of pressure</strong>
-              <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>
-                → RFS f+4,4 CH launches them
-              </p>
-            </div>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <strong>They sidestep</strong>
-              <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>
-                → Use df+4 (homing), RFF df+3 (homing), or 1,2,f+3 (tracks)
-              </p>
-            </div>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <strong>They power crush</strong>
-              <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>
-                → Block and punish, or use lows (PC doesn't absorb lows)
-              </p>
-            </div>
-            <div style={{ padding: '12px', background: 'var(--background-secondary)', borderRadius: '8px' }}>
-              <strong>They dickjab (d+1)</strong>
-              <p style={{ color: 'var(--text-secondary)', marginTop: '4px' }}>
-                → 1,2,f+4 low crushes. RFS 3~4 low crushes.
-              </p>
-            </div>
-          </div>
-        </KeyConcept>
+        <ExecutionBox title="Just Frame 3~4">
+          <p>The input: press <strong>3</strong> for exactly <strong>one frame</strong>, then immediately press <strong>4</strong>.</p>
+          <p>
+            In practice, you need to press 3 and 4 almost simultaneously but with 3 very slightly
+            before 4. Think of it as a slide from 3 to 4 with your fingers — not two distinct
+            button presses.
+          </p>
+          <p><strong>From RFS (RFS [3~4]):</strong></p>
+          <ul>
+            <li>Normal RFS 3~4: -3 on block, mid-mid, low crushes</li>
+            <li>Blue spark RFS [3~4]: <strong>+1 on block</strong> instead of -3, more damage</li>
+            <li>The +1 on block difference is massive — it means you stay plus and can continue pressure</li>
+          </ul>
+          <p><strong>From RFF (RFF [3~4] / Backlash):</strong></p>
+          <ul>
+            <li>Normal: +4~+7 on block, power crush, homing, high</li>
+            <li>Blue spark: same properties but <strong>more damage and slightly more plus</strong></li>
+            <li>The execution here is less critical since Backlash is already plus on block</li>
+          </ul>
+          <p><strong>In combos:</strong></p>
+          <ul>
+            <li>Blue spark [3~4] after f+4 in combos gives <strong>5-8 more damage</strong> than normal 3~4</li>
+            <li>Over a full combo, this adds up to a significant damage increase</li>
+            <li>Practice the just frame in combos separately — the timing is different mid-juggle</li>
+          </ul>
+        </ExecutionBox>
       </Section>
 
-      <Section title="Mental Frames">
-        <KeyConcept title="What Are Mental Frames?" icon="🧠">
+      <Section title="Fox Step">
+        <ExecutionBox title="Fox Step (3+4 → Backdash)">
+          <p>The input: <strong>3+4 → b,b</strong> (switch to RFF, then immediately backdash).</p>
           <p>
-            <strong>Mental frames</strong> occur when your opponent thinks they can't act, 
-            even when they technically can. Hwoarang's animations look very plus even when 
-            they're not.
+            Fox step is a movement technique, not a move. You switch to RFF with 3+4 and immediately
+            backdash. Because the RFF backdash has different properties than LFF backdash, you cover
+            distance quickly and can whiff punish with RFF tools.
+          </p>
+          <p><strong>Why it matters:</strong></p>
+          <ul>
+            <li>Creates space faster than a normal backdash</li>
+            <li>Ends in RFF, giving you access to RFF b+2 (+4~+5 on block), RFF [3~4] (Backlash), and RFF df+3 (homing heat engager)</li>
+            <li>The opponent sees the stance switch and might react, creating openings</li>
+            <li>Advanced players use fox step to bait whiffs and punish with JFSR from RFF</li>
+          </ul>
+          <p><strong>How to practice:</strong></p>
+          <ol>
+            <li>3+4 → b,b at standing. Get the rhythm of switching and immediately moving back.</li>
+            <li>3+4 → b,b → RFF b+2. The poke should come out cleanly after the backstep.</li>
+            <li>3+4 → b,b → JFSR. The ultimate punish sequence — step back, bait a whiff, launch.</li>
+          </ol>
+        </ExecutionBox>
+      </Section>
+
+      <Section title="Power Crush Cancel">
+        <ExecutionBox title="df+3~F (Power Crush Cancel)">
+          <p>The input: <strong>df+3 then immediately press F</strong> to cancel into LFS.</p>
+          <p>
+            df+3 is the first hit of df+3,4 (your power crush). Normally you'd press df+3,4 for
+            the full string. But if you press df+3 alone and cancel with F, you get just the first
+            hit and transition into LFS. The first hit absorbs attacks (power crush property) and
+            the LFS transition gives you stance options.
+          </p>
+          <p><strong>Applications:</strong></p>
+          <ul>
+            <li>Absorb an attack and immediately enter LFS for d+3,4 or LFS f+3 heat engage</li>
+            <li>Use it as a frame trap into LFS — the power crush property makes it safe against mashers</li>
+            <li>At the wall, absorbing an attack into LFS pressure is devastating</li>
+          </ul>
+          <p><strong>The risk:</strong> df+3 alone is minus on block. You're entering LFS (can't block)
+          while minus. Only use this when the power crush property absorbs an attack, or when the
+          opponent is respecting enough that the minus frames don't matter.</p>
+        </ExecutionBox>
+      </Section>
+
+      <Section title="Final Skill Check">
+        <p>
+          If you've worked through all ten chapters, you've built a complete Hwoarang. This skill
+          check confirms you have all the tools. You don't need to master every item — but you
+          should be comfortable with at least 8 out of 12.
+        </p>
+
+        <SkillCheck
+          title="The Complete Hwoarang"
+          subtitle="Can you do all of these in Practice Mode?"
+          skills={[
+            { id: 'loop', skill: 'd+3,4 → RFS 2 loop (3+ cycles without dropping)', description: 'The fundamental. If nothing else, this should be automatic.' },
+            { id: 'rfs-menu', skill: 'Use 4+ different RFS options after d+3,4', description: 'RFS f+4, RFS 2, RFS df+4, RFS d+4,3, RFS 4,3, RFS 3~4 — you should be comfortable choosing any of them.' },
+            { id: 'full-cycle', skill: 'Full 4-stance cycle (LFF → RFS → RFF → LFS → back)', description: 'Flow through all four stances without breaking the chain.' },
+            { id: 'punish-10', skill: 'Punish a -10 move with 1,2,4 → RFS pressure', description: 'Turn punishment into your loop system.' },
+            { id: 'punish-ws', skill: 'Punish a -12 low with ws+1,4 → RFS pressure', description: 'The Season 2 crouching punish that enters your loops.' },
+            { id: 'df2-combo', skill: 'df+2 → full combo (standard route)', description: 'Convert your safe launcher into damage.' },
+            { id: 'whiff-b3', skill: 'Backdash → b+3 whiff punish at range 3', description: 'The patient game that opponents don\'t expect.' },
+            { id: 'heat-engage', skill: 'Heat engage mid-loop (RFS b+3 or LFS f+3)', description: 'Activate heat from inside your pressure, not just from neutral.' },
+            { id: 'heat-rfs', skill: 'Use RFS f+4,4 and RFS d+4,3,4 in heat', description: 'Your heat-enhanced options — the i8 launcher and the natural combo hell sweep.' },
+            { id: 'adapt', skill: 'Switch entry point when d+3,4 is downloaded', description: 'Use f+2 → RFF, db+4~F, or punishment to enter stances instead.' },
+            { id: 'jfsr', skill: 'JFSR from standing (3 out of 5 success rate)', description: 'The just frame that transforms your neutral game.' },
+            { id: 'blue-spark', skill: 'Blue spark [3~4] in combos', description: 'The just frame that maximizes your combo damage.' },
+          ]}
+          requiredToPass={8}
+        />
+
+        <KeyConcept title="What Comes Next" icon="🏆">
+          <p>
+            Hwoarang is a character that rewards thousands of hours. You now have the tools,
+            the understanding, and the practice structure. From here, improvement comes from:
+          </p>
+          <ul>
+            <li><strong>Match experience:</strong> Take everything into ranked. The real learning starts when you face opponents who fight back. Every loss teaches you something if you're paying attention.</li>
+            <li><strong>Execution refinement:</strong> JFSR and blue spark get more consistent with time. Don't force them — let them develop naturally as your hands learn the motions.</li>
+            <li><strong>Matchup knowledge:</strong> Learn what to punish from each character. Your punishment system (Chapter 4) is only as good as your knowledge of what's unsafe.</li>
+            <li><strong>Pattern recognition:</strong> Over time, you'll start reading opponents faster. You'll see the duck before it happens. You'll feel the sidestep. You'll know when to power crush cancel and when to run the loop one more time.</li>
+          </ul>
+          <p>
+            The best Hwoarang players never stop learning. The stance system is deep enough that
+            new options and transitions reveal themselves years into playing. That depth is the
+            reward — and it's why Hwoarang players stay loyal to the character.
           </p>
         </KeyConcept>
 
-        <p>
-          Examples of moves that look more plus than they are:
-        </p>
-
-        <ul>
-          <li><code>RFS df+4</code> — Only +1 but looks very plus</li>
-          <li><code>RFF b+2</code> — +4-5 but the animation is intimidating</li>
-          <li><code>RFF df+3</code> — +1 but the Heat activation is scary</li>
-        </ul>
-
-        <TipBox variant="tip" title="Exploit Mental Frames">
-          When opponents are scared to press, they block everything. That's when you go 
-          for throws, lows, and resets. Mental frames are real advantage.
-        </TipBox>
+        <Collapsible title="Resources">
+          <ul>
+            <li><strong>Frame data:</strong> TekkenDocs (tekkendocs.com/t8/hwoarang) — always updated for the current season</li>
+            <li><strong>Match VODs:</strong> Watch high-level Hwoarang players and study their entry point choices, loop variations, and when they choose to stop pressing</li>
+            <li><strong>Practice routine:</strong> 10 minutes of JFSR, 10 minutes of loop variations, 10 minutes of punishment drills. Do this before ranked sessions to warm up your hands and your decision-making.</li>
+          </ul>
+        </Collapsible>
       </Section>
-
-      <Collapsible title="Quick Frame Trap Reference" icon="📊">
-        <div style={{ marginTop: '12px', overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Setup Move</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Frames</th>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Best Follow-up</th>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Reward</th>
-              </tr>
-            </thead>
-            <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr>
-                <td style={{ padding: '8px' }}>d+3,4 (block)</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+8~+10</td>
-                <td style={{ padding: '8px' }}>RFS f+4,4</td>
-                <td style={{ padding: '8px' }}>CH full combo</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}>1,2,4 (block)</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+3</td>
-                <td style={{ padding: '8px' }}>RFS f+4,4</td>
-                <td style={{ padding: '8px' }}>CH full combo</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}>RFF 2,4~f (block)</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+4</td>
-                <td style={{ padding: '8px' }}>RFS f+4,4 / RFS 4,3</td>
-                <td style={{ padding: '8px' }}>CH combo / +4 LFS</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}>RFS 4,3 (block)</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+4</td>
-                <td style={{ padding: '8px' }}>LFS 1</td>
-                <td style={{ padding: '8px' }}>Beats jabs, +5</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}>RFS df+4 (block)</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+1</td>
-                <td style={{ padding: '8px' }}>RFS df+4 / RFS f+4,4</td>
-                <td style={{ padding: '8px' }}>Loop / CH trap</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}>db+4~f (CH)</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>+3</td>
-                <td style={{ padding: '8px' }}>RFS f+4,4</td>
-                <td style={{ padding: '8px' }}>CH full combo</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </Collapsible>
     </Chapter>
   )
 }

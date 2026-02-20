@@ -1,300 +1,333 @@
 import { Chapter, Section } from '../../../components/guide'
-import { 
-  KeyConcept, 
-  TipBox,
-  Collapsible,
-  StanceBox
-} from '../../../components/ui'
+import { MoveCard, KeyConcept, TipBox, Flowchart, ConceptBuilder, DecisionGrid, DrillMode, Collapsible } from '../../../components/ui'
 import type { ChapterProps } from '../../../types'
 
 export function Chapter3({ goToChapter }: ChapterProps) {
   return (
     <Chapter
       number={3}
-      title="The Four Stances"
-      intro="Hwoarang's stance system is what makes him unique. Understanding when you're in each stance, how to enter them, and what options you have is the key to unlocking his potential."
+      title="The Infinite Machine"
+      intro="Chapter 2 gave you one loop: d+3,4 → RFS 2 → repeat. That's the starter motor. This chapter connects it to every other stance, turning your one loop into an infinite machine that flows through all four stances."
+      hasPrevious
       onPrevious={() => goToChapter(2)}
       onNext={() => goToChapter(4)}
-      nextLabel="Learn Core Mids & Lows"
+      nextLabel="Punishment Into Pressure"
     >
-      <Section title="Why Stances Matter">
+      <Section title="From One Loop to Many">
+        <ConceptBuilder
+          title="Building the Full Stance Cycle"
+          foundation={[
+            {
+              label: 'd+3,4 Core Loop',
+              description: 'LFF → d+3,4 → RFS → RFS 2 → RFF → d+3,4 → RFS (repeat). You know this from Chapter 2.',
+            },
+            {
+              label: 'RFF f+3 Connector',
+              description: 'Instead of d+3,4 from RFF, do RFF f+3 to enter LFS at +12~+15 on block.',
+            },
+            {
+              label: 'LFS Options',
+              description: 'LFS f+3 (heat engager, +4, stays in LFS) or LFS d+3,4 (back into RFS). Now you visit all four stances.',
+            },
+          ]}
+          newAddition={{
+            label: 'RFS 4,3 Path',
+            description: 'RFS 4,3 is +4 on block and transitions to LFS. A safe mid-mid alternative to RFS 2 that enters the LFS mixup.',
+          }}
+          result="d+3,4 → RFS 2 → RFF f+3 → LFS f+3 → LFS d+3,4 → RFS 4,3 → LFS... The entire stance system is connected. You never have to stop moving."
+        />
+      </Section>
+
+      <Section title="The Key Connectors">
         <p>
-          Unlike most characters who have one neutral state, Hwoarang has <strong>four</strong>. 
-          Each stance has unique moves, and transitioning between them is how you create pressure. 
-          Your opponent has to track which stance you're in to know what's coming next.
+          These are the moves that bridge stances. You already know the RFS menu from Chapter 2.
+          These connectors are what turn isolated options into a flowing system.
         </p>
 
-        <KeyConcept title="The Stance Philosophy" icon="🔄">
+        <MoveCard
+          character="hwoarang"
+          videoId="RFF.f+3"
+          move={{
+            input: 'RFF f+3',
+            hitLevel: ['h'],
+            damage: '21',
+            startup: 'i14',
+            onBlock: '+12~+15',
+            onHit: '+23~+26',
+            tags: ['High', 'Massive Plus', 'Transition'],
+            description: 'The golden connector. From RFF, this high kick transitions to LFS at +12 to +15 on block. At +12, even your i19 LFS f+3 is uninterruptible. The catch: it\'s a high. If they duck, you\'re dead. But if they respect it, you have the biggest plus frames in the game.',
+          }}
+          showVideo
+        />
+
+        <MoveCard
+          character="hwoarang"
+          videoId="RFF.b+2"
+          move={{
+            input: 'RFF b+2',
+            hitLevel: ['m'],
+            damage: '17',
+            startup: 'i16',
+            onBlock: '+4~+5',
+            onHit: '+6c~+7c',
+            onCH: '+25d~+26d',
+            tags: ['Mid', 'Plus on Block', 'Safe'],
+            description: 'The safe mid alternative in RFF. +4~+5 on block, stays in RFF. When the opponent starts ducking RFF f+3, this is your mid that keeps you plus. Chip damage on block. On CH, knocks down for a guaranteed follow-up.',
+          }}
+          showVideo
+        />
+
+        <MoveCard
+          character="hwoarang"
+          videoId="LFS.f+3"
+          move={{
+            input: 'LFS f+3',
+            hitLevel: ['m'],
+            damage: '23',
+            startup: 'i19',
+            onBlock: '+4',
+            onHit: 'Heat Engage',
+            tags: ['Mid', 'Heat Engager', 'Plus on Block'],
+            description: 'The reason LFS is scary. +4 on block, stays in LFS, and it\'s your heat engager. After RFF f+3 at +12, this mid is completely uninterruptible. On block you\'re +4 in LFS — do it again, or go low with LFS d+3,4, or poke with LFS 1.',
+          }}
+          showVideo
+        />
+
+        <MoveCard
+          character="hwoarang"
+          videoId="LFS.1"
+          move={{
+            input: 'LFS 1',
+            hitLevel: ['h'],
+            damage: '6',
+            startup: 'i13',
+            onBlock: '+5',
+            onHit: '+7',
+            tags: ['High', 'Plus on Block', 'Reset'],
+            description: 'The LFS jab. +5 on block. When you\'re in LFS and don\'t know what to do, press 1. You get plus frames and can decide from there — go into d+3,4, throw df+2, or just jab again. This is your "I\'m safe" button in LFS.',
+          }}
+          showVideo
+        />
+
+        <MoveCard
+          character="hwoarang"
+          videoId="LFS.d+4"
+          move={{
+            input: 'LFS d+4',
+            hitLevel: ['l'],
+            damage: '17',
+            startup: 'i20',
+            onBlock: '-12',
+            onHit: '+4',
+            tags: ['Low', 'Transition'],
+            description: 'LFS low that transitions to RFF on hit at +4. Tracks sidesteps to the right. Complements LFS f+3 — the opponent has to choose between blocking mid (and eating the low) or blocking low (and eating the mid). On CH, knocks down.',
+          }}
+          showVideo
+        />
+
+        <MoveCard
+          character="hwoarang"
+          videoId="RFF.3,4"
+          move={{
+            input: 'RFF 3,4',
+            hitLevel: ['m', 'h'],
+            damage: '13, 16',
+            startup: 'i16',
+            onBlock: '+10g~+11g',
+            onHit: '+21g~+22g',
+            tags: ['Mid-High', 'Massive Plus', 'Transition'],
+            description: 'Mid-high from RFF that transitions to RFS at +10 on block. Like d+3,4 but starts with a mid. The second hit is a high that can be ducked, but at +10 in RFS your options are almost impossible to contest. The mid-first version of your core loop.',
+          }}
+          showVideo
+        />
+      </Section>
+
+      <Section title="Five Core Loops">
+        <p>
+          These are the five loops that connect the entire stance system. You don't need to memorize all five
+          immediately — start with Loop 1 (you already know it) and add one at a time.
+        </p>
+
+        <Flowchart
+          title="Loop 1: d+3,4 Core (Chapter 2)"
+          nodes={[
+            { type: 'start', label: 'LFF or RFF: d+3,4' },
+            { type: 'decision', label: 'In RFS at +8~+10', branches: [
+              { label: 'RFS 2 (+5)', action: 'Back to RFF → d+3,4 again (loop restarts)' },
+              { label: 'RFS f+4 (i8)', action: 'Stay in RFS → press again or RFS 2' },
+              { label: 'Mixup option', action: 'RFS df+4 / RFS d+4,3 / RFS 4,3' },
+            ]},
+            { type: 'end', label: 'Loop back to d+3,4 from RFF' },
+          ]}
+        />
+
+        <Flowchart
+          title="Loop 2: Full Stance Cycle"
+          nodes={[
+            { type: 'start', label: 'd+3,4 → RFS 2 → RFF' },
+            { type: 'decision', label: 'In RFF at +5', branches: [
+              { label: 'RFF f+3 (+12~+15)', action: 'Enter LFS with massive plus frames' },
+              { label: 'RFF b+2 (+4~+5)', action: 'Stay in RFF, safe mid pressure' },
+            ]},
+            { type: 'decision', label: 'In LFS', branches: [
+              { label: 'LFS f+3 (+4)', action: 'Heat engager, stay in LFS' },
+              { label: 'LFS d+3,4', action: 'Back to RFS → full cycle complete' },
+              { label: 'LFS 1 (+5)', action: 'Jab reset, stay plus' },
+            ]},
+            { type: 'end', label: 'From LFS: d+3,4 restarts the whole cycle' },
+          ]}
+        />
+
+        <Flowchart
+          title="Loop 3: RFS 4,3 Path"
+          nodes={[
+            { type: 'start', label: 'd+3,4 → RFS at +8~+10' },
+            { type: 'decision', label: 'RFS 4,3 option', branches: [
+              { label: 'RFS 4,3 (+4, mid-mid)', action: 'Enter LFS at +4' },
+            ]},
+            { type: 'decision', label: 'In LFS at +4', branches: [
+              { label: 'LFS f+3 (+4)', action: 'Heat engager, stay in LFS' },
+              { label: 'LFS d+3,4', action: 'Back to RFS (full cycle)' },
+              { label: 'LFS 1 (+5)', action: 'Jab, continue from LFS' },
+            ]},
+            { type: 'end', label: 'All-mid path: d+3,4 → RFS 4,3 → LFS f+3' },
+          ]}
+        />
+
+        <Flowchart
+          title="Loop 4: RFF 3,4 Alternative Entry"
+          nodes={[
+            { type: 'start', label: 'From RFF: RFF 3,4 (mid-high)' },
+            { type: 'decision', label: 'In RFS at +10~+11', branches: [
+              { label: 'RFS 2 (+5)', action: 'Back to RFF → loop continues' },
+              { label: 'RFS f+4 (i8)', action: 'Fastest option, stay in RFS' },
+              { label: 'RFS 4,3 (+4)', action: 'Safe mid-mid into LFS' },
+            ]},
+            { type: 'end', label: 'Same RFS menu, but entered from a mid instead of a low' },
+          ]}
+        />
+
+        <Flowchart
+          title="Loop 5: LFS f+3 Repeat"
+          nodes={[
+            { type: 'start', label: 'In LFS (from any transition)' },
+            { type: 'decision', label: 'LFS f+3 (+4, stays in LFS)', branches: [
+              { label: 'They block', action: 'LFS f+3 again (+4 on block, all-mid loop)' },
+              { label: 'They duck', action: 'LFS f+3 hits them (it\'s a mid)' },
+              { label: 'They press', action: 'LFS f+3 at +4 beats i15+ options' },
+            ]},
+            { type: 'end', label: 'All-mid, can\'t be ducked. Only beaten by fast mids or sidesteps.' },
+          ]}
+        />
+
+        <TipBox variant="tip" title="You Don't Need All Five">
+          Loop 1 and Loop 2 cover 80% of your offense. Loop 3 adds the safe mid-mid path. Loops 4 and 5
+          are variations you'll naturally discover as you play. Master 1 and 2 first, then layer in the rest.
+        </TipBox>
+      </Section>
+
+      <Section title="Understanding 'Fake Plus Frames'">
+        <p>
+          Chapter 1 introduced this concept. Now let's make it mechanical. Being plus in flamingo doesn't mean
+          the same thing as being plus in a normal stance. Here's the actual math at each key transition point:
+        </p>
+
+        <DecisionGrid
+          title="What '+5 in Flamingo' Actually Means"
+          description="At +5 in RFS, your options race against their i10 jab (which comes out at effective frame 5). Here's who wins:"
+          rows={[
+            { situation: 'RFS f+4 (i8) — effective frame 3', response: 'Use this to beat mashers', reason: 'You win by 2 frames. Uninterruptible. This is why the pressure works.' },
+            { situation: 'RFS 2 (i13) — effective frame 8', response: 'Use for loop reset when they stop pressing', reason: 'Their jab wins, but RFS 2 is a high that trades with jab. Risk/reward is even.' },
+            { situation: 'RFS df+4 (i17) — effective frame 12', response: 'Use when they freeze or duck', reason: 'Their jab wins clean. Only throw this when you read them not pressing — the CH launch is your reward.' },
+            { situation: 'RFS d+4,3 (i20) — effective frame 15', response: 'Use against turtling opponents only', reason: 'Way too slow to beat anything. The hell sweep only works when they commit to blocking.' },
+            { situation: 'RFS 4,3 (i14) — effective frame 9', response: 'Use against d+1 mashers', reason: 'Their jab wins, but 4,3 low crushes d+1. Beats the specific "mash d+1" habit.' },
+          ]}
+        />
+
+        <KeyConcept title="The Real Frame Trap" icon="🧠">
           <p>
-            <strong>LFF</strong> and <strong>RFF</strong> are "safe" stances — you can block, move, 
-            and use fundamental Tekken.
+            The frame trap isn't any single move. The frame trap is <strong>the threat of RFS f+4</strong>.
+            Because RFS f+4 exists at 8 frames, the opponent has to account for it. If they just hold block,
+            RFS f+4 is +0 and you can go again. If they press a button, RFS f+4 beats it and you're still
+            in RFS with plus frames.
           </p>
-          <p style={{ marginTop: '12px' }}>
-            <strong>LFS</strong> and <strong>RFS</strong> are "aggressive" stances — you sacrifice 
-            blocking for devastating offense. This is where Hwoarang becomes terrifying.
-          </p>
-        </KeyConcept>
-      </Section>
-
-      <Section title="LFF — Left Foot Forward">
-        <StanceBox name="Left Foot Forward (LFF)" input="Default">
-          <p>Your default neutral stance. Full movement, can block, access to all fundamental options.</p>
-          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
-          <ul>
-            <li>Can block normally</li>
-            <li>Full movement (sidestep both ways)</li>
-            <li>Access to all universal moves</li>
-            <li>Where you start every round</li>
-          </ul>
-          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
-          <ul>
-            <li>Default stance at round start</li>
-            <li>Sidestep from RFF</li>
-            <li>RFS.3+4 (stance switch)</li>
-            <li>Naturally after most moves end</li>
-          </ul>
-        </StanceBox>
-
-        <p>
-          LFF is where you start and where you return when you want to play fundamental Tekken. 
-          From here, you can access your launchers (df+2, b+3), your homing move (df+4), and 
-          safely navigate neutral.
-        </p>
-
-        <KeyConcept title="Key LFF Moves" icon="📋">
-          <ul>
-            <li><code>1,2,3</code> — Go to LFS (+3 block / +12 hit)</li>
-            <li><code>1,2,4</code> — Go to RFS (+3 block / +12 hit)</li>
-            <li><code>d+3,4</code> — Go to RFS (+8-10 block / +14-16 hit)</li>
-            <li><code>df+2</code> — i15 launcher</li>
-            <li><code>b+3</code> — i16 launcher (whiff punish)</li>
-            <li><code>df+4</code> — Homing move, goes to RFF</li>
-            <li><code>3+4</code> — Manual switch to RFF</li>
-          </ul>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="When to Stay in LFF">
-          Stay in LFF when: playing neutral at range, waiting for whiff punishes, blocking pressure, 
-          or when you need to sidestep. LFF is safety. Flamingo is commitment.
-        </TipBox>
-      </Section>
-
-      <Section title="RFF — Right Foot Forward">
-        <StanceBox name="Right Foot Forward (RFF)" input="3+4">
-          <p>Secondary neutral stance. Can block, but sidestepping exits to LFF. Has the 'superior jab' and key transitions.</p>
-          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
-          <ul>
-            <li>Can block normally</li>
-            <li>Limited sidestep (exits to LFF)</li>
-            <li>Superior jab (RFF 2 is +2 on block)</li>
-            <li>Access to Backlash power crush</li>
-          </ul>
-          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
-          <ul>
-            <li>3+4 from LFF (manual switch)</li>
-            <li>df+4 on hit/block</li>
-            <li>ws4,4 on hit</li>
-            <li>d+3,4 cancelled with no RFS transition</li>
-            <li>Many move enders naturally put you here</li>
-          </ul>
-        </StanceBox>
-
-        <p>
-          RFF is your "aggressive neutral." You can still block, but your movement is limited. 
-          The payoff is access to incredible moves like RFF df+3 (homing heat engager), RFF 3~4 
-          (Backlash), and the superior jab (RFF 2).
-        </p>
-
-        <KeyConcept title="Key RFF Moves" icon="📋">
-          <ul>
-            <li><code>RFF 2,4~f</code> — Go to RFS (+4 block / +16 hit)</li>
-            <li><code>RFF df+3</code> — Homing heat engager (+1 on block!)</li>
-            <li><code>RFF 3~4</code> — Backlash power crush (+4-7 on block)</li>
-            <li><code>RFF b+3</code> — i13 high CH launcher (-10)</li>
-            <li><code>RFF b+2</code> — Safe mid (+4-5 on block, +6c on hit)</li>
-            <li><code>RFF f+4</code> — Go to RFS manually</li>
-          </ul>
-        </KeyConcept>
-
-        <TipBox variant="warning" title="Sidestep Exits RFF">
-          If you sidestep while in RFF, you return to LFF. This is important — you can't sidestep 
-          and stay in RFF. Plan your movement accordingly.
-        </TipBox>
-      </Section>
-
-      <Section title="LFS — Left Flamingo Stance">
-        <StanceBox name="Left Flamingo Stance (LFS)" input="1,2,3">
-          <p>Aggressive stance with left leg raised. <strong style={{ color: 'var(--danger)' }}>CANNOT BLOCK.</strong> Has heat engager and mid options.</p>
-          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
-          <ul>
-            <li>CANNOT block!</li>
-            <li>High reward moves</li>
-            <li>Heat engager (LFS f+3)</li>
-            <li>Quick mid with LFS 3~f for loops</li>
-          </ul>
-          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
-          <ul>
-            <li>1,2,3 on block/hit</li>
-            <li>f+3 from LFF (manual entry)</li>
-            <li>3,3~f from LFF</li>
-            <li>4,3~f (cancel 4,3 into LFS)</li>
-            <li>RFS.3+4 (stance swap)</li>
-          </ul>
-        </StanceBox>
-
-        <p>
-          LFS is powerful but less used than RFS. Your main tool is <code>LFS f+3</code> — a heat 
-          engager that's +4 on block and remains in LFS. This lets you loop pressure.
-        </p>
-
-        <KeyConcept title="Key LFS Moves" icon="📋">
-          <ul>
-            <li><code>LFS 1</code> — +5 on block, +7 on hit, your check move</li>
-            <li><code>LFS f+3</code> — Heat engager, +4 on block, stays in LFS</li>
-            <li><code>LFS 3~f</code> — Mid that loops back to LFS (+2/+8)</li>
-            <li><code>LFS 4</code> — High launcher, +4 on block</li>
-            <li><code>LFS uf+4</code> — Tornado launcher (-14, risky)</li>
-            <li><code>LFS d+3,4</code> — Same as regular d+3,4, goes to RFS</li>
-          </ul>
-        </KeyConcept>
-
-        <TipBox variant="danger" title="You Cannot Block in LFS">
-          The moment you enter Left Flamingo, blocking is gone. If they do a mid, you get hit 
-          (unless you have a power crush or evasion). Commit to offense or use LFS 3+4 to swap 
-          to RFS, which also cannot block but has faster options.
-        </TipBox>
-      </Section>
-
-      <Section title="RFS — Right Flamingo Stance">
-        <StanceBox name="Right Flamingo Stance (RFS)" input="1,2,4 / d+3,4">
-          <p>Your <strong style={{ color: 'var(--accent)' }}>MOST IMPORTANT</strong> stance. <strong style={{ color: 'var(--danger)' }}>CANNOT BLOCK.</strong> Has 8-frame CH launcher, hell sweep, and all your pressure.</p>
-          <p style={{ marginTop: '8px' }}><strong>Features:</strong></p>
-          <ul>
-            <li>CANNOT block!</li>
-            <li>8-frame CH launcher (RFS f+4,4)</li>
-            <li>Hell sweep mixup (RFS d+4,3,4)</li>
-            <li>Plus frame mids</li>
-            <li>Where your damage comes from</li>
-          </ul>
-          <p style={{ marginTop: '8px' }}><strong>Entries:</strong></p>
-          <ul>
-            <li>1,2,4 on block/hit</li>
-            <li>d+3,4 on block/hit</li>
-            <li>RFF.2,4~f on block/hit</li>
-            <li>RFF.f+4 (manual entry)</li>
-            <li>f,n,4 from LFF (manual entry)</li>
-          </ul>
-        </StanceBox>
-
-        <p>
-          <span className="highlight">RFS is where Hwoarang becomes terrifying.</span> You have an 
-          8-frame counter-hit launcher (RFS f+4,4), a knockdown sweep (RFS d+4,3,4), safe mids, 
-          and plus frames everywhere.
-        </p>
-
-        <KeyConcept title="Key RFS Moves" icon="🔥">
-          <ul>
-            <li><code>RFS f+4,4</code> — <strong>8-frame CH launcher!</strong> (0 on block, +5 on hit)</li>
-            <li><code>RFS 2</code> — Jab (+5 block / +7 hit), goes to RFF</li>
-            <li><code>RFS 4,3</code> — Safe mid-mid, CH wall splat (+4 block!)</li>
-            <li><code>RFS df+4</code> — Plus mid (+1 block, +8 hit, CH launches)</li>
-            <li><code>RFS d+4,3,4</code> — Hell sweep (full combo in Heat!)</li>
-            <li><code>RFS b+3</code> — Heat engager, safe (-9)</li>
-            <li><code>RFS uf+3</code> — Safe mid launcher alternative</li>
-          </ul>
-        </KeyConcept>
-
-        <TipBox variant="tip" title="The RFS 50/50">
-          From RFS, your core mixup is:
-          <ul style={{ marginTop: '8px' }}>
-            <li><strong>RFS d+4,3,4</strong> — Hell sweep (low, full combo in Heat)</li>
-            <li><strong>RFS 4,3</strong> — Safe mid, wall splats on CH</li>
-          </ul>
-          They have to guess. If they duck, 4,3 launches/wall splats. If they stand, hell sweep.
-        </TipBox>
-      </Section>
-
-      <Section title="Stance Transition Flow">
-        <p>
-          Understanding how stances connect is crucial. Here's the general flow:
-        </p>
-
-        <KeyConcept title="Stance Flowchart" icon="🔄">
-          <div style={{ fontFamily: 'monospace', background: 'var(--background-secondary)', padding: '16px', borderRadius: '8px', marginTop: '12px' }}>
-            <p>LFF → (1,2,3) → LFS → (LFS 3+4) → RFS</p>
-            <p>LFF → (1,2,4) → RFS</p>
-            <p>LFF → (d+3,4) → RFS</p>
-            <p>LFF → (3+4) → RFF → (RFF 2,4~f) → RFS</p>
-            <p>LFF → (df+4) → RFF</p>
-            <p>RFS → (RFS 2) → RFF → loop...</p>
-          </div>
-          <p style={{ marginTop: '12px', color: 'var(--text-secondary)' }}>
-            Notice how many roads lead to RFS. That's intentional — RFS is your destination.
-          </p>
-        </KeyConcept>
-      </Section>
-
-      <Section title="The Golden Rule">
-        <KeyConcept title="Block in LFF/RFF, Attack in LFS/RFS" icon="⚔️">
           <p>
-            When you need to block or play defense: <strong>stay in LFF or RFF</strong>.
+            RFS f+4 is the <em>threat</em>. Everything else is the <em>payoff</em>. The opponent freezes
+            because of the threat, and then you cash in with the options that are slower but more rewarding
+            — RFS df+4 for a mid, RFS d+4,3 for the sweep, RFS 2 for the loop reset.
           </p>
-          <p style={{ marginTop: '12px' }}>
-            When you have advantage or are committing to offense: <strong>enter LFS or RFS</strong>.
-          </p>
-          <p style={{ marginTop: '12px' }}>
-            Don't enter flamingo randomly. Enter it when you have plus frames (from d+3,4, 1,2,3, 
-            RFF 2,4, etc.) or when you're confident your offense will win.
+          <p>
+            This is why Hwoarang's pressure works even though his plus frames are "fake." The i8 option
+            is real. Everything else rides on the fear it creates.
           </p>
         </KeyConcept>
-
-        <TipBox variant="warning" title="Common Beginner Mistake">
-          New Hwoarang players enter flamingo when they shouldn't and then get hit because they 
-          can't block. The solution isn't to avoid flamingo — it's to enter it from plus frames 
-          where your offense is safe.
-        </TipBox>
       </Section>
 
-      <Collapsible title="Quick Stance Reference" icon="📊">
-        <div style={{ marginTop: '12px', overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-            <thead>
-              <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Stance</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Can Block?</th>
-                <th style={{ textAlign: 'center', padding: '8px', color: 'var(--accent)' }}>Movement</th>
-                <th style={{ textAlign: 'left', padding: '8px', color: 'var(--accent)' }}>Main Entry</th>
-              </tr>
-            </thead>
-            <tbody style={{ color: 'var(--text-secondary)' }}>
-              <tr>
-                <td style={{ padding: '8px' }}><strong>LFF</strong></td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>Yes</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>Full</td>
-                <td style={{ padding: '8px' }}>Default / Sidestep from RFF</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><strong>RFF</strong></td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--success)' }}>Yes</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>Limited</td>
-                <td style={{ padding: '8px' }}>3+4 / df+4 / RFS 2</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><strong>LFS</strong></td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>NO</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>None</td>
-                <td style={{ padding: '8px' }}>1,2,3 / f+3</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px' }}><strong>RFS</strong></td>
-                <td style={{ textAlign: 'center', padding: '8px', color: 'var(--danger)' }}>NO</td>
-                <td style={{ textAlign: 'center', padding: '8px' }}>None</td>
-                <td style={{ padding: '8px' }}>1,2,4 / d+3,4 / RFF 2,4~f</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </Collapsible>
+      <Section title="Mixing Loops Together">
+        <p>
+          Real Hwoarang pressure doesn't follow one loop — it weaves between them based on what the opponent
+          is doing. Here's what a pressure sequence looks like when you mix loops together:
+        </p>
+
+        <Collapsible title="Example Pressure Sequence" defaultOpen>
+          <ol>
+            <li><strong>d+3,4 → RFS 2</strong> — Start Loop 1. You're in RFF at +5.</li>
+            <li><strong>RFF f+3</strong> — Switch to Loop 2. You're in LFS at +12.</li>
+            <li><strong>LFS f+3</strong> — Heat engager, +4 on block. Stay in LFS.</li>
+            <li><strong>LFS d+3,4</strong> — Back to RFS. Loop 1 again but entered from LFS.</li>
+            <li><strong>RFS 4,3</strong> — Switch to Loop 3. Safe mid-mid, +4 into LFS.</li>
+            <li><strong>LFS 1</strong> — Jab reset. +5 on block. Take a breath.</li>
+            <li><strong>d+3,4</strong> — Loop 1 again from LFS.</li>
+          </ol>
+          <p>
+            That's seven moves across all four stances. The opponent had to make a correct defensive decision at
+            every single step. One wrong guess and you get a combo, a knockdown, or more pressure.
+          </p>
+        </Collapsible>
+
+        <Collapsible title="Example: Against a Ducker">
+          <ol>
+            <li><strong>d+3,4</strong> — They block. You're in RFS at +8.</li>
+            <li><strong>RFS df+4</strong> — They ducked expecting another d+3,4 high. Counter hit launch.</li>
+          </ol>
+          <p>
+            Or if they duck d+3,4's second hit:
+          </p>
+          <ol>
+            <li><strong>d+3</strong> — Stop after the first hit. -13 on block but you didn't throw the duckable high.</li>
+            <li><strong>RFS 4,3</strong> — Mid-mid from the RFS you entered. If they're still ducking, this hits.</li>
+          </ol>
+        </Collapsible>
+      </Section>
+
+      <Section title="Practice: The Infinite Machine">
+        <DrillMode
+          title="Stance Cycle Drill"
+          objective="Build the full stance cycle one piece at a time. Each step adds a new connection between stances."
+          steps={[
+            {
+              instruction: 'Loop 1: d+3,4 → RFS 2 (review)',
+              detail: 'Run the basic loop from Chapter 2. d+3,4 → RFS 2 → d+3,4 → RFS 2. Three complete cycles.',
+              targetReps: 5,
+            },
+            {
+              instruction: 'Add RFF f+3',
+              detail: 'd+3,4 → RFS 2 → RFF f+3 → (in LFS). Just feel the transition from RFF to LFS.',
+              targetReps: 10,
+            },
+            {
+              instruction: 'Full Cycle',
+              detail: 'd+3,4 → RFS 2 → RFF f+3 → LFS f+3 → LFS d+3,4 → RFS 2 → repeat. All four stances.',
+              targetReps: 5,
+            },
+            {
+              instruction: 'Mix Loops',
+              detail: 'Run the full cycle but randomly switch between RFS 2 and RFS 4,3 at RFS decision points. Get comfortable choosing.',
+              targetReps: 5,
+            },
+          ]}
+        />
+      </Section>
     </Chapter>
   )
 }
