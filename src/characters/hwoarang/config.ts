@@ -9,6 +9,7 @@ import { Chapter7 } from './chapters/Chapter7'
 import { Chapter8 } from './chapters/Chapter8'
 import { Chapter9 } from './chapters/Chapter9'
 import { Chapter10 } from './chapters/Chapter10'
+import { Chapter11 } from './chapters/Chapter11'
 
 export const hwoarangConfig: CharacterConfig = {
   slug: 'hwoarang',
@@ -48,5 +49,6 @@ export const hwoarangConfig: CharacterConfig = {
     { id: 8, title: 'Defense', section: 'Survival', content: Chapter8 },
     { id: 9, title: 'Conditioning & Adaptation', section: 'Mastery', content: Chapter9 },
     { id: 10, title: "The Master's Toolkit", section: 'Mastery', content: Chapter10 },
+    { id: 11, title: 'Match Ready', section: 'Mastery', content: Chapter11 },
   ],
 }
