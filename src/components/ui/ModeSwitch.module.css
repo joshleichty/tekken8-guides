@@ -1,0 +1,195 @@
+.container {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin: 16px 0 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.description {
+  margin: 12px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.modes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mode {
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: var(--bg-secondary);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.mode:hover:not(.expanded) {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+}
+
+.mode.accentColor.expanded {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg-secondary));
+}
+
+.mode.secondaryColor.expanded {
+  border-color: var(--accent-secondary);
+  background: color-mix(in srgb, var(--accent-secondary) 6%, var(--bg-secondary));
+}
+
+.modeHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modeIcon {
+  font-size: 1.25rem;
+}
+
+.modeName {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+.chevron {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  transition: transform 0.2s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.modeTrigger {
+  margin-top: 6px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.triggerLabel {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+.modeBody {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.section {
+  margin-bottom: 14px;
+}
+
+.sectionTitle {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.list li {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tool {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  color: var(--accent);
+  font-family: 'Courier New', monospace;
+}
+
+.exitBox {
+  background: color-mix(in srgb, var(--accent-secondary) 8%, var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--accent-secondary) 20%, var(--border));
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.exitLabel {
+  color: var(--accent-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+}
+
+@media (max-width: 768px) {
+  .modes {
+    gap: 8px;
+  }
+  .mode {
+    padding: 12px 14px;
+  }
+}

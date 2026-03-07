@@ -22,6 +22,7 @@ import { reinaConfig } from './reina/config'
 import { victorConfig } from './victor/config'
 import { yoshimitsuConfig } from './yoshimitsu/config'
 import { xiaoyuConfig } from './xiaoyu/config'
+import { lidiaConfig } from './lidia/config'
 import { zafinaConfig } from './zafina/config'
 
 // Counter guide imports
@@ -47,6 +48,7 @@ export const characters: Record<string, CharacterConfig> = {
   'lars': larsConfig,
   'law': lawConfig,
   'lee': leeConfig,
+  'lidia': lidiaConfig,
   'lili': liliConfig,
   'paul': paulConfig,
   'reina': reinaConfig,

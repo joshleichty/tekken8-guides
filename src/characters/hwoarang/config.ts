@@ -10,6 +10,10 @@ import { Chapter8 } from './chapters/Chapter8'
 import { Chapter9 } from './chapters/Chapter9'
 import { Chapter10 } from './chapters/Chapter10'
 import { Chapter11 } from './chapters/Chapter11'
+import { Chapter12 } from './chapters/Chapter12'
+import { Chapter13 } from './chapters/Chapter13'
+import { Chapter14 } from './chapters/Chapter14'
+import { Chapter15 } from './chapters/Chapter15'
 
 export const hwoarangConfig: CharacterConfig = {
   slug: 'hwoarang',
@@ -50,5 +54,9 @@ export const hwoarangConfig: CharacterConfig = {
     { id: 9, title: 'Conditioning & Adaptation', section: 'Mastery', content: Chapter9 },
     { id: 10, title: "The Master's Toolkit", section: 'Mastery', content: Chapter10 },
     { id: 11, title: 'Match Ready', section: 'Mastery', content: Chapter11 },
+    { id: 12, title: 'The Game Plan', section: 'Coaching', content: Chapter12 },
+    { id: 13, title: 'The Lab', section: 'Coaching', content: Chapter13 },
+    { id: 14, title: 'Reading the Opponent', section: 'Coaching', content: Chapter14 },
+    { id: 15, title: 'The Pressure Manual', section: 'Coaching', content: Chapter15 },
   ],
 }

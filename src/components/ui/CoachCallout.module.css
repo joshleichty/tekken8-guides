@@ -1,0 +1,53 @@
+.callout {
+  position: relative;
+  margin: 24px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, var(--bg-card)), var(--bg-card));
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent), var(--accent-secondary));
+}
+
+.body {
+  display: flex;
+  gap: 16px;
+  padding: 20px 20px 20px 24px;
+  align-items: flex-start;
+}
+
+.icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.quote {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.context {
+  margin: 10px 0 0;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}

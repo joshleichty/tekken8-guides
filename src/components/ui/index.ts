@@ -28,3 +28,10 @@ export { SituationDrill } from './SituationDrill'
 export { ReadingChallenge } from './ReadingChallenge'
 export { DrillMode } from './DrillMode'
 export { DecisionGrid } from './DecisionGrid'
+
+// Coaching Components
+export { CoachCallout } from './CoachCallout'
+export { ModeSwitch } from './ModeSwitch'
+export { OptionTest } from './OptionTest'
+export { LabProtocol } from './LabProtocol'
+export { FrameTruth } from './FrameTruth'

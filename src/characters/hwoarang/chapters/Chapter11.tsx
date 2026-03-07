@@ -10,6 +10,7 @@ export function Chapter11({ goToChapter }: ChapterProps) {
       intro="Everything in one place. No drills, no explanations — just what you need to remember before you queue up. Scan the section that matches where you are in the round."
       hasPrevious
       onPrevious={() => goToChapter(10)}
+      onNext={() => goToChapter(12)}
     >
       <Section title="Your Win Condition">
         <p>
