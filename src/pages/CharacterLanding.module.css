@@ -1,59 +1,101 @@
 .page {
   min-height: 100vh;
-  background: var(--bg-primary);
+  width: 100%;
+  background: radial-gradient(
+      circle at 50% -15%,
+      color-mix(in srgb, var(--accent) 10%, transparent) 0%,
+      transparent 55%
+    ),
+    var(--bg-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 14px 20px 18px;
+  padding: 24px 20px 26px;
+  gap: 16px;
 }
 
-/* Minimal header */
 .header {
+  width: min(100%, 920px);
   text-align: center;
-  margin-bottom: 14px;
+  padding: 18px 22px 16px;
+  border: 1px solid color-mix(in srgb, var(--border) 88%, var(--accent) 12%);
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--bg-secondary) 92%, var(--accent) 8%) 0%,
+    color-mix(in srgb, var(--bg-primary) 95%, black 5%) 100%
+  );
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
 }
 
 .title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+  font-weight: 700;
   color: var(--text-primary);
   margin: 0;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .subtitle {
-  font-weight: 400;
-  color: var(--text-muted);
+  color: color-mix(in srgb, var(--text-secondary) 72%, var(--accent) 28%);
+  font-weight: 500;
 }
 
-/* Main content area */
+.description {
+  max-width: 720px;
+  margin: 10px auto 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .main {
   width: 100%;
   max-width: 1500px;
+  border: 1px solid color-mix(in srgb, var(--border) 92%, var(--accent) 8%);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--bg-secondary) 78%, black 22%);
+  padding: 18px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .page {
-    padding: 16px 12px;
+    padding: 16px 12px 18px;
+    gap: 12px;
   }
   
   .header {
-    margin-bottom: 12px;
+    border-radius: 12px;
+    padding: 14px 14px 12px;
   }
   
   .title {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
+  }
+
+  .description {
+    margin-top: 8px;
+    font-size: 0.88rem;
+  }
+
+  .main {
+    border-radius: 12px;
+    padding: 12px;
   }
 }
 
 @media (max-width: 480px) {
   .page {
-    padding: 14px 10px;
+    padding: 12px 10px 14px;
   }
   
   .title {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.84rem;
   }
 }
