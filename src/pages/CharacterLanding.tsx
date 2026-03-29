@@ -30,7 +30,13 @@ export function CharacterLanding() {
   return (
     <div className={styles.page}>
       <header className={styles.header}>
-        <h1 className={styles.title}>Tekken 8 <span className={styles.subtitle}>Mastery Guides</span></h1>
+        <h1 className={styles.title}>
+          Tekken 8 <span className={styles.subtitle}>Mastery Guides</span>
+        </h1>
+        <p className={styles.description}>
+          Choose your fighter to explore matchup-specific gameplans, practical drills, and
+          concise chapter breakdowns.
+        </p>
       </header>
       
       <main className={styles.main}>
